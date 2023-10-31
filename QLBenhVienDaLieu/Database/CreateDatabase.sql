@@ -1738,6 +1738,7 @@ EXEC DangKyUser_Insert '0987654320', 'Abcde!12'
 
 -- TABLE HoSoBenhNhan
 EXEC HoSoBenhNhan_Insert N'Nguyễn Văn A', '0123456789', '1990-05-15', N'Nam', '123456789012', 'BHYT123456789', N'Kỹ sư', '0123456789', 'nguyenvana@example.com', N'123 Đường ABC'
+EXEC HoSoBenhNhan_Insert N'Nguyễn Văn B', '0123456789', '1940-05-15', N'Nam', '143456789012', 'BHYT123411789', N'Nông dân', '0123451789', 'nguyenvanb@example.com', N'941 Đường ABC'
 EXEC HoSoBenhNhan_Insert N'Trần Thị B', '0987654321', '1985-10-20', N'Nữ', '234567890123', 'BHYT234567890', N'Giáo viên', '0987654321', 'tranthib@example.com', N'456 Đường XYZ'
 EXEC HoSoBenhNhan_Insert N'Lê Văn C', '0369852147', '1992-03-25', N'Nam', '345678901234', 'BHYT345678901', N'Bác sĩ', '0369852147', 'levanc@example.com', N'789 Đường DEF'
 EXEC HoSoBenhNhan_Insert N'Phạm Thị D', '0765432198', '1988-12-10', N'Nữ', '456789012345', 'BHYT456789012', N'Y tá', '0765432198', 'phamthid@example.com', N'101 Đường GHI'

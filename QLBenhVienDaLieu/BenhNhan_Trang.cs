@@ -190,7 +190,7 @@ namespace QLBenhVienDaLieu
         private void buttonXemLich_Click(object sender, EventArgs e)
         {
             mainPanelRight.Controls.Clear();
-            XemLichKham xemLichKham = new XemLichKham(sqlFunctionCaller);
+            XemLichKham xemLichKham = new XemLichKham(sqlFunctionCaller, this);
 
             xemLichKham.TopLevel = false;
             xemLichKham.Dock = DockStyle.Fill;
@@ -307,16 +307,7 @@ namespace QLBenhVienDaLieu
             mainPanelLeft.Region = Graphic.Draw.RoundedRectangle(0, 0, mainPanelLeft.Width, mainPanelLeft.Height, 20, 20);
             mainPanelRight.Region = Graphic.Draw.RoundedRectangle(0, 0, mainPanelRight.Width, mainPanelRight.Height, 20, 20);
 
-            mainPanelRight.Controls.Clear();
-            XemLichKham xemLichKham = new XemLichKham(sqlFunctionCaller);
-
-            xemLichKham.TopLevel = false;
-            xemLichKham.Dock = DockStyle.Fill;
-
-            mainPanelRight.Controls.Add(xemLichKham);
-            mainPanelRight.Tag = xemLichKham;
-
-            xemLichKham.Show();
+           
         }
     }
 }

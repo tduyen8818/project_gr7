@@ -334,6 +334,7 @@
             // buttonGioiThieu
             // 
             this.buttonGioiThieu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonGioiThieu.FlatAppearance.BorderSize = 0;
             this.buttonGioiThieu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGioiThieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonGioiThieu.ForeColor = System.Drawing.Color.SeaGreen;
@@ -350,6 +351,7 @@
             // buttonTrangChu
             // 
             this.buttonTrangChu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonTrangChu.FlatAppearance.BorderSize = 0;
             this.buttonTrangChu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTrangChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTrangChu.ForeColor = System.Drawing.Color.SeaGreen;
@@ -380,6 +382,7 @@
             // buttonTaiKhoan
             // 
             this.buttonTaiKhoan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonTaiKhoan.FlatAppearance.BorderSize = 0;
             this.buttonTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTaiKhoan.ForeColor = System.Drawing.Color.SeaGreen;
@@ -484,6 +487,7 @@
             // buttonDichVu
             // 
             this.buttonDichVu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonDichVu.FlatAppearance.BorderSize = 0;
             this.buttonDichVu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDichVu.ForeColor = System.Drawing.Color.SeaGreen;
@@ -514,6 +518,7 @@
             // buttonDatLich
             // 
             this.buttonDatLich.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonDatLich.FlatAppearance.BorderSize = 0;
             this.buttonDatLich.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDatLich.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDatLich.ForeColor = System.Drawing.Color.SeaGreen;
@@ -532,6 +537,7 @@
             // buttonXemLich
             // 
             this.buttonXemLich.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonXemLich.FlatAppearance.BorderSize = 0;
             this.buttonXemLich.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonXemLich.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonXemLich.ForeColor = System.Drawing.Color.SeaGreen;
@@ -550,6 +556,7 @@
             // buttonLichKham
             // 
             this.buttonLichKham.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonLichKham.FlatAppearance.BorderSize = 0;
             this.buttonLichKham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLichKham.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLichKham.ForeColor = System.Drawing.Color.SeaGreen;
@@ -567,6 +574,7 @@
             // buttonThongBao
             // 
             this.buttonThongBao.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonThongBao.FlatAppearance.BorderSize = 0;
             this.buttonThongBao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonThongBao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonThongBao.ForeColor = System.Drawing.Color.SeaGreen;
@@ -584,6 +592,7 @@
             // buttonHoTro
             // 
             this.buttonHoTro.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonHoTro.FlatAppearance.BorderSize = 0;
             this.buttonHoTro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHoTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonHoTro.ForeColor = System.Drawing.Color.SeaGreen;
@@ -601,6 +610,7 @@
             // buttonTextPhone
             // 
             this.buttonTextPhone.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonTextPhone.FlatAppearance.BorderSize = 0;
             this.buttonTextPhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTextPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTextPhone.ForeColor = System.Drawing.Color.Red;

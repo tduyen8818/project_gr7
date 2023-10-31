@@ -386,6 +386,12 @@
     <Compile Include="QuenMatKhau2.Designer.cs">
       <DependentUpon>QuenMatKhau2.cs</DependentUpon>
     </Compile>
+    <Compile Include="GiaoDien\Lich_Kham\XemLichKham\XemChiTiet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaoDien\Lich_Kham\XemLichKham\XemChiTiet.Designer.cs">
+      <DependentUpon>XemChiTiet.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Admin_Trang.resx">
       <DependentUpon>Admin_Trang.cs</DependentUpon>
     </EmbeddedResource>
@@ -421,6 +427,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GiaoDien\Lich_Kham\XemLichKham\DataXemLichKham.resx">
       <DependentUpon>DataXemLichKham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiaoDien\Lich_Kham\XemLichKham\XemChiTiet.resx">
+      <DependentUpon>XemChiTiet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GiaoDien\Lich_Kham\XemLichKham\XemLichKham.resx">
       <DependentUpon>XemLichKham.cs</DependentUpon>
@@ -490,6 +499,8 @@
     <Content Include="Database\CreateDatabase.sql" />
     <Content Include="Database\DropDatabase.sql" />
     <Content Include="Database\QueryDatabase.sql" />
+    <None Include="Image\background\grid.png" />
+    <None Include="Image\background\arrow_left.png" />
     <Content Include="Image\button\account.png" />
     <Content Include="Image\button\calender.png" />
     <Content Include="Image\button\dot.png" />

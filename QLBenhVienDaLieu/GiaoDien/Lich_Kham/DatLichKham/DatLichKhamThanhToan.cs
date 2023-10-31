@@ -107,7 +107,7 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
                 }
 
                 int tongTien = sqlFunctionCaller.GetDichVuByMaDichVu(sqlFunctionCaller.GetLichKham().Last<LichKham>().MaDichVu).GiaDichVu;
-                int thanhTien =  (int) Math.Round(tongTien * tyLeGiam);
+                int thanhTien =  (int) Math.Round(tongTien * (tyLeGiam == 0 ? 1 : tyLeGiam));
                 
                 sqlFunctionCaller.InsertHoaDon(maHoSoBenhNhan, maLichKham, thanhTien, dataThanhToan.SelectedItem.ToString());
                 MessageBox.Show("Thanh toán thành công");

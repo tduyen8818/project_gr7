@@ -1,4 +1,5 @@
-﻿using QLBenhVienDaLieu.Graphic;
+﻿using QLBenhVienDaLieu.Database;
+using QLBenhVienDaLieu.Graphic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,9 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.XemLichKham
 {
     public partial class DataXemLichKham : Form
     {
+        BenhNhan_Trang benhNhan_Trang;
+        SqlFunctionCaller sqlFunctionCaller;
+
         Rectangle originalForm;
         Rectangle originalTextMaPhieu;
         Rectangle originalDataMaPhieu;
@@ -37,9 +41,13 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.XemLichKham
         float textSizeDataTrangThai;
         float textSizeLinkXemChiTiet;
 
-        public DataXemLichKham()
+        public DataXemLichKham(BenhNhan_Trang benhNhan_Trang, SqlFunctionCaller sqlFunctionCaller)
         {
             InitializeComponent();
+
+            this.benhNhan_Trang = benhNhan_Trang;
+            this.sqlFunctionCaller = sqlFunctionCaller;
+
             originalForm = new Rectangle(this.Location.X, this.Location.Y, this.Width, this.Height);
             originalTextMaPhieu = new Rectangle(textMaPhieu.Location.X, textMaPhieu.Location.Y, textMaPhieu.Width, textMaPhieu.Height);
             originalDataMaPhieu = new Rectangle(dataMaPhieu.Location.X, dataMaPhieu.Location.Y, dataMaPhieu.Width, dataMaPhieu.Height);
@@ -138,6 +146,24 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.XemLichKham
             ScaleSize.Resize(originalForm, originalTextTrangThai, textTrangThai, this, textSizeTextTrangThai);
             ScaleSize.Resize(originalForm, originalDataTrangThai, dataTrangThai, this, textSizeDataTrangThai);
             ScaleSize.Resize(originalForm, originalLinkXemChiTiet, linkXemChiTiet, this, textSizeLinkXemChiTiet);
+        }
+
+        private void linkXemChiTiet_Click(object sender, EventArgs e)
+        {
+
+            Panel mainPanelRight = benhNhan_Trang.MainPanelRight;
+            mainPanelRight.Controls.Clear();
+            
+            XemChiTiet xemChiTiet = new XemChiTiet(this.benhNhan_Trang, sqlFunctionCaller, this);
+
+            xemChiTiet.TopLevel = false;
+            xemChiTiet.Dock = DockStyle.Fill;
+
+            mainPanelRight.Controls.Add(xemChiTiet);
+            mainPanelRight.Tag = xemChiTiet;
+
+            xemChiTiet.Show();
+
         }
     }
 }

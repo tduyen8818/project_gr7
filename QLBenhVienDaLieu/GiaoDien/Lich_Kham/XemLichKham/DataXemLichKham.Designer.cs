@@ -88,7 +88,7 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.XemLichKham
             this.dataTrangThai.ForeColor = System.Drawing.Color.MediumBlue;
             this.dataTrangThai.Location = new System.Drawing.Point(672, 9);
             this.dataTrangThai.Name = "dataTrangThai";
-            this.dataTrangThai.Size = new System.Drawing.Size(146, 34);
+            this.dataTrangThai.Size = new System.Drawing.Size(86, 34);
             this.dataTrangThai.TabIndex = 6;
             this.dataTrangThai.Text = "Đã đặt";
             // 
@@ -102,6 +102,7 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.XemLichKham
             this.linkXemChiTiet.TabIndex = 8;
             this.linkXemChiTiet.TabStop = true;
             this.linkXemChiTiet.Text = "Xem chi tiết >";
+            this.linkXemChiTiet.Click += new System.EventHandler(this.linkXemChiTiet_Click);
             // 
             // textDichVu
             // 

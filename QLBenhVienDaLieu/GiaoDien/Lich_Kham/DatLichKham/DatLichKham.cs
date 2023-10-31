@@ -20,8 +20,9 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
         SqlFunctionCaller sqlFunctionCaller;
         BenhNhan_Trang benhNhan_Trang;
 
+        private string soDienThoai = "0123456789";
+
         Rectangle originalForm;
-        Rectangle originalTextTemp;
         Rectangle originalImageUser;
         Rectangle originalBtnAccount;
         Rectangle originalBtnDatLich;
@@ -42,6 +43,7 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
         Rectangle originalImageCheck;
         Rectangle originalImageCheck1;
         Rectangle originalImageCheck2;
+        Rectangle originalTextTemp;
 
         float textSizeInitialBtnAccount;
         float textSizeInitialBtnDatLich;
@@ -59,12 +61,6 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
         float textSizeInitialTextErrorDichVu;
         float textSizeInitialTextErrorCaKham;
 
-        int day;
-        int month;
-        int year;
-        int hour;
-        int minute;
-
         public DatLichKham(SqlFunctionCaller sqlFunctionCaller, BenhNhan_Trang benhNhan_Trang)
         {
             this.sqlFunctionCaller = sqlFunctionCaller;
@@ -73,7 +69,6 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             InitializeComponent();
 
             originalForm = new Rectangle(this.Location.X, this.Location.Y, this.Width, this.Height);
-            originalTextTemp = new Rectangle(textTemp.Location.X, textTemp.Location.Y, textTemp.Width, textTemp.Height);
             originalImageUser = new Rectangle(imageUser.Location.X, imageUser.Location.Y, imageUser.Width, imageUser.Width);
             originalBtnAccount = new Rectangle(btnAccount.Location.X, btnAccount.Location.Y, btnAccount.Width, btnAccount.Height);
             originalBtnDatLich = new Rectangle(btnDatLich.Location.X, btnDatLich.Location.Y, btnDatLich.Width, btnDatLich.Height);
@@ -94,11 +89,11 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             originalImageCheck = new Rectangle(imageCheck.Location.X, imageCheck.Location.Y, imageCheck.Width, imageCheck.Height);
             originalImageCheck1 = new Rectangle(imageCheck1.Location.X, imageCheck1.Location.Y, imageCheck1.Width, imageCheck1.Height);
             originalImageCheck2 = new Rectangle(imageCheck2.Location.X, imageCheck2.Location.Y, imageCheck2.Width, imageCheck2.Height);
+            originalTextTemp = new Rectangle(textTemp.Location.X, textTemp.Location.Y, textTemp.Width, textTemp.Height);
 
             imageUser.Region = Draw.RoundedRectangle(0, 0, imageUser.Width, imageUser.Height, 57, 70);
             btnAccount.Region = Draw.RoundedRectangle(0, 0, btnAccount.Width, btnAccount.Height, 35, 35);
             btnDatLich.Region = Draw.RoundedRectangle(0, 0, btnDatLich.Width, btnDatLich.Height, 50, 50);
-            showHoSoBenhNhan.Region = Draw.RoundedRectangle(0, 0, showHoSoBenhNhan.Width, showHoSoBenhNhan.Height, 20, 20);
 
             textSizeInitialBtnAccount = btnAccount.Font.Size;
             textSizeInitialBtnDatLich = btnDatLich.Font.Size;
@@ -130,17 +125,17 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             dataCaKham.Items.Add("Chiều");
 
             
-            foreach(HoSoBenhNhan hoSoBenhNhan in sqlFunctionCaller.GetHoSoBenhNhanByMaTaiKhoanOrSoDienThoai("0123456789"))
+            foreach(HoSoBenhNhan hoSoBenhNhan in sqlFunctionCaller.GetHoSoBenhNhanByMaTaiKhoanOrSoDienThoai(this.soDienThoai))
             {
                 DataHoSoBenhNhan dataHoSoBenhNhan = new DataHoSoBenhNhan();
 
                 dataHoSoBenhNhan.TopLevel = false;
-                dataHoSoBenhNhan.Dock = DockStyle.Top;
+                dataHoSoBenhNhan.Dock = DockStyle.Top;    
 
                 dataHoSoBenhNhan.DataMaHoSoBenhNhan.Text = hoSoBenhNhan.MaHoSoBenhNhan;
                 dataHoSoBenhNhan.DataHoVaTen.Text = hoSoBenhNhan.HoVaTen;
                 dataHoSoBenhNhan.DataMaTaiKhoan.Text = hoSoBenhNhan.MaTaiKhoan;
-                dataHoSoBenhNhan.DataNgaySinh.Text = hoSoBenhNhan.NgaySinh.ToString();
+                dataHoSoBenhNhan.DataNgaySinh.Text = hoSoBenhNhan.NgaySinh.ToShortDateString();
                 dataHoSoBenhNhan.DataGioiTinh.Text = hoSoBenhNhan.GioiTinh;
                 dataHoSoBenhNhan.DataCCCD.Text = hoSoBenhNhan.CCCD;
                 dataHoSoBenhNhan.DataMaBHYT.Text = hoSoBenhNhan.MaBHYT;
@@ -149,20 +144,17 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
                 dataHoSoBenhNhan.DataEmail.Text = hoSoBenhNhan.Email;
                 dataHoSoBenhNhan.DataDiaChi.Text = hoSoBenhNhan.DiaChi;
 
-                showHoSoBenhNhan.Controls.Add(dataHoSoBenhNhan);
-                showHoSoBenhNhan.Tag = dataHoSoBenhNhan;
+                flowLayoutPanel1.Controls.Add(dataHoSoBenhNhan);
+                flowLayoutPanel1.Tag = dataHoSoBenhNhan;
 
                 dataHoSoBenhNhan.Show();
             }
-
-            
 
         }
 
         private void DatLichKham_Resize(object sender, EventArgs e)
         {
             ScaleSize.Resize(originalForm, originalImageUser, imageUser, this);
-            ScaleSize.Resize(originalForm, originalTextTemp, textTemp, this);
             ScaleSize.Resize(originalForm, originalBtnAccount, btnAccount, this, textSizeInitialBtnAccount);
             ScaleSize.Resize(originalForm, originalBtnDatLich, btnDatLich, this, textSizeInitialBtnDatLich);
             ScaleSize.Resize(originalForm, originalTitleDatLich, titleDatLich, this, textSizeInitialTitleDatLich);
@@ -182,12 +174,11 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             ScaleSize.Resize(originalForm, originalImageCheck, imageCheck, this);
             ScaleSize.Resize(originalForm, originalImageCheck1, imageCheck1, this);
             ScaleSize.Resize(originalForm, originalImageCheck2, imageCheck2, this);
-
+            ScaleSize.Resize(originalForm, originalTextTemp, textTemp, this);
 
             imageUser.Region = Draw.RoundedRectangle(0, 0, imageUser.Width, imageUser.Height, 57, 70);
             btnAccount.Region = Draw.RoundedRectangle(0, 0, btnAccount.Width, btnAccount.Height, 35, 35);
             btnDatLich.Region = Draw.RoundedRectangle(0, 0, btnDatLich.Width, btnDatLich.Height, 50, 50);
-            showHoSoBenhNhan.Region = Draw.RoundedRectangle(0, 0, showHoSoBenhNhan.Width, showHoSoBenhNhan.Height, 20, 20);
         }
 
         private void btnDatLich_Click(object sender, EventArgs e)
@@ -227,17 +218,8 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
 
             if (dataChuyenKhoa.SelectedItem != null && dataDichVu.SelectedItem != null && dataCaKham.SelectedItem != null)
             {
-                string[] time = dataNgayKham.Value.ToString().Split(' ');
-                string[] dayMonthYear = time[0].Split('/');
-                string[] hourMinute = time[1].Split(':');
-                day = int.Parse(dayMonthYear[0]);
-                month = int.Parse(dayMonthYear[1]);
-                year = int.Parse(dayMonthYear[2]);
-                hour = int.Parse(hourMinute[0]);
-                minute = int.Parse(hourMinute[1]);
-
-                DateTime ngayDangKy = new DateTime(year, month, day);
-                DateTime khungGioKham = new DateTime(year, month, day, hour, minute, 0);
+                DateTime ngayDangKy = DateTime.Parse(dataNgayKham.Value.ToShortDateString());
+                DateTime khungGioKham = DateTime.Parse(dataNgayKham.Value.ToShortTimeString());
 
                 if (DateTime.Compare(ngayDangKy, DateTime.Now) < 0) {
                     MessageBox.Show("Thời gian không hợp lệ");

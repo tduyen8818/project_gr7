@@ -42,6 +42,7 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             this.textCaKham = new System.Windows.Forms.Label();
             this.textHoSoBenhNhan = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.textTemp = new System.Windows.Forms.Label();
             this.btnDatLich = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
             this.imageUser = new System.Windows.Forms.PictureBox();
@@ -52,7 +53,6 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             this.imageCheck = new System.Windows.Forms.PictureBox();
             this.imageCheck1 = new System.Windows.Forms.PictureBox();
             this.imageCheck2 = new System.Windows.Forms.PictureBox();
-            this.textTemp = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageUser)).BeginInit();
             this.showHoSoBenhNhan.SuspendLayout();
@@ -177,17 +177,24 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanel1.Controls.Add(this.textTemp);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 30);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(10);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(471, 481);
             this.flowLayoutPanel1.TabIndex = 12;
             this.flowLayoutPanel1.WrapContents = false;
+            // 
+            // textTemp
+            // 
+            this.textTemp.Location = new System.Drawing.Point(0, 0);
+            this.textTemp.Margin = new System.Windows.Forms.Padding(0);
+            this.textTemp.Name = "textTemp";
+            this.textTemp.Size = new System.Drawing.Size(471, 1);
+            this.textTemp.TabIndex = 0;
             // 
             // btnDatLich
             // 
@@ -237,6 +244,7 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             // 
             this.showHoSoBenhNhan.Controls.Add(this.flowLayoutPanel1);
             this.showHoSoBenhNhan.Location = new System.Drawing.Point(512, 227);
+            this.showHoSoBenhNhan.Margin = new System.Windows.Forms.Padding(0);
             this.showHoSoBenhNhan.Name = "showHoSoBenhNhan";
             this.showHoSoBenhNhan.Size = new System.Drawing.Size(471, 481);
             this.showHoSoBenhNhan.TabIndex = 16;
@@ -306,14 +314,6 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             this.imageCheck2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imageCheck2.TabIndex = 23;
             this.imageCheck2.TabStop = false;
-            // 
-            // textTemp
-            // 
-            this.textTemp.Location = new System.Drawing.Point(10, 10);
-            this.textTemp.Margin = new System.Windows.Forms.Padding(0);
-            this.textTemp.Name = "textTemp";
-            this.textTemp.Size = new System.Drawing.Size(455, 10);
-            this.textTemp.TabIndex = 0;
             // 
             // DatLichKham
             // 
