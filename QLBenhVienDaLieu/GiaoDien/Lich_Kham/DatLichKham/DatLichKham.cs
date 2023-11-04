@@ -17,54 +17,98 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
 {
     public partial class DatLichKham : Form
     {
-        SqlFunctionCaller sqlFunctionCaller;
-        BenhNhan_Trang benhNhan_Trang;
+        private SqlFunctionCaller sqlFunctionCaller;
+        private BenhNhan_Trang benhNhan_Trang;
 
-        private string soDienThoai = "0123456789";
+        private string soDienThoai;
+        private int countChecked = 0;
+        private DataHoSoBenhNhan hoSoBenhNhanChoosed;
 
-        Rectangle originalForm;
-        Rectangle originalImageUser;
-        Rectangle originalBtnAccount;
-        Rectangle originalBtnDatLich;
-        Rectangle originalTitleDatLich;
-        Rectangle originalTextChuyenKhoa;
-        Rectangle originalDataChuyenKhoa;
-        Rectangle originalTextDichVu;
-        Rectangle originalDataDichVu;
-        Rectangle originalTextNgayKham;
-        Rectangle originalDataNgayKham;
-        Rectangle originalTextCaKham;
-        Rectangle originalDataCaKham;
-        Rectangle originalTextHoSoBenhNhan;
-        Rectangle originalShowHoSoBenhNhan;
-        Rectangle originalTextErrorChuyenKhoa;
-        Rectangle originalTextErrorDichVu;
-        Rectangle originalTextErrorCaKham;
-        Rectangle originalImageCheck;
-        Rectangle originalImageCheck1;
-        Rectangle originalImageCheck2;
-        Rectangle originalTextTemp;
+        private List<DataHoSoBenhNhan> listDataHoSoBenhNhan = new List<DataHoSoBenhNhan>();
 
-        float textSizeInitialBtnAccount;
-        float textSizeInitialBtnDatLich;
-        float textSizeInitialTitleDatLich;
-        float textSizeInitialTextChuyenKhoa;
-        float textSizeInitialDataChuyenKhoa;
-        float textSizeInitialTextDichVu;
-        float textSizeInitialDataDichVu;
-        float textSizeInitialTextNgayKham;
-        float textSizeInitialDataNgayKham;
-        float textSizeInitialTextCaKham;
-        float textSizeInitialDataCaKham;
-        float textSizeInitialTextHoSoBenhNhan;
-        float textSizeInitialTextErrorChuyenKhoa;
-        float textSizeInitialTextErrorDichVu;
-        float textSizeInitialTextErrorCaKham;
+        private Rectangle originalForm;
+        private Rectangle originalImageUser;
+        private Rectangle originalBtnAccount;
+        private Rectangle originalBtnDatLich;
+        private Rectangle originalTitleDatLich;
+        private Rectangle originalTextChuyenKhoa;
+        private Rectangle originalDataChuyenKhoa;
+        private Rectangle originalTextDichVu;
+        private Rectangle originalDataDichVu;
+        private Rectangle originalTextNgayKham;
+        private Rectangle originalDataNgayKham;
+        private Rectangle originalTextCaKham;
+        private Rectangle originalDataCaKham;
+        private Rectangle originalTextHoSoBenhNhan;
+        private Rectangle originalShowHoSoBenhNhan;
+        private Rectangle originalTextErrorChuyenKhoa;
+        private Rectangle originalTextErrorDichVu;
+        private Rectangle originalTextErrorCaKham;
+        private Rectangle originalTextErrorHoSoBenhNhan;
+        private Rectangle originalImageCheck;
+        private Rectangle originalImageCheck1;
+        private Rectangle originalImageCheck2;
+        private Rectangle originalImageCheck3;
+        private Rectangle originalTextTemp;
 
-        public DatLichKham(SqlFunctionCaller sqlFunctionCaller, BenhNhan_Trang benhNhan_Trang)
+        private float textSizeInitialBtnAccount;
+        private float textSizeInitialBtnDatLich;
+        private float textSizeInitialTitleDatLich;
+        private float textSizeInitialTextChuyenKhoa;
+        private float textSizeInitialDataChuyenKhoa;
+        private float textSizeInitialTextDichVu;
+        private float textSizeInitialDataDichVu;
+        private float textSizeInitialTextNgayKham;
+        private float textSizeInitialDataNgayKham;
+        private float textSizeInitialTextCaKham;
+        private float textSizeInitialDataCaKham;
+        private float textSizeInitialTextHoSoBenhNhan;
+        private float textSizeInitialTextErrorChuyenKhoa;
+        private float textSizeInitialTextErrorDichVu;
+        private float textSizeInitialTextErrorCaKham;
+        private float textSizeInitialTextErrorHoSoBenhNhan;
+
+        private string SoDienThoai
+        {
+            get { return this.soDienThoai; }
+            set {this.soDienThoai = value; } 
+        }
+
+        public ComboBox DataChuyenKhoa
+        {
+            get { return this.dataChuyenKhoa; }
+            set { this.dataChuyenKhoa = value; }   
+        }
+
+        public ComboBox DataDichVu
+        {
+            get { return this.dataDichVu; }
+            set { this.dataDichVu = value; }
+        }
+
+        public DateTimePicker DataNgayKham
+        {
+            get { return this.dataNgayKham; }
+            set { this.dataNgayKham = value; }
+        }
+
+        public ComboBox DataCaKham
+        {
+            get { return this.dataCaKham; }
+            set { this.dataCaKham = value; }
+        }
+
+        public DataHoSoBenhNhan HoSoBenhNhanChoosed
+        {
+            get { return this.hoSoBenhNhanChoosed; }
+            set { this.hoSoBenhNhanChoosed = value; }
+        }
+
+        public DatLichKham(SqlFunctionCaller sqlFunctionCaller, BenhNhan_Trang benhNhan_Trang, string soDienThoai)
         {
             this.sqlFunctionCaller = sqlFunctionCaller;
             this.benhNhan_Trang = benhNhan_Trang;
+            this.soDienThoai = soDienThoai;
 
             InitializeComponent();
 
@@ -86,9 +130,11 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             originalTextErrorChuyenKhoa = new Rectangle(textErrorChuyenKhoa.Location.X, textErrorChuyenKhoa.Location.Y, textErrorChuyenKhoa.Width, textErrorChuyenKhoa.Height);
             originalTextErrorDichVu = new Rectangle(textErrorDichVu.Location.X, textErrorDichVu.Location.Y, textErrorDichVu.Width, textErrorDichVu.Height);
             originalTextErrorCaKham = new Rectangle(textErrorCaKham.Location.X, textErrorCaKham.Location.Y, textErrorCaKham.Width, textErrorCaKham.Height);
+            originalTextErrorHoSoBenhNhan = new Rectangle(textErrorHoSoBenhNhan.Location.X, textErrorHoSoBenhNhan.Location.Y, textErrorHoSoBenhNhan.Width, textErrorHoSoBenhNhan.Height);
             originalImageCheck = new Rectangle(imageCheck.Location.X, imageCheck.Location.Y, imageCheck.Width, imageCheck.Height);
             originalImageCheck1 = new Rectangle(imageCheck1.Location.X, imageCheck1.Location.Y, imageCheck1.Width, imageCheck1.Height);
             originalImageCheck2 = new Rectangle(imageCheck2.Location.X, imageCheck2.Location.Y, imageCheck2.Width, imageCheck2.Height);
+            originalImageCheck3 = new Rectangle(imageCheck3.Location.X, imageCheck3.Location.Y, imageCheck3.Width, imageCheck3.Height);
             originalTextTemp = new Rectangle(textTemp.Location.X, textTemp.Location.Y, textTemp.Width, textTemp.Height);
 
             imageUser.Region = Draw.RoundedRectangle(0, 0, imageUser.Width, imageUser.Height, 57, 70);
@@ -110,6 +156,7 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             textSizeInitialTextErrorChuyenKhoa = textErrorChuyenKhoa.Font.Size;
             textSizeInitialTextErrorDichVu = textErrorDichVu.Font.Size;
             textSizeInitialTextErrorCaKham = textErrorCaKham.Font.Size;
+            textSizeInitialTextErrorHoSoBenhNhan = textErrorHoSoBenhNhan.Font.Size;
 
             foreach (ChuyenKhoa chuyenKhoa in sqlFunctionCaller.GetChuyenKhoa())
             {
@@ -124,13 +171,17 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             dataCaKham.Items.Add("Sáng");
             dataCaKham.Items.Add("Chiều");
 
-            
-            foreach(HoSoBenhNhan hoSoBenhNhan in sqlFunctionCaller.GetHoSoBenhNhanByMaTaiKhoanOrSoDienThoai(this.soDienThoai))
+            List<HoSoBenhNhan> listHoSoBenhNhan = sqlFunctionCaller.GetHoSoBenhNhanByMaTaiKhoanOrSoDienThoai(this.soDienThoai);
+
+            if (listHoSoBenhNhan.Count == 1)
             {
+                showHoSoBenhNhan.Controls.Clear();
+                HoSoBenhNhan hoSoBenhNhan = listHoSoBenhNhan.Last();
+
                 DataHoSoBenhNhan dataHoSoBenhNhan = new DataHoSoBenhNhan();
 
                 dataHoSoBenhNhan.TopLevel = false;
-                dataHoSoBenhNhan.Dock = DockStyle.Top;    
+                dataHoSoBenhNhan.Dock = DockStyle.Fill;
 
                 dataHoSoBenhNhan.DataMaHoSoBenhNhan.Text = hoSoBenhNhan.MaHoSoBenhNhan;
                 dataHoSoBenhNhan.DataHoVaTen.Text = hoSoBenhNhan.HoVaTen;
@@ -144,12 +195,41 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
                 dataHoSoBenhNhan.DataEmail.Text = hoSoBenhNhan.Email;
                 dataHoSoBenhNhan.DataDiaChi.Text = hoSoBenhNhan.DiaChi;
 
-                flowLayoutPanel1.Controls.Add(dataHoSoBenhNhan);
-                flowLayoutPanel1.Tag = dataHoSoBenhNhan;
+                listDataHoSoBenhNhan.Add(dataHoSoBenhNhan);
+
+                showHoSoBenhNhan.Controls.Add(dataHoSoBenhNhan);
+                showHoSoBenhNhan.Tag = dataHoSoBenhNhan;
 
                 dataHoSoBenhNhan.Show();
-            }
+            } else
+            {
+                foreach (HoSoBenhNhan hoSoBenhNhan in listHoSoBenhNhan)
+                {
+                    DataHoSoBenhNhan dataHoSoBenhNhan = new DataHoSoBenhNhan();
 
+                    dataHoSoBenhNhan.TopLevel = false;
+                    dataHoSoBenhNhan.Dock = DockStyle.Top;
+
+                    dataHoSoBenhNhan.DataMaHoSoBenhNhan.Text = hoSoBenhNhan.MaHoSoBenhNhan;
+                    dataHoSoBenhNhan.DataHoVaTen.Text = hoSoBenhNhan.HoVaTen;
+                    dataHoSoBenhNhan.DataMaTaiKhoan.Text = hoSoBenhNhan.MaTaiKhoan;
+                    dataHoSoBenhNhan.DataNgaySinh.Text = hoSoBenhNhan.NgaySinh.ToShortDateString();
+                    dataHoSoBenhNhan.DataGioiTinh.Text = hoSoBenhNhan.GioiTinh;
+                    dataHoSoBenhNhan.DataCCCD.Text = hoSoBenhNhan.CCCD;
+                    dataHoSoBenhNhan.DataMaBHYT.Text = hoSoBenhNhan.MaBHYT;
+                    dataHoSoBenhNhan.DataNgheNghiep.Text = hoSoBenhNhan.NgheNghiep;
+                    dataHoSoBenhNhan.DataSoDienThoai.Text = hoSoBenhNhan.SoDienThoai;
+                    dataHoSoBenhNhan.DataEmail.Text = hoSoBenhNhan.Email;
+                    dataHoSoBenhNhan.DataDiaChi.Text = hoSoBenhNhan.DiaChi;
+
+                    listDataHoSoBenhNhan.Add(dataHoSoBenhNhan);
+
+                    flowLayoutPanel1.Controls.Add(dataHoSoBenhNhan);
+                    flowLayoutPanel1.Tag = dataHoSoBenhNhan;
+
+                    dataHoSoBenhNhan.Show();
+                }
+            }
         }
 
         private void DatLichKham_Resize(object sender, EventArgs e)
@@ -171,9 +251,11 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             ScaleSize.Resize(originalForm, originalTextErrorChuyenKhoa, textErrorChuyenKhoa, this, textSizeInitialTextErrorChuyenKhoa);
             ScaleSize.Resize(originalForm, originalTextErrorDichVu, textErrorDichVu, this, textSizeInitialTextErrorDichVu);
             ScaleSize.Resize(originalForm, originalTextErrorCaKham, textErrorCaKham, this, textSizeInitialTextErrorCaKham);
+            ScaleSize.Resize(originalForm, originalTextErrorHoSoBenhNhan, textErrorHoSoBenhNhan, this, textSizeInitialTextErrorHoSoBenhNhan);
             ScaleSize.Resize(originalForm, originalImageCheck, imageCheck, this);
             ScaleSize.Resize(originalForm, originalImageCheck1, imageCheck1, this);
             ScaleSize.Resize(originalForm, originalImageCheck2, imageCheck2, this);
+            ScaleSize.Resize(originalForm, originalImageCheck3, imageCheck3, this);
             ScaleSize.Resize(originalForm, originalTextTemp, textTemp, this);
 
             imageUser.Region = Draw.RoundedRectangle(0, 0, imageUser.Width, imageUser.Height, 57, 70);
@@ -216,33 +298,47 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
                 imageCheck2.Image = Image.FromFile("../../Image/check/true.jpg");
             }
 
-            if (dataChuyenKhoa.SelectedItem != null && dataDichVu.SelectedItem != null && dataCaKham.SelectedItem != null)
+            foreach (DataHoSoBenhNhan data in listDataHoSoBenhNhan)
             {
+                if (data.CheckChoose.Checked)
+                {
+                    this.countChecked++;
+                    this.hoSoBenhNhanChoosed = data;
+                }
+            }
+
+            if (countChecked != 1)
+            {
+                textErrorHoSoBenhNhan.Visible = true;
+                imageCheck3.Image = Image.FromFile("../../Image/check/error.jpg");
+            } else
+            {
+                textErrorHoSoBenhNhan.Visible = false;
+                imageCheck3.Image = Image.FromFile("../../Image/check/true.jpg");
+            }
+
+            if (dataChuyenKhoa.SelectedItem != null && dataDichVu.SelectedItem != null && dataCaKham.SelectedItem != null &&  countChecked == 1)
+            {
+                this.countChecked = 0;
+
                 DateTime ngayDangKy = DateTime.Parse(dataNgayKham.Value.ToShortDateString());
-                DateTime khungGioKham = DateTime.Parse(dataNgayKham.Value.ToShortTimeString());
+                DateTime khungGioKham = DateTime.Parse(dataNgayKham.Value.ToLongTimeString());
 
                 if (DateTime.Compare(ngayDangKy, DateTime.Now) < 0) {
                     MessageBox.Show("Thời gian không hợp lệ");
                     return;
                 }
 
-                string maHoSoBenhNhan = "";
-                string maChuyenKhoa = "";
-                string maDichVu = "";
-
+                string maHoSoBenhNhan = hoSoBenhNhanChoosed.DataMaHoSoBenhNhan.Text;
+                string maChuyenKhoa = sqlFunctionCaller.GetChuyenKhoaByTenChuyenKhoa(dataChuyenKhoa.SelectedItem.ToString()).MaChuyenKhoa;
+                string maDichVu = sqlFunctionCaller.GetDichVuByTenDichVu(dataDichVu.SelectedItem.ToString()).MaDichVu;
                 string ca = dataCaKham.SelectedItem.ToString();
-
-                maHoSoBenhNhan = sqlFunctionCaller.GetHoSoBenhNhanByMaTaiKhoanOrSoDienThoai("0123456789").Last().MaHoSoBenhNhan;
-
-                maChuyenKhoa = sqlFunctionCaller.GetChuyenKhoaByTenChuyenKhoa(dataChuyenKhoa.SelectedItem.ToString()).MaChuyenKhoa;
-
-                maDichVu = sqlFunctionCaller.GetDichVuByTenDichVu(dataDichVu.SelectedItem.ToString()).MaDichVu;
 
                 sqlFunctionCaller.InsertLichKham(maHoSoBenhNhan, maChuyenKhoa, maDichVu, ngayDangKy, ca, khungGioKham);
 
 
                 benhNhan_Trang.MainPanelRight.Controls.Clear();
-                DatLichKhamThanhToan datLichKhamThanhToan = new DatLichKhamThanhToan(sqlFunctionCaller);
+                DatLichKhamThanhToan datLichKhamThanhToan = new DatLichKhamThanhToan(sqlFunctionCaller, this);
                 datLichKhamThanhToan.TopLevel = false;
                 datLichKhamThanhToan.Dock = DockStyle.Fill;
                 benhNhan_Trang.MainPanelRight.Controls.Add(datLichKhamThanhToan);

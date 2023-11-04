@@ -11,8 +11,10 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
 {
     public partial class DatLichKhamThanhToan : Form
     {
-
         SqlFunctionCaller sqlFunctionCaller;
+
+        DatLichKham datLichKham;
+
         Rectangle originalForm;
         Rectangle originalImageUser;
         Rectangle originalImageCheck;
@@ -30,11 +32,12 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
         float textSizeInitialDataThanhToan;
         float textSizeInitialTextErrorThanhToan;
 
-        public DatLichKhamThanhToan(SqlFunctionCaller sqlFunctionCaller)
+        public DatLichKhamThanhToan(SqlFunctionCaller sqlFunctionCaller, DatLichKham datLichKham)
         {
             InitializeComponent();
 
             this.sqlFunctionCaller = sqlFunctionCaller;
+            this.datLichKham = datLichKham;
 
             originalForm = new Rectangle(this.Location.X, this.Location.Y, this.Width, this.Height);
             originalImageUser = new Rectangle(imageUser.Location.X, imageUser.Location.Y, imageUser.Width, imageUser.Width);
@@ -95,10 +98,14 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
                 textErrorThanhToan.Visible = false;
                 imageCheck.Image = Image.FromFile("../../Image/check/true.jpg");
 
-                string maLichKham = sqlFunctionCaller.GetLichKham().Last<LichKham>().MaLichKham;
+
+
+                DataHoSoBenhNhan hoSoBenhNhanChoosed = this.datLichKham.HoSoBenhNhanChoosed;
+
+                string maLichKham = sqlFunctionCaller.GetLichKhamByMaHoSoBenhNhan(hoSoBenhNhanChoosed.DataMaHoSoBenhNhan.Text).Last().MaLichKham;
                 string maChuyenKhoa = sqlFunctionCaller.GetLichKhamByMaLichKham(maLichKham).MaChuyenKhoa;
                 string maKhuyenMai = sqlFunctionCaller.GetChuyenKhoaByMaChuyenKhoa(maChuyenKhoa).MaKhuyenMai;
-                string maHoSoBenhNhan = sqlFunctionCaller.GetLichKham().Last<LichKham>().MaHoSoBenhNhan;
+                string maHoSoBenhNhan = hoSoBenhNhanChoosed.DataMaHoSoBenhNhan.Text;
                 double tyLeGiam = 0.0;
 
                 if (!sqlFunctionCaller.GetKhuyenMaiByMaKhuyenMai(maKhuyenMai).GiaKhuyenMai.Equals(""))
@@ -106,7 +113,7 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
                     tyLeGiam = double.Parse(sqlFunctionCaller.GetKhuyenMaiByMaKhuyenMai(maKhuyenMai).GiaKhuyenMai.Split('%')[0]) / 100.0;
                 }
 
-                int tongTien = sqlFunctionCaller.GetDichVuByMaDichVu(sqlFunctionCaller.GetLichKham().Last<LichKham>().MaDichVu).GiaDichVu;
+                int tongTien = sqlFunctionCaller.GetDichVuByTenDichVu(this.datLichKham.DataDichVu.SelectedItem.ToString()).GiaDichVu;
                 int thanhTien =  (int) Math.Round(tongTien * (tyLeGiam == 0 ? 1 : tyLeGiam));
                 
                 sqlFunctionCaller.InsertHoaDon(maHoSoBenhNhan, maLichKham, thanhTien, dataThanhToan.SelectedItem.ToString());

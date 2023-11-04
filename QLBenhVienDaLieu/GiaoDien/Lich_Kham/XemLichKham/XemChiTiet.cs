@@ -20,6 +20,8 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.XemLichKham
 
         private DataXemLichKham dataXemLichKham;
 
+        private string soDienThoai;
+
         private Rectangle originalForm;
         private Rectangle originalTextMaLichKham;
         private Rectangle originalTextMaHoSoBenhNhan;
@@ -43,6 +45,7 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.XemLichKham
         private Rectangle originalDataTenDichVu;
         private Rectangle originalDataTongTien;
         private Rectangle originalDataHinhThucThanhToan;
+        private Rectangle originalButtonReturn;
 
         float textSizeInitialTextMaLichKham;
         float textSizeInitialTextMaHoSoBenhNhan;
@@ -67,13 +70,14 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.XemLichKham
         float textSizeInitialDataTongTien;
         float textSizeInitialDataHinhThucThanhToan;
 
-        public XemChiTiet(BenhNhan_Trang benhNhan_Trang, SqlFunctionCaller sqlFunctionCaller, DataXemLichKham dataXemLichKham)
+        public XemChiTiet(BenhNhan_Trang benhNhan_Trang, SqlFunctionCaller sqlFunctionCaller, DataXemLichKham dataXemLichKham, string soDienThoai)
         {
             InitializeComponent();
 
             this.benhNhan_Trang = benhNhan_Trang;
             this.sqlFunctionCaller = sqlFunctionCaller;
             this.dataXemLichKham = dataXemLichKham;
+            this.soDienThoai = soDienThoai;
 
             originalForm = new Rectangle(this.Location.X, this.Location.Y, this.Width, this.Height);
             originalTextMaLichKham = new Rectangle(textMaLichKham.Location.X, textMaLichKham.Location.Y, textMaLichKham.Width, textMaLichKham.Height);
@@ -98,6 +102,8 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.XemLichKham
             originalDataTenDichVu = new Rectangle(dataTenDichVu.Location.X, dataTenDichVu.Location.Y, dataTenDichVu.Width, dataTenDichVu.Height);
             originalDataTongTien = new Rectangle(dataTongTien.Location.X, dataTongTien.Location.Y, dataTongTien.Width, dataTongTien.Height);
             originalDataHinhThucThanhToan = new Rectangle(dataHinhThucThanhToan.Location.X, dataHinhThucThanhToan.Location.Y, dataHinhThucThanhToan.Width, dataHinhThucThanhToan.Height);
+            originalButtonReturn = new Rectangle(buttonReturn.Location.X, buttonReturn.Location.Y, buttonReturn.Width, buttonReturn.Height);
+
 
             textSizeInitialTextMaLichKham = textMaLichKham.Font.Size;
             textSizeInitialTextMaHoSoBenhNhan = textMaHoSoBenhNhan.Font.Size;
@@ -129,7 +135,7 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.XemLichKham
             dataMaDichVu.Text = lichKham.MaDichVu;
             dataNgayDangKy.Text = lichKham.NgayDangKy.ToShortDateString();
             dataCa.Text = lichKham.Ca;
-            dataKhungGioKham.Text = lichKham.KhungGioKham.ToShortTimeString();
+            dataKhungGioKham.Text = lichKham.KhungGioKham.ToLongTimeString();
 
             ChuyenKhoa chuyenKhoa = sqlFunctionCaller.GetChuyenKhoaByMaChuyenKhoa(lichKham.MaChuyenKhoa);
 
@@ -142,8 +148,8 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.XemLichKham
             HoaDon hoaDon = sqlFunctionCaller.GetHoaDonByMaLichKham(lichKham.MaLichKham);
 
             dataTongTien.Text = hoaDon.TongTien.ToString();
-            dataHinhThucThanhToan.Text = hoaDon.HinhThucThanhToan;
-
+            dataHinhThucThanhToan.Text = hoaDon.HinhThucThanhToan.Equals("") ? "Chưa thanh toán" : hoaDon.HinhThucThanhToan;
+            
         }
 
         private void XemChiTiet_Resize(object sender, EventArgs e)
@@ -170,6 +176,7 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.XemLichKham
             Graphic.ScaleSize.Resize(originalForm, originalDataTenDichVu, dataTenDichVu, this, textSizeInitialDataTenDichVu);
             Graphic.ScaleSize.Resize(originalForm, originalDataTongTien, dataTongTien, this, textSizeInitialDataTongTien);
             Graphic.ScaleSize.Resize(originalForm, originalDataHinhThucThanhToan, dataHinhThucThanhToan, this, textSizeInitialDataHinhThucThanhToan);
+            Graphic.ScaleSize.Resize(originalForm, originalButtonReturn, buttonReturn, this);
         }
 
         private void buttonReturn_Click(object sender, EventArgs e)
@@ -178,7 +185,7 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.XemLichKham
 
             mainPanelRight.Controls.Clear();
 
-            XemLichKham xemLichKham = new XemLichKham(sqlFunctionCaller, benhNhan_Trang);
+            XemLichKham xemLichKham = new XemLichKham(sqlFunctionCaller, benhNhan_Trang, soDienThoai);
 
             xemLichKham.TopLevel = false;
             xemLichKham.Dock = DockStyle.Fill;

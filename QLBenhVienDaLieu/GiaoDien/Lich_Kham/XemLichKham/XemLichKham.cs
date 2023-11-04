@@ -14,7 +14,7 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.XemLichKham
     {
         BenhNhan_Trang benhNhan_Trang;
 
-        private string soDienThoai = "0123456789";
+        private string soDienThoai;
 
         private Rectangle originalForm;
         private Rectangle originalTitle;
@@ -23,16 +23,17 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.XemLichKham
 
         float textSizeInitialTitle;
 
-        public XemLichKham(SqlFunctionCaller sqlFunctionCaller, BenhNhan_Trang benhNhan_Trang)
+        public XemLichKham(SqlFunctionCaller sqlFunctionCaller, BenhNhan_Trang benhNhan_Trang, string soDienThoai)
         {
             InitializeComponent();
 
             this.sqlFunctionCaller = sqlFunctionCaller;
             this.benhNhan_Trang = benhNhan_Trang;
+            this.soDienThoai = soDienThoai;
 
             originalForm = new Rectangle(Location.X, Location.Y, this.Width, this.Height);
             originalTitle = new Rectangle(titleXemLich.Location.X, titleXemLich.Location.Y, titleXemLich.Width, titleXemLich.Height);
-            DataXemLichKham dataXemLichKhamInitial = new DataXemLichKham(benhNhan_Trang, sqlFunctionCaller);
+            DataXemLichKham dataXemLichKhamInitial = new DataXemLichKham(benhNhan_Trang, sqlFunctionCaller, soDienThoai);
             originalDataXemLichKham = new Rectangle(dataXemLichKhamInitial.Location.X, dataXemLichKhamInitial.Location.Y, dataXemLichKhamInitial.Width, dataXemLichKhamInitial.Height);
 
             this.textSizeInitialTitle = titleXemLich.Font.Size;
@@ -43,7 +44,7 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.XemLichKham
             {
                 foreach (LichKham lichKham in sqlFunctionCaller.GetLichKhamByMaHoSoBenhNhan(hoSoBenhNhan.MaHoSoBenhNhan))
                 {
-                    DataXemLichKham dataXemLichKham = new DataXemLichKham(benhNhan_Trang, sqlFunctionCaller);
+                    DataXemLichKham dataXemLichKham = new DataXemLichKham(benhNhan_Trang, sqlFunctionCaller, soDienThoai);
                     Blank blank = new Blank();
                     ChuyenKhoa chuyenKhoa = sqlFunctionCaller.GetChuyenKhoaByMaChuyenKhoa(lichKham.MaChuyenKhoa);
                     DichVu dichVu = sqlFunctionCaller.GetDichVuByMaDichVu(lichKham.MaDichVu);
@@ -61,7 +62,7 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.XemLichKham
                     if (hoaDon.TongTien == 0)
                     {
                         dataXemLichKham.DataTrangThai.Text = "Chưa thanh toán";
-                        dataXemLichKham.DataTrangThai.ForeColor = System.Drawing.Color.Red;
+                        dataXemLichKham.DataTrangThai.ForeColor = Color.Red;
                     }
 
                     blank.TopLevel = false;

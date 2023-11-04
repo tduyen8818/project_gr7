@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLBenhVienDaLieu.GiaoDien.Ho_So_Benh_Nhan;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,8 +18,7 @@ namespace QLBenhVienDaLieu
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BenhNhan_Trang());
-
+            Application.Run(new BenhNhan_Trang("0111111111"));
         }
     }
 }

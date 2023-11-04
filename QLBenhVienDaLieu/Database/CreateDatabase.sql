@@ -1721,6 +1721,7 @@ go
 --THEM DU LIEU CHO CAC TABLE 
 -- TABLE DangKyUer
 EXEC DangKyUser_Insert '0123456789', 'Abcd@123'
+EXEC DangKyUser_Insert '0111111111', 'Abcd@123'
 EXEC DangKyUser_Insert '0987654321', 'P@ssw0rd'
 EXEC DangKyUser_Insert '0369852147', 'Secure!12'
 EXEC DangKyUser_Insert '0765432198', 'Qwerty@1'

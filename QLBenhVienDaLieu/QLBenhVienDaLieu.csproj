@@ -279,6 +279,7 @@
     <Compile Include="BS_Kham_Benh.designer.cs">
       <DependentUpon>BS_Kham_Benh.cs</DependentUpon>
     </Compile>
+    <Compile Include="Check\Available.cs" />
     <Compile Include="Class\AdminManager.cs" />
     <Compile Include="Class\BenhAn.cs" />
     <Compile Include="Class\ChuyenKhoa.cs" />
@@ -307,6 +308,12 @@
     <Compile Include="DangKy3.cs" />
     <Compile Include="DangKy3.Designer.cs">
       <DependentUpon>DangKy3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GiaoDien\Tai_Khoan\Ho_So_Benh_Nhan\DangKyHoSoBenhNhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaoDien\Tai_Khoan\Ho_So_Benh_Nhan\DangKyHoSoBenhNhan.Designer.cs">
+      <DependentUpon>DangKyHoSoBenhNhan.cs</DependentUpon>
     </Compile>
     <Compile Include="DangNhap.cs" />
     <Compile Include="DangNhap.Designer.cs">
@@ -360,6 +367,12 @@
     </Compile>
     <Compile Include="Graphic\Draw.cs" />
     <Compile Include="Graphic\ScaleSize.cs" />
+    <Compile Include="GiaoDien\Tai_Khoan\Ho_So_Benh_Nhan\HoSoBenhNhanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaoDien\Tai_Khoan\Ho_So_Benh_Nhan\HoSoBenhNhanForm.Designer.cs">
+      <DependentUpon>HoSoBenhNhanForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="KeToan_Trang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -371,6 +384,11 @@
     </Compile>
     <Compile Include="LeTan_Trang.designer.cs">
       <DependentUpon>LeTan_Trang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="QuenMatKhau.cs" />
     <Compile Include="QuenMatKhau.Designer.cs">
@@ -413,6 +431,9 @@
     <EmbeddedResource Include="BenhNhan_Trang.resx">
       <DependentUpon>BenhNhan_Trang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GiaoDien\Tai_Khoan\Ho_So_Benh_Nhan\DangKyHoSoBenhNhan.resx">
+      <DependentUpon>DangKyHoSoBenhNhan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GiaoDien\Lich_Kham\DatLichKham\DataHoSoBenhNhan.resx">
       <DependentUpon>DataHoSoBenhNhan.cs</DependentUpon>
     </EmbeddedResource>
@@ -434,6 +455,9 @@
     <EmbeddedResource Include="GiaoDien\Lich_Kham\XemLichKham\XemLichKham.resx">
       <DependentUpon>XemLichKham.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GiaoDien\Tai_Khoan\Ho_So_Benh_Nhan\HoSoBenhNhanForm.resx">
+      <DependentUpon>HoSoBenhNhanForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KeToan_Trang.resx">
       <DependentUpon>KeToan_Trang.cs</DependentUpon>
     </EmbeddedResource>
@@ -442,14 +466,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="QuenMatKhau.resx">
       <DependentUpon>QuenMatKhau.cs</DependentUpon>
     </EmbeddedResource>
@@ -501,6 +520,11 @@
     <Content Include="Database\QueryDatabase.sql" />
     <None Include="Image\background\grid.png" />
     <None Include="Image\background\arrow_left.png" />
+    <Content Include="Image\background\add.png" />
+    <Content Include="Image\background\arrow_right.png" />
+    <Content Include="Image\background\delete.png" />
+    <Content Include="Image\background\edit.png" />
+    <Content Include="Image\background\save.png" />
     <Content Include="Image\button\account.png" />
     <Content Include="Image\button\calender.png" />
     <Content Include="Image\button\dot.png" />
@@ -513,7 +537,13 @@
     <Content Include="Image\check\error.jpg" />
     <Content Include="Image\check\true.jpg" />
     <Content Include="Image\icon\logo_pro_sin.ico" />
+    <Content Include="Image\important\dot_red.png" />
     <Content Include="Image\logo\logo_pro_sin.jpg" />
+    <Content Include="Image\profile\baby.png" />
+    <Content Include="Image\profile\grandfather.png" />
+    <Content Include="Image\profile\grandmother.png" />
+    <Content Include="Image\profile\man.png" />
+    <Content Include="Image\profile\woman.png" />
     <Content Include="Resources\1.png" />
     <Content Include="Resources\10.png" />
     <Content Include="Resources\12.png" />

@@ -17,6 +17,7 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.XemLichKham
     {
         BenhNhan_Trang benhNhan_Trang;
         SqlFunctionCaller sqlFunctionCaller;
+        private string soDienThoai;
 
         Rectangle originalForm;
         Rectangle originalTextMaPhieu;
@@ -41,12 +42,13 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.XemLichKham
         float textSizeDataTrangThai;
         float textSizeLinkXemChiTiet;
 
-        public DataXemLichKham(BenhNhan_Trang benhNhan_Trang, SqlFunctionCaller sqlFunctionCaller)
+        public DataXemLichKham(BenhNhan_Trang benhNhan_Trang, SqlFunctionCaller sqlFunctionCaller, string soDienThoai)
         {
             InitializeComponent();
 
             this.benhNhan_Trang = benhNhan_Trang;
             this.sqlFunctionCaller = sqlFunctionCaller;
+            this.soDienThoai = soDienThoai;
 
             originalForm = new Rectangle(this.Location.X, this.Location.Y, this.Width, this.Height);
             originalTextMaPhieu = new Rectangle(textMaPhieu.Location.X, textMaPhieu.Location.Y, textMaPhieu.Width, textMaPhieu.Height);
@@ -70,7 +72,7 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.XemLichKham
             textSizeTextTrangThai = textTrangThai.Font.Size;
             textSizeDataTrangThai = dataTrangThai.Font.Size;
             textSizeLinkXemChiTiet = linkXemChiTiet.Font.Size;
-
+           
         }
 
 
@@ -154,7 +156,7 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.XemLichKham
             Panel mainPanelRight = benhNhan_Trang.MainPanelRight;
             mainPanelRight.Controls.Clear();
             
-            XemChiTiet xemChiTiet = new XemChiTiet(this.benhNhan_Trang, sqlFunctionCaller, this);
+            XemChiTiet xemChiTiet = new XemChiTiet(this.benhNhan_Trang, sqlFunctionCaller, this, soDienThoai);
 
             xemChiTiet.TopLevel = false;
             xemChiTiet.Dock = DockStyle.Fill;

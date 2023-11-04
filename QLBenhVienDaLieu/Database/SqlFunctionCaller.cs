@@ -1886,7 +1886,22 @@ namespace QLBenhVienDaLieu.Database
 
         public void DeleteHoSoBenhNhan(string maHoSoBenhNhan)
         {
+            foreach(HoaDon hoaDon in GetHoaDonByMaHoSoBenhNhan(maHoSoBenhNhan))
+            {
+                DeleteHoaDon(hoaDon.MaHoaDon);
+            }
 
+            DeleteSoKhamBenh(GetSoKhamBenhByMaHoSoBenhNhan(maHoSoBenhNhan).MaLichKham);
+            
+            foreach(BenhAn benhAn in GetBenhAnByMaHoSoBenhNhan(maHoSoBenhNhan))
+            {
+                DeleteRecordByMaBenhAn(benhAn.MaBenhAn);
+            }
+
+            foreach(LichKham lichKham in GetLichKhamByMaHoSoBenhNhan(maHoSoBenhNhan))
+            {
+                DeleteLichKham(lichKham.MaLichKham);
+            }
 
             SqlCommand command = new SqlCommand();
 
@@ -1995,6 +2010,11 @@ namespace QLBenhVienDaLieu.Database
 
         public void DeleteRecordByMaBenhAn(string maBenhAn)
         {
+            foreach(ToaThuoc toaThuoc in GetToaThuocByMaBenhAn(maBenhAn))
+            {
+                DeleteToaThuoc(toaThuoc.MaToaThuoc);
+            }
+
             SqlCommand command = new SqlCommand();
 
             command.Connection = connection;
@@ -2007,6 +2027,7 @@ namespace QLBenhVienDaLieu.Database
 
 
         }
+
         public void DeleteToaThuoc(string maToaThuoc)
         {
             SqlCommand command = new SqlCommand();

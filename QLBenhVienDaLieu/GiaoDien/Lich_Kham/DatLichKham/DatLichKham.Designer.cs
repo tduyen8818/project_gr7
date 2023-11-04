@@ -53,12 +53,15 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             this.imageCheck = new System.Windows.Forms.PictureBox();
             this.imageCheck1 = new System.Windows.Forms.PictureBox();
             this.imageCheck2 = new System.Windows.Forms.PictureBox();
+            this.textErrorHoSoBenhNhan = new System.Windows.Forms.Label();
+            this.imageCheck3 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageUser)).BeginInit();
             this.showHoSoBenhNhan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageCheck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCheck1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCheck2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCheck3)).BeginInit();
             this.SuspendLayout();
             // 
             // titleDatLich
@@ -133,13 +136,14 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             // dataNgayKham
             // 
             this.dataNgayKham.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dataNgayKham.CustomFormat = "dd/MM/yyyy hh:mm:ss tt";
+            this.dataNgayKham.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             this.dataNgayKham.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dataNgayKham.Location = new System.Drawing.Point(50, 501);
             this.dataNgayKham.Margin = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.dataNgayKham.Name = "dataNgayKham";
             this.dataNgayKham.Size = new System.Drawing.Size(409, 26);
             this.dataNgayKham.TabIndex = 8;
+            this.dataNgayKham.Value = new System.DateTime(2023, 11, 1, 9, 50, 0, 0);
             // 
             // dataCaKham
             // 
@@ -177,7 +181,7 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Control;
             this.flowLayoutPanel1.Controls.Add(this.textTemp);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
@@ -242,8 +246,9 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             // 
             // showHoSoBenhNhan
             // 
+            this.showHoSoBenhNhan.BackColor = System.Drawing.SystemColors.Control;
             this.showHoSoBenhNhan.Controls.Add(this.flowLayoutPanel1);
-            this.showHoSoBenhNhan.Location = new System.Drawing.Point(512, 227);
+            this.showHoSoBenhNhan.Location = new System.Drawing.Point(512, 258);
             this.showHoSoBenhNhan.Margin = new System.Windows.Forms.Padding(0);
             this.showHoSoBenhNhan.Name = "showHoSoBenhNhan";
             this.showHoSoBenhNhan.Size = new System.Drawing.Size(471, 481);
@@ -315,10 +320,34 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             this.imageCheck2.TabIndex = 23;
             this.imageCheck2.TabStop = false;
             // 
+            // textErrorHoSoBenhNhan
+            // 
+            this.textErrorHoSoBenhNhan.AutoSize = true;
+            this.textErrorHoSoBenhNhan.ForeColor = System.Drawing.Color.Red;
+            this.textErrorHoSoBenhNhan.Location = new System.Drawing.Point(513, 233);
+            this.textErrorHoSoBenhNhan.Margin = new System.Windows.Forms.Padding(5);
+            this.textErrorHoSoBenhNhan.Name = "textErrorHoSoBenhNhan";
+            this.textErrorHoSoBenhNhan.Size = new System.Drawing.Size(283, 20);
+            this.textErrorHoSoBenhNhan.TabIndex = 24;
+            this.textErrorHoSoBenhNhan.Text = "Vui lòng chỉ chọn một hồ sơ bệnh nhân";
+            this.textErrorHoSoBenhNhan.Visible = false;
+            // 
+            // imageCheck3
+            // 
+            this.imageCheck3.Enabled = false;
+            this.imageCheck3.Location = new System.Drawing.Point(804, 222);
+            this.imageCheck3.Name = "imageCheck3";
+            this.imageCheck3.Size = new System.Drawing.Size(44, 33);
+            this.imageCheck3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imageCheck3.TabIndex = 25;
+            this.imageCheck3.TabStop = false;
+            // 
             // DatLichKham
             // 
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1037, 850);
+            this.Controls.Add(this.imageCheck3);
+            this.Controls.Add(this.textErrorHoSoBenhNhan);
             this.Controls.Add(this.imageCheck2);
             this.Controls.Add(this.imageCheck1);
             this.Controls.Add(this.imageCheck);
@@ -350,6 +379,7 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             ((System.ComponentModel.ISupportInitialize)(this.imageCheck)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCheck1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCheck2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCheck3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -379,5 +409,7 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
         private PictureBox imageCheck1;
         private PictureBox imageCheck2;
         private Label textTemp;
+        private Label textErrorHoSoBenhNhan;
+        private PictureBox imageCheck3;
     }
 }

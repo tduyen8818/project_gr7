@@ -474,9 +474,10 @@
             // 
             // buttonLogo
             // 
+            this.buttonLogo.BackgroundImage = global::QLBenhVienDaLieu.Properties.Resources.logo_pro_sin1;
+            this.buttonLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonLogo.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonLogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogo.Image = global::QLBenhVienDaLieu.Properties.Resources._1;
             this.buttonLogo.Location = new System.Drawing.Point(10, 10);
             this.buttonLogo.Margin = new System.Windows.Forms.Padding(0);
             this.buttonLogo.Name = "buttonLogo";

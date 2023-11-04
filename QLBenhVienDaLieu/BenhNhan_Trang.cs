@@ -1,4 +1,5 @@
 ﻿using QLBenhVienDaLieu.Database;
+using QLBenhVienDaLieu.GiaoDien.Ho_So_Benh_Nhan;
 using QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham;
 using QLBenhVienDaLieu.GiaoDien.Lich_Kham.XemLichKham;
 using System;
@@ -18,6 +19,8 @@ namespace QLBenhVienDaLieu
         private bool isCollapsed1;
 
         private SqlFunctionCaller sqlFunctionCaller;
+
+        private string soDienThoai;
 
         Rectangle originalForm;
         Rectangle originalButtonLogo;
@@ -84,11 +87,18 @@ namespace QLBenhVienDaLieu
 
         public Panel MainPanelRight { get {return mainPanelRight; } set {mainPanelRight = value; } }
 
-        public BenhNhan_Trang()
+        public string SoDienThoai
+        {
+            get { return soDienThoai; }
+            set { soDienThoai = value; }
+        }
+
+        public BenhNhan_Trang(string soDienThoai)
         {
 
             this.sqlFunctionCaller = new SqlFunctionCaller();
             sqlFunctionCaller.Connect();
+            this.soDienThoai = soDienThoai;
 
             InitializeComponent();
             
@@ -190,7 +200,7 @@ namespace QLBenhVienDaLieu
         private void buttonXemLich_Click(object sender, EventArgs e)
         {
             mainPanelRight.Controls.Clear();
-            XemLichKham xemLichKham = new XemLichKham(sqlFunctionCaller, this);
+            XemLichKham xemLichKham = new XemLichKham(sqlFunctionCaller, this, soDienThoai);
 
             xemLichKham.TopLevel = false;
             xemLichKham.Dock = DockStyle.Fill;
@@ -203,16 +213,33 @@ namespace QLBenhVienDaLieu
 
         private void buttonDatLich_Click(object sender, EventArgs e)
         {
-            mainPanelRight.Controls.Clear();
-            DatLichKham datLichKham = new DatLichKham(sqlFunctionCaller, this);
+            if (!sqlFunctionCaller.GetHoSoBenhNhanByMaTaiKhoanOrSoDienThoai(soDienThoai).Any())
+            {
+                mainPanelRight.Controls.Clear();
+                DangKyHoSoBenhNhan dangKyHoSoBenhNhan = new DangKyHoSoBenhNhan(sqlFunctionCaller, soDienThoai);
 
-            datLichKham.TopLevel = false;
-            datLichKham.Dock = DockStyle.Fill;
+                dangKyHoSoBenhNhan.TopLevel = false;
+                dangKyHoSoBenhNhan.Dock = DockStyle.Fill;
 
-            mainPanelRight.Controls.Add(datLichKham);
-            mainPanelRight.Tag = datLichKham;
+                mainPanelRight.Controls.Add(dangKyHoSoBenhNhan);
+                mainPanelRight.Tag = dangKyHoSoBenhNhan;
 
-            datLichKham.Show();
+                dangKyHoSoBenhNhan.Show();
+
+            } else
+            {
+                mainPanelRight.Controls.Clear();
+                DatLichKham datLichKham = new DatLichKham(sqlFunctionCaller, this, soDienThoai);
+
+                datLichKham.TopLevel = false;
+                datLichKham.Dock = DockStyle.Fill;
+
+                mainPanelRight.Controls.Add(datLichKham);
+                mainPanelRight.Tag = datLichKham;
+
+                datLichKham.Show();
+
+            }
         }
 
         private void buttonThongBao_Click(object sender, EventArgs e)
@@ -237,9 +264,33 @@ namespace QLBenhVienDaLieu
             }
         }
 
-        private void buttonHoSoBenhNhan_Click(object sender, EventArgs e)
+        public void buttonHoSoBenhNhan_Click(object sender, EventArgs e)
         {
+            if (!sqlFunctionCaller.GetHoSoBenhNhanByMaTaiKhoanOrSoDienThoai(soDienThoai).Any())
+            {
+                mainPanelRight.Controls.Clear();
+                DangKyHoSoBenhNhan dangKyHoSoBenhNhan = new DangKyHoSoBenhNhan(sqlFunctionCaller, soDienThoai);
 
+                dangKyHoSoBenhNhan.TopLevel = false;
+                dangKyHoSoBenhNhan.Dock = DockStyle.Fill;
+
+                mainPanelRight.Controls.Add(dangKyHoSoBenhNhan);
+                mainPanelRight.Tag = dangKyHoSoBenhNhan;
+
+                dangKyHoSoBenhNhan.Show();
+            } else
+            {
+                mainPanelRight.Controls.Clear();
+                HoSoBenhNhanForm hoSoBenhNhan = new HoSoBenhNhanForm(sqlFunctionCaller, this);
+
+                hoSoBenhNhan.TopLevel = false;
+                hoSoBenhNhan.Dock = DockStyle.Fill;
+
+                mainPanelRight.Controls.Add(hoSoBenhNhan);
+                mainPanelRight.Tag = hoSoBenhNhan;
+
+                hoSoBenhNhan.Show();
+            }
         }
 
         private void buttonTaiKhoanSub_Click(object sender, EventArgs e)

@@ -12,6 +12,12 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
 {
     public partial class DataHoSoBenhNhan : Form
     {
+        public CheckBox CheckChoose
+        {
+            get { return this.checkChoose; }
+            set { this.checkChoose = value; }
+        }
+
         public Label DataMaHoSoBenhNhan { get {return this.dataMaHoSoBenhNhan; } set {this.dataMaHoSoBenhNhan = value; } }
         public Label DataHoVaTen { get { return this.dataHoVaTen; } set { this.dataHoVaTen = value; } }
         public Label DataMaTaiKhoan { get { return this.dataMaTaiKhoan; } set { this.dataMaTaiKhoan = value; } }
@@ -25,6 +31,7 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
         public Label DataDiaChi { get { return this.dataDiaChi; } set { this.dataDiaChi = value; } }
 
         private Rectangle originalForm;
+        private Rectangle originalCheckChoose;
         private Rectangle originalTextMaHoSoBenhNhan;
         private Rectangle originalTextHoVaTen;
         private Rectangle originalTextMaTaiKhoan;
@@ -78,6 +85,7 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             InitializeComponent();
 
             originalForm = new Rectangle(this.Location.X, this.Location.Y, this.Width, this.Height);
+            originalCheckChoose = new Rectangle(checkChoose.Location.X, checkChoose.Location.Y, checkChoose.Width, checkChoose.Height);
             originalTextMaHoSoBenhNhan = new Rectangle(textMaHoSoBenhNhan.Location.X, textMaHoSoBenhNhan.Location.Y, textMaHoSoBenhNhan.Width, textMaHoSoBenhNhan.Height);
             originalTextHoVaTen = new Rectangle(textHoVaTen.Location.X, textHoVaTen.Location.Y, textHoVaTen.Width, textHoVaTen.Height);
             originalTextMaTaiKhoan = new Rectangle(textMaTaiKhoan.Location.X, textMaTaiKhoan.Location.Y, textMaTaiKhoan.Width, textMaTaiKhoan.Height);
@@ -129,6 +137,7 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
 
         private void DataHoSoBenhNhan_Resize(object sender, EventArgs e)
         {
+            Graphic.ScaleSize.Resize(originalForm, originalCheckChoose, checkChoose, this);
             Graphic.ScaleSize.Resize(originalForm, originalTextMaHoSoBenhNhan, textMaHoSoBenhNhan, this, textSizeInitialTextMaHoSoBenhNhan);
             Graphic.ScaleSize.Resize(originalForm, originalTextHoVaTen, textHoVaTen, this, textSizeInitialTextHoVaTen);
             Graphic.ScaleSize.Resize(originalForm, originalTextMaTaiKhoan, textMaTaiKhoan, this, textSizeInitialTextMaTaiKhoan);
@@ -152,6 +161,17 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             Graphic.ScaleSize.Resize(originalForm, originalDataEmail, dataEmail, this, textSizeInitialDataEmail);
             Graphic.ScaleSize.Resize(originalForm, originalDataDiaChi, dataDiaChi, this, textSizeInitialDataDiaChi);
 
+        }
+
+        private void checkChoose_CheckStateChanged(object sender, EventArgs e)
+        {
+            if (checkChoose.Checked)
+            {
+                this.BackColor = Color.Lavender;
+            } else
+            {
+                this.BackColor = SystemColors.Control;
+            }
         }
     }
 }

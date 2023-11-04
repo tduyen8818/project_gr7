@@ -50,13 +50,14 @@
             this.dataSoDienThoai = new System.Windows.Forms.Label();
             this.dataEmail = new System.Windows.Forms.Label();
             this.dataDiaChi = new System.Windows.Forms.Label();
+            this.checkChoose = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // textHoVaTen
             // 
             this.textHoVaTen.AutoSize = true;
             this.textHoVaTen.BackColor = System.Drawing.Color.Transparent;
-            this.textHoVaTen.Location = new System.Drawing.Point(19, 59);
+            this.textHoVaTen.Location = new System.Drawing.Point(19, 82);
             this.textHoVaTen.Margin = new System.Windows.Forms.Padding(10);
             this.textHoVaTen.Name = "textHoVaTen";
             this.textHoVaTen.Size = new System.Drawing.Size(81, 20);
@@ -67,7 +68,7 @@
             // 
             this.textMaHoSoBenhNhan.AutoSize = true;
             this.textMaHoSoBenhNhan.BackColor = System.Drawing.Color.Transparent;
-            this.textMaHoSoBenhNhan.Location = new System.Drawing.Point(19, 19);
+            this.textMaHoSoBenhNhan.Location = new System.Drawing.Point(19, 42);
             this.textMaHoSoBenhNhan.Margin = new System.Windows.Forms.Padding(10);
             this.textMaHoSoBenhNhan.Name = "textMaHoSoBenhNhan";
             this.textMaHoSoBenhNhan.Size = new System.Drawing.Size(158, 20);
@@ -78,7 +79,7 @@
             // 
             this.textMaTaiKhoan.AutoSize = true;
             this.textMaTaiKhoan.BackColor = System.Drawing.Color.Transparent;
-            this.textMaTaiKhoan.Location = new System.Drawing.Point(19, 99);
+            this.textMaTaiKhoan.Location = new System.Drawing.Point(19, 122);
             this.textMaTaiKhoan.Margin = new System.Windows.Forms.Padding(10);
             this.textMaTaiKhoan.Name = "textMaTaiKhoan";
             this.textMaTaiKhoan.Size = new System.Drawing.Size(104, 20);
@@ -89,7 +90,7 @@
             // 
             this.textNgaySinh.AutoSize = true;
             this.textNgaySinh.BackColor = System.Drawing.Color.Transparent;
-            this.textNgaySinh.Location = new System.Drawing.Point(19, 139);
+            this.textNgaySinh.Location = new System.Drawing.Point(19, 162);
             this.textNgaySinh.Margin = new System.Windows.Forms.Padding(10);
             this.textNgaySinh.Name = "textNgaySinh";
             this.textNgaySinh.Size = new System.Drawing.Size(82, 20);
@@ -100,7 +101,7 @@
             // 
             this.textGioiTinh.AutoSize = true;
             this.textGioiTinh.BackColor = System.Drawing.Color.Transparent;
-            this.textGioiTinh.Location = new System.Drawing.Point(19, 179);
+            this.textGioiTinh.Location = new System.Drawing.Point(19, 202);
             this.textGioiTinh.Margin = new System.Windows.Forms.Padding(10);
             this.textGioiTinh.Name = "textGioiTinh";
             this.textGioiTinh.Size = new System.Drawing.Size(71, 20);
@@ -111,7 +112,7 @@
             // 
             this.textCCCD.AutoSize = true;
             this.textCCCD.BackColor = System.Drawing.Color.Transparent;
-            this.textCCCD.Location = new System.Drawing.Point(19, 219);
+            this.textCCCD.Location = new System.Drawing.Point(19, 242);
             this.textCCCD.Margin = new System.Windows.Forms.Padding(10);
             this.textCCCD.Name = "textCCCD";
             this.textCCCD.Size = new System.Drawing.Size(58, 20);
@@ -122,7 +123,7 @@
             // 
             this.textMaBHYT.AutoSize = true;
             this.textMaBHYT.BackColor = System.Drawing.Color.Transparent;
-            this.textMaBHYT.Location = new System.Drawing.Point(19, 259);
+            this.textMaBHYT.Location = new System.Drawing.Point(19, 282);
             this.textMaBHYT.Margin = new System.Windows.Forms.Padding(10);
             this.textMaBHYT.Name = "textMaBHYT";
             this.textMaBHYT.Size = new System.Drawing.Size(82, 20);
@@ -133,7 +134,7 @@
             // 
             this.textNgheNghiep.AutoSize = true;
             this.textNgheNghiep.BackColor = System.Drawing.Color.Transparent;
-            this.textNgheNghiep.Location = new System.Drawing.Point(19, 299);
+            this.textNgheNghiep.Location = new System.Drawing.Point(19, 322);
             this.textNgheNghiep.Margin = new System.Windows.Forms.Padding(10);
             this.textNgheNghiep.Name = "textNgheNghiep";
             this.textNgheNghiep.Size = new System.Drawing.Size(103, 20);
@@ -144,7 +145,7 @@
             // 
             this.textSoDienThoai.AutoSize = true;
             this.textSoDienThoai.BackColor = System.Drawing.Color.Transparent;
-            this.textSoDienThoai.Location = new System.Drawing.Point(19, 339);
+            this.textSoDienThoai.Location = new System.Drawing.Point(19, 362);
             this.textSoDienThoai.Margin = new System.Windows.Forms.Padding(10);
             this.textSoDienThoai.Name = "textSoDienThoai";
             this.textSoDienThoai.Size = new System.Drawing.Size(106, 20);
@@ -155,7 +156,7 @@
             // 
             this.textEmail.AutoSize = true;
             this.textEmail.BackColor = System.Drawing.Color.Transparent;
-            this.textEmail.Location = new System.Drawing.Point(19, 379);
+            this.textEmail.Location = new System.Drawing.Point(19, 402);
             this.textEmail.Margin = new System.Windows.Forms.Padding(10);
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(52, 20);
@@ -178,7 +179,7 @@
             this.dataMaHoSoBenhNhan.AutoEllipsis = true;
             this.dataMaHoSoBenhNhan.BackColor = System.Drawing.Color.Transparent;
             this.dataMaHoSoBenhNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataMaHoSoBenhNhan.Location = new System.Drawing.Point(197, 19);
+            this.dataMaHoSoBenhNhan.Location = new System.Drawing.Point(197, 42);
             this.dataMaHoSoBenhNhan.Margin = new System.Windows.Forms.Padding(10);
             this.dataMaHoSoBenhNhan.Name = "dataMaHoSoBenhNhan";
             this.dataMaHoSoBenhNhan.Size = new System.Drawing.Size(255, 40);
@@ -190,7 +191,7 @@
             this.dataHoVaTen.AutoEllipsis = true;
             this.dataHoVaTen.BackColor = System.Drawing.Color.Transparent;
             this.dataHoVaTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataHoVaTen.Location = new System.Drawing.Point(120, 59);
+            this.dataHoVaTen.Location = new System.Drawing.Point(120, 82);
             this.dataHoVaTen.Margin = new System.Windows.Forms.Padding(10);
             this.dataHoVaTen.Name = "dataHoVaTen";
             this.dataHoVaTen.Size = new System.Drawing.Size(332, 33);
@@ -202,10 +203,10 @@
             this.dataMaTaiKhoan.AutoEllipsis = true;
             this.dataMaTaiKhoan.BackColor = System.Drawing.Color.Transparent;
             this.dataMaTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataMaTaiKhoan.Location = new System.Drawing.Point(143, 99);
+            this.dataMaTaiKhoan.Location = new System.Drawing.Point(145, 122);
             this.dataMaTaiKhoan.Margin = new System.Windows.Forms.Padding(10);
             this.dataMaTaiKhoan.Name = "dataMaTaiKhoan";
-            this.dataMaTaiKhoan.Size = new System.Drawing.Size(309, 36);
+            this.dataMaTaiKhoan.Size = new System.Drawing.Size(307, 36);
             this.dataMaTaiKhoan.TabIndex = 13;
             this.dataMaTaiKhoan.Text = "label3";
             // 
@@ -214,7 +215,7 @@
             this.dataNgaySinh.AutoEllipsis = true;
             this.dataNgaySinh.BackColor = System.Drawing.Color.Transparent;
             this.dataNgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataNgaySinh.Location = new System.Drawing.Point(121, 139);
+            this.dataNgaySinh.Location = new System.Drawing.Point(121, 162);
             this.dataNgaySinh.Margin = new System.Windows.Forms.Padding(10);
             this.dataNgaySinh.Name = "dataNgaySinh";
             this.dataNgaySinh.Size = new System.Drawing.Size(331, 39);
@@ -226,10 +227,10 @@
             this.dataGioiTinh.AutoEllipsis = true;
             this.dataGioiTinh.BackColor = System.Drawing.Color.Transparent;
             this.dataGioiTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGioiTinh.Location = new System.Drawing.Point(110, 179);
+            this.dataGioiTinh.Location = new System.Drawing.Point(100, 202);
             this.dataGioiTinh.Margin = new System.Windows.Forms.Padding(10);
             this.dataGioiTinh.Name = "dataGioiTinh";
-            this.dataGioiTinh.Size = new System.Drawing.Size(342, 34);
+            this.dataGioiTinh.Size = new System.Drawing.Size(352, 34);
             this.dataGioiTinh.TabIndex = 15;
             this.dataGioiTinh.Text = "label5";
             // 
@@ -238,7 +239,7 @@
             this.dataCCCD.AutoEllipsis = true;
             this.dataCCCD.BackColor = System.Drawing.Color.Transparent;
             this.dataCCCD.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataCCCD.Location = new System.Drawing.Point(97, 219);
+            this.dataCCCD.Location = new System.Drawing.Point(97, 242);
             this.dataCCCD.Margin = new System.Windows.Forms.Padding(10);
             this.dataCCCD.Name = "dataCCCD";
             this.dataCCCD.Size = new System.Drawing.Size(355, 31);
@@ -250,7 +251,7 @@
             this.dataMaBHYT.AutoEllipsis = true;
             this.dataMaBHYT.BackColor = System.Drawing.Color.Transparent;
             this.dataMaBHYT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataMaBHYT.Location = new System.Drawing.Point(121, 259);
+            this.dataMaBHYT.Location = new System.Drawing.Point(121, 282);
             this.dataMaBHYT.Margin = new System.Windows.Forms.Padding(10);
             this.dataMaBHYT.Name = "dataMaBHYT";
             this.dataMaBHYT.Size = new System.Drawing.Size(331, 38);
@@ -262,7 +263,7 @@
             this.dataNgheNghiep.AutoEllipsis = true;
             this.dataNgheNghiep.BackColor = System.Drawing.Color.Transparent;
             this.dataNgheNghiep.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataNgheNghiep.Location = new System.Drawing.Point(142, 299);
+            this.dataNgheNghiep.Location = new System.Drawing.Point(142, 322);
             this.dataNgheNghiep.Margin = new System.Windows.Forms.Padding(10);
             this.dataNgheNghiep.Name = "dataNgheNghiep";
             this.dataNgheNghiep.Size = new System.Drawing.Size(310, 32);
@@ -274,7 +275,7 @@
             this.dataSoDienThoai.AutoEllipsis = true;
             this.dataSoDienThoai.BackColor = System.Drawing.Color.Transparent;
             this.dataSoDienThoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataSoDienThoai.Location = new System.Drawing.Point(145, 339);
+            this.dataSoDienThoai.Location = new System.Drawing.Point(145, 362);
             this.dataSoDienThoai.Margin = new System.Windows.Forms.Padding(10);
             this.dataSoDienThoai.Name = "dataSoDienThoai";
             this.dataSoDienThoai.Size = new System.Drawing.Size(307, 32);
@@ -286,7 +287,7 @@
             this.dataEmail.AutoEllipsis = true;
             this.dataEmail.BackColor = System.Drawing.Color.Transparent;
             this.dataEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataEmail.Location = new System.Drawing.Point(91, 379);
+            this.dataEmail.Location = new System.Drawing.Point(91, 402);
             this.dataEmail.Margin = new System.Windows.Forms.Padding(10);
             this.dataEmail.Name = "dataEmail";
             this.dataEmail.Size = new System.Drawing.Size(361, 43);
@@ -305,10 +306,22 @@
             this.dataDiaChi.TabIndex = 21;
             this.dataDiaChi.Text = "label11";
             // 
+            // checkChoose
+            // 
+            this.checkChoose.Location = new System.Drawing.Point(23, 19);
+            this.checkChoose.Margin = new System.Windows.Forms.Padding(10);
+            this.checkChoose.Name = "checkChoose";
+            this.checkChoose.Size = new System.Drawing.Size(104, 24);
+            this.checkChoose.TabIndex = 22;
+            this.checkChoose.UseVisualStyleBackColor = true;
+            this.checkChoose.CheckStateChanged += new System.EventHandler(this.checkChoose_CheckStateChanged);
+            // 
             // DataHoSoBenhNhan
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(471, 481);
+            this.Controls.Add(this.checkChoose);
             this.Controls.Add(this.dataDiaChi);
             this.Controls.Add(this.dataEmail);
             this.Controls.Add(this.dataSoDienThoai);
@@ -364,5 +377,6 @@
         private System.Windows.Forms.Label dataSoDienThoai;
         private System.Windows.Forms.Label dataEmail;
         private System.Windows.Forms.Label dataDiaChi;
+        private System.Windows.Forms.CheckBox checkChoose;
     }
 }

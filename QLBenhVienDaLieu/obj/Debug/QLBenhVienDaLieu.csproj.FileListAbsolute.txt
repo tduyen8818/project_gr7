@@ -336,3 +336,5 @@ C:\Users\QUANG\OneDrive\Máy tính\project_gr7-main\QLBenhVienDaLieu\bin\Debug\S
 C:\Users\QUANG\OneDrive\Máy tính\project_gr7-main\QLBenhVienDaLieu\bin\Debug\System.Text.Encoding.CodePages.xml
 C:\Users\QUANG\OneDrive\Máy tính\project_gr7-main\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham.DataHoSoBenhNhan.resources
 C:\Users\QUANG\OneDrive\Máy tính\project_gr7-main\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.GiaoDien.Lich_Kham.XemLichKham.XemChiTiet.resources
+C:\Users\QUANG\OneDrive\Máy tính\project_gr7-main\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.GiaoDien.Ho_So_Benh_Nhan.DangKyHoSoBenhNhan.resources
+C:\Users\QUANG\OneDrive\Máy tính\project_gr7-main\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.GiaoDien.Ho_So_Benh_Nhan.HoSoBenhNhanForm.resources
