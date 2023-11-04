@@ -44,8 +44,6 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.textTemp = new System.Windows.Forms.Label();
             this.btnDatLich = new System.Windows.Forms.Button();
-            this.btnAccount = new System.Windows.Forms.Button();
-            this.imageUser = new System.Windows.Forms.PictureBox();
             this.showHoSoBenhNhan = new System.Windows.Forms.Panel();
             this.textErrorChuyenKhoa = new System.Windows.Forms.Label();
             this.textErrorDichVu = new System.Windows.Forms.Label();
@@ -56,7 +54,6 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             this.textErrorHoSoBenhNhan = new System.Windows.Forms.Label();
             this.imageCheck3 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imageUser)).BeginInit();
             this.showHoSoBenhNhan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageCheck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCheck1)).BeginInit();
@@ -215,35 +212,6 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             this.btnDatLich.UseVisualStyleBackColor = false;
             this.btnDatLich.Click += new System.EventHandler(this.btnDatLich_Click);
             // 
-            // btnAccount
-            // 
-            this.btnAccount.BackColor = System.Drawing.Color.White;
-            this.btnAccount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAccount.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAccount.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(139)))), ((int)(((byte)(68)))));
-            this.btnAccount.FlatAppearance.BorderSize = 0;
-            this.btnAccount.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccount.Location = new System.Drawing.Point(827, 20);
-            this.btnAccount.Margin = new System.Windows.Forms.Padding(0, 10, 10, 0);
-            this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Size = new System.Drawing.Size(194, 70);
-            this.btnAccount.TabIndex = 14;
-            this.btnAccount.Text = "0962214534";
-            this.btnAccount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAccount.UseVisualStyleBackColor = false;
-            this.btnAccount.Visible = false;
-            // 
-            // imageUser
-            // 
-            this.imageUser.Image = global::QLBenhVienDaLieu.Properties.Resources._9;
-            this.imageUser.Location = new System.Drawing.Point(827, 20);
-            this.imageUser.Name = "imageUser";
-            this.imageUser.Size = new System.Drawing.Size(57, 70);
-            this.imageUser.TabIndex = 15;
-            this.imageUser.TabStop = false;
-            this.imageUser.Visible = false;
-            // 
             // showHoSoBenhNhan
             // 
             this.showHoSoBenhNhan.BackColor = System.Drawing.SystemColors.Control;
@@ -355,8 +323,6 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             this.Controls.Add(this.textErrorDichVu);
             this.Controls.Add(this.textErrorChuyenKhoa);
             this.Controls.Add(this.showHoSoBenhNhan);
-            this.Controls.Add(this.imageUser);
-            this.Controls.Add(this.btnAccount);
             this.Controls.Add(this.btnDatLich);
             this.Controls.Add(this.textHoSoBenhNhan);
             this.Controls.Add(this.dataCaKham);
@@ -374,7 +340,6 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             this.Text = "DatLichKham";
             this.Resize += new System.EventHandler(this.DatLichKham_Resize);
             this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.imageUser)).EndInit();
             this.showHoSoBenhNhan.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imageCheck)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCheck1)).EndInit();
@@ -399,8 +364,6 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
         private Label textHoSoBenhNhan;
         private FlowLayoutPanel flowLayoutPanel1;
         private Button btnDatLich;
-        private Button btnAccount;
-        private PictureBox imageUser;
         private Panel showHoSoBenhNhan;
         private Label textErrorChuyenKhoa;
         private Label textErrorDichVu;

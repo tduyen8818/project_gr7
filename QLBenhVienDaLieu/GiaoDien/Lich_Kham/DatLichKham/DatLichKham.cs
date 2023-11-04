@@ -27,8 +27,6 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
         private List<DataHoSoBenhNhan> listDataHoSoBenhNhan = new List<DataHoSoBenhNhan>();
 
         private Rectangle originalForm;
-        private Rectangle originalImageUser;
-        private Rectangle originalBtnAccount;
         private Rectangle originalBtnDatLich;
         private Rectangle originalTitleDatLich;
         private Rectangle originalTextChuyenKhoa;
@@ -113,8 +111,6 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             InitializeComponent();
 
             originalForm = new Rectangle(this.Location.X, this.Location.Y, this.Width, this.Height);
-            originalImageUser = new Rectangle(imageUser.Location.X, imageUser.Location.Y, imageUser.Width, imageUser.Width);
-            originalBtnAccount = new Rectangle(btnAccount.Location.X, btnAccount.Location.Y, btnAccount.Width, btnAccount.Height);
             originalBtnDatLich = new Rectangle(btnDatLich.Location.X, btnDatLich.Location.Y, btnDatLich.Width, btnDatLich.Height);
             originalTitleDatLich = new Rectangle(titleDatLich.Location.X, titleDatLich.Location.Y, titleDatLich.Width, titleDatLich.Height);
             originalTextChuyenKhoa = new Rectangle(textChuyenKhoa.Location.X, textChuyenKhoa.Location.Y, textChuyenKhoa.Width, textChuyenKhoa.Height);
@@ -137,11 +133,8 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             originalImageCheck3 = new Rectangle(imageCheck3.Location.X, imageCheck3.Location.Y, imageCheck3.Width, imageCheck3.Height);
             originalTextTemp = new Rectangle(textTemp.Location.X, textTemp.Location.Y, textTemp.Width, textTemp.Height);
 
-            imageUser.Region = Draw.RoundedRectangle(0, 0, imageUser.Width, imageUser.Height, 57, 70);
-            btnAccount.Region = Draw.RoundedRectangle(0, 0, btnAccount.Width, btnAccount.Height, 35, 35);
             btnDatLich.Region = Draw.RoundedRectangle(0, 0, btnDatLich.Width, btnDatLich.Height, 50, 50);
 
-            textSizeInitialBtnAccount = btnAccount.Font.Size;
             textSizeInitialBtnDatLich = btnDatLich.Font.Size;
             textSizeInitialTitleDatLich = titleDatLich.Font.Size;
             textSizeInitialTextChuyenKhoa = textChuyenKhoa.Font.Size;
@@ -234,8 +227,6 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
 
         private void DatLichKham_Resize(object sender, EventArgs e)
         {
-            ScaleSize.Resize(originalForm, originalImageUser, imageUser, this);
-            ScaleSize.Resize(originalForm, originalBtnAccount, btnAccount, this, textSizeInitialBtnAccount);
             ScaleSize.Resize(originalForm, originalBtnDatLich, btnDatLich, this, textSizeInitialBtnDatLich);
             ScaleSize.Resize(originalForm, originalTitleDatLich, titleDatLich, this, textSizeInitialTitleDatLich);
             ScaleSize.Resize(originalForm, originalTextChuyenKhoa, textChuyenKhoa, this, textSizeInitialTextChuyenKhoa);
@@ -258,8 +249,6 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             ScaleSize.Resize(originalForm, originalImageCheck3, imageCheck3, this);
             ScaleSize.Resize(originalForm, originalTextTemp, textTemp, this);
 
-            imageUser.Region = Draw.RoundedRectangle(0, 0, imageUser.Width, imageUser.Height, 57, 70);
-            btnAccount.Region = Draw.RoundedRectangle(0, 0, btnAccount.Width, btnAccount.Height, 35, 35);
             btnDatLich.Region = Draw.RoundedRectangle(0, 0, btnDatLich.Width, btnDatLich.Height, 50, 50);
         }
 

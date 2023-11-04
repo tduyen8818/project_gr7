@@ -18,6 +18,4 @@ select * from ADMIN_Manager
 select * from TaiKhoanThanhVien
 select * from LichLamViec
 
-EXEC DeleteToaThuoc @MaToaThuoc = 'TT000001'
-
 

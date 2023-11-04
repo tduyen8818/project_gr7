@@ -63,11 +63,23 @@
             this.textErrorSoCCCD = new System.Windows.Forms.Label();
             this.textErrorNgaySinh = new System.Windows.Forms.Label();
             this.textErrorGioiTinh = new System.Windows.Forms.Label();
+            this.textErrorMaBHYT = new System.Windows.Forms.Label();
+            this.textErrorNgheNghiep = new System.Windows.Forms.Label();
+            this.textErrorEmail = new System.Windows.Forms.Label();
+            this.textErrorDiaChi = new System.Windows.Forms.Label();
+            this.imageCheckEmail = new System.Windows.Forms.PictureBox();
+            this.imageCheckDiaChi = new System.Windows.Forms.PictureBox();
+            this.imageCheckMaBHYT = new System.Windows.Forms.PictureBox();
+            this.imageCheckNgheNghiep = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.imageCheckHoVaTen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCheckNgaySinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCheckSoDienThoai)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCheckSoCCCD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCheckGioiTinh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCheckEmail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCheckDiaChi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCheckMaBHYT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCheckNgheNghiep)).BeginInit();
             this.SuspendLayout();
             // 
             // titleDangKyHoSoBenhNhan
@@ -157,6 +169,7 @@
             this.dataMaBHYT.Name = "dataMaBHYT";
             this.dataMaBHYT.Size = new System.Drawing.Size(398, 26);
             this.dataMaBHYT.TabIndex = 10;
+            this.dataMaBHYT.TextChanged += new System.EventHandler(this.dataMaBHYT_TextChanged);
             // 
             // textMaBHYT
             // 
@@ -177,6 +190,7 @@
             this.dataNgheNghiep.Name = "dataNgheNghiep";
             this.dataNgheNghiep.Size = new System.Drawing.Size(398, 26);
             this.dataNgheNghiep.TabIndex = 12;
+            this.dataNgheNghiep.TextChanged += new System.EventHandler(this.dataNgheNghiep_TextChanged);
             // 
             // textNgheNghiep
             // 
@@ -241,6 +255,7 @@
             this.dataEmail.Name = "dataEmail";
             this.dataEmail.Size = new System.Drawing.Size(398, 26);
             this.dataEmail.TabIndex = 20;
+            this.dataEmail.TextChanged += new System.EventHandler(this.dataEmail_TextChanged);
             // 
             // textEmail
             // 
@@ -261,6 +276,7 @@
             this.dataDiaChi.Name = "dataDiaChi";
             this.dataDiaChi.Size = new System.Drawing.Size(398, 26);
             this.dataDiaChi.TabIndex = 22;
+            this.dataDiaChi.TextChanged += new System.EventHandler(this.dataDiaChi_TextChanged);
             // 
             // textDiaChi
             // 
@@ -449,12 +465,104 @@
             this.textErrorGioiTinh.Text = "Vui lòng nhập giới tính";
             this.textErrorGioiTinh.Visible = false;
             // 
+            // textErrorMaBHYT
+            // 
+            this.textErrorMaBHYT.AutoSize = true;
+            this.textErrorMaBHYT.ForeColor = System.Drawing.Color.Red;
+            this.textErrorMaBHYT.Location = new System.Drawing.Point(120, 423);
+            this.textErrorMaBHYT.Name = "textErrorMaBHYT";
+            this.textErrorMaBHYT.Size = new System.Drawing.Size(173, 20);
+            this.textErrorMaBHYT.TabIndex = 39;
+            this.textErrorMaBHYT.Text = "Mã BHYT không hợp lệ";
+            this.textErrorMaBHYT.Visible = false;
+            // 
+            // textErrorNgheNghiep
+            // 
+            this.textErrorNgheNghiep.AutoSize = true;
+            this.textErrorNgheNghiep.ForeColor = System.Drawing.Color.Red;
+            this.textErrorNgheNghiep.Location = new System.Drawing.Point(150, 518);
+            this.textErrorNgheNghiep.Name = "textErrorNgheNghiep";
+            this.textErrorNgheNghiep.Size = new System.Drawing.Size(194, 20);
+            this.textErrorNgheNghiep.TabIndex = 40;
+            this.textErrorNgheNghiep.Text = "Nghề nghiệp không hợp lệ";
+            this.textErrorNgheNghiep.Visible = false;
+            // 
+            // textErrorEmail
+            // 
+            this.textErrorEmail.AutoSize = true;
+            this.textErrorEmail.ForeColor = System.Drawing.Color.Red;
+            this.textErrorEmail.Location = new System.Drawing.Point(554, 332);
+            this.textErrorEmail.Name = "textErrorEmail";
+            this.textErrorEmail.Size = new System.Drawing.Size(143, 20);
+            this.textErrorEmail.TabIndex = 41;
+            this.textErrorEmail.Text = "Email không hợp lệ";
+            this.textErrorEmail.Visible = false;
+            // 
+            // textErrorDiaChi
+            // 
+            this.textErrorDiaChi.AutoSize = true;
+            this.textErrorDiaChi.ForeColor = System.Drawing.Color.Red;
+            this.textErrorDiaChi.Location = new System.Drawing.Point(567, 425);
+            this.textErrorDiaChi.Name = "textErrorDiaChi";
+            this.textErrorDiaChi.Size = new System.Drawing.Size(152, 20);
+            this.textErrorDiaChi.TabIndex = 42;
+            this.textErrorDiaChi.Text = "Địa chỉ không hợp lệ";
+            this.textErrorDiaChi.Visible = false;
+            // 
+            // imageCheckEmail
+            // 
+            this.imageCheckEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imageCheckEmail.Location = new System.Drawing.Point(899, 372);
+            this.imageCheckEmail.Margin = new System.Windows.Forms.Padding(0);
+            this.imageCheckEmail.Name = "imageCheckEmail";
+            this.imageCheckEmail.Size = new System.Drawing.Size(29, 26);
+            this.imageCheckEmail.TabIndex = 43;
+            this.imageCheckEmail.TabStop = false;
+            // 
+            // imageCheckDiaChi
+            // 
+            this.imageCheckDiaChi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imageCheckDiaChi.Location = new System.Drawing.Point(899, 465);
+            this.imageCheckDiaChi.Margin = new System.Windows.Forms.Padding(0);
+            this.imageCheckDiaChi.Name = "imageCheckDiaChi";
+            this.imageCheckDiaChi.Size = new System.Drawing.Size(29, 26);
+            this.imageCheckDiaChi.TabIndex = 44;
+            this.imageCheckDiaChi.TabStop = false;
+            // 
+            // imageCheckMaBHYT
+            // 
+            this.imageCheckMaBHYT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imageCheckMaBHYT.Location = new System.Drawing.Point(433, 465);
+            this.imageCheckMaBHYT.Margin = new System.Windows.Forms.Padding(0);
+            this.imageCheckMaBHYT.Name = "imageCheckMaBHYT";
+            this.imageCheckMaBHYT.Size = new System.Drawing.Size(29, 26);
+            this.imageCheckMaBHYT.TabIndex = 45;
+            this.imageCheckMaBHYT.TabStop = false;
+            // 
+            // imageCheckNgheNghiep
+            // 
+            this.imageCheckNgheNghiep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imageCheckNgheNghiep.Location = new System.Drawing.Point(433, 558);
+            this.imageCheckNgheNghiep.Margin = new System.Windows.Forms.Padding(0);
+            this.imageCheckNgheNghiep.Name = "imageCheckNgheNghiep";
+            this.imageCheckNgheNghiep.Size = new System.Drawing.Size(29, 26);
+            this.imageCheckNgheNghiep.TabIndex = 46;
+            this.imageCheckNgheNghiep.TabStop = false;
+            // 
             // DangKyHoSoBenhNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(937, 670);
+            this.Controls.Add(this.imageCheckNgheNghiep);
+            this.Controls.Add(this.imageCheckMaBHYT);
+            this.Controls.Add(this.imageCheckDiaChi);
+            this.Controls.Add(this.imageCheckEmail);
+            this.Controls.Add(this.textErrorDiaChi);
+            this.Controls.Add(this.textErrorEmail);
+            this.Controls.Add(this.textErrorNgheNghiep);
+            this.Controls.Add(this.textErrorMaBHYT);
             this.Controls.Add(this.textErrorGioiTinh);
             this.Controls.Add(this.textErrorNgaySinh);
             this.Controls.Add(this.textErrorSoCCCD);
@@ -499,6 +607,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.imageCheckSoDienThoai)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCheckSoCCCD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCheckGioiTinh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCheckEmail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCheckDiaChi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCheckMaBHYT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCheckNgheNghiep)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -541,5 +653,13 @@
         private System.Windows.Forms.Label textErrorSoCCCD;
         private System.Windows.Forms.Label textErrorNgaySinh;
         private System.Windows.Forms.Label textErrorGioiTinh;
+        private System.Windows.Forms.Label textErrorMaBHYT;
+        private System.Windows.Forms.Label textErrorNgheNghiep;
+        private System.Windows.Forms.Label textErrorEmail;
+        private System.Windows.Forms.Label textErrorDiaChi;
+        private System.Windows.Forms.PictureBox imageCheckEmail;
+        private System.Windows.Forms.PictureBox imageCheckDiaChi;
+        private System.Windows.Forms.PictureBox imageCheckMaBHYT;
+        private System.Windows.Forms.PictureBox imageCheckNgheNghiep;
     }
 }

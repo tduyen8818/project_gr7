@@ -20,6 +20,7 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.XemLichKham
         private string soDienThoai;
 
         Rectangle originalForm;
+        Rectangle originalBenhNhan_Trang;
         Rectangle originalTextMaPhieu;
         Rectangle originalDataMaPhieu;
         Rectangle originalDataName;
@@ -51,6 +52,7 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.XemLichKham
             this.soDienThoai = soDienThoai;
 
             originalForm = new Rectangle(this.Location.X, this.Location.Y, this.Width, this.Height);
+            originalBenhNhan_Trang = new Rectangle(benhNhan_Trang.Location.X, benhNhan_Trang.Location.Y, benhNhan_Trang.Width, benhNhan_Trang.Height);
             originalTextMaPhieu = new Rectangle(textMaPhieu.Location.X, textMaPhieu.Location.Y, textMaPhieu.Width, textMaPhieu.Height);
             originalDataMaPhieu = new Rectangle(dataMaPhieu.Location.X, dataMaPhieu.Location.Y, dataMaPhieu.Width, dataMaPhieu.Height);
             originalDataName = new Rectangle(dataName.Location.X, dataName.Location.Y, dataName.Width, dataName.Height);
@@ -72,7 +74,6 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.XemLichKham
             textSizeTextTrangThai = textTrangThai.Font.Size;
             textSizeDataTrangThai = dataTrangThai.Font.Size;
             textSizeLinkXemChiTiet = linkXemChiTiet.Font.Size;
-           
         }
 
 
@@ -148,11 +149,12 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.XemLichKham
             ScaleSize.Resize(originalForm, originalTextTrangThai, textTrangThai, this, textSizeTextTrangThai);
             ScaleSize.Resize(originalForm, originalDataTrangThai, dataTrangThai, this, textSizeDataTrangThai);
             ScaleSize.Resize(originalForm, originalLinkXemChiTiet, linkXemChiTiet, this, textSizeLinkXemChiTiet);
+
+            this.Region = Draw.RoundedRectangle(0, 0, this.Width, this.Height, 30, 30);
         }
 
         private void linkXemChiTiet_Click(object sender, EventArgs e)
         {
-
             Panel mainPanelRight = benhNhan_Trang.MainPanelRight;
             mainPanelRight.Controls.Clear();
             
@@ -165,7 +167,6 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.XemLichKham
             mainPanelRight.Tag = xemChiTiet;
 
             xemChiTiet.Show();
-
         }
     }
 }

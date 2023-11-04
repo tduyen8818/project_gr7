@@ -81,13 +81,11 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.XemLichKham
 
         private void XemLichKham_Resize(object sender, EventArgs e)
         {
-
             ScaleSize.Resize(originalForm, originalTitle, titleXemLich, this, textSizeInitialTitle);
 
             foreach (var dataXemLichKham in flowLayoutPanel1.Controls.OfType<DataXemLichKham>().ToList())
             {
                 ScaleSize.Resize(originalForm, originalDataXemLichKham, dataXemLichKham, this);
-                dataXemLichKham.Region = Draw.RoundedRectangle(0, 0, dataXemLichKham.Width, dataXemLichKham.Height, 30, 30);
             }
         }
     }

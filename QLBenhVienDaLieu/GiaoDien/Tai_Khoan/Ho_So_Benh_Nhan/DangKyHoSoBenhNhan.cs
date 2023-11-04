@@ -51,11 +51,19 @@ namespace QLBenhVienDaLieu.GiaoDien.Ho_So_Benh_Nhan
         private Rectangle originalTextErrorSoCCCD;
         private Rectangle originalTextErrorNgaySinh;
         private Rectangle originalTextErrorGioiTinh;
+        private Rectangle originalTextErrorMaBHYT;
+        private Rectangle originalTextErrorNgheNghiep;
+        private Rectangle originalTextErrorEmail;
+        private Rectangle originalTextErrorDiaChi;
         private Rectangle originalImageCheckHoVaTen;
         private Rectangle originalImageCheckSoDienThoai;
         private Rectangle originalImageCheckSoCCCD;
         private Rectangle originalImageCheckNgaySinh;
         private Rectangle originalImageCheckGioiTinh;
+        private Rectangle originalImageCheckMaBHYT;
+        private Rectangle originalImageCheckNgheNghiep;
+        private Rectangle originalImageCheckEmail;
+        private Rectangle originalImageCheckDiaChi;
 
         private float textSizeInitialTitleDangKyHoSoBenhNhan;
         private float textSizeInitialTextHoVaTen;
@@ -82,6 +90,10 @@ namespace QLBenhVienDaLieu.GiaoDien.Ho_So_Benh_Nhan
         private float textSizeInitialTextErrorSoCCCD;
         private float textSizeInitialTextErrorNgaySinh;
         private float textSizeInitialTextErrorGioiTinh;
+        private float textSizeInitialTextErrorMaBHYT;
+        private float textSizeInitialTextErrorNgheNghiep;
+        private float textSizeInitialTextErrorEmail;
+        private float textSizeInitialTextErrorDiaChi;
         private float textSizeInitialTextDotHoVaTen;
         private float textSizeInitialTextDotSoDienThoai;
         private float textSizeInitialTextDotSoCCCD;
@@ -127,6 +139,10 @@ namespace QLBenhVienDaLieu.GiaoDien.Ho_So_Benh_Nhan
             originalTextErrorSoCCCD = new Rectangle(textErrorSoCCCD.Location.X, textErrorSoCCCD.Location.Y, textErrorSoCCCD.Width, textErrorSoCCCD.Height);
             originalTextErrorNgaySinh = new Rectangle(textErrorNgaySinh.Location.X, textErrorNgaySinh.Location.Y, textErrorNgaySinh.Width, textErrorNgaySinh.Height);
             originalTextErrorGioiTinh = new Rectangle(textErrorGioiTinh.Location.X, textErrorGioiTinh.Location.Y, textErrorGioiTinh.Width, textErrorGioiTinh.Height);
+            originalTextErrorMaBHYT = new Rectangle(textErrorMaBHYT.Location.X, textErrorMaBHYT.Location.Y, textErrorMaBHYT.Width, textErrorMaBHYT.Height);
+            originalTextErrorNgheNghiep = new Rectangle(textErrorNgheNghiep.Location.X, textErrorNgheNghiep.Location.Y, textErrorNgheNghiep.Width, textErrorNgheNghiep.Height);
+            originalTextErrorEmail = new Rectangle(textErrorEmail.Location.X, textErrorEmail.Location.Y, textErrorEmail.Width, textErrorEmail.Height);
+            originalTextErrorDiaChi = new Rectangle(textErrorDiaChi.Location.X, textErrorDiaChi.Location.Y, textErrorDiaChi.Width, textErrorDiaChi.Height);
             originalImageCheckHoVaTen = new Rectangle(imageCheckHoVaTen.Location.X, imageCheckHoVaTen.Location.Y, imageCheckHoVaTen.Width, imageCheckHoVaTen.Height);
             originalImageCheckSoDienThoai = new Rectangle(imageCheckSoDienThoai.Location.X, imageCheckSoDienThoai.Location.Y, imageCheckSoDienThoai.Width, imageCheckSoDienThoai.Height);
             originalImageCheckSoCCCD = new Rectangle(imageCheckSoCCCD.Location.X, imageCheckSoCCCD.Location.Y, imageCheckSoCCCD.Width, imageCheckSoCCCD.Height);
@@ -158,6 +174,10 @@ namespace QLBenhVienDaLieu.GiaoDien.Ho_So_Benh_Nhan
             textSizeInitialTextErrorSoCCCD = textErrorSoCCCD.Font.Size;
             textSizeInitialTextErrorNgaySinh = textErrorNgaySinh.Font.Size;
             textSizeInitialTextErrorGioiTinh = textErrorGioiTinh.Font.Size;
+            textSizeInitialTextErrorMaBHYT = textErrorMaBHYT.Font.Size;
+            textSizeInitialTextErrorNgheNghiep = textErrorNgheNghiep.Font.Size;
+            textSizeInitialTextErrorEmail = textErrorEmail.Font.Size;
+            textSizeInitialTextErrorDiaChi = textErrorDiaChi.Font.Size;
             textSizeInitialTextDotHoVaTen = textDotHoVaTen.Font.Size;
             textSizeInitialTextDotSoDienThoai = textDotSoDienThoai.Font.Size;
             textSizeInitialTextDotSoCCCD = textDotSoCCCD.Font.Size;
@@ -199,11 +219,19 @@ namespace QLBenhVienDaLieu.GiaoDien.Ho_So_Benh_Nhan
             Graphic.ScaleSize.Resize(originalForm, originalTextErrorSoCCCD, textErrorSoCCCD, this, textSizeInitialTextErrorSoCCCD);
             Graphic.ScaleSize.Resize(originalForm, originalTextErrorNgaySinh, textErrorNgaySinh, this, textSizeInitialTextErrorNgaySinh);
             Graphic.ScaleSize.Resize(originalForm, originalTextErrorGioiTinh, textErrorGioiTinh, this, textSizeInitialTextErrorGioiTinh);
+            Graphic.ScaleSize.Resize(originalForm, originalTextErrorMaBHYT, textErrorMaBHYT, this, textSizeInitialTextErrorMaBHYT);
+            Graphic.ScaleSize.Resize(originalForm, originalTextErrorNgheNghiep, textErrorNgheNghiep, this, textSizeInitialTextErrorNgheNghiep);
+            Graphic.ScaleSize.Resize(originalForm, originalTextErrorEmail, textErrorEmail, this, textSizeInitialTextErrorEmail);
+            Graphic.ScaleSize.Resize(originalForm, originalTextErrorDiaChi, textErrorDiaChi, this, textSizeInitialTextErrorDiaChi);
             Graphic.ScaleSize.Resize(originalForm, originalImageCheckHoVaTen, imageCheckHoVaTen, this);
             Graphic.ScaleSize.Resize(originalForm, originalImageCheckSoDienThoai, imageCheckSoDienThoai, this);
             Graphic.ScaleSize.Resize(originalForm, originalImageCheckSoCCCD, imageCheckSoCCCD, this);
             Graphic.ScaleSize.Resize(originalForm, originalImageCheckNgaySinh, imageCheckNgaySinh, this);
             Graphic.ScaleSize.Resize(originalForm, originalImageCheckGioiTinh, imageCheckGioiTinh, this);
+            Graphic.ScaleSize.Resize(originalForm, originalImageCheckMaBHYT, imageCheckMaBHYT, this);
+            Graphic.ScaleSize.Resize(originalForm, originalImageCheckNgheNghiep, imageCheckNgheNghiep, this);
+            Graphic.ScaleSize.Resize(originalForm, originalImageCheckEmail, imageCheckEmail, this);
+            Graphic.ScaleSize.Resize(originalForm, originalImageCheckDiaChi, imageCheckDiaChi, this);
 
             buttonLuuHoSo.Region =  Graphic.Draw.RoundedRectangle(0, 0, buttonLuuHoSo.Width, buttonLuuHoSo.Height, 30, 30);
 
@@ -360,6 +388,52 @@ namespace QLBenhVienDaLieu.GiaoDien.Ho_So_Benh_Nhan
                 textErrorGioiTinh.Visible = true;
                 imageCheckGioiTinh.BackgroundImage = Image.FromFile("../../Image/check/error.jpg");
             }
+        }
+
+        private void dataMaBHYT_TextChanged(object sender, EventArgs e)
+        {
+            if (Available.CheckMaBHYT(dataMaBHYT.Text) || dataMaBHYT.Text.Equals(""))
+            {
+                textErrorMaBHYT.Visible = false;
+                imageCheckMaBHYT.BackgroundImage = Image.FromFile("../../Image/check/true.jpg");
+            } else
+            {
+                textErrorMaBHYT.Visible = true;
+                imageCheckMaBHYT.BackgroundImage = Image.FromFile("../../Image/check/error.jpg");
+            }
+        }
+
+        private void dataNgheNghiep_TextChanged(object sender, EventArgs e)
+        {
+            if (Available.CheckNgheNghiep(dataNgheNghiep.Text) || dataNgheNghiep.Text.Equals(""))
+            {
+                textErrorNgheNghiep.Visible = false;
+                imageCheckNgheNghiep.BackgroundImage = Image.FromFile("../../Image/check/true.jpg");
+            }
+            else
+            {
+                textErrorNgheNghiep.Visible = true;
+                imageCheckNgheNghiep.BackgroundImage = Image.FromFile("../../Image/check/error.jpg");
+            }
+        }
+
+        private void dataEmail_TextChanged(object sender, EventArgs e)
+        {
+            if (Available.CheckEmail(dataEmail.Text) || dataEmail.Text.Equals(""))
+            {
+                textErrorEmail.Visible = false;
+                imageCheckEmail.BackgroundImage = Image.FromFile("../../Image/check/true.jpg");
+            }
+            else
+            {
+                textErrorEmail.Visible = true;
+                imageCheckEmail.BackgroundImage = Image.FromFile("../../Image/check/error.jpg");
+            }
+        }
+
+        private void dataDiaChi_TextChanged(object sender, EventArgs e)
+        {
+            imageCheckDiaChi.BackgroundImage = Image.FromFile("../../Image/check/true.jpg");
         }
     }
 }

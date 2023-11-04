@@ -37,10 +37,7 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             this.textErrorThanhToan = new System.Windows.Forms.Label();
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.dataThanhToan = new System.Windows.Forms.ComboBox();
-            this.btnAccount = new System.Windows.Forms.Button();
-            this.imageUser = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.imageCheck)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageUser)).BeginInit();
             this.SuspendLayout();
             // 
             // textThanhToan
@@ -49,7 +46,7 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             this.textThanhToan.Location = new System.Drawing.Point(44, 134);
             this.textThanhToan.Margin = new System.Windows.Forms.Padding(0, 8, 0, 4);
             this.textThanhToan.Name = "textThanhToan";
-            this.textThanhToan.Size = new System.Drawing.Size(224, 33);
+            this.textThanhToan.Size = new System.Drawing.Size(255, 33);
             this.textThanhToan.TabIndex = 5;
             this.textThanhToan.Text = "Hình thức thanh toán";
             // 
@@ -117,42 +114,12 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             this.dataThanhToan.TabIndex = 22;
             this.dataThanhToan.TextChanged += new System.EventHandler(this.dataThanhToan_TextChanged);
             // 
-            // btnAccount
-            // 
-            this.btnAccount.BackColor = System.Drawing.Color.White;
-            this.btnAccount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAccount.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAccount.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(139)))), ((int)(((byte)(68)))));
-            this.btnAccount.FlatAppearance.BorderSize = 0;
-            this.btnAccount.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccount.Location = new System.Drawing.Point(742, 15);
-            this.btnAccount.Margin = new System.Windows.Forms.Padding(0, 8, 9, 0);
-            this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Size = new System.Drawing.Size(175, 56);
-            this.btnAccount.TabIndex = 26;
-            this.btnAccount.Text = "0962214534";
-            this.btnAccount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAccount.UseVisualStyleBackColor = false;
-            // 
-            // imageUser
-            // 
-            this.imageUser.Image = global::QLBenhVienDaLieu.Properties.Resources._9;
-            this.imageUser.Location = new System.Drawing.Point(742, 15);
-            this.imageUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.imageUser.Name = "imageUser";
-            this.imageUser.Size = new System.Drawing.Size(51, 56);
-            this.imageUser.TabIndex = 27;
-            this.imageUser.TabStop = false;
-            // 
             // DatLichKhamThanhToan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(933, 680);
-            this.Controls.Add(this.imageUser);
-            this.Controls.Add(this.btnAccount);
             this.Controls.Add(this.imageCheck);
             this.Controls.Add(this.textErrorThanhToan);
             this.Controls.Add(this.btnThanhToan);
@@ -165,7 +132,6 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
             this.Text = "DatLichKhamThanhToan_cs";
             this.Resize += new System.EventHandler(this.DatLichKhamThanhToan_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.imageCheck)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,7 +145,5 @@ namespace QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham
         private Label textErrorThanhToan;
         private Button btnThanhToan;
         private ComboBox dataThanhToan;
-        private Button btnAccount;
-        private PictureBox imageUser;
     }
 }
