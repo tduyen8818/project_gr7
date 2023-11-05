@@ -1,0 +1,35 @@
+******git init: tạo file .git
+PS D:\tailieuhoctapTDTU\HK1nam3\CNPM\project_code_gr7> git init  
+Reinitialized existing Git repository in D:/tailieuhoctapTDTU/HK1nam3/CNPM/project_code_gr7/.git/
+******git remote add origin https://github.com/tduyen8818/projectcnpm_gr7.git: trỏ đến github của tui
+PS D:\tailieuhoctapTDTU\HK1nam3\CNPM\project_code_gr7> git remote add origin https://github.com/tduyen8818/projectcnpm_gr7.git
+error: remote origin already exists.
+******git config --global user.name NguyenDangTrucDuyen: cho biết mình tải lên git bằng tên nào
+PS D:\tailieuhoctapTDTU\HK1nam3\CNPM\project_code_gr7> git config --global user.name NguyenDangTrucDuyen
+******git branch -M main: trỏ vào nhánh main của git tui
+PS D:\tailieuhoctapTDTU\HK1nam3\CNPM\project_code_gr7> git branch -M main  
+******git pull origin main: kéo tất cả file trong nhánh main 
+PS D:\tailieuhoctapTDTU\HK1nam3\CNPM\project_code_gr7> git pull origin main            
+From https://github.com/tduyen8818/projectcnpm_gr7
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+******git add BenhanDalieu.DOC: thêm file BenhanDaLieu lên github.
+PS D:\tailieuhoctapTDTU\HK1nam3\CNPM\project_code_gr7> git add BenhanDalieu.DOC   
+******git push -uf origin main: thiết lập kết nối với github (hình như dành cho lần đầu kết nối?)
+PS D:\tailieuhoctapTDTU\HK1nam3\CNPM\project_code_gr7> git push -u origin main
+Everything up-to-date
+branch 'main' set up to track 'origin/main'.
+//////git status: hiện danh sách những file, folder chưa tải lên git
+PS D:\tailieuhoctapTDTU\HK1nam3\CNPM\project_code_gr7> git status              
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+///////git commit -m "project_gr7_edit": cho biết hoạt động, thao tác với git mà mình làm.
+PS D:\tailieuhoctapTDTU\HK1nam3\CNPM\project_code_gr7> git commit -m "project_gr7_edit"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+PS D:\tailieuhoctapTDTU\HK1nam3\CNPM\project_code_gr7> 
