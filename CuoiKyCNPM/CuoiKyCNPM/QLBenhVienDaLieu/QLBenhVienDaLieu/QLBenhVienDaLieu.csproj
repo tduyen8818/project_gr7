@@ -324,28 +324,28 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Check\Available.cs" />
-    <Compile Include="Class\AdminManager.cs" />
-    <Compile Include="Class\BenhAn.cs" />
-    <Compile Include="Class\ChuyenKhoa.cs" />
-    <Compile Include="Class\DangKyUser.cs" />
-    <Compile Include="Class\DichVu.cs" />
-    <Compile Include="Class\HoaDon.cs" />
-    <Compile Include="Class\HoSoBenhNhan.cs" />
-    <Compile Include="Class\KhuyenMai.cs" />
-    <Compile Include="Class\LichKham.cs" />
-    <Compile Include="Class\LichLamViec.cs" />
-    <Compile Include="Class\SoKhamBenh.cs" />
-    <Compile Include="Class\TaiKhoanBacSi.cs" />
-    <Compile Include="Class\TaiKhoanBenhNhan.cs" />
-    <Compile Include="Class\TaiKhoanKeToan.cs" />
-    <Compile Include="Class\TaiKhoanLeTan.cs" />
-    <Compile Include="Class\TaiKhoanNhanVien.cs" />
-    <Compile Include="Class\ToaThuoc.cs" />
-    <Compile Include="GiaoDien\Tai_Khoan\Ho_So_Benh_Nhan\DangKyHoSoBenhNhan.cs">
+    <Compile Include="Database\Check\Available.cs" />
+    <Compile Include="Database\Class\AdminManager.cs" />
+    <Compile Include="Database\Class\BenhAn.cs" />
+    <Compile Include="Database\Class\ChuyenKhoa.cs" />
+    <Compile Include="Database\Class\DangKyUser.cs" />
+    <Compile Include="Database\Class\DichVu.cs" />
+    <Compile Include="Database\Class\HoaDon.cs" />
+    <Compile Include="Database\Class\HoSoBenhNhan.cs" />
+    <Compile Include="Database\Class\KhuyenMai.cs" />
+    <Compile Include="Database\Class\LichKham.cs" />
+    <Compile Include="Database\Class\LichLamViec.cs" />
+    <Compile Include="Database\Class\SoKhamBenh.cs" />
+    <Compile Include="Database\Class\TaiKhoanBacSi.cs" />
+    <Compile Include="Database\Class\TaiKhoanBenhNhan.cs" />
+    <Compile Include="Database\Class\TaiKhoanKeToan.cs" />
+    <Compile Include="Database\Class\TaiKhoanLeTan.cs" />
+    <Compile Include="Database\Class\TaiKhoanNhanVien.cs" />
+    <Compile Include="Database\Class\ToaThuoc.cs" />
+    <Compile Include="GiaoDien\BenhNhanTrangUI\TaiKhoanUI\HoSoBenhNhanUI\DangKyHoSoBenhNhan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GiaoDien\Tai_Khoan\Ho_So_Benh_Nhan\DangKyHoSoBenhNhan.Designer.cs">
+    <Compile Include="GiaoDien\BenhNhanTrangUI\TaiKhoanUI\HoSoBenhNhanUI\DangKyHoSoBenhNhan.Designer.cs">
       <DependentUpon>DangKyHoSoBenhNhan.cs</DependentUpon>
     </Compile>
     <Compile Include="BenhNhan_Trang.cs">
@@ -354,52 +354,51 @@
     <Compile Include="BenhNhan_Trang.designer.cs">
       <DependentUpon>BenhNhan_Trang.cs</DependentUpon>
     </Compile>
-    <Compile Include="Database\FunctionName.cs" />
-    <Compile Include="Database\SqlFunctionCaller.cs" />
-    <Compile Include="Database\Table.cs" />
-    <Compile Include="Database\Test.cs" />
-    <Compile Include="GiaoDien\Lich_Kham\DatLichKham\DataHoSoBenhNhan.cs">
+    <Compile Include="Database\Function\FunctionName.cs" />
+    <Compile Include="Database\Function\SqlFunctionCaller.cs" />
+    <Compile Include="Database\Function\Table.cs" />
+    <Compile Include="GiaoDien\BenhNhanTrangUI\LichKhamUI\DatLichKhamUI\DataHoSoBenhNhan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GiaoDien\Lich_Kham\DatLichKham\DataHoSoBenhNhan.Designer.cs">
+    <Compile Include="GiaoDien\BenhNhanTrangUI\LichKhamUI\DatLichKhamUI\DataHoSoBenhNhan.Designer.cs">
       <DependentUpon>DataHoSoBenhNhan.cs</DependentUpon>
     </Compile>
-    <Compile Include="GiaoDien\Lich_Kham\DatLichKham\DatLichKham.cs">
+    <Compile Include="GiaoDien\BenhNhanTrangUI\LichKhamUI\DatLichKhamUI\DatLichKham.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GiaoDien\Lich_Kham\DatLichKham\DatLichKham.Designer.cs">
+    <Compile Include="GiaoDien\BenhNhanTrangUI\LichKhamUI\DatLichKhamUI\DatLichKham.Designer.cs">
       <DependentUpon>DatLichKham.cs</DependentUpon>
     </Compile>
-    <Compile Include="GiaoDien\Lich_Kham\DatLichKham\DatLichKhamThanhToan.cs">
+    <Compile Include="GiaoDien\BenhNhanTrangUI\LichKhamUI\DatLichKhamUI\DatLichKhamThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GiaoDien\Lich_Kham\DatLichKham\DatLichKhamThanhToan.Designer.cs">
+    <Compile Include="GiaoDien\BenhNhanTrangUI\LichKhamUI\DatLichKhamUI\DatLichKhamThanhToan.Designer.cs">
       <DependentUpon>DatLichKhamThanhToan.cs</DependentUpon>
     </Compile>
-    <Compile Include="GiaoDien\Lich_Kham\XemLichKham\Blank.cs">
+    <Compile Include="GiaoDien\BenhNhanTrangUI\LichKhamUI\XemLichKhamUI\Blank.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GiaoDien\Lich_Kham\XemLichKham\Blank.Designer.cs">
+    <Compile Include="GiaoDien\BenhNhanTrangUI\LichKhamUI\XemLichKhamUI\Blank.Designer.cs">
       <DependentUpon>Blank.cs</DependentUpon>
     </Compile>
-    <Compile Include="GiaoDien\Lich_Kham\XemLichKham\DataXemLichKham.cs">
+    <Compile Include="GiaoDien\BenhNhanTrangUI\LichKhamUI\XemLichKhamUI\DataXemLichKham.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GiaoDien\Lich_Kham\XemLichKham\DataXemLichKham.Designer.cs">
+    <Compile Include="GiaoDien\BenhNhanTrangUI\LichKhamUI\XemLichKhamUI\DataXemLichKham.Designer.cs">
       <DependentUpon>DataXemLichKham.cs</DependentUpon>
     </Compile>
-    <Compile Include="GiaoDien\Lich_Kham\XemLichKham\XemLichKham.cs">
+    <Compile Include="GiaoDien\BenhNhanTrangUI\LichKhamUI\XemLichKhamUI\XemLichKham.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GiaoDien\Lich_Kham\XemLichKham\XemLichKham.Designer.cs">
+    <Compile Include="GiaoDien\BenhNhanTrangUI\LichKhamUI\XemLichKhamUI\XemLichKham.Designer.cs">
       <DependentUpon>XemLichKham.cs</DependentUpon>
     </Compile>
     <Compile Include="Graphic\Draw.cs" />
     <Compile Include="Graphic\ScaleSize.cs" />
-    <Compile Include="GiaoDien\Tai_Khoan\Ho_So_Benh_Nhan\HoSoBenhNhanForm.cs">
+    <Compile Include="GiaoDien\BenhNhanTrangUI\TaiKhoanUI\HoSoBenhNhanUI\HoSoBenhNhanForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GiaoDien\Tai_Khoan\Ho_So_Benh_Nhan\HoSoBenhNhanForm.Designer.cs">
+    <Compile Include="GiaoDien\BenhNhanTrangUI\TaiKhoanUI\HoSoBenhNhanUI\HoSoBenhNhanForm.Designer.cs">
       <DependentUpon>HoSoBenhNhanForm.cs</DependentUpon>
     </Compile>
     <Compile Include="KeToan_Trang.cs">
@@ -419,10 +418,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="GiaoDien\Lich_Kham\XemLichKham\XemChiTiet.cs">
+    <Compile Include="GiaoDien\BenhNhanTrangUI\LichKhamUI\XemLichKhamUI\XemChiTiet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GiaoDien\Lich_Kham\XemLichKham\XemChiTiet.Designer.cs">
+    <Compile Include="GiaoDien\BenhNhanTrangUI\LichKhamUI\XemLichKhamUI\XemChiTiet.Designer.cs">
       <DependentUpon>XemChiTiet.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Admin_Trang.resx">
@@ -446,31 +445,31 @@
     <EmbeddedResource Include="BenhNhan_Trang.resx">
       <DependentUpon>BenhNhan_Trang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GiaoDien\Tai_Khoan\Ho_So_Benh_Nhan\DangKyHoSoBenhNhan.resx">
+    <EmbeddedResource Include="GiaoDien\BenhNhanTrangUI\TaiKhoanUI\HoSoBenhNhanUI\DangKyHoSoBenhNhan.resx">
       <DependentUpon>DangKyHoSoBenhNhan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GiaoDien\Lich_Kham\DatLichKham\DataHoSoBenhNhan.resx">
+    <EmbeddedResource Include="GiaoDien\BenhNhanTrangUI\LichKhamUI\DatLichKhamUI\DataHoSoBenhNhan.resx">
       <DependentUpon>DataHoSoBenhNhan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GiaoDien\Lich_Kham\DatLichKham\DatLichKham.resx">
+    <EmbeddedResource Include="GiaoDien\BenhNhanTrangUI\LichKhamUI\DatLichKhamUI\DatLichKham.resx">
       <DependentUpon>DatLichKham.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GiaoDien\Lich_Kham\DatLichKham\DatLichKhamThanhToan.resx">
+    <EmbeddedResource Include="GiaoDien\BenhNhanTrangUI\LichKhamUI\DatLichKhamUI\DatLichKhamThanhToan.resx">
       <DependentUpon>DatLichKhamThanhToan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GiaoDien\Lich_Kham\XemLichKham\Blank.resx">
+    <EmbeddedResource Include="GiaoDien\BenhNhanTrangUI\LichKhamUI\XemLichKhamUI\Blank.resx">
       <DependentUpon>Blank.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GiaoDien\Lich_Kham\XemLichKham\DataXemLichKham.resx">
+    <EmbeddedResource Include="GiaoDien\BenhNhanTrangUI\LichKhamUI\XemLichKhamUI\DataXemLichKham.resx">
       <DependentUpon>DataXemLichKham.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GiaoDien\Lich_Kham\XemLichKham\XemChiTiet.resx">
+    <EmbeddedResource Include="GiaoDien\BenhNhanTrangUI\LichKhamUI\XemLichKhamUI\XemChiTiet.resx">
       <DependentUpon>XemChiTiet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GiaoDien\Lich_Kham\XemLichKham\XemLichKham.resx">
+    <EmbeddedResource Include="GiaoDien\BenhNhanTrangUI\LichKhamUI\XemLichKhamUI\XemLichKham.resx">
       <DependentUpon>XemLichKham.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GiaoDien\Tai_Khoan\Ho_So_Benh_Nhan\HoSoBenhNhanForm.resx">
+    <EmbeddedResource Include="GiaoDien\BenhNhanTrangUI\TaiKhoanUI\HoSoBenhNhanUI\HoSoBenhNhanForm.resx">
       <DependentUpon>HoSoBenhNhanForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KeToan_Trang.resx">
@@ -529,9 +528,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database\CreateDatabase.sql" />
-    <Content Include="Database\DropDatabase.sql" />
-    <Content Include="Database\QueryDatabase.sql" />
+    <Content Include="Database\Test\CreateDatabase.sql" />
+    <Content Include="Database\Test\DropDatabase.sql" />
+    <Content Include="Database\Test\QueryDatabase.sql" />
     <None Include="Image\background\grid.png" />
     <None Include="Image\background\arrow_left.png" />
     <Content Include="Image\background\add.png" />

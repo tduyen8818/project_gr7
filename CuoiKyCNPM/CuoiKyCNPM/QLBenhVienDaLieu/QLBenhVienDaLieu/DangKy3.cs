@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using QLBenhVienDaLieu.Database;
+using QLBenhVienDaLieu.Database.Function;
 
 namespace QLBenhVienDaLieu
 {

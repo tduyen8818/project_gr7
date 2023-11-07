@@ -1,5 +1,5 @@
 ﻿using Guna.UI2.WinForms;
-using QLBenhVienDaLieu.Database;
+using QLBenhVienDaLieu.Database.Function;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

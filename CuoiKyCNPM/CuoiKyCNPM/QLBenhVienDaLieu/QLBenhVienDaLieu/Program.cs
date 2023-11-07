@@ -16,7 +16,7 @@ namespace QLBenhVienDaLieu
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DangNhap());
+            Application.Run(new BenhNhan_Trang("0123456789"));
 
         }
     }

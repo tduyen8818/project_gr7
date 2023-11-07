@@ -1,7 +1,7 @@
-﻿using QLBenhVienDaLieu.Database;
-using QLBenhVienDaLieu.GiaoDien.Ho_So_Benh_Nhan;
-using QLBenhVienDaLieu.GiaoDien.Lich_Kham.DatLichKham;
-using QLBenhVienDaLieu.GiaoDien.Lich_Kham.XemLichKham;
+﻿using QLBenhVienDaLieu.Database.Function;
+using QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.DatLichKhamUI;
+using QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.XemLichKhamUI;
+using QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

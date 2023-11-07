@@ -1,4 +1,4 @@
-﻿using QLBenhVienDaLieu.Database;
+﻿using QLBenhVienDaLieu.Database.Function;
 using System;
 using System.Data.SqlClient;
 using System.Drawing;
