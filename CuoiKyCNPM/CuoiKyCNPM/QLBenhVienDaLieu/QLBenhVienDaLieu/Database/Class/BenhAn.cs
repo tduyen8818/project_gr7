@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QLBenhVienDaLieu.Database.Class
 {
@@ -85,7 +81,7 @@ namespace QLBenhVienDaLieu.Database.Class
             this.tongSoNgayDieuTri = tongSoNgayDieuTri;
             this.noiChuyenDen = noiChuyenDen;
             this.kkBorCapCuu = kkBorCapCuu;
-            this.khiVaoKhoaDieuTri = khiVaoKhoaDieuTri; 
+            this.khiVaoKhoaDieuTri = khiVaoKhoaDieuTri;
             this.ketQuaDieuTri = ketQuaDieuTri;
             this.giaiPhauBenh = giaiPhauBenh;
             this.quaTrinhBenhLy = quaTrinhBenhLy;
@@ -102,158 +98,158 @@ namespace QLBenhVienDaLieu.Database.Class
 
         public string MaBenhAn
         {
-            get {return this.maBenhAn;}
-            set {this.maBenhAn = value;}
+            get { return this.maBenhAn; }
+            set { this.maBenhAn = value; }
         }
 
         public string MaHoSoBenhNhan
         {
-            get {return this.maHoSoBenhNhan;}
-            set {this.maHoSoBenhNhan = value;}
+            get { return this.maHoSoBenhNhan; }
+            set { this.maHoSoBenhNhan = value; }
         }
 
         public string DoiTuong
         {
-            get {return this.doiTuong;}
-            set {this.doiTuong = value;}
+            get { return this.doiTuong; }
+            set { this.doiTuong = value; }
         }
 
         public DateTime GiaTriBHYT
         {
-            get {return this.giaTriBHYT;}
-            set {this.giaTriBHYT = value;}
+            get { return this.giaTriBHYT; }
+            set { this.giaTriBHYT = value; }
         }
 
         public string HoTenThanNhan
         {
-            get {return this.hoTenThanNhan;}
-            set {this.hoTenThanNhan = value;}
+            get { return this.hoTenThanNhan; }
+            set { this.hoTenThanNhan = value; }
         }
 
         public DateTime ThoiGianVaoVien
         {
-            get {return this.thoiGianVaoVien;}
-            set {this.thoiGianVaoVien = value;}
+            get { return this.thoiGianVaoVien; }
+            set { this.thoiGianVaoVien = value; }
         }
 
         public string TrucTiepVao
         {
-            get {return this.trucTiepVao;}
-            set {this.trucTiepVao = value;}
+            get { return this.trucTiepVao; }
+            set { this.trucTiepVao = value; }
         }
 
         public string NoiGioiThieu
         {
-            get {return this.noiGioiThieu;}
-            set {this.noiGioiThieu = value;}
+            get { return this.noiGioiThieu; }
+            set { this.noiGioiThieu = value; }
         }
 
         public string VaoKhoa
         {
-            get {return this.vaoKhoa;}
-            set {this.vaoKhoa = value;}
+            get { return this.vaoKhoa; }
+            set { this.vaoKhoa = value; }
         }
 
         public string ChuyenKhoa
         {
-            get {return this.chuyenKhoa;}
-            set {this.chuyenKhoa = value;}
+            get { return this.chuyenKhoa; }
+            set { this.chuyenKhoa = value; }
         }
 
         public string TongSoNgayDieuTri
         {
-            get {return this.tongSoNgayDieuTri;}
-            set {this.tongSoNgayDieuTri = value;}
+            get { return this.tongSoNgayDieuTri; }
+            set { this.tongSoNgayDieuTri = value; }
         }
 
         public string NoiChuyenDen
         {
-            get {return this.noiChuyenDen;}
-            set {this.noiChuyenDen = value;}
+            get { return this.noiChuyenDen; }
+            set { this.noiChuyenDen = value; }
         }
 
         public string KkBorCapCuu
         {
-            get {return this.kkBorCapCuu;}
-            set {this.kkBorCapCuu = value;}
+            get { return this.kkBorCapCuu; }
+            set { this.kkBorCapCuu = value; }
         }
 
         public string KhiVaoKhoaDieuTri
         {
-            get {return this.khiVaoKhoaDieuTri;}
-            set {this.khiVaoKhoaDieuTri = value;}
+            get { return this.khiVaoKhoaDieuTri; }
+            set { this.khiVaoKhoaDieuTri = value; }
         }
 
         public string KetQuaDieuTri
         {
-            get {return this.ketQuaDieuTri;}
-            set {this.ketQuaDieuTri = value;}
+            get { return this.ketQuaDieuTri; }
+            set { this.ketQuaDieuTri = value; }
         }
 
         public string GiaiPhauBenh
         {
-            get {return this.giaiPhauBenh;}
-            set {this.giaiPhauBenh = value;}
+            get { return this.giaiPhauBenh; }
+            set { this.giaiPhauBenh = value; }
         }
 
         public string QuaTrinhBenhLy
         {
-            get {return this.quaTrinhBenhLy;}
-            set {this.quaTrinhBenhLy = value;}
+            get { return this.quaTrinhBenhLy; }
+            set { this.quaTrinhBenhLy = value; }
         }
 
         public string TienSuBenh
         {
-            get {return this.tienSuBenh;}
-            set {this.tienSuBenh = value;}
+            get { return this.tienSuBenh; }
+            set { this.tienSuBenh = value; }
         }
 
         public string ToanThan
         {
-            get {return this.toanThan;}
-            set {this.toanThan = value;}
+            get { return this.toanThan; }
+            set { this.toanThan = value; }
         }
 
         public string TrieuChungCoNang
         {
-            get {return this.trieuChungCoNang;}
-            set {this.trieuChungCoNang = value;}
+            get { return this.trieuChungCoNang; }
+            set { this.trieuChungCoNang = value; }
         }
 
         public string ThuongTonCanBan
         {
-            get {return this.thuongTonCanBan;}
-            set {this.thuongTonCanBan = value;}
+            get { return this.thuongTonCanBan; }
+            set { this.thuongTonCanBan = value; }
         }
 
         public string CacCoQuan
         {
-            get {return this.cacCoQuan;}
-            set {this.cacCoQuan = value;}
+            get { return this.cacCoQuan; }
+            set { this.cacCoQuan = value; }
         }
 
         public string TKetQuaTrinhBenhLy
         {
-            get {return this.tKetQuaTrinhBenhLy;}
-            set {this.tKetQuaTrinhBenhLy = value;}
+            get { return this.tKetQuaTrinhBenhLy; }
+            set { this.tKetQuaTrinhBenhLy = value; }
         }
 
         public string TomTatKQXN
         {
-            get {return this.tomTatKQXN;}
-            set {this.tomTatKQXN = value;}
+            get { return this.tomTatKQXN; }
+            set { this.tomTatKQXN = value; }
         }
 
         public string PhuongPhapDieuTri
         {
-            get {return this.phuongPhapDieuTri;}
-            set {this.phuongPhapDieuTri = value;}
+            get { return this.phuongPhapDieuTri; }
+            set { this.phuongPhapDieuTri = value; }
         }
 
         public string HoSoPhimAnh
         {
-            get {return this.hoSoPhimAnh;}
-            set {this.hoSoPhimAnh = value;}
+            get { return this.hoSoPhimAnh; }
+            set { this.hoSoPhimAnh = value; }
         }
 
         public override string ToString()

@@ -30,7 +30,7 @@ namespace QLBenhVienDaLieu
             // Bắt đầu đếm ngược khi form được hiển thị
             countdownTimer.Start();
         }
-        
+
         private void CountdownTimer_Tick(object sender, EventArgs e)
         {
             // Giảm thời gian đi 1 giây

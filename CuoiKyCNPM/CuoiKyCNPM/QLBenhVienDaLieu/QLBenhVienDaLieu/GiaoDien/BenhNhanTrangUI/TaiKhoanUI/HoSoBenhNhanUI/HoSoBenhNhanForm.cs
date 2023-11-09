@@ -3,13 +3,8 @@ using QLBenhVienDaLieu.Database.Class;
 using QLBenhVienDaLieu.Database.Function;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
@@ -89,20 +84,20 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
 
         public Label DataTongSoHoSo
         {
-            get {return dataTongSoHoSo; }
-            set { dataTongSoHoSo = value;}
+            get { return dataTongSoHoSo; }
+            set { dataTongSoHoSo = value; }
         }
 
         public Label DataNumberHoSoBenhNhan
         {
-            get {  return dataNumberHoSoBenhNhan;}
-            set { dataNumberHoSoBenhNhan = value;}
+            get { return dataNumberHoSoBenhNhan; }
+            set { dataNumberHoSoBenhNhan = value; }
         }
 
         public TextBox DataMaHoSoBenhNhan
         {
             get { return dataMaHoSoBenhNhan; }
-            set {dataMaHoSoBenhNhan = value; }
+            set { dataMaHoSoBenhNhan = value; }
         }
 
         public TextBox DataHoVaTen
@@ -119,8 +114,8 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
 
         public TextBox DataNgaySinh
         {
-            get {return dataNgaySinh; }
-            set { dataNgaySinh = value;}
+            get { return dataNgaySinh; }
+            set { dataNgaySinh = value; }
         }
 
         public TextBox DataGioiTinh
@@ -131,14 +126,14 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
 
         public TextBox DataCCCD
         {
-            get {return dataCCCD; }
+            get { return dataCCCD; }
             set { dataCCCD = value; }
         }
 
         public TextBox DataMaBHYT
         {
-            get {return dataMaBHYT; }
-            set { dataMaBHYT = value;}
+            get { return dataMaBHYT; }
+            set { dataMaBHYT = value; }
         }
 
         public TextBox DataNgheNghiep
@@ -155,14 +150,14 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
 
         public TextBox DataEmail
         {
-            get {return dataEmail; }
+            get { return dataEmail; }
             set { dataEmail = value; }
         }
 
         public TextBox DataDiaChi
         {
             get { return dataDiaChi; }
-            set { dataDiaChi = value;}
+            set { dataDiaChi = value; }
         }
 
         private void setBackgroundImageForAgeAndSex(int namSinh, string gioiTinh)
@@ -208,7 +203,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
 
         private bool AllDataValid()
         {
-            
+
             if (dataHoVaTen.ForeColor == Color.Black && dataNgaySinh.ForeColor == Color.Black &&
                 dataGioiTinh.ForeColor == Color.Black && dataCCCD.ForeColor == Color.Black &&
                 dataMaBHYT.ForeColor == Color.Black && dataNgheNghiep.ForeColor == Color.Black &&
@@ -239,7 +234,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
         public HoSoBenhNhanForm(SqlFunctionCaller sqlFunctionCaller, BenhNhan_Trang benhNhan_Trang)
         {
             InitializeComponent();
-            
+
             this.sqlFunctionCaller = sqlFunctionCaller;
             this.benhNhan_Trang = benhNhan_Trang;
 
@@ -308,7 +303,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
             textSizeInitialDataEmail = dataEmail.Font.Size;
             textSizeInitialDataDiaChi = dataDiaChi.Font.Size;
 
-            showHoSoBenhNhan.Region = Graphic.Draw.RoundedRectangle(0,0, showHoSoBenhNhan.Width, showHoSoBenhNhan.Height, 20, 20);
+            showHoSoBenhNhan.Region = Graphic.Draw.RoundedRectangle(0, 0, showHoSoBenhNhan.Width, showHoSoBenhNhan.Height, 20, 20);
             buttonAdd.Region = Graphic.Draw.RoundedRectangle(0, 0, buttonAdd.Width, buttonAdd.Height, 20, 20);
 
             HoSoBenhNhan hoSoBenhNhan = listHoSoBenhNhan[0];
@@ -402,7 +397,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            DialogResult result =  MessageBox.Show("Nếu bạn xóa hồ sơ nó sẽ không thể khôi phục",
+            DialogResult result = MessageBox.Show("Nếu bạn xóa hồ sơ nó sẽ không thể khôi phục",
                             "Bạn có chắc muốn xóa hồ sơ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (result == DialogResult.Yes)
@@ -505,8 +500,9 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
         {
             if (Available.CheckHoVaTen(dataHoVaTen.Text))
             {
-                InputValid(dataHoVaTen);                
-            } else
+                InputValid(dataHoVaTen);
+            }
+            else
             {
                 InputError(dataHoVaTen);
             }
@@ -530,12 +526,13 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
 
                 AllDataValid();
 
-            } catch (FormatException)
+            }
+            catch (FormatException)
             {
                 InputError(dataNgaySinh);
                 AllDataValid();
             }
-            
+
         }
 
         private void dataGioiTinh_TextChanged(object sender, EventArgs e)
@@ -543,7 +540,8 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
             if (Available.CheckGioiTinh(dataGioiTinh.Text))
             {
                 InputValid(dataGioiTinh);
-            } else
+            }
+            else
             {
                 InputError(dataGioiTinh);
             }
@@ -557,7 +555,8 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
             {
                 InputValid(dataCCCD);
 
-            } else
+            }
+            else
             {
                 InputError(dataCCCD);
             }
@@ -568,11 +567,12 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
         private void dataMaBHYT_TextChanged(object sender, EventArgs e)
         {
 
-            if(Available.CheckMaBHYT(dataMaBHYT.Text) || dataMaBHYT.Text.Equals(""))
+            if (Available.CheckMaBHYT(dataMaBHYT.Text) || dataMaBHYT.Text.Equals(""))
             {
                 InputValid(dataMaBHYT);
 
-            } else
+            }
+            else
             {
                 InputError(dataMaBHYT);
 
@@ -583,10 +583,11 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
 
         private void dataNgheNghiep_TextChanged(object sender, EventArgs e)
         {
-            if(Available.CheckNgheNghiep(dataNgheNghiep.Text) || dataNgheNghiep.Text.Equals(""))
+            if (Available.CheckNgheNghiep(dataNgheNghiep.Text) || dataNgheNghiep.Text.Equals(""))
             {
                 InputValid(dataNgheNghiep);
-            } else
+            }
+            else
             {
                 InputError(dataNgheNghiep);
             }
@@ -596,10 +597,11 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
 
         private void dataSoDienThoai_TextChanged(object sender, EventArgs e)
         {
-            if(Available.CheckSoDienThoai(dataSoDienThoai.Text))
+            if (Available.CheckSoDienThoai(dataSoDienThoai.Text))
             {
                 InputValid(dataSoDienThoai);
-            } else
+            }
+            else
             {
                 InputError(dataSoDienThoai);
             }
@@ -612,7 +614,8 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
             if (Available.CheckEmail(dataEmail.Text) || dataEmail.Text.Equals(""))
             {
                 InputValid(dataEmail);
-            } else
+            }
+            else
             {
                 InputError(dataEmail);
 
@@ -623,10 +626,11 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
 
         private void HoSoBenhNhanForm_MouseWheel(object sender, MouseEventArgs e)
         {
-            if(e.Delta > 0)
+            if (e.Delta > 0)
             {
                 buttonArrowRight_Click(null, null);
-            } else
+            }
+            else
             {
                 buttonArrowLeft_Click(null, null);
             }

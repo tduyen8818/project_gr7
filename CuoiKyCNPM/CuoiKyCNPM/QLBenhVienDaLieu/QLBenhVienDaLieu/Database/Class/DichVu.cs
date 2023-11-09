@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace QLBenhVienDaLieu.Database.Class
+﻿namespace QLBenhVienDaLieu.Database.Class
 {
     public class DichVu
     {
@@ -31,26 +25,26 @@ namespace QLBenhVienDaLieu.Database.Class
 
         public string MaDichVu
         {
-            get {return this.maDichVu;}
-            set {this.maDichVu = value;}
+            get { return this.maDichVu; }
+            set { this.maDichVu = value; }
         }
 
         public string TenDichVu
         {
-            get {return this.tenDichVu;}
-            set {this.tenDichVu = value;}
+            get { return this.tenDichVu; }
+            set { this.tenDichVu = value; }
         }
 
         public string NoiDungDichVu
         {
-            get {return this.noiDungDichVu;}
-            set {this.noiDungDichVu = value;}
+            get { return this.noiDungDichVu; }
+            set { this.noiDungDichVu = value; }
         }
 
         public int GiaDichVu
         {
-            get {return this.giaDichVu;}
-            set {this.giaDichVu = value;}
+            get { return this.giaDichVu; }
+            set { this.giaDichVu = value; }
         }
 
         public override string ToString()

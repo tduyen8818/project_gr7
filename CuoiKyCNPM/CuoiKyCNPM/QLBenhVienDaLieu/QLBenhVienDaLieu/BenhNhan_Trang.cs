@@ -3,13 +3,8 @@ using QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.DatLichKhamUI;
 using QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.XemLichKhamUI;
 using QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLBenhVienDaLieu
@@ -63,17 +58,6 @@ namespace QLBenhVienDaLieu
         Rectangle originalPanel18;
         Rectangle originalPanel19;
 
-        float textSizeInitialButtonLogo;
-        float textSizeInitialButtonTrangChu;
-        float textSizeInitialButtonDichVu;
-        float textSizeInitialButtonLichKham;
-        float textSizeInitialButtonXemLich;
-        float textSizeInitialButtonDatLich;
-        float textSizeInitialButtonThongBao;
-        float textSizeInitialButtonHoTro;
-        float textSizeInitialButtonTaiKhoan;
-        float textSizeInitialButtonHoSoBenhNhan;
-        float textSizeInitialButtonTaiKhoanSub;
         float textSizeInitialButtonTextPhone;
         float textSizeInitialButtonDatLichKhamNgay;
         float textSizeInitialButtonPhoneUser;
@@ -85,7 +69,7 @@ namespace QLBenhVienDaLieu
         float textSizeInitialLabel5;
         float textSizeInitialLabel6;
 
-        public Panel MainPanelRight { get {return mainPanelRight; } set {mainPanelRight = value; } }
+        public Panel MainPanelRight { get { return mainPanelRight; } set { mainPanelRight = value; } }
 
         public string SoDienThoai
         {
@@ -101,7 +85,7 @@ namespace QLBenhVienDaLieu
             this.soDienThoai = soDienThoai;
 
             InitializeComponent();
-            
+
 
             originalForm = new Rectangle(this.Location.X, this.Location.Y, this.Width, this.Height);
             originalButtonLogo = new Rectangle(buttonLogo.Location.X, buttonLogo.Location.Y, buttonLogo.Width, buttonLogo.Height);
@@ -144,17 +128,6 @@ namespace QLBenhVienDaLieu
             originalPanel18 = new Rectangle(panel18.Location.X, panel18.Location.Y, panel18.Width, panel18.Height);
             originalPanel19 = new Rectangle(panel19.Location.X, panel19.Location.Y, panel19.Width, panel19.Height);
 
-            textSizeInitialButtonLogo = buttonLogo.Font.Size;
-            textSizeInitialButtonTrangChu = buttonTrangChu.Font.Size;
-            textSizeInitialButtonDichVu = buttonDichVu.Font.Size;
-            textSizeInitialButtonLichKham = buttonLichKham.Font.Size;
-            textSizeInitialButtonXemLich = buttonXemLich.Font.Size;
-            textSizeInitialButtonDatLich = buttonDatLich.Font.Size;
-            textSizeInitialButtonThongBao = buttonThongBao.Font.Size;
-            textSizeInitialButtonHoTro = buttonHoTro.Font.Size;
-            textSizeInitialButtonTaiKhoan = buttonTaiKhoan.Font.Size;
-            textSizeInitialButtonHoSoBenhNhan = buttonHoSoBenhNhan.Font.Size;
-            textSizeInitialButtonTaiKhoanSub = buttonTaiKhoanSub.Font.Size;
             textSizeInitialButtonTextPhone = buttonTextPhone.Font.Size;
             textSizeInitialButtonDatLichKhamNgay = buttonDatLichKhamNgay.Font.Size;
             textSizeInitialButtonPhoneUser = buttonPhoneUser.Font.Size;
@@ -168,12 +141,12 @@ namespace QLBenhVienDaLieu
 
             mainPanelLeft.Region = Graphic.Draw.RoundedRectangle(0, 0, mainPanelLeft.Width, mainPanelLeft.Height, 20, 20);
             mainPanelRight.Region = Graphic.Draw.RoundedRectangle(0, 0, mainPanelRight.Width, mainPanelRight.Height, 20, 20);
-            
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
+
         }
 
         private void buttonTrangChu_Click(object sender, EventArgs e)
@@ -191,7 +164,8 @@ namespace QLBenhVienDaLieu
             if (panelDropDown1.Height > (buttonXemLich.Height + buttonDatLich.Height))
             {
                 panelDropDown1.Height = buttonLichKham.Height;
-            } else
+            }
+            else
             {
                 panelDropDown1.Height = buttonLichKham.Height + buttonXemLich.Height + buttonDatLich.Height;
             }
@@ -226,7 +200,8 @@ namespace QLBenhVienDaLieu
 
                 dangKyHoSoBenhNhan.Show();
 
-            } else
+            }
+            else
             {
                 mainPanelRight.Controls.Clear();
                 DatLichKham datLichKham = new DatLichKham(sqlFunctionCaller, this, soDienThoai);
@@ -278,7 +253,8 @@ namespace QLBenhVienDaLieu
                 mainPanelRight.Tag = dangKyHoSoBenhNhan;
 
                 dangKyHoSoBenhNhan.Show();
-            } else
+            }
+            else
             {
                 mainPanelRight.Controls.Clear();
                 HoSoBenhNhanForm hoSoBenhNhan = new HoSoBenhNhanForm(sqlFunctionCaller, this);
@@ -315,17 +291,17 @@ namespace QLBenhVienDaLieu
 
         private void BenhNhan_Trang_Resize(object sender, EventArgs e)
         {
-            Graphic.ScaleSize.Resize(originalForm, originalButtonLogo, buttonLogo, this, textSizeInitialButtonLogo);
-            Graphic.ScaleSize.Resize(originalForm, originalButtonTrangChu, buttonTrangChu, this, textSizeInitialButtonTrangChu);
-            Graphic.ScaleSize.Resize(originalForm, originalButtonDichVu, buttonDichVu, this, textSizeInitialButtonDichVu);
-            Graphic.ScaleSize.Resize(originalForm, originalButtonLichKham, buttonLichKham, this, textSizeInitialButtonLichKham);
-            Graphic.ScaleSize.Resize(originalForm, originalButtonXemLich, buttonXemLich, this, textSizeInitialButtonXemLich);
-            Graphic.ScaleSize.Resize(originalForm, originalButtonDatLich, buttonDatLich, this, textSizeInitialButtonDatLich);
-            Graphic.ScaleSize.Resize(originalForm, originalButtonThongBao, buttonThongBao, this, textSizeInitialButtonThongBao);
-            Graphic.ScaleSize.Resize(originalForm, originalButtonHoTro, buttonHoTro, this, textSizeInitialButtonHoTro);
-            Graphic.ScaleSize.Resize(originalForm, originalButtonTaiKhoan, buttonTaiKhoan, this, textSizeInitialButtonTaiKhoan);
-            Graphic.ScaleSize.Resize(originalForm, originalButtonHoSoBenhNhan, buttonHoSoBenhNhan, this, textSizeInitialButtonHoSoBenhNhan);
-            Graphic.ScaleSize.Resize(originalForm, originalButtonTaiKhoanSub, buttonTaiKhoanSub, this, textSizeInitialButtonTaiKhoanSub);
+            Graphic.ScaleSize.Resize(originalForm, originalButtonLogo, buttonLogo, this);
+            Graphic.ScaleSize.Resize(originalForm, originalButtonTrangChu, buttonTrangChu, this);
+            Graphic.ScaleSize.Resize(originalForm, originalButtonDichVu, buttonDichVu, this);
+            Graphic.ScaleSize.Resize(originalForm, originalButtonLichKham, buttonLichKham, this);
+            Graphic.ScaleSize.Resize(originalForm, originalButtonXemLich, buttonXemLich, this);
+            Graphic.ScaleSize.Resize(originalForm, originalButtonDatLich, buttonDatLich, this);
+            Graphic.ScaleSize.Resize(originalForm, originalButtonThongBao, buttonThongBao, this);
+            Graphic.ScaleSize.Resize(originalForm, originalButtonHoTro, buttonHoTro, this);
+            Graphic.ScaleSize.Resize(originalForm, originalButtonTaiKhoan, buttonTaiKhoan, this);
+            Graphic.ScaleSize.Resize(originalForm, originalButtonHoSoBenhNhan, buttonHoSoBenhNhan, this);
+            Graphic.ScaleSize.Resize(originalForm, originalButtonTaiKhoanSub, buttonTaiKhoanSub, this);
             Graphic.ScaleSize.Resize(originalForm, originalButtonTextPhone, buttonTextPhone, this, textSizeInitialButtonTextPhone);
             Graphic.ScaleSize.Resize(originalForm, originalButtonDatLichKhamNgay, buttonDatLichKhamNgay, this, textSizeInitialButtonDatLichKhamNgay);
             Graphic.ScaleSize.Resize(originalForm, originalButtonPhoneUser, buttonPhoneUser, this, textSizeInitialButtonPhoneUser);
@@ -358,7 +334,7 @@ namespace QLBenhVienDaLieu
             mainPanelLeft.Region = Graphic.Draw.RoundedRectangle(0, 0, mainPanelLeft.Width, mainPanelLeft.Height, 20, 20);
             mainPanelRight.Region = Graphic.Draw.RoundedRectangle(0, 0, mainPanelRight.Width, mainPanelRight.Height, 20, 20);
 
-           
+
         }
     }
 }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace QLBenhVienDaLieu.Database.Class
+﻿namespace QLBenhVienDaLieu.Database.Class
 {
     public class DangKyUser
     {
@@ -25,19 +19,19 @@ namespace QLBenhVienDaLieu.Database.Class
 
         public string SoDienThoai
         {
-            get {return this.soDienThoai;}
-            set {this.soDienThoai = value;}
+            get { return this.soDienThoai; }
+            set { this.soDienThoai = value; }
         }
 
         public string MatKhau
         {
-            get {return this.matKhau;}
-            set {this.matKhau = value;}
+            get { return this.matKhau; }
+            set { this.matKhau = value; }
         }
 
         public override string ToString()
         {
-            return  "Đăng ký user { số điện thoại: " + soDienThoai +
+            return "Đăng ký user { số điện thoại: " + soDienThoai +
                     ", mật khẩu: " + matKhau + " }";
         }
 

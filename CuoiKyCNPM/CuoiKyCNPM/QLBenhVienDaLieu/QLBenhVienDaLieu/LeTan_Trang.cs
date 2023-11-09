@@ -12,9 +12,32 @@ namespace QLBenhVienDaLieu
 {
     public partial class LeTan_Trang : Form
     {
-        public LeTan_Trang()
+        private string sDT;
+        public LeTan_Trang(string sDT)
         {
             InitializeComponent();
+            this.sDT = sDT;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            TaiKhoan_LT TaiKhoan = new TaiKhoan_LT(sDT);
+            this.Hide();
+            TaiKhoan.ShowDialog();
+            this.Close();
+        }
+
+        private void btn_TrangChu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_LichLamViec_Click(object sender, EventArgs e)
+        {
+            LichLamViec_LT LichLamViec = new LichLamViec_LT(sDT);
+            this.Hide();
+            LichLamViec.ShowDialog();
+            this.Close();
         }
     }
 }

@@ -1,14 +1,7 @@
-﻿using Guna.UI2.WinForms;
-using QLBenhVienDaLieu.Database.Function;
+﻿using QLBenhVienDaLieu.Database.Function;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLBenhVienDaLieu
@@ -41,21 +34,21 @@ namespace QLBenhVienDaLieu
 
         private void btn_Them_Click(object sender, EventArgs e)
         {
-            string hoVaTen = txt_HoVaTen.Text; 
+            string hoVaTen = txt_HoVaTen.Text;
             string matKhau = txt_MatKhau.Text;
-            DateTime ngaySinh = dateTimePicker_NgaySinh.Value; 
-            string gioiTinh = comboBox_GioiTinh.SelectedItem.ToString(); 
-            string cccd = txt_CCCD.Text; 
-            string soDienThoai = txt_SoDienThoai.Text; 
-            string email = txt_Email.Text; 
-            string diaChi = txt_DiaChi.Text; 
-            string chuyenKhoa = txt_ChuyenKhoa.Text; 
-            string viTri = txt_ViTri.Text; 
+            DateTime ngaySinh = dateTimePicker_NgaySinh.Value;
+            string gioiTinh = comboBox_GioiTinh.SelectedItem.ToString();
+            string cccd = txt_CCCD.Text;
+            string soDienThoai = txt_SoDienThoai.Text;
+            string email = txt_Email.Text;
+            string diaChi = txt_DiaChi.Text;
+            string chuyenKhoa = txt_ChuyenKhoa.Text;
+            string viTri = txt_ViTri.Text;
             string loaiTaiKhoan = comboBox_LoaiTaiKhoan.SelectedItem.ToString();
 
             // Gọi hàm để chèn dữ liệu
             functioner.InsertTaiKhoanThanhVien(hoVaTen, matKhau, ngaySinh, gioiTinh, cccd, soDienThoai, email, diaChi, chuyenKhoa, viTri, loaiTaiKhoan);
-            
+
             functioner.LoadDataFromDatabase(guna2DataGridView1);
 
             // Xóa các trường nhập liệu sau khi chèn dữ liệu
@@ -139,17 +132,17 @@ namespace QLBenhVienDaLieu
         }
 
         private void btn_Reset_Click(object sender, EventArgs e)
-            {
-                txt_HoVaTen.ResetText();
-                txt_MatKhau.ResetText();
-                txt_CCCD.ResetText();
-                txt_Email.ResetText();
-                txt_DiaChi.ResetText();
-                txt_ChuyenKhoa.ResetText();
-                txt_ViTri.ResetText();
-                txt_SoDienThoai.ResetText();
+        {
+            txt_HoVaTen.ResetText();
+            txt_MatKhau.ResetText();
+            txt_CCCD.ResetText();
+            txt_Email.ResetText();
+            txt_DiaChi.ResetText();
+            txt_ChuyenKhoa.ResetText();
+            txt_ViTri.ResetText();
+            txt_SoDienThoai.ResetText();
 
-                functioner.LoadDataFromDatabase(guna2DataGridView1);
+            functioner.LoadDataFromDatabase(guna2DataGridView1);
         }
 
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -176,7 +169,7 @@ namespace QLBenhVienDaLieu
         private void Admin_Trang_Load(object sender, EventArgs e)
         {
 
-           functioner.LoadDataFromDatabase(guna2DataGridView1);
+            functioner.LoadDataFromDatabase(guna2DataGridView1);
 
         }
 

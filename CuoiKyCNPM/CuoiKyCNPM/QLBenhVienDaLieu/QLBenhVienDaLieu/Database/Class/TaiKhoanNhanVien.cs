@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QLBenhVienDaLieu.Database.Class
 {
@@ -49,62 +45,62 @@ namespace QLBenhVienDaLieu.Database.Class
 
         public string HoVaTen
         {
-            get {return this.hoVaTen;}
-            set {this.hoVaTen = value;}
+            get { return this.hoVaTen; }
+            set { this.hoVaTen = value; }
         }
 
         public string MaThanhVien
         {
-            get {return this.maThanhVien;}
-            set {this.maThanhVien = value;}
+            get { return this.maThanhVien; }
+            set { this.maThanhVien = value; }
         }
 
         public string MatKhau
         {
-            get {return this.matKhau;}
-            set {this.matKhau = value;}
+            get { return this.matKhau; }
+            set { this.matKhau = value; }
         }
 
         public DateTime NgaySinh
         {
-            get {return this.ngaySinh;}
-            set {this.ngaySinh = value;}
+            get { return this.ngaySinh; }
+            set { this.ngaySinh = value; }
         }
 
         public string GioiTinh
         {
-            get {return this.gioiTinh;}
-            set {this.gioiTinh = value;}
+            get { return this.gioiTinh; }
+            set { this.gioiTinh = value; }
         }
 
         public string CCCD
         {
-            get {return this.cCCD;}
-            set {this.cCCD = value;}
+            get { return this.cCCD; }
+            set { this.cCCD = value; }
         }
 
         public string SoDienThoai
         {
-            get {return this.soDienThoai;}
-            set {this.soDienThoai = value;}
+            get { return this.soDienThoai; }
+            set { this.soDienThoai = value; }
         }
 
         public string Email
         {
-            get {return this.email;}
-            set {this.email = value;}
+            get { return this.email; }
+            set { this.email = value; }
         }
 
         public string DiaChi
         {
-            get {return this.diaChi;}
-            set {this.diaChi = value;}
+            get { return this.diaChi; }
+            set { this.diaChi = value; }
         }
 
         public string LoaiTaiKhoan
         {
-            get {return this.loaiTaiKhoan;}
-            set {this.loaiTaiKhoan = value;}
+            get { return this.loaiTaiKhoan; }
+            set { this.loaiTaiKhoan = value; }
         }
 
         public override string ToString()

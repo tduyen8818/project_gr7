@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace QLBenhVienDaLieu.Database.Check
 {
@@ -18,7 +13,7 @@ namespace QLBenhVienDaLieu.Database.Check
             {
                 return true;
             }
-            
+
             return false;
         }
 
@@ -28,7 +23,7 @@ namespace QLBenhVienDaLieu.Database.Check
             {
                 return true;
             }
-           
+
             return false;
         }
 
@@ -38,7 +33,7 @@ namespace QLBenhVienDaLieu.Database.Check
             {
                 return true;
             }
-             
+
             return false;
         }
 
@@ -47,8 +42,8 @@ namespace QLBenhVienDaLieu.Database.Check
             if (gioiTinh.ToLower().Equals("nam") || gioiTinh.ToLower().Equals("nữ") || gioiTinh.ToLower().Equals("male") || gioiTinh.ToLower().Equals("female"))
             {
                 return true;
-            } 
-                
+            }
+
             return false;
         }
 
@@ -67,7 +62,7 @@ namespace QLBenhVienDaLieu.Database.Check
             if (maBHYT.Length == 15 && Regex.Match(maBHYT, @"[a-zA-Z]{2}\d{13}").Success)
             {
                 return true;
-            } 
+            }
             return false;
         }
 

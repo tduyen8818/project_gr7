@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QLBenhVienDaLieu.Database.Class
 {
@@ -25,7 +21,7 @@ namespace QLBenhVienDaLieu.Database.Class
             this.thoiGianKetThuc = new DateTime();
         }
 
-        public KhuyenMai(string maKhuyenMai, string tenChuongTrinhKM, string giaKhuyenMai , string noiDungKM, DateTime thoiGianBatDau, DateTime thoiGianKetThuc)
+        public KhuyenMai(string maKhuyenMai, string tenChuongTrinhKM, string giaKhuyenMai, string noiDungKM, DateTime thoiGianBatDau, DateTime thoiGianKetThuc)
         {
             this.maKhuyenMai = maKhuyenMai;
             this.tenChuongTrinhKM = tenChuongTrinhKM;
@@ -37,38 +33,38 @@ namespace QLBenhVienDaLieu.Database.Class
 
         public string MaKhuyenMai
         {
-            get {return this.maKhuyenMai;}
-            set {this.maKhuyenMai = value;}
+            get { return this.maKhuyenMai; }
+            set { this.maKhuyenMai = value; }
         }
 
         public string TenChuongTrinhKM
         {
-            get {return this.tenChuongTrinhKM;}
-            set {this.tenChuongTrinhKM = value;}
+            get { return this.tenChuongTrinhKM; }
+            set { this.tenChuongTrinhKM = value; }
         }
 
         public string GiaKhuyenMai
         {
-            get {return this.giaKhuyenMai;}
-            set {this.giaKhuyenMai = value;}
+            get { return this.giaKhuyenMai; }
+            set { this.giaKhuyenMai = value; }
         }
 
         public string NoiDungKM
         {
-            get {return this.noiDungKM;}
-            set {this.noiDungKM = value;}
+            get { return this.noiDungKM; }
+            set { this.noiDungKM = value; }
         }
 
         public DateTime ThoiGianBatDau
         {
-            get {return this.thoiGianBatDau;}
-            set {this.thoiGianBatDau = value;}
+            get { return this.thoiGianBatDau; }
+            set { this.thoiGianBatDau = value; }
         }
 
         public DateTime ThoiGianKetThuc
         {
-            get {return this.thoiGianKetThuc;}
-            set {this.thoiGianKetThuc = value;}
+            get { return this.thoiGianKetThuc; }
+            set { this.thoiGianKetThuc = value; }
         }
 
         public override string ToString()

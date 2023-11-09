@@ -2,13 +2,11 @@
 using Guna.UI2.WinForms;
 using QLBenhVienDaLieu.Database.Class;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Windows.Forms;
-using System.Xml;
 
 namespace QLBenhVienDaLieu.Database.Function
 {
@@ -23,14 +21,14 @@ namespace QLBenhVienDaLieu.Database.Function
             const string databaseName = "PHONGKHAMDALIEU";
             const string userName = "quang";
             const string password = "123";
-            
+
             this.connectionString = $"Data Source={serverName};" +
                 $"Initial Catalog={databaseName};" +
                 $"User id={userName};" +
                 $"Password={password};";
 
             this.connection = new SqlConnection(connectionString);
-         
+
         }
 
         public SqlFunctionCaller(string connectionString)
@@ -77,7 +75,7 @@ namespace QLBenhVienDaLieu.Database.Function
 
             DataTable resultTable = new DataTable();
             adapter.Fill(resultTable);
-            
+
             return resultTable;
         }
 
@@ -90,7 +88,7 @@ namespace QLBenhVienDaLieu.Database.Function
 
             DataTable resultTable = new DataTable();
             adapter.Fill(resultTable);
-            
+
             return resultTable;
         }
 
@@ -103,7 +101,7 @@ namespace QLBenhVienDaLieu.Database.Function
 
             DataTable resultTable = new DataTable();
             adapter.Fill(resultTable);
-            
+
             return resultTable;
         }
 
@@ -116,7 +114,7 @@ namespace QLBenhVienDaLieu.Database.Function
 
             DataTable resultTable = new DataTable();
             adapter.Fill(resultTable);
-            
+
             return resultTable;
         }
 
@@ -124,7 +122,7 @@ namespace QLBenhVienDaLieu.Database.Function
         {
             List<DangKyUser> listDangKyUser = new List<DangKyUser>();
 
-            foreach(DataRow row in resultTable.Rows)
+            foreach (DataRow row in resultTable.Rows)
             {
                 DangKyUser dangKyUser = new DangKyUser();
 
@@ -625,7 +623,8 @@ namespace QLBenhVienDaLieu.Database.Function
 
                     listTaiKhoanNhanVien.Add(taiKhoanBacSi);
 
-                } else if (row["LoaiTaiKhoan"].ToString().Equals("KT"))
+                }
+                else if (row["LoaiTaiKhoan"].ToString().Equals("KT"))
                 {
                     TaiKhoanKeToan taiKhoanKeToan = new TaiKhoanKeToan();
                     taiKhoanKeToan.HoVaTen = row["HoVaTen"].ToString();
@@ -643,7 +642,8 @@ namespace QLBenhVienDaLieu.Database.Function
 
                     listTaiKhoanNhanVien.Add(taiKhoanKeToan);
 
-                } else
+                }
+                else
                 {
                     TaiKhoanLeTan taiKhoanLeTan = new TaiKhoanLeTan();
 
@@ -665,7 +665,7 @@ namespace QLBenhVienDaLieu.Database.Function
 
             return listTaiKhoanNhanVien;
         }
-        
+
         private TaiKhoanNhanVien GetTaiKhoanNhanVien(DataTable resultTable)
         {
             foreach (DataRow row in resultTable.Rows)
@@ -785,7 +785,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public DangKyUser GetDangKyUserBySoDienThoai(string soDienThoai)
         {
             string query = $"SELECT * FROM DangKyUser WHERE SoDienThoai = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, soDienThoai);
 
             return GetDangKyUser(resultTable);
@@ -799,7 +799,7 @@ namespace QLBenhVienDaLieu.Database.Function
 
             return GetListDangKyUser(resultTable);
         }
-        
+
 
         // Hồ sơ bệnh nhân
 
@@ -878,7 +878,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<HoSoBenhNhan> GetHoSoBenhNhanByNgheNghiep(string ngheNghiep)
         {
             string query = $"SELECT * FROM HoSoBenhNhan WHERE NgheNghiep = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, ngheNghiep);
 
             return GetListHoSoBenhNhan(resultTable);
@@ -887,7 +887,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<HoSoBenhNhan> GetHoSoBenhNhanByEmail(string email)
         {
             string query = $"SELECT * FROM HoSoBenhNhan WHERE Email = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, email);
 
             return GetListHoSoBenhNhan(resultTable);
@@ -915,7 +915,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public SoKhamBenh GetSoKhamBenhByMaHoSoBenhNhan(string maHoSoBenhNhan)
         {
             string query = $"SELECT * FROM SoKhamBenh WHERE MaHoSoBenhNhan = @value";
-           
+
             DataTable resultTable = GetResultTable(query, this.connection, maHoSoBenhNhan);
 
             return GetSoKhamBenh(resultTable);
@@ -924,7 +924,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public SoKhamBenh GetSoKhamBenhByMaLichKham(string maLichKham)
         {
             string query = $"SELECT * FROM SoKhamBenh WHERE MaLichKham = @value";
-           
+
             DataTable resultTable = GetResultTable(query, this.connection, maLichKham);
 
             return GetSoKhamBenh(resultTable);
@@ -933,7 +933,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<SoKhamBenh> GetSoKhamBenhByHoVaTen(string hoVaTen)
         {
             string query = $"SELECT * FROM SoKhamBenh WHERE HoVaTen = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, hoVaTen);
 
             return GetListSoKhamBenh(resultTable);
@@ -942,7 +942,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<SoKhamBenh> GetSoKhamBenhByTuoi(string tuoi)
         {
             string query = $"SELECT * FROM SoKhamBenh WHERE Tuoi = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, tuoi);
 
             return GetListSoKhamBenh(resultTable);
@@ -951,7 +951,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<SoKhamBenh> GetSoKhamBenhBySoTheBHYT(string soTheBHYT)
         {
             string query = $"SELECT * FROM SoKhamBenh WHERE SoTheBHYT = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, soTheBHYT);
 
             return GetListSoKhamBenh(resultTable);
@@ -960,7 +960,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<SoKhamBenh> GetSoKhamBenhByDiaChi(string diaChi)
         {
             string query = $"SELECT * FROM SoKhamBenh WHERE DiaChi = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, diaChi);
 
             return GetListSoKhamBenh(resultTable);
@@ -969,7 +969,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<SoKhamBenh> GetSoKhamBenhByNgheNghiep(string ngheNghiep)
         {
             string query = $"SELECT * FROM SoKhamBenh WHERE NgheNghiep = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, ngheNghiep);
 
             return GetListSoKhamBenh(resultTable);
@@ -978,7 +978,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<SoKhamBenh> GetSoKhamBenhByDanToc(string danToc)
         {
             string query = $"SELECT * FROM SoKhamBenh WHERE DanToc = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, danToc);
 
             return GetListSoKhamBenh(resultTable);
@@ -987,7 +987,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<SoKhamBenh> GetSoKhamBenhByTrieuChung(string trieuChung)
         {
             string query = $"SELECT * FROM SoKhamBenh WHERE TrieuChung = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, trieuChung);
 
             return GetListSoKhamBenh(resultTable);
@@ -996,7 +996,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<SoKhamBenh> GetSoKhamBenhByChanDoan(string chanDoan)
         {
             string query = $"SELECT * FROM SoKhamBenh WHERE ChanDoan = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, chanDoan);
 
             return GetListSoKhamBenh(resultTable);
@@ -1005,7 +1005,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<SoKhamBenh> GetSoKhamBenhByPhuongPhapDieuTri(string phuongPhapDieuTri)
         {
             string query = $"SELECT * FROM SoKhamBenh WHERE PhuongPhapDieuTri = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, phuongPhapDieuTri);
 
             return GetListSoKhamBenh(resultTable);
@@ -1014,7 +1014,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<SoKhamBenh> GetSoKhamBenhByBSKhamBenh(string bsKhamBenh)
         {
             string query = $"SELECT * FROM SoKhamBenh WHERE BSKhamBenh = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, bsKhamBenh);
 
             return GetListSoKhamBenh(resultTable);
@@ -1023,7 +1023,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<SoKhamBenh> GetSoKhamBenhByGhiChu(string ghiChu)
         {
             string query = $"SELECT * FROM SoKhamBenh WHERE GhiChu = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, ghiChu);
 
             return GetListSoKhamBenh(resultTable);
@@ -1034,7 +1034,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<BenhAn> GetBenhAn()
         {
             string query = "SELECT * FROM BenhAn";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection);
 
             return GetListBenhAn(resultTable);
@@ -1043,7 +1043,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public BenhAn GetBenhAnByMaBenhAn(string maBenhAn)
         {
             string query = $"SELECT * FROM BenhAn WHERE MaBenhAn = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, maBenhAn);
 
             return GetBenhAn(resultTable);
@@ -1052,7 +1052,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<BenhAn> GetBenhAnByMaHoSoBenhNhan(string maHoSoBenhNhan)
         {
             string query = $"SELECT * FROM BenhAn WHERE MaHoSoBenhNhan = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, maHoSoBenhNhan);
 
             return GetListBenhAn(resultTable);
@@ -1061,7 +1061,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<BenhAn> GetBenhAnByDoiTuong(string doiTuong)
         {
             string query = $"SELECT * FROM BenhAn WHERE DoiTuong = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, doiTuong);
 
             return GetListBenhAn(resultTable);
@@ -1070,7 +1070,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<BenhAn> GetBenhAnByGiaTriBHYT(string giaTriBHYT)
         {
             string query = $"SELECT * FROM BenhAn WHERE GiaTriBHYT = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, giaTriBHYT);
 
             return GetListBenhAn(resultTable);
@@ -1088,7 +1088,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public BenhAn GetBenhAnByThoiGianVaoVien(DateTime thoiGianVaoVien)
         {
             string query = $"SELECT * FROM BenhAn WHERE ThoiGianVaoVien = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, thoiGianVaoVien);
 
             return GetBenhAn(resultTable);
@@ -1097,7 +1097,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<BenhAn> GetBenhAnByTrucTiepVao(string trucTiepVao)
         {
             string query = $"SELECT * FROM BenhAn WHERE TrucTiepVao = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, trucTiepVao);
 
             return GetListBenhAn(resultTable);
@@ -1106,7 +1106,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<BenhAn> GetBenhAnByNoiGioiThieu(string noiGioiThieu)
         {
             string query = $"SELECT * FROM BenhAn WHERE NoiGioiThieu = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, noiGioiThieu);
 
             return GetListBenhAn(resultTable);
@@ -1115,7 +1115,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<BenhAn> GetBenhAnByVaoKhoa(string vaoKhoa)
         {
             string query = $"SELECT * FROM BenhAn WHERE VaoKhoa = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, vaoKhoa);
 
             return GetListBenhAn(resultTable);
@@ -1124,7 +1124,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<BenhAn> GetBenhAnByChuyenKhoa(string chuyenKhoa)
         {
             string query = $"SELECT * FROM BenhAn WHERE ChuyenKhoa = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, chuyenKhoa);
 
             return GetListBenhAn(resultTable);
@@ -1133,7 +1133,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<BenhAn> GetBenhAnByTongSoNgayDieuTri(string tongSoNgayDieuTri)
         {
             string query = $"SELECT * FROM BenhAn WHERE TongSoNgayDieuTri = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, tongSoNgayDieuTri);
 
             return GetListBenhAn(resultTable);
@@ -1142,7 +1142,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<BenhAn> GetBenhAnByNoiChuyenDen(string noiChuyenDen)
         {
             string query = $"SELECT * FROM BenhAn WHERE NoiChuyenDen = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, noiChuyenDen);
 
             return GetListBenhAn(resultTable);
@@ -1151,7 +1151,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<BenhAn> GetBenhAnByKKBorCapCuu(string kkBorCapCuu)
         {
             string query = $"SELECT * FROM BenhAn WHERE KKBorCapCuu = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, kkBorCapCuu);
 
             return GetListBenhAn(resultTable);
@@ -1160,7 +1160,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<BenhAn> GetBenhAnByKhiVaoKhoaDieuTri(string khiVaoKhoaDieuTri)
         {
             string query = $"SELECT * FROM BenhAn WHERE KhiVaoKhoaDieuTri = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, khiVaoKhoaDieuTri);
 
             return GetListBenhAn(resultTable);
@@ -1169,7 +1169,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<BenhAn> GetBenhAnByKetQuaDieuTri(string ketQuaDieuTri)
         {
             string query = $"SELECT * FROM BenhAn WHERE KetQuaDieuTri = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, ketQuaDieuTri);
 
             return GetListBenhAn(resultTable);
@@ -1178,7 +1178,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<BenhAn> GetBenhAnByGiaiPhauBenh(string giaiPhauBenh)
         {
             string query = $"SELECT * FROM BenhAn WHERE GiaiPhauBenh = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, giaiPhauBenh);
 
             return GetListBenhAn(resultTable);
@@ -1187,7 +1187,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<BenhAn> GetBenhAnByQuaTrinhBenhLy(string quaTrinhBenhLy)
         {
             string query = $"SELECT * FROM BenhAn WHERE QuaTrinhBenhLy = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, quaTrinhBenhLy);
 
             return GetListBenhAn(resultTable);
@@ -1196,7 +1196,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<BenhAn> GetBenhAnByTienSuBenh(string tienSuBenh)
         {
             string query = $"SELECT * FROM BenhAn WHERE TienSuBenh = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, tienSuBenh);
 
             return GetListBenhAn(resultTable);
@@ -1205,7 +1205,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<BenhAn> GetBenhAnByToanThan(string toanThan)
         {
             string query = $"SELECT * FROM BenhAn WHERE ToanThan = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, toanThan);
 
             return GetListBenhAn(resultTable);
@@ -1214,7 +1214,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<BenhAn> GetBenhAnByTrieuChungCoNang(string trieuChungCoNang)
         {
             string query = $"SELECT * FROM BenhAn WHERE TrieuChungCoNang = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, trieuChungCoNang);
 
             return GetListBenhAn(resultTable);
@@ -1223,7 +1223,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<BenhAn> GetBenhAnByThuongTonCanBan(string thuongTonCanBan)
         {
             string query = $"SELECT * FROM BenhAn WHERE ThuongTonCanBan = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, thuongTonCanBan);
 
             return GetListBenhAn(resultTable);
@@ -1232,7 +1232,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<BenhAn> GetBenhAnByCacCoQuan(string cacCoQuan)
         {
             string query = $"SELECT * FROM BenhAn WHERE CacCoQuan = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, cacCoQuan);
 
             return GetListBenhAn(resultTable);
@@ -1241,7 +1241,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<BenhAn> GetBenhAnByTKetQuaTrinhBenhLy(string tKetQuaTrinhBenhLy)
         {
             string query = $"SELECT * FROM BenhAn WHERE TKetQuaTrinhBenhLy = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, tKetQuaTrinhBenhLy);
 
             return GetListBenhAn(resultTable);
@@ -1250,7 +1250,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<BenhAn> GetBenhAnByTomTatKQXN(string tomTatKQXN)
         {
             string query = $"SELECT * FROM BenhAn WHERE TomTatKQXN = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, tomTatKQXN);
 
             return GetListBenhAn(resultTable);
@@ -1259,7 +1259,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<BenhAn> GetBenhAnByPhuongPhapDieuTri(string phuongPhapDieuTri)
         {
             string query = $"SELECT * FROM BenhAn WHERE PhuongPhapDieuTri = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, phuongPhapDieuTri);
 
             return GetListBenhAn(resultTable);
@@ -1268,8 +1268,8 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<BenhAn> GetBenhAnByHoSoPhimAnh(string hoSoPhimAnh)
         {
             string query = $"SELECT * FROM BenhAn WHERE HoSoPhimAnh = @value";
-            
-            DataTable resultTable = GetResultTable(query, this.connection,  hoSoPhimAnh);
+
+            DataTable resultTable = GetResultTable(query, this.connection, hoSoPhimAnh);
 
             return GetListBenhAn(resultTable);
         }
@@ -1279,7 +1279,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<ToaThuoc> GetToaThuoc()
         {
             string query = "SELECT * FROM ToaThuoc";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection);
 
             return GetListToaThuoc(resultTable);
@@ -1288,7 +1288,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public ToaThuoc GetToaThuocBySoThuTu(string soThuTu)
         {
             string query = $"SELECT * FROM ToaThuoc WHERE SoThuTu = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, soThuTu);
 
             return GetToaThuoc(resultTable);
@@ -1297,7 +1297,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public ToaThuoc GetToaThuocByMaToaThuoc(string maToaThuoc)
         {
             string query = $"SELECT * FROM ToaThuoc WHERE MaToaThuoc = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, maToaThuoc);
 
             return GetToaThuoc(resultTable);
@@ -1306,7 +1306,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public ToaThuoc GetToaThuocByMaThuoc(string maThuoc)
         {
             string query = $"SELECT * FROM ToaThuoc WHERE MaThuoc = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, maThuoc);
 
             return GetToaThuoc(resultTable);
@@ -1315,7 +1315,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<ToaThuoc> GetToaThuocByMaBenhAn(string maBenhAn)
         {
             string query = $"SELECT * FROM ToaThuoc WHERE MaBenhAn = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, maBenhAn);
 
             return GetListToaThuoc(resultTable);
@@ -1324,7 +1324,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<ToaThuoc> GetToaThuocByTenThuoc(string tenThuoc)
         {
             string query = $"SELECT * FROM ToaThuoc WHERE TenThuoc = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, tenThuoc);
 
             return GetListToaThuoc(resultTable);
@@ -1333,7 +1333,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<ToaThuoc> GetToaThuocBySoLuong(int soLuong)
         {
             string query = $"SELECT * FROM ToaThuoc WHERE SoLuong = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, soLuong);
 
             return GetListToaThuoc(resultTable);
@@ -1342,7 +1342,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<ToaThuoc> GetToaThuocByDang(string dang)
         {
             string query = $"SELECT * FROM ToaThuoc WHERE Dang = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, dang);
 
             return GetListToaThuoc(resultTable);
@@ -1351,7 +1351,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<ToaThuoc> GetToaThuocByGhiChu(string ghiChu)
         {
             string query = $"SELECT * FROM ToaThuoc WHERE GhiChu = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, ghiChu);
 
             return GetListToaThuoc(resultTable);
@@ -1362,7 +1362,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<HoaDon> GetHoaDon()
         {
             string query = "SELECT * FROM HoaDon";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection);
 
             return GetListHoaDon(resultTable);
@@ -1371,7 +1371,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public HoaDon GetHoaDonByMaHoaDon(string maHoaDon)
         {
             string query = $"SELECT * FROM HoaDon WHERE MaHoaDon = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, maHoaDon);
 
             return GetHoaDon(resultTable);
@@ -1380,8 +1380,8 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<HoaDon> GetHoaDonByMaHoSoBenhNhan(string maHoSoBenhNhan)
         {
             string query = $"SELECT * FROM HoaDon WHERE MaHoSoBenhNhan = @value";
-           
-           DataTable resultTable = GetResultTable(query, this.connection, maHoSoBenhNhan);
+
+            DataTable resultTable = GetResultTable(query, this.connection, maHoSoBenhNhan);
 
             return GetListHoaDon(resultTable);
         }
@@ -1389,7 +1389,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public HoaDon GetHoaDonByMaLichKham(string maLichKham)
         {
             string query = $"SELECT * FROM HoaDon WHERE MaLichKham = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, maLichKham);
 
             return GetHoaDon(resultTable);
@@ -1398,7 +1398,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<HoaDon> GetHoaDonByTongTien(int tongTien)
         {
             string query = $"SELECT * FROM HoaDon WHERE TongTien = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, tongTien);
 
             return GetListHoaDon(resultTable);
@@ -1407,7 +1407,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<HoaDon> GetHoaDonByHinhThucThanhToan(string hinhThucThanhToan)
         {
             string query = $"SELECT * FROM HoaDon WHERE HinhThucThanhToan = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, hinhThucThanhToan);
 
             return GetListHoaDon(resultTable);
@@ -1418,7 +1418,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<KhuyenMai> GetKhuyenMai()
         {
             string query = "SELECT * FROM KhuyenMai";
-           
+
             DataTable resultTable = GetResultTable(query, this.connection);
 
             return GetListKhuyenMai(resultTable);
@@ -1427,7 +1427,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public KhuyenMai GetKhuyenMaiByMaKhuyenMai(string maKhuyenMai)
         {
             string query = $"SELECT * FROM KhuyenMai WHERE MaKhuyenMai = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, maKhuyenMai);
 
             return GetKhuyenMai(resultTable);
@@ -1436,7 +1436,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<KhuyenMai> GetKhuyenMaiByTenChuongTrinhKM(string tenChuongTrinhKM)
         {
             string query = $"SELECT * FROM KhuyenMai WHERE TenChuongTrinhKM = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, tenChuongTrinhKM);
 
             return GetListKhuyenMai(resultTable);
@@ -1445,7 +1445,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<KhuyenMai> GetKhuyenMaiByGiaKhuyenMai(string giaKhuyenMai)
         {
             string query = $"SELECT * FROM KhuyenMai WHERE GiaKhuyenMai = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, giaKhuyenMai);
 
             return GetListKhuyenMai(resultTable);
@@ -1454,7 +1454,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<KhuyenMai> GetKhuyenMaiByThoiGianBatDau(DateTime thoiGianBatDau)
         {
             string query = $"SELECT * FROM KhuyenMai WHERE ThoiGianBatDau = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, thoiGianBatDau);
 
             return GetListKhuyenMai(resultTable);
@@ -1463,7 +1463,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<KhuyenMai> GetKhuyenMaiByThoiGianKetThuc(DateTime thoiGianKetThuc)
         {
             string query = $"SELECT * FROM KhuyenMai WHERE ThoiGianKetThuc = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, thoiGianKetThuc);
 
             return GetListKhuyenMai(resultTable);
@@ -1474,7 +1474,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<DichVu> GetDichVu()
         {
             string query = "SELECT * FROM DichVu";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection);
 
             return GetListDichVu(resultTable);
@@ -1483,7 +1483,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public DichVu GetDichVuByMaDichVu(string maDichVu)
         {
             string query = $"SELECT * FROM DichVu WHERE MaDichVu = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, maDichVu);
 
             return GetDichVu(resultTable);
@@ -1492,7 +1492,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public DichVu GetDichVuByTenDichVu(string tenDichVu)
         {
             string query = $"SELECT * FROM DichVu WHERE TenDichVu = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, tenDichVu);
 
             return GetDichVu(resultTable);
@@ -1501,7 +1501,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<DichVu> GetDichVuByNoiDungDichVu(string noiDungDichVu)
         {
             string query = $"SELECT * FROM DichVu WHERE NoiDungDichVu = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, noiDungDichVu);
 
             return GetListDichVu(resultTable);
@@ -1510,7 +1510,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<DichVu> GetDichVuByGiaDichVu(int giaDichVu)
         {
             string query = $"SELECT * FROM DichVu WHERE GiaDichVu = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, giaDichVu);
 
             return GetListDichVu(resultTable);
@@ -1521,7 +1521,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<ChuyenKhoa> GetChuyenKhoa()
         {
             string query = "SELECT * FROM ChuyenKhoa";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection);
 
             return GetListChuyenKhoa(resultTable);
@@ -1530,7 +1530,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public ChuyenKhoa GetChuyenKhoaByMaChuyenKhoa(string maChuyenKhoa)
         {
             string query = $"SELECT * FROM ChuyenKhoa WHERE MaChuyenKhoa = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, maChuyenKhoa);
 
             return GetChuyenKhoa(resultTable);
@@ -1539,7 +1539,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public ChuyenKhoa GetChuyenKhoaByTenChuyenKhoa(string tenChuyenKhoa)
         {
             string query = $"SELECT * FROM ChuyenKhoa WHERE TenChuyenKhoa = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, tenChuyenKhoa);
 
             return GetChuyenKhoa(resultTable);
@@ -1548,7 +1548,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<ChuyenKhoa> GetChuyenKhoaByMaKhuyenMai(string maKhuyenMai)
         {
             string query = $"SELECT * FROM ChuyenKhoa WHERE MaKhuyenMai = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, maKhuyenMai);
 
             return GetListChuyenKhoa(resultTable);
@@ -1559,7 +1559,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<LichKham> GetLichKham()
         {
             string query = "SELECT * FROM LichKham";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection);
 
             return GetListLichKham(resultTable);
@@ -1568,7 +1568,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public LichKham GetLichKhamByMaLichKham(string maLichKham)
         {
             string query = $"SELECT * FROM LichKham WHERE MaLichKham = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, maLichKham);
 
             return GetLichKham(resultTable);
@@ -1577,7 +1577,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<LichKham> GetLichKhamByMaHoSoBenhNhan(string maHoSoBenhNhan)
         {
             string query = $"SELECT * FROM LichKham WHERE MaHoSoBenhNhan = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, maHoSoBenhNhan);
 
             return GetListLichKham(resultTable);
@@ -1586,7 +1586,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<LichKham> GetLichKhamByMaChuyenKhoa(string maChuyenKhoa)
         {
             string query = $"SELECT * FROM LichKham WHERE MaChuyenKhoa = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, maChuyenKhoa);
 
             return GetListLichKham(resultTable);
@@ -1595,7 +1595,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<LichKham> GetLichKhamByMaDichVu(string maDichVu)
         {
             string query = $"SELECT * FROM LichKham WHERE MaDichVu = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, maDichVu);
 
             return GetListLichKham(resultTable);
@@ -1613,7 +1613,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<LichKham> GetLichKhamByCa(string ca)
         {
             string query = $"SELECT * FROM LichKham WHERE Ca = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, ca);
 
             return GetListLichKham(resultTable);
@@ -1622,7 +1622,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public LichKham GetLichKhamByKhungGioKham(DateTime khungGioKham)
         {
             string query = $"SELECT * FROM LichKham WHERE KhungGioKham = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, khungGioKham);
 
             return GetLichKham(resultTable);
@@ -1633,7 +1633,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<AdminManager> GetAdminManager()
         {
             string query = "SELECT * FROM ADMIN_Manager";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection);
 
             return GetListAdminManager(resultTable);
@@ -1642,7 +1642,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public AdminManager GetAdminManagerByMaAdmin(string maAdmin)
         {
             string query = $"SELECT * FROM ADMIN_Manager WHERE MaAdmin = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, maAdmin);
 
             return GetAdminManager(resultTable);
@@ -1651,7 +1651,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<AdminManager> GetAdminManagerByMatKhau(string matKhau)
         {
             string query = $"SELECT * FROM ADMIN_Manager WHERE MatKhau = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, matKhau);
 
             return GetListAdminManager(resultTable);
@@ -1662,7 +1662,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<TaiKhoanNhanVien> GetTaiKhoanThanhVien()
         {
             string query = "SELECT * FROM TaiKhoanThanhVien";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection);
 
             return GetListTaiKhoanNhanVien(resultTable);
@@ -1671,7 +1671,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<TaiKhoanNhanVien> GetTaiKhoanThanhVienByHoVaTen(string hoVaTen)
         {
             string query = $"SELECT * FROM TaiKhoanThanhVien WHERE HoVaTen = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, hoVaTen);
 
             return GetListTaiKhoanNhanVien(resultTable);
@@ -1680,7 +1680,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public TaiKhoanNhanVien GetTaiKhoanThanhVienByThanhVien(string maThanhVien)
         {
             string query = $"SELECT * FROM TaiKhoanThanhVien WHERE MaThanhVien = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, maThanhVien);
 
             return GetTaiKhoanNhanVien(resultTable);
@@ -1689,7 +1689,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<TaiKhoanNhanVien> GetTaiKhoanThanhVienByMatKhau(string matKhau)
         {
             string query = $"SELECT * FROM TaiKhoanThanhVien WHERE MatKhau = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, matKhau);
 
             return GetListTaiKhoanNhanVien(resultTable);
@@ -1698,7 +1698,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<TaiKhoanNhanVien> GetTaiKhoanThanhVienByNgaySinh(DateTime ngaySinh)
         {
             string query = $"SELECT * FROM TaiKhoanThanhVien WHERE NgaySinh = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, ngaySinh);
 
             return GetListTaiKhoanNhanVien(resultTable);
@@ -1707,7 +1707,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<TaiKhoanNhanVien> GetTaiKhoanThanhVienByGioiTinh(string gioiTinh)
         {
             string query = $"SELECT * FROM TaiKhoanThanhVien WHERE GioiTinh = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, gioiTinh);
 
             return GetListTaiKhoanNhanVien(resultTable);
@@ -1716,7 +1716,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<TaiKhoanNhanVien> GetTaiKhoanThanhVienByCCCD(string CCCD)
         {
             string query = $"SELECT * FROM TaiKhoanThanhVien WHERE CCCD = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, CCCD);
 
             return GetListTaiKhoanNhanVien(resultTable);
@@ -1725,7 +1725,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<TaiKhoanNhanVien> GetTaiKhoanThanhVienBySoDienThoai(string soDienThoai)
         {
             string query = $"SELECT * FROM TaiKhoanThanhVien WHERE SoDienThoai = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, soDienThoai);
 
             return GetListTaiKhoanNhanVien(resultTable);
@@ -1734,7 +1734,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<TaiKhoanNhanVien> GetTaiKhoanThanhVienByEmail(string email)
         {
             string query = $"SELECT * FROM TaiKhoanThanhVien WHERE Email = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, email);
 
             return GetListTaiKhoanNhanVien(resultTable);
@@ -1743,7 +1743,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<TaiKhoanNhanVien> GetTaiKhoanThanhVienByDiaChi(string diaChi)
         {
             string query = $"SELECT * FROM TaiKhoanThanhVien WHERE DiaChi = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, diaChi);
 
             return GetListTaiKhoanNhanVien(resultTable);
@@ -1761,7 +1761,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<TaiKhoanNhanVien> GetTaiKhoanThanhVienByViTri(string viTri)
         {
             string query = $"SELECT * FROM TaiKhoanThanhVien WHERE ViTri = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, viTri);
 
             return GetListTaiKhoanNhanVien(resultTable);
@@ -1770,7 +1770,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<TaiKhoanNhanVien> GetTaiKhoanThanhVienByLoaiTaiKhoan(string loaiTaiKhoan)
         {
             string query = $"SELECT * FROM TaiKhoanThanhVien WHERE LoaiTaiKhoan = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, loaiTaiKhoan);
 
             return GetListTaiKhoanNhanVien(resultTable);
@@ -1780,7 +1780,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<LichLamViec> GetLichLamViec()
         {
             string query = "SELECT * FROM LichLamViec";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection);
 
             return GetListLichLamViec(resultTable);
@@ -1789,7 +1789,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public LichLamViec GetLichLamViecByMaLichLamViec(string maLichLamViec)
         {
             string query = $"SELECT * FROM LichLamViec WHERE MaLichLamViec = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, maLichLamViec);
 
             return GetLichLamViec(resultTable);
@@ -1798,7 +1798,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<LichLamViec> GetLichLamViecByHoVaTen(string hoVaTen)
         {
             string query = $"SELECT * FROM LichLamViec WHERE HoVaTen = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, hoVaTen);
 
             return GetListLichLamViec(resultTable);
@@ -1807,7 +1807,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<LichLamViec> GetLichLamViecByMaThanhVien(string maThanhVien)
         {
             string query = $"SELECT * FROM LichLamViec WHERE MaThanhVien = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, maThanhVien);
 
             return GetListLichLamViec(resultTable);
@@ -1816,7 +1816,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<LichLamViec> GetLichLamViecByNgayLamViec(DateTime ngayLamViec)
         {
             string query = $"SELECT * FROM LichLamViec WHERE NgayLamViec = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, ngayLamViec);
 
             return GetListLichLamViec(resultTable);
@@ -1825,7 +1825,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public List<LichLamViec> GetLichLamViecByCa(string ca)
         {
             string query = $"SELECT * FROM LichLamViec WHERE Ca = @value";
-            
+
             DataTable resultTable = GetResultTable(query, this.connection, ca);
 
             return GetListLichLamViec(resultTable);
@@ -1890,19 +1890,19 @@ namespace QLBenhVienDaLieu.Database.Function
 
         public void DeleteHoSoBenhNhan(string maHoSoBenhNhan)
         {
-            foreach(HoaDon hoaDon in GetHoaDonByMaHoSoBenhNhan(maHoSoBenhNhan))
+            foreach (HoaDon hoaDon in GetHoaDonByMaHoSoBenhNhan(maHoSoBenhNhan))
             {
                 DeleteHoaDon(hoaDon.MaHoaDon);
             }
 
             DeleteSoKhamBenh(GetSoKhamBenhByMaHoSoBenhNhan(maHoSoBenhNhan).MaLichKham);
-            
-            foreach(BenhAn benhAn in GetBenhAnByMaHoSoBenhNhan(maHoSoBenhNhan))
+
+            foreach (BenhAn benhAn in GetBenhAnByMaHoSoBenhNhan(maHoSoBenhNhan))
             {
                 DeleteRecordByMaBenhAn(benhAn.MaBenhAn);
             }
 
-            foreach(LichKham lichKham in GetLichKhamByMaHoSoBenhNhan(maHoSoBenhNhan))
+            foreach (LichKham lichKham in GetLichKhamByMaHoSoBenhNhan(maHoSoBenhNhan))
             {
                 DeleteLichKham(lichKham.MaLichKham);
             }
@@ -2014,12 +2014,12 @@ namespace QLBenhVienDaLieu.Database.Function
 
         public void DeleteRecordByMaBenhAn(string maBenhAn)
         {
-            foreach(ToaThuoc toaThuoc in GetToaThuocByMaBenhAn(maBenhAn))
+            foreach (ToaThuoc toaThuoc in GetToaThuocByMaBenhAn(maBenhAn))
             {
                 DeleteToaThuoc(toaThuoc.MaToaThuoc);
             }
 
-            foreach(ToaThuoc toaThuoc in GetToaThuoc())
+            foreach (ToaThuoc toaThuoc in GetToaThuoc())
             {
                 Debug.WriteLine(toaThuoc.ToString());
             }
@@ -2623,6 +2623,72 @@ namespace QLBenhVienDaLieu.Database.Function
 
         }
 
+        public DataTable RetrieveMemberData(string sDT)
+        {
+            DataTable memberData = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("SELECT * FROM TaiKhoanThanhVien WHERE SoDienThoai = @sDT", connection))
+                {
+                    command.Parameters.AddWithValue("@sDT", sDT);
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(memberData);
+                    }
+                }
+            }
+
+            return memberData;
+        }
+
+        public DataTable CallSearchLichLamViec(string searchKeyword)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("searchLichLamViec", connection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                })
+                {
+                    command.Parameters.AddWithValue("@SearchKeyword", searchKeyword);
+
+                    DataTable dataTable = new DataTable();
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+
+                    return dataTable;
+                }
+            }
+        }
+
+        public bool IsDuplicateLichLamViec(string maThanhVien, DateTime ngay, string ca)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "CheckDuplicateLichLamViec";
+                    command.Parameters.AddWithValue("@MaThanhVien", maThanhVien);
+                    command.Parameters.AddWithValue("@Ngay", ngay);
+                    command.Parameters.AddWithValue("@Ca", ca);
+                    int count = (int)command.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+        }
+
         public string CheckUser(string soDienThoai, string matKhau)
         {
             try
@@ -2831,8 +2897,99 @@ namespace QLBenhVienDaLieu.Database.Function
                 connection.Close();
             }
         }
+        
+        public void LoadDataFromDatabaseLichLamViec(Guna2DataGridView dataGridView)
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
 
+            try
+            {
+                connection.Open();
+                string query = "SELECT * FROM LichLamViec ";
 
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+
+                        dataGridView.DataSource = dataTable;
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Lỗi SQL: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public void InsertLichLamViec(string hoVaTen, string maThanhVien, DateTime ngay, string ca)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "InsertLichLamViec";
+                    command.Parameters.AddWithValue("@HoVaTen", hoVaTen); // Add @HoVaTen parameter
+                    command.Parameters.AddWithValue("@MaThanhVien", maThanhVien);
+                    command.Parameters.AddWithValue("@Ngay", ngay);
+                    command.Parameters.AddWithValue("@Ca", ca);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public string GetMaThanhVien(string hoVaTen)
+        {
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "GetMaThanhVien"; // Replace with the actual stored procedure name
+
+                    command.Parameters.AddWithValue("@HoVaTen", hoVaTen);
+
+                    string maThanhVien = (string)command.ExecuteScalar();
+
+                    return maThanhVien;
+                }
+            }
+        }
+
+        public void UpdateLichLamViec(string maLichLamViec, string hoVaTen, string mathanhvien, DateTime ngay, string ca)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("UpdateLichLamViec", connection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                })
+                {
+                    command.Parameters.AddWithValue("@MaLichLamViec", maLichLamViec);
+                    command.Parameters.AddWithValue("@HoVaTen", hoVaTen);
+                    command.Parameters.AddWithValue("@MaThanhVien", mathanhvien);
+                    command.Parameters.AddWithValue("@Ngay", ngay);
+                    command.Parameters.AddWithValue("@Ca", ca);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
 
     }
 }

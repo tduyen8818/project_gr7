@@ -1,14 +1,7 @@
 ﻿using QLBenhVienDaLieu.Database.Function;
 using QLBenhVienDaLieu.Graphic;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.XemLichKhamUI
@@ -157,7 +150,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.XemLichKhamUI
         {
             Panel mainPanelRight = benhNhan_Trang.MainPanelRight;
             mainPanelRight.Controls.Clear();
-            
+
             XemChiTiet xemChiTiet = new XemChiTiet(this.benhNhan_Trang, sqlFunctionCaller, this, soDienThoai);
 
             xemChiTiet.TopLevel = false;

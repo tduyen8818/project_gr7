@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QLBenhVienDaLieu.Database.Class
 {
@@ -23,8 +19,8 @@ namespace QLBenhVienDaLieu.Database.Class
 
         public string ViTri
         {
-            get {return this.viTri;}
-            set {this.viTri = value;}
+            get { return this.viTri; }
+            set { this.viTri = value; }
         }
 
         public override string ToString()

@@ -1,16 +1,8 @@
 ﻿using QLBenhVienDaLieu.Database.Check;
 using QLBenhVienDaLieu.Database.Function;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
@@ -184,8 +176,8 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
             textSizeInitialTextDotNgaySinh = textDotNgaySinh.Font.Size;
             textSizeInitialTextDotGioiTinh = textDotGioiTinh.Font.Size;
 
-            buttonLuuHoSo.Region =  Graphic.Draw.RoundedRectangle(0,0, buttonLuuHoSo.Width, buttonLuuHoSo.Height, 30, 30);
-    }
+            buttonLuuHoSo.Region = Graphic.Draw.RoundedRectangle(0, 0, buttonLuuHoSo.Width, buttonLuuHoSo.Height, 30, 30);
+        }
 
         private void DangKyHoSoBenhNhan_Resize(object sender, EventArgs e)
         {
@@ -233,7 +225,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
             Graphic.ScaleSize.Resize(originalForm, originalImageCheckEmail, imageCheckEmail, this);
             Graphic.ScaleSize.Resize(originalForm, originalImageCheckDiaChi, imageCheckDiaChi, this);
 
-            buttonLuuHoSo.Region =  Graphic.Draw.RoundedRectangle(0, 0, buttonLuuHoSo.Width, buttonLuuHoSo.Height, 30, 30);
+            buttonLuuHoSo.Region = Graphic.Draw.RoundedRectangle(0, 0, buttonLuuHoSo.Width, buttonLuuHoSo.Height, 30, 30);
 
         }
 
@@ -243,7 +235,8 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
             {
                 textErrorHoVaTen.Visible = false;
                 imageCheckHoVaTen.BackgroundImage = Image.FromFile("../../Image/check/true.jpg");
-            } else
+            }
+            else
             {
                 textErrorHoVaTen.Visible = true;
                 imageCheckHoVaTen.BackgroundImage = Image.FromFile("../../Image/check/error.jpg");
@@ -253,7 +246,8 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
             {
                 textErrorSoDienThoai.Visible = false;
                 imageCheckSoDienThoai.BackgroundImage = Image.FromFile("../../Image/check/true.jpg");
-            } else
+            }
+            else
             {
                 textErrorSoDienThoai.Visible = true;
                 imageCheckSoDienThoai.BackgroundImage = Image.FromFile("../../Image/check/error.jpg");
@@ -263,7 +257,8 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
             {
                 textErrorSoCCCD.Visible = false;
                 imageCheckSoCCCD.BackgroundImage = Image.FromFile("../../Image/check/true.jpg");
-            } else
+            }
+            else
             {
                 textErrorSoCCCD.Visible = true;
                 imageCheckSoCCCD.BackgroundImage = Image.FromFile("../../Image/check/error.jpg");
@@ -276,12 +271,13 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
                 {
                     textErrorNgaySinh.Visible = false;
                     imageCheckNgaySinh.BackgroundImage = Image.FromFile("../../Image/check/true.jpg");
-                } else
+                }
+                else
                 {
                     textErrorNgaySinh.Visible = true;
                     imageCheckNgaySinh.BackgroundImage = Image.FromFile("../../Image/check/error.jpg");
                 }
-                
+
             }
             catch (FormatException)
             {
@@ -319,7 +315,8 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
             {
                 textErrorHoVaTen.Visible = false;
                 imageCheckHoVaTen.BackgroundImage = Image.FromFile("../../Image/check/true.jpg");
-            } else
+            }
+            else
             {
                 textErrorHoVaTen.Visible = true;
                 imageCheckHoVaTen.BackgroundImage = Image.FromFile("../../Image/check/error.jpg");
@@ -369,7 +366,8 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
                     textErrorNgaySinh.Visible = true;
                     imageCheckNgaySinh.BackgroundImage = Image.FromFile("../../Image/check/error.jpg");
                 }
-            } catch(FormatException)
+            }
+            catch (FormatException)
             {
                 textErrorNgaySinh.Visible = true;
                 imageCheckNgaySinh.BackgroundImage = Image.FromFile("../../Image/check/error.jpg");
@@ -396,7 +394,8 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
             {
                 textErrorMaBHYT.Visible = false;
                 imageCheckMaBHYT.BackgroundImage = Image.FromFile("../../Image/check/true.jpg");
-            } else
+            }
+            else
             {
                 textErrorMaBHYT.Visible = true;
                 imageCheckMaBHYT.BackgroundImage = Image.FromFile("../../Image/check/error.jpg");

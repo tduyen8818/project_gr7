@@ -1,13 +1,7 @@
 ﻿using QLBenhVienDaLieu.Database.Class;
 using QLBenhVienDaLieu.Database.Function;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.XemLichKhamUI
@@ -149,7 +143,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.XemLichKhamUI
 
             dataTongTien.Text = hoaDon.TongTien.ToString();
             dataHinhThucThanhToan.Text = hoaDon.HinhThucThanhToan.Equals("") ? "Chưa thanh toán" : hoaDon.HinhThucThanhToan;
-            
+
         }
 
         private void XemChiTiet_Resize(object sender, EventArgs e)

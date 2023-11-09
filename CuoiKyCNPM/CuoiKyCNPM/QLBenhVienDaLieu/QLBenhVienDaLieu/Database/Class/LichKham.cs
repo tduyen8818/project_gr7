@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QLBenhVienDaLieu.Database.Class
 {
@@ -41,44 +37,44 @@ namespace QLBenhVienDaLieu.Database.Class
 
         public string MaLichKham
         {
-            get {return this.maLichKham;}
-            set {this.maLichKham = value;}
+            get { return this.maLichKham; }
+            set { this.maLichKham = value; }
         }
 
         public string MaHoSoBenhNhan
         {
-            get {return this.maHoSoBenhNhan;}
-            set {this.maHoSoBenhNhan = value;}
+            get { return this.maHoSoBenhNhan; }
+            set { this.maHoSoBenhNhan = value; }
         }
 
         public string MaDichVu
         {
-            get {return this.maDichVu;}
-            set {this.maDichVu = value;}
+            get { return this.maDichVu; }
+            set { this.maDichVu = value; }
         }
 
         public string MaChuyenKhoa
         {
-            get {return this.maChuyenKhoa;}
-            set {this.maChuyenKhoa = value;}
+            get { return this.maChuyenKhoa; }
+            set { this.maChuyenKhoa = value; }
         }
 
         public DateTime NgayDangKy
         {
-            get {return this.ngayDangKy;}
-            set {this.ngayDangKy = value;}
+            get { return this.ngayDangKy; }
+            set { this.ngayDangKy = value; }
         }
 
         public string Ca
         {
-            get {return this.ca;}
-            set {this.ca = value;}
+            get { return this.ca; }
+            set { this.ca = value; }
         }
 
         public DateTime KhungGioKham
         {
-            get {return this.khungGioKham;}
-            set {this.khungGioKham = value;}
+            get { return this.khungGioKham; }
+            set { this.khungGioKham = value; }
         }
 
         public override string ToString()

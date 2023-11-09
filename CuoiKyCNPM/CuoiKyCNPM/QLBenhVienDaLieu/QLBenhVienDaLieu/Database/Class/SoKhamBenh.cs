@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace QLBenhVienDaLieu.Database.Class
+﻿namespace QLBenhVienDaLieu.Database.Class
 {
     public class SoKhamBenh
     {
@@ -58,85 +52,85 @@ namespace QLBenhVienDaLieu.Database.Class
 
         public string MaHoSoBenhNhan
         {
-            get {return this.maHoSoBenhNhan;}
-            set {this.maHoSoBenhNhan = value;}
+            get { return this.maHoSoBenhNhan; }
+            set { this.maHoSoBenhNhan = value; }
         }
 
         public string MaLichKham
         {
-            get {return this.maLichKham;}
-            set {this.maLichKham = value;}
+            get { return this.maLichKham; }
+            set { this.maLichKham = value; }
         }
 
         public string HoVaTen
         {
-            get {return this.hoVaTen;}
-            set {this.hoVaTen = value;}
+            get { return this.hoVaTen; }
+            set { this.hoVaTen = value; }
         }
 
         public string Tuoi
         {
-            get {return this.tuoi;}
-            set {this.tuoi = value;}
+            get { return this.tuoi; }
+            set { this.tuoi = value; }
         }
 
         public string SoTheBHYT
         {
-            get {return this.soTheBHYT;}
-            set {this.soTheBHYT = value;}
+            get { return this.soTheBHYT; }
+            set { this.soTheBHYT = value; }
         }
 
         public string DiaChi
         {
-            get {return this.diaChi;}
-            set {this.diaChi = value;}
+            get { return this.diaChi; }
+            set { this.diaChi = value; }
         }
 
         public string NgheNghiep
         {
-            get {return this.ngheNghiep;}
-            set {this.ngheNghiep = value;}
+            get { return this.ngheNghiep; }
+            set { this.ngheNghiep = value; }
         }
 
         public string DanToc
         {
-            get {return this.danToc;}
-            set {this.danToc = value;}
+            get { return this.danToc; }
+            set { this.danToc = value; }
         }
 
         public string TrieuChung
         {
-            get {return this.trieuChung;}
-            set {this.trieuChung = value;}
+            get { return this.trieuChung; }
+            set { this.trieuChung = value; }
         }
 
         public string ChanDoan
         {
-            get {return this.chanDoan;}
-            set {this.chanDoan = value;}
+            get { return this.chanDoan; }
+            set { this.chanDoan = value; }
         }
 
         public string PhuongPhapDieuTri
         {
-            get {return this.phuongPhapDieuTri;}
-            set {this.phuongPhapDieuTri = value;}
+            get { return this.phuongPhapDieuTri; }
+            set { this.phuongPhapDieuTri = value; }
         }
 
         public string BsKhamBenh
         {
-            get {return this.bsKhamBenh;}
-            set {this.bsKhamBenh = value;}
+            get { return this.bsKhamBenh; }
+            set { this.bsKhamBenh = value; }
         }
 
         public string GhiChu
         {
-            get {return this.ghiChu;}
-            set {this.ghiChu = value;}
+            get { return this.ghiChu; }
+            set { this.ghiChu = value; }
         }
-        
+
         public override string ToString()
         {
-            return  "Sổ khám bệnh { mã hồ sơ bệnh nhân: " + maHoSoBenhNhan +
+            return "Sổ khám bệnh { mã hồ sơ bệnh nhân: " + maHoSoBenhNhan +
                     ", mã lịch khám: " + maLichKham +
                     ", họ và tên: " + hoVaTen +
                     ", tuổi: " + tuoi +

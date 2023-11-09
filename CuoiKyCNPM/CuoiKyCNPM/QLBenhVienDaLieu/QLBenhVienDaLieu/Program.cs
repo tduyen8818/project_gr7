@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLBenhVienDaLieu
@@ -16,8 +13,7 @@ namespace QLBenhVienDaLieu
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BenhNhan_Trang("0123456789"));
-
+            Application.Run(new DangNhap());
         }
     }
 }

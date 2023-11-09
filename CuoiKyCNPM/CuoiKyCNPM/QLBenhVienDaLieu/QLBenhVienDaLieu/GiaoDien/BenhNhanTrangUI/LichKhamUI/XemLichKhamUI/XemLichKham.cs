@@ -3,7 +3,6 @@ using QLBenhVienDaLieu.Database.Function;
 using QLBenhVienDaLieu.Graphic;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -40,7 +39,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.XemLichKhamUI
 
             List<HoSoBenhNhan> listHoSoBenhNhan = sqlFunctionCaller.GetHoSoBenhNhanByMaTaiKhoanOrSoDienThoai(this.soDienThoai);
 
-            foreach(HoSoBenhNhan hoSoBenhNhan in listHoSoBenhNhan)
+            foreach (HoSoBenhNhan hoSoBenhNhan in listHoSoBenhNhan)
             {
                 foreach (LichKham lichKham in sqlFunctionCaller.GetLichKhamByMaHoSoBenhNhan(hoSoBenhNhan.MaHoSoBenhNhan))
                 {

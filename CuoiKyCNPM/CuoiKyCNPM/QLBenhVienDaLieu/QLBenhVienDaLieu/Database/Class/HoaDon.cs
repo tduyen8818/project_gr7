@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace QLBenhVienDaLieu.Database.Class
+﻿namespace QLBenhVienDaLieu.Database.Class
 {
     public class HoaDon
     {
@@ -34,32 +28,32 @@ namespace QLBenhVienDaLieu.Database.Class
 
         public string MaHoaDon
         {
-            get {return this.maHoaDon;}
-            set {this.maHoaDon = value;}
+            get { return this.maHoaDon; }
+            set { this.maHoaDon = value; }
         }
 
         public string MaHoSoBenhNhan
         {
-            get {return this.maHoSoBenhNhan;}
-            set {this.maHoSoBenhNhan = value;}
+            get { return this.maHoSoBenhNhan; }
+            set { this.maHoSoBenhNhan = value; }
         }
 
         public string MaLichKham
         {
-            get {return this.maLichKham;}
-            set {this.maLichKham = value;}
+            get { return this.maLichKham; }
+            set { this.maLichKham = value; }
         }
 
         public int TongTien
         {
-            get {return this.tongTien;}
-            set {this.tongTien = value;}
+            get { return this.tongTien; }
+            set { this.tongTien = value; }
         }
 
         public string HinhThucThanhToan
         {
-            get {return this.hinhThucThanhToan;}
-            set {this.hinhThucThanhToan = value;}
+            get { return this.hinhThucThanhToan; }
+            set { this.hinhThucThanhToan = value; }
         }
 
         public override string ToString()

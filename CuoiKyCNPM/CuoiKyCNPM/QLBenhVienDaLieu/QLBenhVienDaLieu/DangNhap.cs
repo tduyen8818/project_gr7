@@ -38,12 +38,12 @@ namespace QLBenhVienDaLieu
                     AdminForm.ShowDialog();
                     this.Close();
                 }
-                else if (functionCaller.CheckUser(sDT, matKhau) == "User") 
+                else if (functionCaller.CheckUser(sDT, matKhau) == "User")
                 {
-                    BenhNhan_Trang benhNhan_Trang = new BenhNhan_Trang(sDT);
-                    this.Hide(); 
-                    benhNhan_Trang.ShowDialog();
-                    this.Close(); 
+                    BenhNhan_Trang form1 = new BenhNhan_Trang(sDT);
+                    this.Hide();
+                    form1.ShowDialog();
+                    this.Close();
                 }
 
                 else
@@ -54,21 +54,21 @@ namespace QLBenhVienDaLieu
                         switch (loaiTaiKhoan)
                         {
                             case "BacSi":
-                                BS_Kham_Benh bacSiForm = new BS_Kham_Benh();
+                                BS_Kham_Benh bacSiForm = new BS_Kham_Benh(sDT);
                                 this.Hide();
                                 bacSiForm.ShowDialog();
                                 this.Close();
                                 break;
 
                             case "ThuKy":
-                                KeToan_Trang thuKyForm = new KeToan_Trang();
+                                KeToan_Trang thuKyForm = new KeToan_Trang(sDT);
                                 this.Hide();
                                 thuKyForm.ShowDialog();
                                 this.Close();
                                 break;
 
                             case "ThanhVien":
-                                LeTan_Trang thanhVienForm = new LeTan_Trang();
+                                LeTan_Trang thanhVienForm = new LeTan_Trang(sDT);
                                 this.Hide();
                                 thanhVienForm.ShowDialog();
                                 this.Close();
@@ -99,6 +99,14 @@ namespace QLBenhVienDaLieu
             }
         }
 
+        private void linkLabel_QMK_Click(object sender, EventArgs e)
+        {
+            // Tạo một instance của Form mới
+            QuenMatKhau quenMatKhau = new QuenMatKhau();
+            this.Hide();
+            quenMatKhau.ShowDialog();
+            this.Close();
+        }
 
         private void linkLabel_DangKy_Click(object sender, EventArgs e)
         {
@@ -106,15 +114,6 @@ namespace QLBenhVienDaLieu
             DangKy1 dangKy = new DangKy1();
             this.Hide();
             dangKy.ShowDialog();
-            this.Close();
-        }
-
-        private void linkLabel_QMK_Click(object sender, EventArgs e)
-        {
-            // Tạo một instance của Form mới
-            QuenMatKhau quenMatKhau = new QuenMatKhau();
-            this.Hide();
-            quenMatKhau.ShowDialog();
             this.Close();
         }
     }

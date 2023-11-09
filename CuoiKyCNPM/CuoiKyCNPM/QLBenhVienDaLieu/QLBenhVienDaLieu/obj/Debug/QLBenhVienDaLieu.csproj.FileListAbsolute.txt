@@ -379,3 +379,10 @@ C:\Users\QUANG\Downloads\Compressed\project_gr7-main\CuoiKyCNPM\CuoiKyCNPM\QLBen
 C:\Users\QUANG\Downloads\Compressed\project_gr7-main\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.XemLichKhamUI.XemChiTiet.resources
 C:\Users\QUANG\Downloads\Compressed\project_gr7-main\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.XemLichKhamUI.XemLichKham.resources
 C:\Users\QUANG\Downloads\Compressed\project_gr7-main\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI.HoSoBenhNhanForm.resources
+C:\Users\QUANG\Downloads\Compressed\project_gr7-main\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.LichLamViec_BS.resources
+C:\Users\QUANG\Downloads\Compressed\project_gr7-main\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.LichLamViec_KT.resources
+C:\Users\QUANG\Downloads\Compressed\project_gr7-main\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.LichLamViec_LT.resources
+C:\Users\QUANG\Downloads\Compressed\project_gr7-main\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.LichLamViec_Trang.resources
+C:\Users\QUANG\Downloads\Compressed\project_gr7-main\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.TaiKhoan_BS.resources
+C:\Users\QUANG\Downloads\Compressed\project_gr7-main\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.TaiKhoan_KT.resources
+C:\Users\QUANG\Downloads\Compressed\project_gr7-main\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.TaiKhoan_LT.resources

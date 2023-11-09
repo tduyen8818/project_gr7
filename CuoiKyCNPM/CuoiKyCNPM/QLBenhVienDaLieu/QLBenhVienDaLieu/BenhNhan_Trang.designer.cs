@@ -333,36 +333,36 @@
             // 
             // buttonGioiThieu
             // 
+            this.buttonGioiThieu.BackgroundImage = global::QLBenhVienDaLieu.Properties.Resources.gioithieu;
+            this.buttonGioiThieu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonGioiThieu.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonGioiThieu.FlatAppearance.BorderSize = 0;
             this.buttonGioiThieu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGioiThieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonGioiThieu.ForeColor = System.Drawing.Color.SeaGreen;
-            this.buttonGioiThieu.Image = global::QLBenhVienDaLieu.Properties.Resources.introduction;
             this.buttonGioiThieu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonGioiThieu.Location = new System.Drawing.Point(10, 649);
             this.buttonGioiThieu.Margin = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.buttonGioiThieu.Name = "buttonGioiThieu";
             this.buttonGioiThieu.Size = new System.Drawing.Size(267, 71);
             this.buttonGioiThieu.TabIndex = 40;
-            this.buttonGioiThieu.Text = "Giới thiệu";
             this.buttonGioiThieu.UseVisualStyleBackColor = true;
             // 
             // buttonTrangChu
             // 
+            this.buttonTrangChu.BackgroundImage = global::QLBenhVienDaLieu.Properties.Resources._2;
+            this.buttonTrangChu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonTrangChu.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonTrangChu.FlatAppearance.BorderSize = 0;
             this.buttonTrangChu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTrangChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTrangChu.ForeColor = System.Drawing.Color.SeaGreen;
-            this.buttonTrangChu.Image = global::QLBenhVienDaLieu.Properties.Resources.home;
             this.buttonTrangChu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonTrangChu.Location = new System.Drawing.Point(10, 102);
             this.buttonTrangChu.Margin = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.buttonTrangChu.Name = "buttonTrangChu";
             this.buttonTrangChu.Size = new System.Drawing.Size(267, 68);
             this.buttonTrangChu.TabIndex = 8;
-            this.buttonTrangChu.Text = "Trang chủ";
             this.buttonTrangChu.UseVisualStyleBackColor = true;
             this.buttonTrangChu.Click += new System.EventHandler(this.buttonTrangChu_Click);
             // 
@@ -381,19 +381,19 @@
             // 
             // buttonTaiKhoan
             // 
+            this.buttonTaiKhoan.BackgroundImage = global::QLBenhVienDaLieu.Properties.Resources._7;
+            this.buttonTaiKhoan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonTaiKhoan.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonTaiKhoan.FlatAppearance.BorderSize = 0;
             this.buttonTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTaiKhoan.ForeColor = System.Drawing.Color.SeaGreen;
-            this.buttonTaiKhoan.Image = global::QLBenhVienDaLieu.Properties.Resources.account;
             this.buttonTaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonTaiKhoan.Location = new System.Drawing.Point(0, 0);
             this.buttonTaiKhoan.Margin = new System.Windows.Forms.Padding(0);
             this.buttonTaiKhoan.Name = "buttonTaiKhoan";
             this.buttonTaiKhoan.Size = new System.Drawing.Size(267, 71);
             this.buttonTaiKhoan.TabIndex = 9;
-            this.buttonTaiKhoan.Text = "Tài khoản";
             this.buttonTaiKhoan.UseVisualStyleBackColor = true;
             this.buttonTaiKhoan.Click += new System.EventHandler(this.buttonTaiKhoan_Click);
             // 
@@ -487,19 +487,19 @@
             // 
             // buttonDichVu
             // 
+            this.buttonDichVu.BackgroundImage = global::QLBenhVienDaLieu.Properties.Resources._3;
+            this.buttonDichVu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonDichVu.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonDichVu.FlatAppearance.BorderSize = 0;
             this.buttonDichVu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDichVu.ForeColor = System.Drawing.Color.SeaGreen;
-            this.buttonDichVu.Image = global::QLBenhVienDaLieu.Properties.Resources.heart;
             this.buttonDichVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonDichVu.Location = new System.Drawing.Point(10, 190);
             this.buttonDichVu.Margin = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.buttonDichVu.Name = "buttonDichVu";
             this.buttonDichVu.Size = new System.Drawing.Size(267, 71);
             this.buttonDichVu.TabIndex = 8;
-            this.buttonDichVu.Text = "Dịch vụ";
             this.buttonDichVu.UseVisualStyleBackColor = true;
             this.buttonDichVu.Click += new System.EventHandler(this.buttonDichVu_Click);
             // 
@@ -556,55 +556,55 @@
             // 
             // buttonLichKham
             // 
+            this.buttonLichKham.BackgroundImage = global::QLBenhVienDaLieu.Properties.Resources._4;
+            this.buttonLichKham.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonLichKham.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonLichKham.FlatAppearance.BorderSize = 0;
             this.buttonLichKham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLichKham.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLichKham.ForeColor = System.Drawing.Color.SeaGreen;
-            this.buttonLichKham.Image = global::QLBenhVienDaLieu.Properties.Resources.calender;
             this.buttonLichKham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonLichKham.Location = new System.Drawing.Point(0, 0);
             this.buttonLichKham.Margin = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.buttonLichKham.Name = "buttonLichKham";
             this.buttonLichKham.Size = new System.Drawing.Size(267, 73);
             this.buttonLichKham.TabIndex = 15;
-            this.buttonLichKham.Text = "Lịch khám";
             this.buttonLichKham.UseVisualStyleBackColor = true;
             this.buttonLichKham.Click += new System.EventHandler(this.buttonLichKham_Click);
             // 
             // buttonThongBao
             // 
+            this.buttonThongBao.BackgroundImage = global::QLBenhVienDaLieu.Properties.Resources._5;
+            this.buttonThongBao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonThongBao.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonThongBao.FlatAppearance.BorderSize = 0;
             this.buttonThongBao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonThongBao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonThongBao.ForeColor = System.Drawing.Color.SeaGreen;
-            this.buttonThongBao.Image = global::QLBenhVienDaLieu.Properties.Resources.notify;
             this.buttonThongBao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonThongBao.Location = new System.Drawing.Point(10, 374);
             this.buttonThongBao.Margin = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.buttonThongBao.Name = "buttonThongBao";
             this.buttonThongBao.Size = new System.Drawing.Size(267, 71);
             this.buttonThongBao.TabIndex = 9;
-            this.buttonThongBao.Text = "Thông báo";
             this.buttonThongBao.UseVisualStyleBackColor = true;
             this.buttonThongBao.Click += new System.EventHandler(this.buttonThongBao_Click);
             // 
             // buttonHoTro
             // 
+            this.buttonHoTro.BackgroundImage = global::QLBenhVienDaLieu.Properties.Resources._6;
+            this.buttonHoTro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonHoTro.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonHoTro.FlatAppearance.BorderSize = 0;
             this.buttonHoTro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHoTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonHoTro.ForeColor = System.Drawing.Color.SeaGreen;
-            this.buttonHoTro.Image = global::QLBenhVienDaLieu.Properties.Resources.phone;
             this.buttonHoTro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonHoTro.Location = new System.Drawing.Point(10, 465);
             this.buttonHoTro.Margin = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.buttonHoTro.Name = "buttonHoTro";
             this.buttonHoTro.Size = new System.Drawing.Size(267, 71);
             this.buttonHoTro.TabIndex = 9;
-            this.buttonHoTro.Text = "Hỗ trợ";
             this.buttonHoTro.UseVisualStyleBackColor = true;
             this.buttonHoTro.Click += new System.EventHandler(this.buttonHoTro_Click);
             // 

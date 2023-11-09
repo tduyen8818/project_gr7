@@ -271,6 +271,18 @@
     <Compile Include="Admin_Trang.cs">
       <SubType>Form</SubType>
     </Compile>
+	<Compile Include="KeToan_Trang.cs">
+		<SubType>Form</SubType>
+	</Compile>
+	<Compile Include="KeToan_Trang.designer.cs">
+		<DependentUpon>KeToan_Trang.cs</DependentUpon>
+	</Compile>
+	<Compile Include="LeTan_Trang.cs">
+		<SubType>Form</SubType>
+	</Compile>
+	<Compile Include="LeTan_Trang.designer.cs">
+		<DependentUpon>LeTan_Trang.cs</DependentUpon>
+	</Compile>
     <Compile Include="Admin_Trang.designer.cs">
       <DependentUpon>Admin_Trang.cs</DependentUpon>
     </Compile>
@@ -322,6 +334,49 @@
     <Compile Include="QuenMatKhau2.Designer.cs">
       <DependentUpon>QuenMatKhau2.cs</DependentUpon>
     </Compile>
+	<Compile Include="LichLamViec_BS.cs">
+		<SubType>Form</SubType>
+	</Compile>
+	<Compile Include="LichLamViec_BS.Designer.cs">
+		<DependentUpon>LichLamViec_BS.cs</DependentUpon>
+	</Compile>
+	<Compile Include="LichLamViec_KT.cs">
+		<SubType>Form</SubType>
+	</Compile>
+	<Compile Include="LichLamViec_KT.Designer.cs">
+		<DependentUpon>LichLamViec_KT.cs</DependentUpon>
+	</Compile>
+	<Compile Include="LichLamViec_LT.cs">
+		<SubType>Form</SubType>
+	</Compile>
+	<Compile Include="LichLamViec_LT.Designer.cs">
+		<DependentUpon>LichLamViec_LT.cs</DependentUpon>
+	</Compile>
+	<Compile Include="LichLamViec_Trang.cs">
+		<SubType>Form</SubType>
+	</Compile>
+	<Compile Include="LichLamViec_Trang.Designer.cs">
+		<DependentUpon>LichLamViec_Trang.cs</DependentUpon>
+	</Compile>
+	<Compile Include="TaiKhoan_BS.cs">
+		<SubType>Form</SubType>
+	</Compile>
+	<Compile Include="TaiKhoan_BS.Designer.cs">
+		<DependentUpon>TaiKhoan_BS.cs</DependentUpon>
+	</Compile>
+	<Compile Include="TaiKhoan_KT.cs">
+		<SubType>Form</SubType>
+	</Compile>
+	<Compile Include="TaiKhoan_KT.Designer.cs">
+		<DependentUpon>TaiKhoan_KT.cs</DependentUpon>
+	</Compile>
+	<Compile Include="TaiKhoan_LT.cs">
+		<SubType>Form</SubType>
+	</Compile>
+	<Compile Include="TaiKhoan_LT.Designer.cs">
+		<DependentUpon>TaiKhoan_LT.cs</DependentUpon>
+	</Compile>
+	  
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Database\Check\Available.cs" />
@@ -401,18 +456,7 @@
     <Compile Include="GiaoDien\BenhNhanTrangUI\TaiKhoanUI\HoSoBenhNhanUI\HoSoBenhNhanForm.Designer.cs">
       <DependentUpon>HoSoBenhNhanForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="KeToan_Trang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="KeToan_Trang.designer.cs">
-      <DependentUpon>KeToan_Trang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="LeTan_Trang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LeTan_Trang.designer.cs">
-      <DependentUpon>LeTan_Trang.cs</DependentUpon>
-    </Compile>
+    
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -492,6 +536,28 @@
     <EmbeddedResource Include="QuenMatKhau2.resx">
       <DependentUpon>QuenMatKhau2.cs</DependentUpon>
     </EmbeddedResource>
+	  
+	<EmbeddedResource Include="LichLamViec_BS.resx">
+		<DependentUpon>LichLamViec_BS.cs</DependentUpon>
+	</EmbeddedResource>
+	<EmbeddedResource Include="LichLamViec_KT.resx">
+		<DependentUpon>LichLamViec_KT.cs</DependentUpon>
+	</EmbeddedResource>
+	<EmbeddedResource Include="LichLamViec_LT.resx">
+		<DependentUpon>LichLamViec_LT.cs</DependentUpon>
+	</EmbeddedResource>
+	<EmbeddedResource Include="LichLamViec_Trang.resx">
+		<DependentUpon>LichLamViec_Trang.cs</DependentUpon>
+	</EmbeddedResource>
+	<EmbeddedResource Include="TaiKhoan_BS.resx">
+		<DependentUpon>TaiKhoan_BS.cs</DependentUpon>
+	</EmbeddedResource>
+	<EmbeddedResource Include="TaiKhoan_KT.resx">
+		<DependentUpon>TaiKhoan_KT.cs</DependentUpon>
+	</EmbeddedResource>
+	<EmbeddedResource Include="TaiKhoan_LT.resx">
+		<DependentUpon>TaiKhoan_LT.cs</DependentUpon>
+	</EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -1,9 +1,9 @@
-﻿using System;
-using System.Drawing;
+﻿using QLBenhVienDaLieu.Database.Function;
+using System;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using QLBenhVienDaLieu.Database.Function;
 
 namespace QLBenhVienDaLieu
 {

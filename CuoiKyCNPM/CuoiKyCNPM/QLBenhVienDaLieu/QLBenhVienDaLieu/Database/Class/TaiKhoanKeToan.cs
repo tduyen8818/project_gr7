@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace QLBenhVienDaLieu.Database.Class
 {
@@ -27,14 +22,14 @@ namespace QLBenhVienDaLieu.Database.Class
 
         public string ChuyenKhoa
         {
-            get {return this.chuyenKhoa;}
-            set {this.chuyenKhoa = value;}
+            get { return this.chuyenKhoa; }
+            set { this.chuyenKhoa = value; }
         }
 
         public string ViTri
         {
-            get {return this.viTri;}
-            set {this.viTri = value;}
+            get { return this.viTri; }
+            set { this.viTri = value; }
         }
 
         public override string ToString()

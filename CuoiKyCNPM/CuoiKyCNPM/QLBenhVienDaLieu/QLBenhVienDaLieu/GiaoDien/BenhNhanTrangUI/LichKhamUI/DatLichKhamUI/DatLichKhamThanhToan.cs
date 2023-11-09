@@ -1,5 +1,4 @@
-﻿using QLBenhVienDaLieu.Database.Class;
-using QLBenhVienDaLieu.Database.Function;
+﻿using QLBenhVienDaLieu.Database.Function;
 using QLBenhVienDaLieu.Graphic;
 using System;
 using System.Drawing;
@@ -103,8 +102,8 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.DatLichKhamUI
                 }
 
                 int tongTien = sqlFunctionCaller.GetDichVuByTenDichVu(this.datLichKham.DataDichVu.SelectedItem.ToString()).GiaDichVu;
-                int thanhTien =  (int) Math.Round(tongTien * (tyLeGiam == 0 ? 1 : tyLeGiam));
-                
+                int thanhTien = (int)Math.Round(tongTien * (tyLeGiam == 0 ? 1 : tyLeGiam));
+
                 sqlFunctionCaller.InsertHoaDon(maHoSoBenhNhan, maLichKham, thanhTien, dataThanhToan.SelectedItem.ToString());
                 MessageBox.Show("Thanh toán thành công");
             }

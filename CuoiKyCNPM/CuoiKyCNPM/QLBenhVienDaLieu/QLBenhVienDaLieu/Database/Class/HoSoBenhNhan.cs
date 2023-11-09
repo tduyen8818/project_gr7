@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QLBenhVienDaLieu.Database.Class
 {
@@ -35,7 +31,7 @@ namespace QLBenhVienDaLieu.Database.Class
             this.diaChi = "";
         }
 
-        public HoSoBenhNhan(string hoVaTen, string maHoSoBenhNhan, DateTime ngaySinh, string maTaiKhoan ,string gioiTinh, string maBHYT, string cCCD, string ngheNghiep, string soDienThoai, string email, string diaChi)
+        public HoSoBenhNhan(string hoVaTen, string maHoSoBenhNhan, DateTime ngaySinh, string maTaiKhoan, string gioiTinh, string maBHYT, string cCCD, string ngheNghiep, string soDienThoai, string email, string diaChi)
         {
             this.hoVaTen = hoVaTen;
             this.maHoSoBenhNhan = maHoSoBenhNhan;
@@ -52,68 +48,68 @@ namespace QLBenhVienDaLieu.Database.Class
 
         public string HoVaTen
         {
-            get {return this.hoVaTen;}
-            set {this.hoVaTen = value;}
+            get { return this.hoVaTen; }
+            set { this.hoVaTen = value; }
         }
 
         public string MaHoSoBenhNhan
         {
-            get {return this.maHoSoBenhNhan;}
-            set {this.maHoSoBenhNhan = value;}
+            get { return this.maHoSoBenhNhan; }
+            set { this.maHoSoBenhNhan = value; }
         }
 
         public DateTime NgaySinh
         {
-            get {return this.ngaySinh;}
-            set {this.ngaySinh = value;}
+            get { return this.ngaySinh; }
+            set { this.ngaySinh = value; }
         }
 
         public string MaTaiKhoan
         {
-            get {return this.maTaiKhoan;}
-            set {this.maTaiKhoan = value;}
+            get { return this.maTaiKhoan; }
+            set { this.maTaiKhoan = value; }
         }
 
         public string GioiTinh
         {
-            get {return this.gioiTinh;}
-            set {this.gioiTinh = value;}
+            get { return this.gioiTinh; }
+            set { this.gioiTinh = value; }
         }
 
         public string MaBHYT
         {
-            get {return this.maBHYT;}
-            set {this.maBHYT = value;}
+            get { return this.maBHYT; }
+            set { this.maBHYT = value; }
         }
 
         public string CCCD
         {
-            get {return this.cCCD;}
-            set {this.cCCD = value;}
+            get { return this.cCCD; }
+            set { this.cCCD = value; }
         }
 
         public string NgheNghiep
         {
-            get {return this.ngheNghiep;}
-            set {this.ngheNghiep = value;}
+            get { return this.ngheNghiep; }
+            set { this.ngheNghiep = value; }
         }
 
         public string SoDienThoai
         {
-            get {return this.soDienThoai;}
-            set {this.soDienThoai = value;}
+            get { return this.soDienThoai; }
+            set { this.soDienThoai = value; }
         }
 
         public string Email
         {
-            get {return this.email;}
-            set {this.email = value;}
+            get { return this.email; }
+            set { this.email = value; }
         }
 
         public string DiaChi
         {
-            get {return this.diaChi;}
-            set {this.diaChi = value;}
+            get { return this.diaChi; }
+            set { this.diaChi = value; }
         }
 
         public override string ToString()

@@ -3,14 +3,8 @@ using QLBenhVienDaLieu.Database.Function;
 using QLBenhVienDaLieu.Graphic;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.DatLichKhamUI
@@ -69,13 +63,13 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.DatLichKhamUI
         private string SoDienThoai
         {
             get { return this.soDienThoai; }
-            set {this.soDienThoai = value; } 
+            set { this.soDienThoai = value; }
         }
 
         public ComboBox DataChuyenKhoa
         {
             get { return this.dataChuyenKhoa; }
-            set { this.dataChuyenKhoa = value; }   
+            set { this.dataChuyenKhoa = value; }
         }
 
         public ComboBox DataDichVu
@@ -194,7 +188,8 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.DatLichKhamUI
                 showHoSoBenhNhan.Tag = dataHoSoBenhNhan;
 
                 dataHoSoBenhNhan.Show();
-            } else
+            }
+            else
             {
                 foreach (HoSoBenhNhan hoSoBenhNhan in listHoSoBenhNhan)
                 {
@@ -300,20 +295,22 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.DatLichKhamUI
             {
                 textErrorHoSoBenhNhan.Visible = true;
                 imageCheck3.Image = Image.FromFile("../../Image/check/error.jpg");
-            } else
+            }
+            else
             {
                 textErrorHoSoBenhNhan.Visible = false;
                 imageCheck3.Image = Image.FromFile("../../Image/check/true.jpg");
             }
 
-            if (dataChuyenKhoa.SelectedItem != null && dataDichVu.SelectedItem != null && dataCaKham.SelectedItem != null &&  countChecked == 1)
+            if (dataChuyenKhoa.SelectedItem != null && dataDichVu.SelectedItem != null && dataCaKham.SelectedItem != null && countChecked == 1)
             {
                 this.countChecked = 0;
 
                 DateTime ngayDangKy = DateTime.Parse(dataNgayKham.Value.ToShortDateString());
                 DateTime khungGioKham = DateTime.Parse(dataNgayKham.Value.ToLongTimeString());
 
-                if (DateTime.Compare(ngayDangKy, DateTime.Now) < 0) {
+                if (DateTime.Compare(ngayDangKy, DateTime.Now) < 0)
+                {
                     MessageBox.Show("Thời gian không hợp lệ");
                     return;
                 }

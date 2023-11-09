@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace QLBenhVienDaLieu.Database.Class
+﻿namespace QLBenhVienDaLieu.Database.Class
 {
     public class AdminManager
     {
@@ -24,18 +18,18 @@ namespace QLBenhVienDaLieu.Database.Class
         }
 
         public string MaAdmin
-        {   
-            get {return this.maAdmin;}
-            set{this.maAdmin = value;}
+        {
+            get { return this.maAdmin; }
+            set { this.maAdmin = value; }
         }
-        public string MatKhau 
-        {   
-            get {return this.matKhau;}
-            set {this.matKhau = value;}
+        public string MatKhau
+        {
+            get { return this.matKhau; }
+            set { this.matKhau = value; }
         }
         public override string ToString()
         {
-            return  "Admin Manager { mã admin: " + maAdmin +
+            return "Admin Manager { mã admin: " + maAdmin +
                     ", mật khẩu: " + matKhau + " }";
         }
     }

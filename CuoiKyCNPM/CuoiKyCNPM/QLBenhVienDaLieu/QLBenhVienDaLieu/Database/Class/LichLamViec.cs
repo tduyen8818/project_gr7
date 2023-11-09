@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QLBenhVienDaLieu.Database.Class
 {
@@ -37,40 +33,40 @@ namespace QLBenhVienDaLieu.Database.Class
 
         public string MaLichLamViec
         {
-            get {return this.maLichLamViec;}
-            set {this.maLichLamViec = value;}
+            get { return this.maLichLamViec; }
+            set { this.maLichLamViec = value; }
         }
 
         public string HoVaTen
         {
-            get {return this.hoVaTen;}
-            set {this.hoVaTen = value;}
+            get { return this.hoVaTen; }
+            set { this.hoVaTen = value; }
         }
 
         public string MaThanhVien
         {
-            get {return this.maThanhVien;}
-            set {this.maThanhVien = value;}
+            get { return this.maThanhVien; }
+            set { this.maThanhVien = value; }
         }
 
         public string ChuyenKhoa
         {
-            get {return this.chuyenKhoa;}
-            set {this.chuyenKhoa = value;}
+            get { return this.chuyenKhoa; }
+            set { this.chuyenKhoa = value; }
         }
 
         public DateTime NgayLamViec
         {
-            get {return this.ngayLamViec;}
-            set {this.ngayLamViec = value;}
+            get { return this.ngayLamViec; }
+            set { this.ngayLamViec = value; }
         }
 
         public string Ca
         {
-            get {return this.ca;}
-            set {this.ca = value;}
+            get { return this.ca; }
+            set { this.ca = value; }
         }
-        
+
         public override string ToString()
         {
             return "Lịch làm việc { mã lịch làm việc: " + maLichLamViec +

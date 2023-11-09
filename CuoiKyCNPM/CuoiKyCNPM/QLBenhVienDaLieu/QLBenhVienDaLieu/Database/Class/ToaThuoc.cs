@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace QLBenhVienDaLieu.Database.Class
+﻿namespace QLBenhVienDaLieu.Database.Class
 {
     public class ToaThuoc
     {
@@ -44,50 +38,50 @@ namespace QLBenhVienDaLieu.Database.Class
 
         public int SoThuTu
         {
-            get {return this.soThuTu;}
-            set {this.soThuTu = value;}
+            get { return this.soThuTu; }
+            set { this.soThuTu = value; }
         }
 
         public string MaToaThuoc
         {
-            get {return this.maThuoc;}
-            set {this.maToaThuoc = value;}
+            get { return this.maThuoc; }
+            set { this.maToaThuoc = value; }
         }
 
         public string MaThuoc
         {
-            get {return this.maThuoc;}
-            set {this.maThuoc = value;}
+            get { return this.maThuoc; }
+            set { this.maThuoc = value; }
         }
 
         public string MaBenhAn
         {
-            get {return this.maBenhAn;}
-            set {this.maBenhAn = value;}
+            get { return this.maBenhAn; }
+            set { this.maBenhAn = value; }
         }
 
         public string TenThuoc
         {
-            get {return this.tenThuoc;}
-            set {this.tenThuoc = value;}
+            get { return this.tenThuoc; }
+            set { this.tenThuoc = value; }
         }
 
         public int SoLuong
         {
-            get {return this.soLuong;}
-            set {this.soLuong = value;}
+            get { return this.soLuong; }
+            set { this.soLuong = value; }
         }
 
         public string Dang
         {
-            get {return this.dang;}
-            set {this.dang = value;}
+            get { return this.dang; }
+            set { this.dang = value; }
         }
 
         public string GhiChu
         {
-            get {return this.ghiChu;}
-            set {this.ghiChu = value;}
+            get { return this.ghiChu; }
+            set { this.ghiChu = value; }
         }
 
         public override string ToString()

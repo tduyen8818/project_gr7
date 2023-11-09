@@ -14,7 +14,7 @@ namespace QLBenhVienDaLieu
         public DangKy1()
         {
             InitializeComponent();
-            this.Size = new Size(1350,800);
+            this.Size = new Size(1350, 800);
         }
         Random random = new Random();
         int otp;

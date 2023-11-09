@@ -12,9 +12,27 @@ namespace QLBenhVienDaLieu
 {
     public partial class BS_Kham_Benh : Form
     {
-        public BS_Kham_Benh()
+        private string sDT;
+        public BS_Kham_Benh(string sDT)
         {
             InitializeComponent();
+            this.sDT = sDT;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            TaiKhoan_BS taiKhoanForm = new TaiKhoan_BS(sDT);
+            this.Hide();
+            taiKhoanForm.ShowDialog();
+            this.Close();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            LichLamViec_BS lichLamViec = new LichLamViec_BS(sDT);
+            this.Hide();
+            lichLamViec.ShowDialog();
+            this.Close();
         }
     }
 }

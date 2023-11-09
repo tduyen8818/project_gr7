@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.DatLichKhamUI
@@ -18,7 +12,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.DatLichKhamUI
             set { this.checkChoose = value; }
         }
 
-        public Label DataMaHoSoBenhNhan { get {return this.dataMaHoSoBenhNhan; } set {this.dataMaHoSoBenhNhan = value; } }
+        public Label DataMaHoSoBenhNhan { get { return this.dataMaHoSoBenhNhan; } set { this.dataMaHoSoBenhNhan = value; } }
         public Label DataHoVaTen { get { return this.dataHoVaTen; } set { this.dataHoVaTen = value; } }
         public Label DataMaTaiKhoan { get { return this.dataMaTaiKhoan; } set { this.dataMaTaiKhoan = value; } }
         public Label DataNgaySinh { get { return this.dataNgaySinh; } set { this.dataNgaySinh = value; } }
@@ -132,7 +126,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.DatLichKhamUI
             textSizeInitialDataSoDienThoai = dataSoDienThoai.Font.Size;
             textSizeInitialDataEmail = dataEmail.Font.Size;
             textSizeInitialDataDiaChi = dataDiaChi.Font.Size;
-            
+
         }
 
         private void DataHoSoBenhNhan_Resize(object sender, EventArgs e)
@@ -168,7 +162,8 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.DatLichKhamUI
             if (checkChoose.Checked)
             {
                 this.BackColor = Color.Lavender;
-            } else
+            }
+            else
             {
                 this.BackColor = SystemColors.Control;
             }
