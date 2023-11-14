@@ -1718,6 +1718,66 @@ BEGIN
     VALUES (@malichlamviec, @HoVaTen, @MaThanhVien, @NgayLamViec, @Ca)
 END
 go
+
+CREATE PROCEDURE searchTaiKhoanThanhVien
+    @SearchKeyword nvarchar(255)
+AS
+BEGIN
+    SELECT *
+    FROM TaiKhoanThanhVien
+    WHERE
+        HoVaTen LIKE '%' + @SearchKeyword + '%' OR       
+		MaThanhVien LIKE '%' + @SearchKeyword + '%' OR
+        MatKhau LIKE '%' + @SearchKeyword + '%' OR
+        GioiTinh LIKE '%' + @SearchKeyword + '%' OR
+        CCCD LIKE '%' + @SearchKeyword + '%' OR
+        SoDienThoai LIKE '%' + @SearchKeyword + '%' OR
+        Email LIKE '%' + @SearchKeyword + '%' OR
+        DiaChi LIKE '%' + @SearchKeyword + '%' OR
+        ChuyenKhoa LIKE '%' + @SearchKeyword + '%' OR
+        ViTri LIKE '%' + @SearchKeyword + '%' OR
+        LoaiTaiKhoan LIKE '%' + @SearchKeyword + '%'
+END
+go
+CREATE PROCEDURE CheckDuplicateLichLamViec
+    @MaThanhVien varchar(8),
+    @NgayLamViec date,
+    @Ca nvarchar(8)
+AS
+BEGIN
+    IF EXISTS (
+        SELECT 1
+        FROM LichLamViec
+        WHERE MaThanhVien = @MaThanhVien
+        AND NgayLamViec = @NgayLamViec
+        AND Ca = @Ca
+    )
+    BEGIN
+        -- Nếu có bản ghi trùng lặp, trả về 1
+        SELECT 1;
+    END
+    ELSE
+    BEGIN
+        -- Nếu không tìm thấy bản ghi trùng lặp, trả về 0
+        SELECT 0;
+    END
+END
+go
+
+CREATE PROCEDURE searchLichLamViec
+    @SearchKeyword NVARCHAR(255)
+AS
+BEGIN
+    SELECT *
+    FROM LichLamViec
+    WHERE HoVaTen LIKE '%' + @SearchKeyword + '%'
+	OR MaLichLamViec LIKE '%' + @SearchKeyword + '%'
+	OR MaThanhVien LIKE '%' + @SearchKeyword + '%'
+    OR NgayLamViec LIKE '%' + @SearchKeyword + '%'
+    OR Ca LIKE '%' + @SearchKeyword + '%'
+END
+go
+
 --THEM DU LIEU CHO CAC TABLE 
 -- TABLE DangKyUer
 EXEC DangKyUser_Insert '0123456789', 'Abcd@123'
@@ -1840,7 +1900,7 @@ EXEC InsertTaiKhoanThanhVien N'Phạm Thị D', 'Def@3456', '1992-09-05', N'Nữ
 EXEC InsertTaiKhoanThanhVien N'Hoàng Văn E', 'Efg@6789', '1995-01-25', N'Nam', '567890123456', '0908123456', 'hoangvane@gmail.com', N'Số 5, Đường XYZ, Quận ABC, Thành phố HCM', N'Da liễu', N'Kế toán', 'KT'
 EXEC InsertTaiKhoanThanhVien N'Võ Thị F', 'Fgh@7890', '1989-08-15', N'Nữ', '678901234567', '0908789123', 'vothif@gmail.com', N'Số 6, Đường XYZ, Quận ABC, Thành phố HCM', N'Da liễu', N'Kế toán', 'KT'
 EXEC InsertTaiKhoanThanhVien N'Đặng Văn G', 'Ghi@1234', '1987-03-02', N'Nam', '789012345678', '0908789456', 'dangvang@gmail.com', N'Số 7, Đường XYZ, Quận ABC, Thành phố HCM', N'Da liễu', N'Kế toán', 'KT'
-EXEC InsertTaiKhoanThanhVien N'Mai Thị H', 'Hik@5678', '1986-11-12', N'Nữ', '890123456789', '0908456123', 'maithih@gmail.com', N'Số 8, Đường XYZ, Quận ABC, Thành phố HCM', N'Không', N'Lễ tân', 'TV'
+EXEC InsertTaiKhoanThanhVien N'Mai Thị H', 'Hik@5678', '1986-11-12', N'Nữ', '890123456789', '0908456223', 'maithih@gmail.com', N'Số 8, Đường XYZ, Quận ABC, Thành phố HCM', N'Không', N'Lễ tân', 'TV'
 EXEC InsertTaiKhoanThanhVien N'Nguyễn Thị I', 'Ijk@7890', '1984-10-05', N'Nữ', '901234567890', '0908567123', 'nguyenthii@gmail.com', N'Số 9, Đường XYZ, Quận ABC, Thành phố HCM', N'Da liễu', N'Thư ký', 'KT'
 EXEC InsertTaiKhoanThanhVien N'Trần Văn J', 'Jlm@1234', '1983-12-30', N'Nam', '012345678901', '0908123789', 'tranvanj@gmail.com', N'Số 10, Đường XYZ, Quận ABC, Thành phố HCM', N'Da liễu', N'Thư ký', 'KT'
 -- SO KHAM BENH
