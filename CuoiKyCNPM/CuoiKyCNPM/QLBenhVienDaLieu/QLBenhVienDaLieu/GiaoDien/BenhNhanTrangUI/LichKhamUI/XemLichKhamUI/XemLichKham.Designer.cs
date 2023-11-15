@@ -47,19 +47,19 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.XemLichKhamUI
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(32, 0, 32, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(36, 0, 36, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(937, 670);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1367, 991);
             this.flowLayoutPanel1.TabIndex = 0;
             this.flowLayoutPanel1.WrapContents = false;
             // 
             // titleXemLich
             // 
-            this.titleXemLich.BackColor = System.Drawing.Color.White;
+            this.titleXemLich.BackColor = System.Drawing.Color.Transparent;
             this.titleXemLich.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
             this.titleXemLich.ForeColor = System.Drawing.Color.SeaGreen;
             this.titleXemLich.Location = new System.Drawing.Point(36, 32);
-            this.titleXemLich.Margin = new System.Windows.Forms.Padding(0, 32, 0, 0);
+            this.titleXemLich.Margin = new System.Windows.Forms.Padding(0, 32, 0, 40);
             this.titleXemLich.Name = "titleXemLich";
-            this.titleXemLich.Size = new System.Drawing.Size(857, 80);
+            this.titleXemLich.Size = new System.Drawing.Size(1289, 80);
             this.titleXemLich.TabIndex = 1;
             this.titleXemLich.Text = "DANH SÁCH LỊCH KHÁM";
             this.titleXemLich.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -68,7 +68,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.XemLichKhamUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(937, 670);
+            this.ClientSize = new System.Drawing.Size(1367, 991);
             this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

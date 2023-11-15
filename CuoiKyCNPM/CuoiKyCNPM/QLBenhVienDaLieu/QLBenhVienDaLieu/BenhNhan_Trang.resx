@@ -126,10 +126,7 @@
   <data name="label2.Text" xml:space="preserve">
     <value>Bệnh đậu mùa, còn được gọi là bệnh đậu mùa khỉ hoặc dịch đậu mùa, là một căn bệnh viêm nhiễm da do virus varicella-zoster gây ra. Bệnh này thường được truyền từ người này sang người khác thông qua tiếp xúc với chất nhầy từ các phát ban hoặc qua hơi nước từ viêm mũi hoặc ho.</value>
   </data>
-  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
+    <value>69</value>
   </metadata>
 </root>

@@ -22,20 +22,24 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.XemLichKhamUI
 
         float textSizeInitialTitle;
 
+
+
         public XemLichKham(SqlFunctionCaller sqlFunctionCaller, BenhNhan_Trang benhNhan_Trang, string soDienThoai)
         {
-            InitializeComponent();
-
             this.sqlFunctionCaller = sqlFunctionCaller;
             this.benhNhan_Trang = benhNhan_Trang;
             this.soDienThoai = soDienThoai;
 
-            originalForm = new Rectangle(Location.X, Location.Y, this.Width, this.Height);
+            InitializeComponent();
+
+            this.textSizeInitialTitle = titleXemLich.Font.Size;
+
+
+
+            originalForm = new Rectangle(this.Location.X, this.Location.Y, this.Width, this.Height);
             originalTitle = new Rectangle(titleXemLich.Location.X, titleXemLich.Location.Y, titleXemLich.Width, titleXemLich.Height);
             DataXemLichKham dataXemLichKhamInitial = new DataXemLichKham(benhNhan_Trang, sqlFunctionCaller, soDienThoai);
             originalDataXemLichKham = new Rectangle(dataXemLichKhamInitial.Location.X, dataXemLichKhamInitial.Location.Y, dataXemLichKhamInitial.Width, dataXemLichKhamInitial.Height);
-
-            this.textSizeInitialTitle = titleXemLich.Font.Size;
 
             List<HoSoBenhNhan> listHoSoBenhNhan = sqlFunctionCaller.GetHoSoBenhNhanByMaTaiKhoanOrSoDienThoai(this.soDienThoai);
 
@@ -80,12 +84,17 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.XemLichKhamUI
 
         private void XemLichKham_Resize(object sender, EventArgs e)
         {
-            ScaleSize.Resize(originalForm, originalTitle, titleXemLich, this, textSizeInitialTitle);
-
-            foreach (var dataXemLichKham in flowLayoutPanel1.Controls.OfType<DataXemLichKham>().ToList())
+            if (originalTitle.Width != 0)
             {
-                ScaleSize.Resize(originalForm, originalDataXemLichKham, dataXemLichKham, this);
+                ScaleSize.ResizeNoLocation(originalForm, originalTitle, titleXemLich, this, textSizeInitialTitle);
+
+                foreach (var dataXemLichKham in flowLayoutPanel1.Controls.OfType<DataXemLichKham>().ToList())
+                {
+                    ScaleSize.ResizeNoLocation(originalForm, originalDataXemLichKham, dataXemLichKham, this);
+                }
+
             }
-        }
+
+        }       
     }
 }

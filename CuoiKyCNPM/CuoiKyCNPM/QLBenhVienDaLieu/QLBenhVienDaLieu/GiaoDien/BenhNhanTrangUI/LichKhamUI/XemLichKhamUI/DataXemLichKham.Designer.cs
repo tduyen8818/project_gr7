@@ -46,59 +46,63 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.XemLichKhamUI
             // textMaPhieu
             // 
             this.textMaPhieu.AutoSize = true;
-            this.textMaPhieu.Location = new System.Drawing.Point(26, 14);
+            this.textMaPhieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textMaPhieu.Location = new System.Drawing.Point(28, 27);
             this.textMaPhieu.Name = "textMaPhieu";
-            this.textMaPhieu.Size = new System.Drawing.Size(79, 20);
+            this.textMaPhieu.Size = new System.Drawing.Size(190, 44);
             this.textMaPhieu.TabIndex = 0;
             this.textMaPhieu.Text = "Mã Phiếu:";
             // 
             // dataMaPhieu
             // 
             this.dataMaPhieu.AutoEllipsis = true;
-            this.dataMaPhieu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.dataMaPhieu.Location = new System.Drawing.Point(111, 9);
+            this.dataMaPhieu.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Bold);
+            this.dataMaPhieu.Location = new System.Drawing.Point(224, 22);
             this.dataMaPhieu.Name = "dataMaPhieu";
-            this.dataMaPhieu.Size = new System.Drawing.Size(144, 34);
+            this.dataMaPhieu.Size = new System.Drawing.Size(324, 62);
             this.dataMaPhieu.TabIndex = 1;
             this.dataMaPhieu.Text = "LKSAKGIAD";
             // 
             // dataName
             // 
             this.dataName.AutoEllipsis = true;
-            this.dataName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.dataName.Location = new System.Drawing.Point(26, 49);
+            this.dataName.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Bold);
+            this.dataName.Location = new System.Drawing.Point(27, 98);
             this.dataName.Name = "dataName";
-            this.dataName.Size = new System.Drawing.Size(230, 34);
+            this.dataName.Size = new System.Drawing.Size(407, 61);
             this.dataName.TabIndex = 2;
             this.dataName.Text = "Hoàng Cao Phúc";
             // 
             // textTrangThai
             // 
             this.textTrangThai.AutoSize = true;
-            this.textTrangThai.Location = new System.Drawing.Point(582, 14);
+            this.textTrangThai.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textTrangThai.Location = new System.Drawing.Point(922, 27);
             this.textTrangThai.Name = "textTrangThai";
-            this.textTrangThai.Size = new System.Drawing.Size(84, 20);
+            this.textTrangThai.Size = new System.Drawing.Size(201, 44);
             this.textTrangThai.TabIndex = 5;
             this.textTrangThai.Text = "Trạng thái:";
+            this.textTrangThai.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dataTrangThai
             // 
             this.dataTrangThai.AutoEllipsis = true;
-            this.dataTrangThai.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.dataTrangThai.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Bold);
             this.dataTrangThai.ForeColor = System.Drawing.Color.MediumBlue;
-            this.dataTrangThai.Location = new System.Drawing.Point(672, 9);
+            this.dataTrangThai.Location = new System.Drawing.Point(1129, 22);
             this.dataTrangThai.Name = "dataTrangThai";
-            this.dataTrangThai.Size = new System.Drawing.Size(86, 34);
+            this.dataTrangThai.Size = new System.Drawing.Size(152, 62);
             this.dataTrangThai.TabIndex = 6;
             this.dataTrangThai.Text = "Đã đặt";
             // 
             // linkXemChiTiet
             // 
             this.linkXemChiTiet.AutoSize = true;
+            this.linkXemChiTiet.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkXemChiTiet.LinkColor = System.Drawing.Color.SeaGreen;
-            this.linkXemChiTiet.Location = new System.Drawing.Point(582, 49);
+            this.linkXemChiTiet.Location = new System.Drawing.Point(1030, 103);
             this.linkXemChiTiet.Name = "linkXemChiTiet";
-            this.linkXemChiTiet.Size = new System.Drawing.Size(105, 20);
+            this.linkXemChiTiet.Size = new System.Drawing.Size(251, 44);
             this.linkXemChiTiet.TabIndex = 8;
             this.linkXemChiTiet.TabStop = true;
             this.linkXemChiTiet.Text = "Xem chi tiết >";
@@ -107,38 +111,40 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.XemLichKhamUI
             // textDichVu
             // 
             this.textDichVu.AutoSize = true;
-            this.textDichVu.Location = new System.Drawing.Point(285, 14);
+            this.textDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textDichVu.Location = new System.Drawing.Point(482, 27);
             this.textDichVu.Name = "textDichVu";
-            this.textDichVu.Size = new System.Drawing.Size(65, 20);
+            this.textDichVu.Size = new System.Drawing.Size(156, 44);
             this.textDichVu.TabIndex = 9;
             this.textDichVu.Text = "Dịch vụ:";
             // 
             // textChuyenKhoa
             // 
             this.textChuyenKhoa.AutoSize = true;
-            this.textChuyenKhoa.Location = new System.Drawing.Point(285, 49);
+            this.textChuyenKhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textChuyenKhoa.Location = new System.Drawing.Point(397, 103);
             this.textChuyenKhoa.Name = "textChuyenKhoa";
-            this.textChuyenKhoa.Size = new System.Drawing.Size(106, 20);
+            this.textChuyenKhoa.Size = new System.Drawing.Size(252, 44);
             this.textChuyenKhoa.TabIndex = 10;
             this.textChuyenKhoa.Text = "Chuyên khoa:";
             // 
             // dataDichVu
             // 
             this.dataDichVu.AutoEllipsis = true;
-            this.dataDichVu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.dataDichVu.Location = new System.Drawing.Point(356, 9);
+            this.dataDichVu.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Bold);
+            this.dataDichVu.Location = new System.Drawing.Point(644, 22);
             this.dataDichVu.Name = "dataDichVu";
-            this.dataDichVu.Size = new System.Drawing.Size(115, 30);
+            this.dataDichVu.Size = new System.Drawing.Size(272, 67);
             this.dataDichVu.TabIndex = 11;
             this.dataDichVu.Text = "Khám dịch vụ";
             // 
             // dataChuyenKhoa
             // 
             this.dataChuyenKhoa.AutoEllipsis = true;
-            this.dataChuyenKhoa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.dataChuyenKhoa.Location = new System.Drawing.Point(397, 45);
+            this.dataChuyenKhoa.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Bold);
+            this.dataChuyenKhoa.Location = new System.Drawing.Point(655, 98);
             this.dataChuyenKhoa.Name = "dataChuyenKhoa";
-            this.dataChuyenKhoa.Size = new System.Drawing.Size(169, 34);
+            this.dataChuyenKhoa.Size = new System.Drawing.Size(369, 69);
             this.dataChuyenKhoa.TabIndex = 12;
             this.dataChuyenKhoa.Text = "Khám bệnh ngoài da";
             // 
@@ -147,7 +153,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.XemLichKhamUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(770, 90);
+            this.ClientSize = new System.Drawing.Size(1289, 203);
             this.Controls.Add(this.dataChuyenKhoa);
             this.Controls.Add(this.dataDichVu);
             this.Controls.Add(this.textChuyenKhoa);

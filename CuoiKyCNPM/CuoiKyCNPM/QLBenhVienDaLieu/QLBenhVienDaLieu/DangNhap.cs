@@ -13,6 +13,7 @@ namespace QLBenhVienDaLieu
             InitializeComponent();
             this.Size = new Size(1350, 800);
             functionCaller = new SqlFunctionCaller();
+            functionCaller.Connect();
 
         }
 
@@ -40,7 +41,7 @@ namespace QLBenhVienDaLieu
                 }
                 else if (functionCaller.CheckUser(sDT, matKhau) == "User")
                 {
-                    BenhNhan_Trang form1 = new BenhNhan_Trang(sDT);
+                    BenhNhan_Trang form1 = new BenhNhan_Trang(sDT, functionCaller);
                     this.Hide();
                     form1.ShowDialog();
                     this.Close();

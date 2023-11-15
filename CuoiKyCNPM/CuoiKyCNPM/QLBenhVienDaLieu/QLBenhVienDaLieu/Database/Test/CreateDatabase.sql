@@ -1780,6 +1780,7 @@ go
 
 --THEM DU LIEU CHO CAC TABLE 
 -- TABLE DangKyUer
+EXEC DangKyUser_Insert '1', '1'
 EXEC DangKyUser_Insert '0123456789', 'Abcd@123'
 EXEC DangKyUser_Insert '0111111111', 'Abcd@123'
 EXEC DangKyUser_Insert '0987654321', 'P@ssw0rd'
@@ -1916,7 +1917,7 @@ EXEC SoKhamBenh_Insert 'BN000008', 'LK000008', N'Mai Thị H', '39', 'BHYT890123
 EXEC InsertLichLamViec N'Nguyễn Văn A', 'BS000001', '2023-10-01', 'S'
 EXEC InsertLichLamViec N'Trần Thị B', 'BS000002', '2023-10-02', 'C'
 EXEC InsertLichLamViec N'Lê Văn C', 'BS000003', '2023-10-03', 'S'
-EXEC InsertLichLamViec N'Phạm Thị D', 'BS000004', '2023-10-04', 'C'
+EXEC InsertLichLamViec N'Phạm Thị D', 'BS000004', '2023-10-04', 'S'
 EXEC InsertLichLamViec N'Nguyễn Văn A', 'BS000001', '2023-10-01', 'S'
 EXEC InsertLichLamViec N'Trần Thị B', 'BS000002', '2023-10-02', 'C'
 EXEC InsertLichLamViec N'Lê Văn C', 'BS000003', '2023-10-03', 'S'

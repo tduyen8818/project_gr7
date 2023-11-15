@@ -386,3 +386,4 @@ C:\Users\QUANG\Downloads\Compressed\project_gr7-main\CuoiKyCNPM\CuoiKyCNPM\QLBen
 C:\Users\QUANG\Downloads\Compressed\project_gr7-main\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.TaiKhoan_BS.resources
 C:\Users\QUANG\Downloads\Compressed\project_gr7-main\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.TaiKhoan_KT.resources
 C:\Users\QUANG\Downloads\Compressed\project_gr7-main\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.TaiKhoan_LT.resources
+C:\Users\QUANG\Downloads\Compressed\project_gr7-main\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.DatLichKhamUI.Blank.resources

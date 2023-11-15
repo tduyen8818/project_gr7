@@ -15,6 +15,7 @@ namespace QLBenhVienDaLieu
             InitializeComponent();
             this.Size = new Size(1350, 800);
             functioner = new SqlFunctionCaller();
+            functioner.Connect();
             PopulateGenderComboBox();
             PopulateAccountTypeComboBox();
         }
@@ -109,8 +110,8 @@ namespace QLBenhVienDaLieu
                     gioiTinhMoi = selectedRow.Cells["GioiTinh"].Value.ToString();
                     cccdMoi = selectedRow.Cells["CCCD"].Value.ToString();
                     soDienThoaiMoi = selectedRow.Cells["SoDienThoai"].Value.ToString();
-                    emailMoi = selectedRow.Cells["DiaChi"].Value.ToString();
-                    diaChiMoi = selectedRow.Cells["Email"].Value.ToString();
+                    emailMoi = selectedRow.Cells["Email"].Value.ToString();
+                    diaChiMoi = selectedRow.Cells["DiaChi"].Value.ToString();
                     chuyenKhoaMoi = selectedRow.Cells["ChuyenKhoa"].Value.ToString();
                     viTriMoi = selectedRow.Cells["ViTri"].Value.ToString();
                     loaiTaiKhoanMoi = selectedRow.Cells["LoaiTaiKhoan"].Value.ToString();
@@ -158,8 +159,8 @@ namespace QLBenhVienDaLieu
                 comboBox_GioiTinh.SelectedItem = selectedRow.Cells["GioiTinh"].Value.ToString();
                 txt_CCCD.Text = selectedRow.Cells["CCCD"].Value.ToString();
                 txt_SoDienThoai.Text = selectedRow.Cells["SoDienThoai"].Value.ToString();
-                txt_Email.Text = selectedRow.Cells["DiaChi"].Value.ToString();
-                txt_DiaChi.Text = selectedRow.Cells["Email"].Value.ToString();
+                txt_Email.Text = selectedRow.Cells["Email"].Value.ToString();
+                txt_DiaChi.Text = selectedRow.Cells["DiaChi"].Value.ToString();
                 txt_ChuyenKhoa.Text = selectedRow.Cells["ChuyenKhoa"].Value.ToString();
                 txt_ViTri.Text = selectedRow.Cells["ViTri"].Value.ToString();
                 comboBox_LoaiTaiKhoan.SelectedItem = selectedRow.Cells["LoaiTaiKhoan"].Value.ToString();

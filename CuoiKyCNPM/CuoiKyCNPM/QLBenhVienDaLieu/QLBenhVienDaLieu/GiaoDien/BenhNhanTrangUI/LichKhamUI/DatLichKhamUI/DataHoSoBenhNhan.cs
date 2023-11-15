@@ -74,6 +74,9 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.DatLichKhamUI
 
 
 
+
+
+
         public DataHoSoBenhNhan()
         {
             InitializeComponent();
@@ -126,36 +129,8 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.DatLichKhamUI
             textSizeInitialDataSoDienThoai = dataSoDienThoai.Font.Size;
             textSizeInitialDataEmail = dataEmail.Font.Size;
             textSizeInitialDataDiaChi = dataDiaChi.Font.Size;
-
         }
 
-        private void DataHoSoBenhNhan_Resize(object sender, EventArgs e)
-        {
-            Graphic.ScaleSize.Resize(originalForm, originalCheckChoose, checkChoose, this);
-            Graphic.ScaleSize.Resize(originalForm, originalTextMaHoSoBenhNhan, textMaHoSoBenhNhan, this, textSizeInitialTextMaHoSoBenhNhan);
-            Graphic.ScaleSize.Resize(originalForm, originalTextHoVaTen, textHoVaTen, this, textSizeInitialTextHoVaTen);
-            Graphic.ScaleSize.Resize(originalForm, originalTextMaTaiKhoan, textMaTaiKhoan, this, textSizeInitialTextMaTaiKhoan);
-            Graphic.ScaleSize.Resize(originalForm, originalTextNgaySinh, textNgaySinh, this, textSizeInitialTextNgaySinh);
-            Graphic.ScaleSize.Resize(originalForm, originalTextGioitinh, textGioiTinh, this, textSizeInitialTextGioiTinh);
-            Graphic.ScaleSize.Resize(originalForm, originalTextCCCD, textCCCD, this, textSizeInitialTextCCCD);
-            Graphic.ScaleSize.Resize(originalForm, originalTextMaBHYT, textMaBHYT, this, textSizeInitialTextMaBHYT);
-            Graphic.ScaleSize.Resize(originalForm, originalTextNgheNghiep, textNgheNghiep, this, textSizeInitialTextNgheNghiep);
-            Graphic.ScaleSize.Resize(originalForm, originalTextSoDienThoai, textSoDienThoai, this, textSizeInitialTextSoDienThoai);
-            Graphic.ScaleSize.Resize(originalForm, originalTextEmail, textEmail, this, textSizeInitialTextEmail);
-            Graphic.ScaleSize.Resize(originalForm, originalTextDiaChi, textDiaChi, this, textSizeInitialTextDiaChi);
-            Graphic.ScaleSize.Resize(originalForm, originalDataMaHoSoBenhNhan, dataMaHoSoBenhNhan, this, textSizeInitialDataMaHoSoBenhNhan);
-            Graphic.ScaleSize.Resize(originalForm, originalDataHoVaTen, dataHoVaTen, this, textSizeInitialDataHoVaTen);
-            Graphic.ScaleSize.Resize(originalForm, originalDataMaTaiKhoan, dataMaTaiKhoan, this, textSizeInitialDataMaTaiKhoan);
-            Graphic.ScaleSize.Resize(originalForm, originalDataNgaySinh, dataNgaySinh, this, textSizeInitialDataNgaySinh);
-            Graphic.ScaleSize.Resize(originalForm, originalDataGioitinh, dataGioiTinh, this, textSizeInitialDataGioiTinh);
-            Graphic.ScaleSize.Resize(originalForm, originalDataCCCD, dataCCCD, this, textSizeInitialDataCCCD);
-            Graphic.ScaleSize.Resize(originalForm, originalDataMaBHYT, dataMaBHYT, this, textSizeInitialDataMaBHYT);
-            Graphic.ScaleSize.Resize(originalForm, originalDataNgheNghiep, dataNgheNghiep, this, textSizeInitialDataNgheNghiep);
-            Graphic.ScaleSize.Resize(originalForm, originalDataSoDienThoai, dataSoDienThoai, this, textSizeInitialDataSoDienThoai);
-            Graphic.ScaleSize.Resize(originalForm, originalDataEmail, dataEmail, this, textSizeInitialDataEmail);
-            Graphic.ScaleSize.Resize(originalForm, originalDataDiaChi, dataDiaChi, this, textSizeInitialDataDiaChi);
-
-        }
 
         private void checkChoose_CheckStateChanged(object sender, EventArgs e)
         {
@@ -167,6 +142,37 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.DatLichKhamUI
             {
                 this.BackColor = SystemColors.Control;
             }
+        }
+
+        private void DataHoSoBenhNhan_Resize(object sender, EventArgs e)
+        {
+            if (originalForm.Width != 0)
+            {
+                Graphic.ScaleSize.Resize(originalForm, originalCheckChoose, checkChoose, this);
+                Graphic.ScaleSize.Resize(originalForm, originalTextMaHoSoBenhNhan, textMaHoSoBenhNhan, this, textSizeInitialTextMaHoSoBenhNhan);
+                Graphic.ScaleSize.Resize(originalForm, originalTextHoVaTen, textHoVaTen, this, textSizeInitialTextHoVaTen);
+                Graphic.ScaleSize.Resize(originalForm, originalTextMaTaiKhoan, textMaTaiKhoan, this, textSizeInitialTextMaTaiKhoan);
+                Graphic.ScaleSize.Resize(originalForm, originalTextNgaySinh, textNgaySinh, this, textSizeInitialTextNgaySinh);
+                Graphic.ScaleSize.Resize(originalForm, originalTextGioitinh, textGioiTinh, this, textSizeInitialTextGioiTinh);
+                Graphic.ScaleSize.Resize(originalForm, originalTextCCCD, textCCCD, this, textSizeInitialTextCCCD);
+                Graphic.ScaleSize.Resize(originalForm, originalTextMaBHYT, textMaBHYT, this, textSizeInitialTextMaBHYT);
+                Graphic.ScaleSize.Resize(originalForm, originalTextNgheNghiep, textNgheNghiep, this, textSizeInitialTextNgheNghiep);
+                Graphic.ScaleSize.Resize(originalForm, originalTextSoDienThoai, textSoDienThoai, this, textSizeInitialTextSoDienThoai);
+                Graphic.ScaleSize.Resize(originalForm, originalTextEmail, textEmail, this, textSizeInitialTextEmail);
+                Graphic.ScaleSize.Resize(originalForm, originalTextDiaChi, textDiaChi, this, textSizeInitialTextDiaChi);
+                Graphic.ScaleSize.Resize(originalForm, originalDataMaHoSoBenhNhan, dataMaHoSoBenhNhan, this, textSizeInitialDataMaHoSoBenhNhan);
+                Graphic.ScaleSize.Resize(originalForm, originalDataHoVaTen, dataHoVaTen, this, textSizeInitialDataHoVaTen);
+                Graphic.ScaleSize.Resize(originalForm, originalDataMaTaiKhoan, dataMaTaiKhoan, this, textSizeInitialDataMaTaiKhoan);
+                Graphic.ScaleSize.Resize(originalForm, originalDataNgaySinh, dataNgaySinh, this, textSizeInitialDataNgaySinh);
+                Graphic.ScaleSize.Resize(originalForm, originalDataGioitinh, dataGioiTinh, this, textSizeInitialDataGioiTinh);
+                Graphic.ScaleSize.Resize(originalForm, originalDataCCCD, dataCCCD, this, textSizeInitialDataCCCD);
+                Graphic.ScaleSize.Resize(originalForm, originalDataMaBHYT, dataMaBHYT, this, textSizeInitialDataMaBHYT);
+                Graphic.ScaleSize.Resize(originalForm, originalDataNgheNghiep, dataNgheNghiep, this, textSizeInitialDataNgheNghiep);
+                Graphic.ScaleSize.Resize(originalForm, originalDataSoDienThoai, dataSoDienThoai, this, textSizeInitialDataSoDienThoai);
+                Graphic.ScaleSize.Resize(originalForm, originalDataEmail, dataEmail, this, textSizeInitialDataEmail);
+                Graphic.ScaleSize.Resize(originalForm, originalDataDiaChi, dataDiaChi, this, textSizeInitialDataDiaChi);
+            }
+
         }
     }
 }

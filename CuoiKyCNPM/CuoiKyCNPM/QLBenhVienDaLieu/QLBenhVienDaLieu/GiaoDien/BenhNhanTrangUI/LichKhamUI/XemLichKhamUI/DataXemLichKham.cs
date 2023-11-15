@@ -38,11 +38,11 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.XemLichKhamUI
 
         public DataXemLichKham(BenhNhan_Trang benhNhan_Trang, SqlFunctionCaller sqlFunctionCaller, string soDienThoai)
         {
-            InitializeComponent();
-
             this.benhNhan_Trang = benhNhan_Trang;
             this.sqlFunctionCaller = sqlFunctionCaller;
             this.soDienThoai = soDienThoai;
+            
+            InitializeComponent();
 
             originalForm = new Rectangle(this.Location.X, this.Location.Y, this.Width, this.Height);
             originalBenhNhan_Trang = new Rectangle(benhNhan_Trang.Location.X, benhNhan_Trang.Location.Y, benhNhan_Trang.Width, benhNhan_Trang.Height);
@@ -67,6 +67,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.XemLichKhamUI
             textSizeTextTrangThai = textTrangThai.Font.Size;
             textSizeDataTrangThai = dataTrangThai.Font.Size;
             textSizeLinkXemChiTiet = linkXemChiTiet.Font.Size;
+
         }
 
 
@@ -130,22 +131,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.XemLichKhamUI
             set { this.linkXemChiTiet = value; }
         }
 
-        private void DataXemLichKham_Resize(object sender, EventArgs e)
-        {
-            ScaleSize.Resize(originalForm, originalTextMaPhieu, textMaPhieu, this, textSizeTextMaphieu);
-            ScaleSize.Resize(originalForm, originalDataMaPhieu, dataMaPhieu, this, textSizeDataMaPhieu);
-            ScaleSize.Resize(originalForm, originalDataName, dataName, this, textSizeDataName);
-            ScaleSize.Resize(originalForm, originalTextDichVu, textDichVu, this, textSizeTextDichVu);
-            ScaleSize.Resize(originalForm, originalDataDichVu, dataDichVu, this, textSizeDataDichVu);
-            ScaleSize.Resize(originalForm, originalTextChuyenKhoa, textChuyenKhoa, this, textSizeTextChuyenKhoa);
-            ScaleSize.Resize(originalForm, originalDataChuyenKhoa, dataChuyenKhoa, this, textSizeDataChuyenKhoa);
-            ScaleSize.Resize(originalForm, originalTextTrangThai, textTrangThai, this, textSizeTextTrangThai);
-            ScaleSize.Resize(originalForm, originalDataTrangThai, dataTrangThai, this, textSizeDataTrangThai);
-            ScaleSize.Resize(originalForm, originalLinkXemChiTiet, linkXemChiTiet, this, textSizeLinkXemChiTiet);
-
-            this.Region = Draw.RoundedRectangle(0, 0, this.Width, this.Height, 30, 30);
-        }
-
+        
         private void linkXemChiTiet_Click(object sender, EventArgs e)
         {
             Panel mainPanelRight = benhNhan_Trang.MainPanelRight;
@@ -160,6 +146,25 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.XemLichKhamUI
             mainPanelRight.Tag = xemChiTiet;
 
             xemChiTiet.Show();
+        }
+
+        private void DataXemLichKham_Resize(object sender, EventArgs e)
+        {
+            if (originalForm.Width != 0)
+            {
+                ScaleSize.Resize(originalForm, originalTextMaPhieu, textMaPhieu, this, textSizeTextMaphieu);
+                ScaleSize.Resize(originalForm, originalDataMaPhieu, dataMaPhieu, this, textSizeDataMaPhieu);
+                ScaleSize.Resize(originalForm, originalDataName, dataName, this, textSizeDataName);
+                ScaleSize.Resize(originalForm, originalTextDichVu, textDichVu, this, textSizeTextDichVu);
+                ScaleSize.Resize(originalForm, originalDataDichVu, dataDichVu, this, textSizeDataDichVu);
+                ScaleSize.Resize(originalForm, originalTextChuyenKhoa, textChuyenKhoa, this, textSizeTextChuyenKhoa);
+                ScaleSize.Resize(originalForm, originalDataChuyenKhoa, dataChuyenKhoa, this, textSizeDataChuyenKhoa);
+                ScaleSize.Resize(originalForm, originalTextTrangThai, textTrangThai, this, textSizeTextTrangThai);
+                ScaleSize.Resize(originalForm, originalDataTrangThai, dataTrangThai, this, textSizeDataTrangThai);
+                ScaleSize.Resize(originalForm, originalLinkXemChiTiet, linkXemChiTiet, this, textSizeLinkXemChiTiet);
+
+                this.Region = Draw.RoundedRectangle(0, 0, this.Width, this.Height, 30, 30);
+            }
         }
     }
 }

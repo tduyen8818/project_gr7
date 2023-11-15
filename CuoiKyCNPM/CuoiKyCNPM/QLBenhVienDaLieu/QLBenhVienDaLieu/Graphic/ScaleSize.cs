@@ -23,6 +23,39 @@ namespace QLBenhVienDaLieu.Graphic
 
         }
 
+        public static void ResizeNoLocation(Rectangle originalFormSize, Rectangle originalControlSize, Control control, Form form)
+        {
+            float xRatio = form.Width / (float)originalFormSize.Width;
+            float yRatio = form.Height / (float)originalFormSize.Height;
+
+            int newWidth = (int)(originalControlSize.Width * xRatio);
+            int newHeight = (int)(originalControlSize.Height * yRatio);
+
+            control.Location = new Point(control.Location.X, control.Location.Y);
+            control.Size = new Size(newWidth, newHeight);
+
+        }
+
+        public static void ResizeNoLocation(Rectangle originalFormSize, Rectangle originalControlSize, Control control, Form form, float sizeTextInitial)
+        {
+
+
+            float xRatio = form.Width / (float)originalFormSize.Width;
+            float yRatio = form.Height / (float)originalFormSize.Height;
+
+            int newWidth = (int)(originalControlSize.Width * xRatio);
+            int newHeight = (int)(originalControlSize.Height * yRatio);
+
+            control.Location = new Point(control.Location.X, control.Location.Y);
+            control.Size = new Size(newWidth, newHeight);
+
+            if (control.Font != null)
+            {
+                control.Font = new Font(control.Font.Name, sizeTextInitial * (xRatio == 1 ? yRatio : xRatio), control.Font.Style);
+            }
+
+        }
+
         public static void Resize(Rectangle originalFormSize, Rectangle originalControlSize, Control control, Form form, float sizeTextInitial)
         {
 

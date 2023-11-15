@@ -49,7 +49,7 @@ namespace QLBenhVienDaLieu.Database.Check
 
         public static bool CheckHoVaTen(string name)
         {
-            if (!Regex.Match(name, @"\d").Success)
+            if (!Regex.Match(name, @"\d").Success && !name.Equals(""))
             {
                 return true;
             }

@@ -31,10 +31,10 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.DatLichKhamUI
 
         public DatLichKhamThanhToan(SqlFunctionCaller sqlFunctionCaller, DatLichKham datLichKham)
         {
-            InitializeComponent();
-
             this.sqlFunctionCaller = sqlFunctionCaller;
             this.datLichKham = datLichKham;
+
+            InitializeComponent();
 
             originalForm = new Rectangle(this.Location.X, this.Location.Y, this.Width, this.Height);
             originalImageCheck = new Rectangle(imageCheck.Location.X, imageCheck.Location.Y, imageCheck.Width, imageCheck.Height);
@@ -54,19 +54,9 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.DatLichKhamUI
 
             dataThanhToan.Items.Add("Tiền mặt");
             dataThanhToan.Items.Add("Thẻ tín dụng");
+
         }
 
-        private void DatLichKhamThanhToan_Resize(object sender, EventArgs e)
-        {
-            ScaleSize.Resize(originalForm, originalImageCheck, imageCheck, this);
-            ScaleSize.Resize(originalForm, originalBtnThanhToan, btnThanhToan, this, textSizeInitialBtnThanhToan);
-            ScaleSize.Resize(originalForm, originalTitleDatLich, titleDatLich, this, textSizeInitialTitleDatLich);
-            ScaleSize.Resize(originalForm, originalTextThanhToan, textThanhToan, this, textSizeInitialTextThanhToan);
-            ScaleSize.Resize(originalForm, originalDataThanhToan, dataThanhToan, this, textSizeInitialDataThanhToan);
-            ScaleSize.Resize(originalForm, originalTextErrorThanhToan, textErrorThanhToan, this, textSizeInitialTextErrorThanhToan);
-
-            btnThanhToan.Region = Draw.RoundedRectangle(0, 0, btnThanhToan.Width, btnThanhToan.Height, 50, 50);
-        }
 
         private void dataThanhToan_TextChanged(object sender, EventArgs e)
         {
@@ -106,6 +96,21 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.DatLichKhamUI
 
                 sqlFunctionCaller.InsertHoaDon(maHoSoBenhNhan, maLichKham, thanhTien, dataThanhToan.SelectedItem.ToString());
                 MessageBox.Show("Thanh toán thành công");
+            }
+        }
+
+        private void DatLichKhamThanhToan_Resize(object sender, EventArgs e)
+        {
+           if (originalForm.Width != 0)
+            {
+                ScaleSize.Resize(originalForm, originalImageCheck, imageCheck, this);
+                ScaleSize.Resize(originalForm, originalBtnThanhToan, btnThanhToan, this, textSizeInitialBtnThanhToan);
+                ScaleSize.Resize(originalForm, originalTitleDatLich, titleDatLich, this, textSizeInitialTitleDatLich);
+                ScaleSize.Resize(originalForm, originalTextThanhToan, textThanhToan, this, textSizeInitialTextThanhToan);
+                ScaleSize.Resize(originalForm, originalDataThanhToan, dataThanhToan, this, textSizeInitialDataThanhToan);
+                ScaleSize.Resize(originalForm, originalTextErrorThanhToan, textErrorThanhToan, this, textSizeInitialTextErrorThanhToan);
+
+                btnThanhToan.Region = Draw.RoundedRectangle(0, 0, btnThanhToan.Width, btnThanhToan.Height, 50, 50);
             }
         }
     }
