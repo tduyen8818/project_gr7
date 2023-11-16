@@ -169,7 +169,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.XemLichKhamUI
 
         private void XemChiTiet_Resize(object sender, EventArgs e)
         {
-            if (originalForm.Width != 0)
+            if (originalForm.Width != 0 && textMaLichKham.Font.Size != 0)
             {
                 Graphic.ScaleSize.Resize(originalForm, originalTextMaLichKham, textMaLichKham, this, textSizeInitialTextMaLichKham);
                 Graphic.ScaleSize.Resize(originalForm, originalTextMaHoSoBenhNhan, textMaHoSoBenhNhan, this, textSizeInitialTextMaHoSoBenhNhan);

@@ -3,7 +3,6 @@ using QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.DatLichKhamUI;
 using QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.XemLichKhamUI;
 using QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI;
 using System;
-using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -75,7 +74,7 @@ namespace QLBenhVienDaLieu
 
         private void buttonDatLich_Click(object sender, EventArgs e)
         {
-            if (!sqlFunctionCaller.GetHoSoBenhNhanByMaTaiKhoanOrSoDienThoai(soDienThoai).Any())
+            if (!sqlFunctionCaller.GetHoSoBenhNhanByMaTaiKhoan(soDienThoai).Any())
             {
                 mainPanelRight.Controls.Clear();
                 DangKyHoSoBenhNhan dangKyHoSoBenhNhan = new DangKyHoSoBenhNhan(sqlFunctionCaller, soDienThoai);
@@ -128,7 +127,7 @@ namespace QLBenhVienDaLieu
 
         public void buttonHoSoBenhNhan_Click(object sender, EventArgs e)
         {
-            if (!sqlFunctionCaller.GetHoSoBenhNhanByMaTaiKhoanOrSoDienThoai(soDienThoai).Any())
+            if (!sqlFunctionCaller.GetHoSoBenhNhanByMaTaiKhoan(soDienThoai).Any())
             {
                 mainPanelRight.Controls.Clear();
                 DangKyHoSoBenhNhan dangKyHoSoBenhNhan = new DangKyHoSoBenhNhan(sqlFunctionCaller, soDienThoai);

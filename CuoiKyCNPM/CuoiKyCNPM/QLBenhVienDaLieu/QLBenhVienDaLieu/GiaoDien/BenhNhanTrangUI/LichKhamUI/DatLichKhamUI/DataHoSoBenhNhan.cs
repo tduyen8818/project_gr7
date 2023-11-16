@@ -30,7 +30,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.DatLichKhamUI
         private Rectangle originalTextHoVaTen;
         private Rectangle originalTextMaTaiKhoan;
         private Rectangle originalTextNgaySinh;
-        private Rectangle originalTextGioitinh;
+        private Rectangle originalTextGioiTinh;
         private Rectangle originalTextCCCD;
         private Rectangle originalTextMaBHYT;
         private Rectangle originalTextNgheNghiep;
@@ -41,7 +41,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.DatLichKhamUI
         private Rectangle originalDataHoVaTen;
         private Rectangle originalDataMaTaiKhoan;
         private Rectangle originalDataNgaySinh;
-        private Rectangle originalDataGioitinh;
+        private Rectangle originalDataGioiTinh;
         private Rectangle originalDataCCCD;
         private Rectangle originalDataMaBHYT;
         private Rectangle originalDataNgheNghiep;
@@ -87,7 +87,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.DatLichKhamUI
             originalTextHoVaTen = new Rectangle(textHoVaTen.Location.X, textHoVaTen.Location.Y, textHoVaTen.Width, textHoVaTen.Height);
             originalTextMaTaiKhoan = new Rectangle(textMaTaiKhoan.Location.X, textMaTaiKhoan.Location.Y, textMaTaiKhoan.Width, textMaTaiKhoan.Height);
             originalTextNgaySinh = new Rectangle(textNgaySinh.Location.X, textNgaySinh.Location.Y, textNgaySinh.Width, textNgaySinh.Height);
-            originalTextGioitinh = new Rectangle(textGioiTinh.Location.X, textGioiTinh.Location.Y, textGioiTinh.Width, textGioiTinh.Height);
+            originalTextGioiTinh = new Rectangle(textGioiTinh.Location.X, textGioiTinh.Location.Y, textGioiTinh.Width, textGioiTinh.Height);
             originalTextCCCD = new Rectangle(textCCCD.Location.X, textCCCD.Location.Y, textCCCD.Width, textCCCD.Height);
             originalTextMaBHYT = new Rectangle(textMaBHYT.Location.X, textMaBHYT.Location.Y, textMaBHYT.Width, textMaBHYT.Height);
             originalTextNgheNghiep = new Rectangle(textNgheNghiep.Location.X, textNgheNghiep.Location.Y, textNgheNghiep.Width, textNgheNghiep.Height);
@@ -98,7 +98,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.DatLichKhamUI
             originalDataHoVaTen = new Rectangle(dataHoVaTen.Location.X, dataHoVaTen.Location.Y, dataHoVaTen.Width, dataHoVaTen.Height);
             originalDataMaTaiKhoan = new Rectangle(dataMaTaiKhoan.Location.X, dataMaTaiKhoan.Location.Y, dataMaTaiKhoan.Width, dataMaTaiKhoan.Height);
             originalDataNgaySinh = new Rectangle(dataNgaySinh.Location.X, dataNgaySinh.Location.Y, dataNgaySinh.Width, dataNgaySinh.Height);
-            originalDataGioitinh = new Rectangle(dataGioiTinh.Location.X, dataGioiTinh.Location.Y, dataGioiTinh.Width, dataGioiTinh.Height);
+            originalDataGioiTinh = new Rectangle(dataGioiTinh.Location.X, dataGioiTinh.Location.Y, dataGioiTinh.Width, dataGioiTinh.Height);
             originalDataCCCD = new Rectangle(dataCCCD.Location.X, dataCCCD.Location.Y, dataCCCD.Width, dataCCCD.Height);
             originalDataMaBHYT = new Rectangle(dataMaBHYT.Location.X, dataMaBHYT.Location.Y, dataMaBHYT.Width, dataMaBHYT.Height);
             originalDataNgheNghiep = new Rectangle(dataNgheNghiep.Location.X, dataNgheNghiep.Location.Y, dataNgheNghiep.Width, dataNgheNghiep.Height);
@@ -146,14 +146,14 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.DatLichKhamUI
 
         private void DataHoSoBenhNhan_Resize(object sender, EventArgs e)
         {
-            if (originalForm.Width != 0)
+            if (originalForm.Width != 0 && textMaHoSoBenhNhan.Font.Size != 0)
             {
                 Graphic.ScaleSize.Resize(originalForm, originalCheckChoose, checkChoose, this);
                 Graphic.ScaleSize.Resize(originalForm, originalTextMaHoSoBenhNhan, textMaHoSoBenhNhan, this, textSizeInitialTextMaHoSoBenhNhan);
                 Graphic.ScaleSize.Resize(originalForm, originalTextHoVaTen, textHoVaTen, this, textSizeInitialTextHoVaTen);
                 Graphic.ScaleSize.Resize(originalForm, originalTextMaTaiKhoan, textMaTaiKhoan, this, textSizeInitialTextMaTaiKhoan);
                 Graphic.ScaleSize.Resize(originalForm, originalTextNgaySinh, textNgaySinh, this, textSizeInitialTextNgaySinh);
-                Graphic.ScaleSize.Resize(originalForm, originalTextGioitinh, textGioiTinh, this, textSizeInitialTextGioiTinh);
+                Graphic.ScaleSize.Resize(originalForm, originalTextGioiTinh, textGioiTinh, this, textSizeInitialTextGioiTinh);
                 Graphic.ScaleSize.Resize(originalForm, originalTextCCCD, textCCCD, this, textSizeInitialTextCCCD);
                 Graphic.ScaleSize.Resize(originalForm, originalTextMaBHYT, textMaBHYT, this, textSizeInitialTextMaBHYT);
                 Graphic.ScaleSize.Resize(originalForm, originalTextNgheNghiep, textNgheNghiep, this, textSizeInitialTextNgheNghiep);
@@ -164,7 +164,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.DatLichKhamUI
                 Graphic.ScaleSize.Resize(originalForm, originalDataHoVaTen, dataHoVaTen, this, textSizeInitialDataHoVaTen);
                 Graphic.ScaleSize.Resize(originalForm, originalDataMaTaiKhoan, dataMaTaiKhoan, this, textSizeInitialDataMaTaiKhoan);
                 Graphic.ScaleSize.Resize(originalForm, originalDataNgaySinh, dataNgaySinh, this, textSizeInitialDataNgaySinh);
-                Graphic.ScaleSize.Resize(originalForm, originalDataGioitinh, dataGioiTinh, this, textSizeInitialDataGioiTinh);
+                Graphic.ScaleSize.Resize(originalForm, originalDataGioiTinh, dataGioiTinh, this, textSizeInitialDataGioiTinh);
                 Graphic.ScaleSize.Resize(originalForm, originalDataCCCD, dataCCCD, this, textSizeInitialDataCCCD);
                 Graphic.ScaleSize.Resize(originalForm, originalDataMaBHYT, dataMaBHYT, this, textSizeInitialDataMaBHYT);
                 Graphic.ScaleSize.Resize(originalForm, originalDataNgheNghiep, dataNgheNghiep, this, textSizeInitialDataNgheNghiep);

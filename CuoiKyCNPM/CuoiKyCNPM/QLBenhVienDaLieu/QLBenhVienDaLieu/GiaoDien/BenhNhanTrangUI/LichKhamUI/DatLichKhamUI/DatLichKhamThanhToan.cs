@@ -94,14 +94,14 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.DatLichKhamUI
                 int tongTien = sqlFunctionCaller.GetDichVuByTenDichVu(this.datLichKham.DataDichVu.SelectedItem.ToString()).GiaDichVu;
                 int thanhTien = (int)Math.Round(tongTien * (tyLeGiam == 0 ? 1 : tyLeGiam));
 
-                sqlFunctionCaller.InsertHoaDon(maHoSoBenhNhan, maLichKham, thanhTien, dataThanhToan.SelectedItem.ToString());
+                sqlFunctionCaller.InsertHoaDon(maLichKham, thanhTien, dataThanhToan.SelectedItem.ToString());
                 MessageBox.Show("Thanh toán thành công");
             }
         }
 
         private void DatLichKhamThanhToan_Resize(object sender, EventArgs e)
         {
-           if (originalForm.Width != 0)
+           if (originalForm.Width != 0 && titleDatLich.Font.Size != 0)
             {
                 ScaleSize.Resize(originalForm, originalImageCheck, imageCheck, this);
                 ScaleSize.Resize(originalForm, originalBtnThanhToan, btnThanhToan, this, textSizeInitialBtnThanhToan);

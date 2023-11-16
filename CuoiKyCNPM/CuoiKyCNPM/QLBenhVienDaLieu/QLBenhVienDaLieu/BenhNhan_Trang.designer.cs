@@ -575,11 +575,12 @@
             this.ClientSize = new System.Drawing.Size(1701, 1076);
             this.Controls.Add(this.mainPanelRight);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "BenhNhan_Trang";
             this.Padding = new System.Windows.Forms.Padding(10);
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "BenhNhan_Trang";
             this.Resize += new System.EventHandler(this.BenhNhan_Trang_Resize);
             this.panel1.ResumeLayout(false);
             this.mainPanelLeft.ResumeLayout(false);

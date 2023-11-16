@@ -150,7 +150,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.XemLichKhamUI
 
         private void DataXemLichKham_Resize(object sender, EventArgs e)
         {
-            if (originalForm.Width != 0)
+            if (originalForm.Width != 0 && textMaPhieu.Font.Size != 0)
             {
                 ScaleSize.Resize(originalForm, originalTextMaPhieu, textMaPhieu, this, textSizeTextMaphieu);
                 ScaleSize.Resize(originalForm, originalDataMaPhieu, dataMaPhieu, this, textSizeDataMaPhieu);

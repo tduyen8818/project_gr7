@@ -69,7 +69,7 @@ namespace QLBenhVienDaLieu
                                 break;
 
                             case "ThanhVien":
-                                LeTan_Trang thanhVienForm = new LeTan_Trang(sDT);
+                                LeTan_Trang thanhVienForm = new LeTan_Trang(sDT, functionCaller);
                                 this.Hide();
                                 thanhVienForm.ShowDialog();
                                 this.Close();

@@ -301,13 +301,11 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
             textSizeInitialDataEmail = dataEmail.Font.Size;
             textSizeInitialDataDiaChi = dataDiaChi.Font.Size;
 
-            showHoSoBenhNhan.Region = Graphic.Draw.RoundedRectangle(0, 0, showHoSoBenhNhan.Width, showHoSoBenhNhan.Height, 20, 20);
             buttonAdd.Region = Graphic.Draw.RoundedRectangle(0, 0, buttonAdd.Width, buttonAdd.Height, 20, 20);
 
-            listHoSoBenhNhan = sqlFunctionCaller.GetHoSoBenhNhanByMaTaiKhoanOrSoDienThoai(benhNhan_Trang.SoDienThoai);
+            listHoSoBenhNhan = sqlFunctionCaller.GetHoSoBenhNhanByMaTaiKhoan(benhNhan_Trang.SoDienThoai);
 
 
-            showHoSoBenhNhan.Region = Graphic.Draw.RoundedRectangle(0, 0, showHoSoBenhNhan.Width, showHoSoBenhNhan.Height, 20, 20);
             buttonAdd.Region = Graphic.Draw.RoundedRectangle(0, 0, buttonAdd.Width, buttonAdd.Height, 20, 20);
 
             HoSoBenhNhan hoSoBenhNhan = listHoSoBenhNhan[0];
@@ -600,7 +598,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
 
         private void HoSoBenhNhanForm_Resize(object sender, EventArgs e)
         {
-            if (originalForm.Width != 0)
+            if (originalForm.Width != 0 && titleHoSoBenhNhan.Font.Size != 0)
             {
                 Graphic.ScaleSize.Resize(originalForm, originalShowHoSoBenhNhan, showHoSoBenhNhan, this);
                 Graphic.ScaleSize.Resize(originalForm, originalTitleHoSoBenhNhan, titleHoSoBenhNhan, this, textSizeInitialTitleHoSoBenhNhan);
@@ -637,7 +635,6 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
                 Graphic.ScaleSize.Resize(originalForm, originalButtonAdd, buttonAdd, this);
                 Graphic.ScaleSize.Resize(originalForm, originalImageProfile, imageProfile, this);
 
-                showHoSoBenhNhan.Region = Graphic.Draw.RoundedRectangle(0, 0, showHoSoBenhNhan.Width, showHoSoBenhNhan.Height, 20, 20);
                 buttonAdd.Region = Graphic.Draw.RoundedRectangle(0, 0, buttonAdd.Width, buttonAdd.Height, 20, 20);
             }
         }

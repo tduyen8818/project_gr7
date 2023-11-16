@@ -306,7 +306,7 @@
             this.textDotHoVaTen.AutoSize = true;
             this.textDotHoVaTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textDotHoVaTen.ForeColor = System.Drawing.Color.Red;
-            this.textDotHoVaTen.Location = new System.Drawing.Point(202, 144);
+            this.textDotHoVaTen.Location = new System.Drawing.Point(210, 144);
             this.textDotHoVaTen.Margin = new System.Windows.Forms.Padding(0);
             this.textDotHoVaTen.Name = "textDotHoVaTen";
             this.textDotHoVaTen.Size = new System.Drawing.Size(31, 40);
@@ -318,7 +318,7 @@
             this.textDotSoDienThoai.AutoSize = true;
             this.textDotSoDienThoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textDotSoDienThoai.ForeColor = System.Drawing.Color.Red;
-            this.textDotSoDienThoai.Location = new System.Drawing.Point(262, 278);
+            this.textDotSoDienThoai.Location = new System.Drawing.Point(271, 278);
             this.textDotSoDienThoai.Margin = new System.Windows.Forms.Padding(0);
             this.textDotSoDienThoai.Name = "textDotSoDienThoai";
             this.textDotSoDienThoai.Size = new System.Drawing.Size(31, 40);
@@ -330,7 +330,7 @@
             this.textDotSoCCCD.AutoSize = true;
             this.textDotSoCCCD.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textDotSoCCCD.ForeColor = System.Drawing.Color.Red;
-            this.textDotSoCCCD.Location = new System.Drawing.Point(204, 414);
+            this.textDotSoCCCD.Location = new System.Drawing.Point(210, 414);
             this.textDotSoCCCD.Margin = new System.Windows.Forms.Padding(0);
             this.textDotSoCCCD.Name = "textDotSoCCCD";
             this.textDotSoCCCD.Size = new System.Drawing.Size(31, 40);
@@ -342,7 +342,7 @@
             this.textDotNgaySinh.AutoSize = true;
             this.textDotNgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textDotNgaySinh.ForeColor = System.Drawing.Color.Red;
-            this.textDotNgaySinh.Location = new System.Drawing.Point(919, 144);
+            this.textDotNgaySinh.Location = new System.Drawing.Point(925, 144);
             this.textDotNgaySinh.Margin = new System.Windows.Forms.Padding(0);
             this.textDotNgaySinh.Name = "textDotNgaySinh";
             this.textDotNgaySinh.Size = new System.Drawing.Size(31, 40);
@@ -354,7 +354,7 @@
             this.textDotGioiTinh.AutoSize = true;
             this.textDotGioiTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textDotGioiTinh.ForeColor = System.Drawing.Color.Red;
-            this.textDotGioiTinh.Location = new System.Drawing.Point(891, 278);
+            this.textDotGioiTinh.Location = new System.Drawing.Point(892, 278);
             this.textDotGioiTinh.Margin = new System.Windows.Forms.Padding(0);
             this.textDotGioiTinh.Name = "textDotGioiTinh";
             this.textDotGioiTinh.Size = new System.Drawing.Size(31, 40);
@@ -578,7 +578,7 @@
             this.titleDangKyHoSoBenhNhan.Name = "titleDangKyHoSoBenhNhan";
             this.titleDangKyHoSoBenhNhan.Size = new System.Drawing.Size(1278, 80);
             this.titleDangKyHoSoBenhNhan.TabIndex = 47;
-            this.titleDangKyHoSoBenhNhan.Text = "DANH SÁCH LỊCH KHÁM";
+            this.titleDangKyHoSoBenhNhan.Text = "ĐĂNG KÝ HỒ SƠ BỆNH NHÂN";
             this.titleDangKyHoSoBenhNhan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // DangKyHoSoBenhNhan

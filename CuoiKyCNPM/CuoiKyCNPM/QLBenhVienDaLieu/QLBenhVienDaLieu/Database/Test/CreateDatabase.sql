@@ -90,7 +90,7 @@ CREATE TABLE HoSoBenhNhan
 	DiaChi nvarchar(50)
 )
 ALTER TABLE HoSoBenhNhan ADD PRIMARY KEY (MaHoSoBenhNhan);
-ALTER TABLE HoSoBenhNhan ADD CONSTRAINT FK_HoSoBenhNhanUser FOREIGN KEY (MaTaiKhoan) REFERENCES DangKyUser(SoDienThoai)
+ALTER TABLE HoSoBenhNhan ADD CONSTRAINT FK_HoSoBenhNhanUser FOREIGN KEY (MaTaiKhoan) REFERENCES DangKyUser(SoDienThoai) ON DELETE CASCADE
 go
 --=================FUNCTION
 CREATE FUNCTION SelectHoSoBenhNhan (@MaHoSoBenhNhan varchar(8))
@@ -200,7 +200,7 @@ CREATE TABLE SoKhamBenh
 	GhiChu nvarchar(50)
 )
 ALTER TABLE SoKhamBenh ADD CONSTRAINT PK_SoKhamBenh PRIMARY KEY (MaHoSoBenhNhan, MaLichKham)
-ALTER TABLE SoKhamBenh ADD CONSTRAINT FK_SoKhamBenhHoSoBenhNhan FOREIGN KEY (MaHoSoBenhNhan) REFERENCES HoSoBenhNhan(MaHoSoBenhNhan);
+ALTER TABLE SoKhamBenh ADD CONSTRAINT FK_SoKhamBenhHoSoBenhNhan FOREIGN KEY (MaHoSoBenhNhan) REFERENCES HoSoBenhNhan(MaHoSoBenhNhan) ON DELETE CASCADE;
 go
 --=================FUNCTION
 CREATE FUNCTION SelectSoKhamBenh (@MaHoSoBenhNhan varchar(8), @MaLichKham varchar(8))
@@ -327,7 +327,7 @@ CREATE TABLE BenhAn
 	HoSoPhimAnh nvarchar(30)
 )
 ALTER TABLE BenhAn ADD CONSTRAINT PK_BenhAn PRIMARY KEY (MaBenhAn)
-ALTER TABLE BenhAn ADD CONSTRAINT FK_BenhAnHoSoBenhNhan FOREIGN KEY (MaHoSoBenhNhan) REFERENCES HoSoBenhNhan(MaHoSoBenhNhan)
+ALTER TABLE BenhAn ADD CONSTRAINT FK_BenhAnHoSoBenhNhan FOREIGN KEY (MaHoSoBenhNhan) REFERENCES HoSoBenhNhan(MaHoSoBenhNhan) ON DELETE CASCADE
 go
 --=================FUNCTION
 CREATE FUNCTION SelectBenhAn (@MaBenhAn varchar(8))
@@ -492,7 +492,7 @@ CREATE TABLE ToaThuoc
 	GhiChu nvarchar(50)
 )
 ALTER TABLE ToaThuoc ADD CONSTRAINT PK_ToaThuoc PRIMARY KEY (MaToaThuoc, MaThuoc)
-ALTER TABLE ToaThuoc ADD CONSTRAINT FK_ToaThuocBenhAn FOREIGN KEY (MaBenhAn) REFERENCES BenhAn(MaBenhAn)
+ALTER TABLE ToaThuoc ADD CONSTRAINT FK_ToaThuocBenhAn FOREIGN KEY (MaBenhAn) REFERENCES BenhAn(MaBenhAn) ON DELETE CASCADE
 go
 --=================FUNCTION
 CREATE FUNCTION SelectToaThuoc (@MaToaThuoc varchar(8))
@@ -574,13 +574,12 @@ go
 CREATE TABLE HoaDon
 (
 	MaHoaDon varchar(8) NOT NULL,
-	MaHoSoBenhNhan varchar(8),
 	MaLichKham varchar(8),
 	TongTien int,
 	HinhThucThanhToan nvarchar(30)
 )
 ALTER TABLE HoaDon ADD CONSTRAINT PK_HoaDon PRIMARY KEY (MaHoaDon)
-ALTER TABLE HoaDon ADD CONSTRAINT FK_HoaDonHoSoBenhNhan FOREIGN KEY (MaHoSoBenhNhan) REFERENCES HoSoBenhNhan(MaHoSoBenhNhan)
+
 
 go
 --=================FUNCTION
@@ -598,9 +597,7 @@ CREATE FUNCTION GetHoaDonByParam(@MaHoaDon varchar(8), @ParamName varchar(50)) R
 AS
 BEGIN
     DECLARE @Result nvarchar(50)
-    IF @ParamName = 'MaHoSoBenhNhan'
-        SELECT @Result = MaHoSoBenhNhan FROM HoaDon WHERE MaHoaDon = @MaHoaDon
-    ELSE IF @ParamName = 'MaLichKham'
+    IF @ParamName = 'MaLichKham'
         SELECT @Result = MaLichKham FROM HoaDon WHERE MaHoaDon = @MaHoaDon
     ELSE IF @ParamName = 'TongTien'
         SELECT @Result = CONVERT(nvarchar(50), TongTien) FROM HoaDon WHERE MaHoaDon = @MaHoaDon
@@ -613,7 +610,6 @@ END
 go
 CREATE PROCEDURE UpdateHoaDon
     @MaHoaDon varchar(8),
-    @MaHoSoBenhNhan varchar(8),
     @MaLichKham varchar(8),
     @TongTien int,
     @HinhThucThanhToan nvarchar(30)
@@ -621,7 +617,6 @@ AS
 BEGIN
     UPDATE HoaDon
     SET 
-        MaHoSoBenhNhan = @MaHoSoBenhNhan,
         MaLichKham = @MaLichKham,
         TongTien = @TongTien,
         HinhThucThanhToan = @HinhThucThanhToan
@@ -879,11 +874,12 @@ CREATE TABLE LichKham
 	Ca nvarchar(15),
 	KhungGioKham datetime
 )
-ALTER TABLE LichKham ADD CONSTRAINT PK_LichKham PRIMARY KEY (MaLichKham)
-ALTER TABLE HoaDon ADD CONSTRAINT FK_HoaDonLichKham FOREIGN KEY (MaLichKham) REFERENCES LichKham(MaLichKham)
-ALTER TABLE LichKham ADD CONSTRAINT FK_LichKhamHoSoBenhNhan FOREIGN KEY (MaHoSoBenhNhan) REFERENCES HoSoBenhNhan(MaHoSoBenhNhan)
-ALTER TABLE LichKham ADD CONSTRAINT FK_LichKhamChuyenKhoa FOREIGN KEY (MaChuyenKhoa) REFERENCES ChuyenKhoa(MaChuyenKhoa)
-ALTER TABLE LichKham ADD CONSTRAINT FK_LichKhamDichVu FOREIGN KEY (MaDichVu) REFERENCES DichVu(MaDichVu)
+
+ALTER TABLE LichKham ADD CONSTRAINT PK_LichKham PRIMARY KEY (MaLichKham) 
+ALTER TABLE HoaDon ADD CONSTRAINT FK_HoaDonLichKham FOREIGN KEY (MaLichKham) REFERENCES LichKham(MaLichKham) ON DELETE CASCADE
+ALTER TABLE LichKham ADD CONSTRAINT FK_LichKhamHoSoBenhNhan FOREIGN KEY (MaHoSoBenhNhan) REFERENCES HoSoBenhNhan(MaHoSoBenhNhan) ON DELETE CASCADE
+ALTER TABLE LichKham ADD CONSTRAINT FK_LichKhamChuyenKhoa FOREIGN KEY (MaChuyenKhoa) REFERENCES ChuyenKhoa(MaChuyenKhoa) ON DELETE CASCADE
+ALTER TABLE LichKham ADD CONSTRAINT FK_LichKhamDichVu FOREIGN KEY (MaDichVu) REFERENCES DichVu(MaDichVu) ON DELETE CASCADE
 go
 --=================FUNCTION
 CREATE FUNCTION SelectLichKham (@MaLichKham varchar(8))
@@ -1124,7 +1120,7 @@ CREATE TABLE LichLamViec
 	Ca varchar(2)
 )
 ALTER TABLE LichLamViec ADD CONSTRAINT PK_LichLamViec PRIMARY KEY (MaLichLamViec)
-ALTER TABLE LichLamViec ADD CONSTRAINT FK_LichViecTaiKhoanThanhVien FOREIGN KEY (MaThanhVien) REFERENCES TaiKhoanThanhVien(MaThanhVien)
+ALTER TABLE LichLamViec ADD CONSTRAINT FK_LichViecTaiKhoanThanhVien FOREIGN KEY (MaThanhVien) REFERENCES TaiKhoanThanhVien(MaThanhVien) ON DELETE CASCADE
 go
 --=================FUNCTION
 CREATE FUNCTION SelectLichLamViec (@MaLichLamViec varchar(8))
@@ -1602,7 +1598,6 @@ END
 go
 --################ PROCEDURE INSERT
 CREATE PROCEDURE InsertHoaDon
-    @MaHoSoBenhNhan varchar(8),
     @MaLichKham varchar(8),
     @TongTien int,
     @HinhThucThanhToan nvarchar(30)
@@ -1610,8 +1605,8 @@ AS
 BEGIN
 	DECLARE @mahoadon varchar(8)
 	SET @mahoadon = dbo.GetNewMaHoaDon()
-    INSERT INTO HoaDon (MaHoaDon, MaHoSoBenhNhan, MaLichKham, TongTien, HinhThucThanhToan)
-    VALUES (@mahoadon, @MaHoSoBenhNhan, @MaLichKham, @TongTien, @HinhThucThanhToan)
+    INSERT INTO HoaDon (MaHoaDon, MaLichKham, TongTien, HinhThucThanhToan)
+    VALUES (@mahoadon, @MaLichKham, @TongTien, @HinhThucThanhToan)
 END
 go
 --################ PROCEDURE INSERT
@@ -1869,21 +1864,21 @@ EXEC InsertLichKham 'BN000002', 'CK000003', 'DV000003', '2023-10-13', N'Sáng', 
 EXEC InsertLichKham 'BN000007', 'CK000001', 'DV000002', '2023-10-14', N'Chiều', '2023-10-14 14:30:00'
 EXEC InsertLichKham 'BN000008', 'CK000003', 'DV000001', '2023-10-15', N'Sáng', '2023-10-15 11:30:00'
 -- HOA DON
-EXEC InsertHoaDon 'BN000001', 'LK000001', 200000, N'Tiền mặt'
-EXEC InsertHoaDon 'BN000002', 'LK000002', 150000, N'Thẻ tín dụng'
-EXEC InsertHoaDon 'BN000003', 'LK000003', 180000, N'Tiền mặt'
-EXEC InsertHoaDon 'BN000004', 'LK000004', 220000, N'Thẻ tín dụng'
-EXEC InsertHoaDon 'BN000005', 'LK000005', 250000, N'Tiền mặt'
-EXEC InsertHoaDon 'BN000006', 'LK000006', 280000, N'Thẻ tín dụng'
-EXEC InsertHoaDon 'BN000007', 'LK000007', 200000, N'Tiền mặt'
-EXEC InsertHoaDon 'BN000008', 'LK000008', 300000, N'Thẻ tín dụng'
-EXEC InsertHoaDon 'BN000001', 'LK000009', 270000, N'Tiền mặt'
-EXEC InsertHoaDon 'BN000002', 'LK000010', 190000, N'Thẻ tín dụng'
-EXEC InsertHoaDon 'BN000003', 'LK000011', 210000, N'Tiền mặt'
-EXEC InsertHoaDon 'BN000004', 'LK000012', 240000, N'Thẻ tín dụng'
-EXEC InsertHoaDon 'BN000005', 'LK000013', 260000, N'Tiền mặt'
-EXEC InsertHoaDon 'BN000006', 'LK000014', 290000, N'Thẻ tín dụng'
-EXEC InsertHoaDon 'BN000007', 'LK000015', 220000, N'Tiền mặt'
+EXEC InsertHoaDon 'LK000001', 200000, N'Tiền mặt'
+EXEC InsertHoaDon 'LK000002', 150000, N'Thẻ tín dụng'
+EXEC InsertHoaDon 'LK000003', 180000, N'Tiền mặt'
+EXEC InsertHoaDon 'LK000004', 220000, N'Thẻ tín dụng'
+EXEC InsertHoaDon 'LK000005', 250000, N'Tiền mặt'
+EXEC InsertHoaDon 'LK000006', 280000, N'Thẻ tín dụng'
+EXEC InsertHoaDon 'LK000007', 200000, N'Tiền mặt'
+EXEC InsertHoaDon 'LK000008', 300000, N'Thẻ tín dụng'
+EXEC InsertHoaDon 'LK000009', 270000, N'Tiền mặt'
+EXEC InsertHoaDon 'LK000010', 190000, N'Thẻ tín dụng'
+EXEC InsertHoaDon 'LK000011', 210000, N'Tiền mặt'
+EXEC InsertHoaDon 'LK000012', 240000, N'Thẻ tín dụng'
+EXEC InsertHoaDon 'LK000013', 260000, N'Tiền mặt'
+EXEC InsertHoaDon 'LK000014', 290000, N'Thẻ tín dụng'
+EXEC InsertHoaDon 'LK000015', 220000, N'Tiền mặt'
 -- TOA THUOC
 EXEC InsertToaThuoc '1', 'TH000001', 'BA000001', N'Thuốc A', 3, N'Viên', N'Uống sau ăn'
 EXEC InsertToaThuoc '2', 'TH000002', 'BA000002', N'Thuốc B', 2, N'Thuốc lỏng', N'Uống trước khi đi ngủ'
@@ -1894,6 +1889,8 @@ EXEC InsertToaThuoc '1', 'TH000006', 'BA000006', N'Thuốc F', 2, N'Viên', N'U�
 EXEC InsertToaThuoc '2', 'TH000007', 'BA000007', N'Thuốc G', 1, N'Thuốc lỏng', N'Uống trước khi đi ngủ'
 EXEC InsertToaThuoc '1', 'TH000008', 'BA000008', N'Thuốc H', 3, N'Viên', N'Uống sau khi ăn'
 -- TAI KHOAN THANH VIEN
+EXEC InsertTaiKhoanThanhVien N'Nguyễn Văn LT', '2', '1990-05-15', N'Nam', '123456789012', '2', 'nguyenvana@gmail.com', N'Số 1, Đường ABC, Quận XYZ, Thành phố HCM', N'Da liễu', N'Lễ tân', 'TV'
+EXEC InsertTaiKhoanThanhVien N'Nguyễn Văn BS', '3', '1990-05-15', N'Nam', '123456789012', '3', 'nguyenvana@gmail.com', N'Số 1, Đường ABC, Quận XYZ, Thành phố HCM', N'Da liễu', N'Bác sĩ', 'BS'
 EXEC InsertTaiKhoanThanhVien N'Nguyễn Văn A', 'Abc@1234', '1990-05-15', N'Nam', '123456789012', '0987654321', 'nguyenvana@gmail.com', N'Số 1, Đường ABC, Quận XYZ, Thành phố HCM', N'Da liễu', N'Bác sĩ', 'BS'
 EXEC InsertTaiKhoanThanhVien N'Trần Thị B', 'Bcd@5678', '1985-07-20', N'Nữ', '234567890123', '0987123456', 'tranthib@gmail.com', N'Số 2, Đường XYZ, Quận ABC, Thành phố HCM', N'Da liễu', N'Bác sĩ', 'BS'
 EXEC InsertTaiKhoanThanhVien N'Lê Văn C', 'Cde@9012', '1988-03-10', N'Nam', '345678901234', '0909123456', 'levanc@gmail.com', N'Số 3, Đường XYZ, Quận ABC, Thành phố HCM', N'Da liễu', N'Bác sĩ', 'BS'

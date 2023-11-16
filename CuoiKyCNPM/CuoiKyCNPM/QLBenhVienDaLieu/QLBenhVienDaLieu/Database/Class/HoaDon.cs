@@ -3,7 +3,6 @@
     public class HoaDon
     {
         private string maHoaDon;
-        private string maHoSoBenhNhan;
         private string maLichKham;
         private int tongTien;
         private string hinhThucThanhToan;
@@ -11,7 +10,6 @@
         public HoaDon()
         {
             this.maHoaDon = "";
-            this.maHoSoBenhNhan = "";
             this.maLichKham = "";
             this.tongTien = 0;
             this.hinhThucThanhToan = "";
@@ -20,7 +18,6 @@
         public HoaDon(string maHoaDon, string maHoSoBenhNhan, string maLichKham, int tongTien, string hinhThucThanhToan)
         {
             this.maHoaDon = maHoaDon;
-            this.maHoSoBenhNhan = maHoSoBenhNhan;
             this.maLichKham = maLichKham;
             this.tongTien = tongTien;
             this.hinhThucThanhToan = hinhThucThanhToan;
@@ -30,12 +27,6 @@
         {
             get { return this.maHoaDon; }
             set { this.maHoaDon = value; }
-        }
-
-        public string MaHoSoBenhNhan
-        {
-            get { return this.maHoSoBenhNhan; }
-            set { this.maHoSoBenhNhan = value; }
         }
 
         public string MaLichKham
@@ -59,7 +50,6 @@
         public override string ToString()
         {
             return "Hóa đơn { mã hóa đơn: " + maHoaDon +
-                    ", mã hồ sơ bệnh nhân: " + maHoSoBenhNhan +
                     ", mã lịch khám: " + maLichKham +
                     ", tổng tiền: " + tongTien +
                     ", hình thức thanh toán: " + hinhThucThanhToan + " }";

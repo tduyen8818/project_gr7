@@ -62,9 +62,9 @@
                                                                                 "SoLuong", "Dang", "GhiChu");
 
         public static (string NameTable, string MaHoaDon,
-                        string MaMaHoSoBenhNhan, string MaLichKham,
+                        string MaLichKham,
                         string TongTien, string HinhThucThanhToan) HoaDon = ("HoaDon", "MaHoaDon",
-                                                                                "MaMaHoSoBenhNhan", "MaLichKham",
+                                                                                "MaLichKham",
                                                                                 "TongTien", "HinhThucThanhToan");
 
         public static (string NameTable, string MaKhuyenMai,

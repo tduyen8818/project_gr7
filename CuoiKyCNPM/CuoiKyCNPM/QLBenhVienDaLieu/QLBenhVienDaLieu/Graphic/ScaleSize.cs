@@ -12,14 +12,17 @@ namespace QLBenhVienDaLieu.Graphic
             float xRatio = form.Width / (float)originalFormSize.Width;
             float yRatio = form.Height / (float)originalFormSize.Height;
 
-            int newX = (int)(originalControlSize.Location.X * xRatio);
-            int newY = (int)(originalControlSize.Location.Y * yRatio);
+            if (xRatio != 0 && yRatio != 0)
+            {
+                int newX = (int)(originalControlSize.Location.X * xRatio);
+                int newY = (int)(originalControlSize.Location.Y * yRatio);
 
-            int newWidth = (int)(originalControlSize.Width * xRatio);
-            int newHeight = (int)(originalControlSize.Height * yRatio);
+                int newWidth = (int)(originalControlSize.Width * xRatio);
+                int newHeight = (int)(originalControlSize.Height * yRatio);
 
-            control.Location = new Point(newX, newY);
-            control.Size = new Size(newWidth, newHeight);
+                control.Location = new Point(newX, newY);
+                control.Size = new Size(newWidth, newHeight);
+            }
 
         }
 
@@ -28,11 +31,14 @@ namespace QLBenhVienDaLieu.Graphic
             float xRatio = form.Width / (float)originalFormSize.Width;
             float yRatio = form.Height / (float)originalFormSize.Height;
 
-            int newWidth = (int)(originalControlSize.Width * xRatio);
-            int newHeight = (int)(originalControlSize.Height * yRatio);
+            if (xRatio != 0 && yRatio != 0)
+            {
+                int newWidth = (int)(originalControlSize.Width * xRatio);
+                int newHeight = (int)(originalControlSize.Height * yRatio);
 
-            control.Location = new Point(control.Location.X, control.Location.Y);
-            control.Size = new Size(newWidth, newHeight);
+                control.Location = new Point(control.Location.X, control.Location.Y);
+                control.Size = new Size(newWidth, newHeight);
+            }
 
         }
 
@@ -43,17 +49,19 @@ namespace QLBenhVienDaLieu.Graphic
             float xRatio = form.Width / (float)originalFormSize.Width;
             float yRatio = form.Height / (float)originalFormSize.Height;
 
-            int newWidth = (int)(originalControlSize.Width * xRatio);
-            int newHeight = (int)(originalControlSize.Height * yRatio);
-
-            control.Location = new Point(control.Location.X, control.Location.Y);
-            control.Size = new Size(newWidth, newHeight);
-
-            if (control.Font != null)
+            if (xRatio != 0 && yRatio != 0)
             {
-                control.Font = new Font(control.Font.Name, sizeTextInitial * (xRatio == 1 ? yRatio : xRatio), control.Font.Style);
-            }
+                int newWidth = (int)(originalControlSize.Width * xRatio);
+                int newHeight = (int)(originalControlSize.Height * yRatio);
 
+                control.Location = new Point(control.Location.X, control.Location.Y);
+                control.Size = new Size(newWidth, newHeight);
+
+                if (control.Font != null)
+                {
+                    control.Font = new Font(control.Font.Name, sizeTextInitial * (xRatio == 1 ? yRatio : xRatio), control.Font.Style);
+                }
+            }
         }
 
         public static void Resize(Rectangle originalFormSize, Rectangle originalControlSize, Control control, Form form, float sizeTextInitial)
@@ -63,20 +71,22 @@ namespace QLBenhVienDaLieu.Graphic
             float xRatio = form.Width / (float)originalFormSize.Width;
             float yRatio = form.Height / (float)originalFormSize.Height;
 
-            int newX = (int)(originalControlSize.Location.X * xRatio);
-            int newY = (int)(originalControlSize.Location.Y * yRatio);
-
-            int newWidth = (int)(originalControlSize.Width * xRatio);
-            int newHeight = (int)(originalControlSize.Height * yRatio);
-
-            control.Location = new Point(newX, newY);
-            control.Size = new Size(newWidth, newHeight);
-
-            if (control.Font != null)
+            if (xRatio != 0 && yRatio != 0)
             {
-                control.Font = new Font(control.Font.Name, sizeTextInitial * (xRatio == 1 ? yRatio : xRatio), control.Font.Style);
-            }
+                int newX = (int)(originalControlSize.Location.X * xRatio);
+                int newY = (int)(originalControlSize.Location.Y * yRatio);
 
+                int newWidth = (int)(originalControlSize.Width * xRatio);
+                int newHeight = (int)(originalControlSize.Height * yRatio);
+
+                control.Location = new Point(newX, newY);
+                control.Size = new Size(newWidth, newHeight);
+
+                if (control.Font != null)
+                {
+                    control.Font = new Font(control.Font.Name, sizeTextInitial * (xRatio == 1 ? yRatio : xRatio), control.Font.Style);
+                }
+            }
         }
 
         public static void Resize(Rectangle originalControlSize1, Rectangle originalControlSize, Control control, Control control1)
@@ -84,14 +94,17 @@ namespace QLBenhVienDaLieu.Graphic
             float xRatio = control1.Width / (float)originalControlSize1.Width;
             float yRatio = control1.Height / (float)originalControlSize1.Height;
 
-            int newX = (int)(originalControlSize.Location.X * xRatio);
-            int newY = (int)(originalControlSize.Location.Y * yRatio);
+            if (xRatio != 0 && yRatio != 0)
+            {
+                int newX = (int)(originalControlSize.Location.X * xRatio);
+                int newY = (int)(originalControlSize.Location.Y * yRatio);
 
-            int newWidth = (int)(originalControlSize.Width * xRatio);
-            int newHeight = (int)(originalControlSize.Height * yRatio);
+                int newWidth = (int)(originalControlSize.Width * xRatio);
+                int newHeight = (int)(originalControlSize.Height * yRatio);
 
-            control.Location = new Point(newX, newY);
-            control.Size = new Size(newWidth, newHeight);
+                control.Location = new Point(newX, newY);
+                control.Size = new Size(newWidth, newHeight);
+            }
 
         }
 
@@ -101,14 +114,17 @@ namespace QLBenhVienDaLieu.Graphic
             float xRatio = form.Width / (float)originalFormSize.Width;
 
 
-            int newX = (int)(originalControlSize.Location.X * xRatio);
+            if (xRatio != 0)
+            {
+                int newX = (int)(originalControlSize.Location.X * xRatio);
 
 
-            int newWidth = (int)(originalControlSize.Width * xRatio);
+                int newWidth = (int)(originalControlSize.Width * xRatio);
 
 
-            control.Location = new Point(newX, control.Location.Y);
-            control.Size = new Size(newWidth, control.Height);
+                control.Location = new Point(newX, control.Location.Y);
+                control.Size = new Size(newWidth, control.Height);
+            }
 
         }
 
@@ -116,14 +132,17 @@ namespace QLBenhVienDaLieu.Graphic
         {
             float yRatio = form.Height / (float)originalFormSize.Height;
 
-            int newY = (int)(originalControlSize.Location.Y * yRatio);
+            if (yRatio != 0)
+            {
+                int newY = (int)(originalControlSize.Location.Y * yRatio);
 
-            int newHeight = (int)(originalControlSize.Height * yRatio);
+                int newHeight = (int)(originalControlSize.Height * yRatio);
 
 
 
-            control.Location = new Point(control.Location.X, newY);
-            control.Size = new Size(control.Width, newHeight);
+                control.Location = new Point(control.Location.X, newY);
+                control.Size = new Size(control.Width, newHeight);
+            }
 
         }
     }

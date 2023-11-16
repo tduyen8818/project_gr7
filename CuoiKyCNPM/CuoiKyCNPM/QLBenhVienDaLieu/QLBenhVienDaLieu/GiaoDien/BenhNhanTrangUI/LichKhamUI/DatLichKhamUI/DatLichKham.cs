@@ -160,7 +160,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.DatLichKhamUI
             dataCaKham.Items.Add("Sáng");
             dataCaKham.Items.Add("Chiều");
 
-            List<HoSoBenhNhan> listHoSoBenhNhan = sqlFunctionCaller.GetHoSoBenhNhanByMaTaiKhoanOrSoDienThoai(this.soDienThoai);
+            List<HoSoBenhNhan> listHoSoBenhNhan = sqlFunctionCaller.GetHoSoBenhNhanByMaTaiKhoan(this.soDienThoai);
 
             if (listHoSoBenhNhan.Count == 1)
             {
@@ -337,7 +337,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.DatLichKhamUI
 
         private void DatLichKham_Resize(object sender, EventArgs e)
         {
-            if (originalForm.Width != 0)
+            if (originalForm.Width != 0 && titleDatLich.Font.Size != 0)
             {
                 ScaleSize.Resize(originalForm, originalBtnDatLich, btnDatLich, this, textSizeInitialBtnDatLich);
                 ScaleSize.Resize(originalForm, originalTitleDatLich, titleDatLich, this, textSizeInitialTitleDatLich);

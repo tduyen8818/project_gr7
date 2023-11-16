@@ -41,7 +41,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.XemLichKhamUI
             DataXemLichKham dataXemLichKhamInitial = new DataXemLichKham(benhNhan_Trang, sqlFunctionCaller, soDienThoai);
             originalDataXemLichKham = new Rectangle(dataXemLichKhamInitial.Location.X, dataXemLichKhamInitial.Location.Y, dataXemLichKhamInitial.Width, dataXemLichKhamInitial.Height);
 
-            List<HoSoBenhNhan> listHoSoBenhNhan = sqlFunctionCaller.GetHoSoBenhNhanByMaTaiKhoanOrSoDienThoai(this.soDienThoai);
+            List<HoSoBenhNhan> listHoSoBenhNhan = sqlFunctionCaller.GetHoSoBenhNhanByMaTaiKhoan(this.soDienThoai);
 
             foreach (HoSoBenhNhan hoSoBenhNhan in listHoSoBenhNhan)
             {
@@ -84,7 +84,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.XemLichKhamUI
 
         private void XemLichKham_Resize(object sender, EventArgs e)
         {
-            if (originalTitle.Width != 0)
+            if (originalTitle.Width != 0 && titleXemLich.Font.Size != 0)
             {
                 ScaleSize.ResizeNoLocation(originalForm, originalTitle, titleXemLich, this, textSizeInitialTitle);
 

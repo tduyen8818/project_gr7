@@ -93,6 +93,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
             // showHoSoBenhNhan
             // 
             this.showHoSoBenhNhan.BackColor = System.Drawing.Color.White;
+            this.showHoSoBenhNhan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.showHoSoBenhNhan.Controls.Add(this.buttonSave);
             this.showHoSoBenhNhan.Controls.Add(this.dataDiaChi);
             this.showHoSoBenhNhan.Controls.Add(this.dataEmail);

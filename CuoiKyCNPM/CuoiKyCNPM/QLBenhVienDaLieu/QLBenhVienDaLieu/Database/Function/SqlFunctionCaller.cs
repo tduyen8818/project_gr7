@@ -386,7 +386,6 @@ namespace QLBenhVienDaLieu.Database.Function
                 HoaDon hoaDon = new HoaDon();
 
                 hoaDon.MaHoaDon = row["MaHoaDon"].ToString();
-                hoaDon.MaHoSoBenhNhan = row["MaHoSoBenhNhan"].ToString();
                 hoaDon.MaLichKham = row["MaLichKham"].ToString();
                 hoaDon.TongTien = Int32.Parse(row["TongTien"].ToString());
                 hoaDon.HinhThucThanhToan = row["HinhThucThanhToan"].ToString();
@@ -404,7 +403,6 @@ namespace QLBenhVienDaLieu.Database.Function
             foreach (DataRow row in resultTable.Rows)
             {
                 hoaDon.MaHoaDon = row["MaHoaDon"].ToString();
-                hoaDon.MaHoSoBenhNhan = row["MaHoSoBenhNhan"].ToString();
                 hoaDon.MaLichKham = row["MaLichKham"].ToString();
                 hoaDon.TongTien = Int32.Parse(row["TongTien"].ToString());
                 hoaDon.HinhThucThanhToan = row["HinhThucThanhToan"].ToString();
@@ -830,11 +828,20 @@ namespace QLBenhVienDaLieu.Database.Function
             return GetHoSoBenhNhan(resultTable);
         }
 
-        public List<HoSoBenhNhan> GetHoSoBenhNhanByMaTaiKhoanOrSoDienThoai(string maTaiKhoanOrSoDienThoai)
+        public List<HoSoBenhNhan> GetHoSoBenhNhanByMaTaiKhoan(string maTaiKhoan)
         {
             string query = $"SELECT * FROM HoSoBenhNhan WHERE MaTaiKhoan = @value";
 
-            DataTable resultTable = GetResultTable(query, this.connection, maTaiKhoanOrSoDienThoai);
+            DataTable resultTable = GetResultTable(query, this.connection, maTaiKhoan);
+
+            return GetListHoSoBenhNhan(resultTable);
+        }
+
+        public List<HoSoBenhNhan> GetHoSoBenhNhanBySoDienThoai(string soDienThoai)
+        {
+            string query = $"SELECT * FROM HoSoBenhNhan WHERE SoDienThoai = @value";
+
+            DataTable resultTable = GetResultTable(query, this.connection, soDienThoai);
 
             return GetListHoSoBenhNhan(resultTable);
         }
@@ -1377,15 +1384,6 @@ namespace QLBenhVienDaLieu.Database.Function
             return GetHoaDon(resultTable);
         }
 
-        public List<HoaDon> GetHoaDonByMaHoSoBenhNhan(string maHoSoBenhNhan)
-        {
-            string query = $"SELECT * FROM HoaDon WHERE MaHoSoBenhNhan = @value";
-
-            DataTable resultTable = GetResultTable(query, this.connection, maHoSoBenhNhan);
-
-            return GetListHoaDon(resultTable);
-        }
-
         public HoaDon GetHoaDonByMaLichKham(string maLichKham)
         {
             string query = $"SELECT * FROM HoaDon WHERE MaLichKham = @value";
@@ -1890,23 +1888,6 @@ namespace QLBenhVienDaLieu.Database.Function
 
         public void DeleteHoSoBenhNhan(string maHoSoBenhNhan)
         {
-            foreach (HoaDon hoaDon in GetHoaDonByMaHoSoBenhNhan(maHoSoBenhNhan))
-            {
-                DeleteHoaDon(hoaDon.MaHoaDon);
-            }
-
-            DeleteSoKhamBenh(GetSoKhamBenhByMaHoSoBenhNhan(maHoSoBenhNhan).MaLichKham);
-
-            foreach (BenhAn benhAn in GetBenhAnByMaHoSoBenhNhan(maHoSoBenhNhan))
-            {
-                DeleteRecordByMaBenhAn(benhAn.MaBenhAn);
-            }
-
-            foreach (LichKham lichKham in GetLichKhamByMaHoSoBenhNhan(maHoSoBenhNhan))
-            {
-                DeleteLichKham(lichKham.MaLichKham);
-            }
-
             SqlCommand command = new SqlCommand();
 
             command.Connection = connection;
@@ -2014,16 +1995,6 @@ namespace QLBenhVienDaLieu.Database.Function
 
         public void DeleteRecordByMaBenhAn(string maBenhAn)
         {
-            foreach (ToaThuoc toaThuoc in GetToaThuocByMaBenhAn(maBenhAn))
-            {
-                DeleteToaThuoc(toaThuoc.MaToaThuoc);
-            }
-
-            foreach (ToaThuoc toaThuoc in GetToaThuoc())
-            {
-                Debug.WriteLine(toaThuoc.ToString());
-            }
-
             SqlCommand command = new SqlCommand();
 
             command.Connection = connection;
@@ -2293,7 +2264,7 @@ namespace QLBenhVienDaLieu.Database.Function
 
 
         }
-        public void UpdateHoaDon(string maHoaDon, string maMaHoSoBenhNhan, string maLichKham, int tongTien, string hinhThucThanhToan)
+        public void UpdateHoaDon(string maHoaDon, string maLichKham, int tongTien, string hinhThucThanhToan)
         {
             SqlCommand command = new SqlCommand();
 
@@ -2302,7 +2273,6 @@ namespace QLBenhVienDaLieu.Database.Function
             command.CommandText = "UpdateHoaDon";
 
             command.Parameters.AddWithValue("@MaHoaDon", maHoaDon);
-            command.Parameters.AddWithValue("@MaMaHoSoBenhNhan", maMaHoSoBenhNhan);
             command.Parameters.AddWithValue("@MaLichKham", maLichKham);
             command.Parameters.AddWithValue("@TongTien", tongTien);
             command.Parameters.AddWithValue("@HinhThucThanhToan", hinhThucThanhToan);
@@ -2508,7 +2478,7 @@ namespace QLBenhVienDaLieu.Database.Function
 
         }
 
-        public void InsertHoaDon(string maHoSoBenhNhan, string maLichKham, int tongTien, string hinhThucThanhToan)
+        public void InsertHoaDon(string maLichKham, int tongTien, string hinhThucThanhToan)
         {
             SqlCommand command = new SqlCommand();
 
@@ -2516,7 +2486,6 @@ namespace QLBenhVienDaLieu.Database.Function
             command.CommandType = CommandType.StoredProcedure;
             command.CommandText = "InsertHoaDon";
 
-            command.Parameters.AddWithValue("@MaHoSoBenhNhan", maHoSoBenhNhan);
             command.Parameters.AddWithValue("@MaLichKham", maLichKham);
             command.Parameters.AddWithValue("@TongTien", tongTien);
             command.Parameters.AddWithValue("@HinhThucThanhToan", hinhThucThanhToan);

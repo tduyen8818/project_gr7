@@ -387,7 +387,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
 
         private void DangKyHoSoBenhNhan_Resize(object sender, EventArgs e)
         {
-            if (originalForm.Width != 0)
+            if (originalForm.Width != 0 && titleDangKyHoSoBenhNhan.Font.Size != 0)
             {
                 Graphic.ScaleSize.Resize(originalForm, originalTitleDangKyHoSoBenhNhan, titleDangKyHoSoBenhNhan, this, textSizeInitialTitleDangKyHoSoBenhNhan);
                 Graphic.ScaleSize.Resize(originalForm, originalTextHoVaTen, textHoVaTen, this, textSizeInitialTextHoVaTen);
@@ -437,6 +437,5 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
             }
 
         }
-
     }
 }
