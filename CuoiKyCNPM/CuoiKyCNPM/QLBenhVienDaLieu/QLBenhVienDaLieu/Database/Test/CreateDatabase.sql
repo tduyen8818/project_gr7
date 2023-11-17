@@ -1889,8 +1889,9 @@ EXEC InsertToaThuoc '1', 'TH000006', 'BA000006', N'Thuốc F', 2, N'Viên', N'U�
 EXEC InsertToaThuoc '2', 'TH000007', 'BA000007', N'Thuốc G', 1, N'Thuốc lỏng', N'Uống trước khi đi ngủ'
 EXEC InsertToaThuoc '1', 'TH000008', 'BA000008', N'Thuốc H', 3, N'Viên', N'Uống sau khi ăn'
 -- TAI KHOAN THANH VIEN
-EXEC InsertTaiKhoanThanhVien N'Nguyễn Văn LT', '2', '1990-05-15', N'Nam', '123456789012', '2', 'nguyenvana@gmail.com', N'Số 1, Đường ABC, Quận XYZ, Thành phố HCM', N'Da liễu', N'Lễ tân', 'TV'
+EXEC InsertTaiKhoanThanhVien N'Nguyễn Văn LT', '2', '1990-05-15', N'Nam', '123456789012', '2', 'nguyenvana@gmail.com', N'Số 1, Đường ABC, Quận XYZ, Thành phố HCM', N'Không', N'Lễ tân', 'TV'
 EXEC InsertTaiKhoanThanhVien N'Nguyễn Văn BS', '3', '1990-05-15', N'Nam', '123456789012', '3', 'nguyenvana@gmail.com', N'Số 1, Đường ABC, Quận XYZ, Thành phố HCM', N'Da liễu', N'Bác sĩ', 'BS'
+EXEC InsertTaiKhoanThanhVien N'Nguyễn Văn KT', '4', '1990-05-15', N'Nam', '123456789012', '4', 'nguyenvana@gmail.com', N'Số 1, Đường ABC, Quận XYZ, Thành phố HCM', N'Da liễu', N'Kế toán', 'KT'
 EXEC InsertTaiKhoanThanhVien N'Nguyễn Văn A', 'Abc@1234', '1990-05-15', N'Nam', '123456789012', '0987654321', 'nguyenvana@gmail.com', N'Số 1, Đường ABC, Quận XYZ, Thành phố HCM', N'Da liễu', N'Bác sĩ', 'BS'
 EXEC InsertTaiKhoanThanhVien N'Trần Thị B', 'Bcd@5678', '1985-07-20', N'Nữ', '234567890123', '0987123456', 'tranthib@gmail.com', N'Số 2, Đường XYZ, Quận ABC, Thành phố HCM', N'Da liễu', N'Bác sĩ', 'BS'
 EXEC InsertTaiKhoanThanhVien N'Lê Văn C', 'Cde@9012', '1988-03-10', N'Nam', '345678901234', '0909123456', 'levanc@gmail.com', N'Số 3, Đường XYZ, Quận ABC, Thành phố HCM', N'Da liễu', N'Bác sĩ', 'BS'

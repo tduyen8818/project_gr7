@@ -1,6 +1,5 @@
 ﻿using QLBenhVienDaLieu.Database.Class;
 using QLBenhVienDaLieu.Database.Function;
-using QLBenhVienDaLieu.Graphic;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -57,6 +56,8 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.XemLichKhamUI
                     dataXemLichKham.TopLevel = false;
                     dataXemLichKham.Dock = DockStyle.Top;
 
+                    dataXemLichKham.Region = Graphic.Draw.RoundedRectangle(0, 0, dataXemLichKham.Width, dataXemLichKham.Height, 30, 30);
+
                     dataXemLichKham.DataMaPhieu.Text = lichKham.MaLichKham;
                     dataXemLichKham.DataChuyenKhoa.Text = chuyenKhoa.TenChuyenKhoa;
                     dataXemLichKham.DataName.Text = hoSoBenhNhan.HoVaTen;
@@ -86,11 +87,12 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.XemLichKhamUI
         {
             if (originalTitle.Width != 0 && titleXemLich.Font.Size != 0)
             {
-                ScaleSize.ResizeNoLocation(originalForm, originalTitle, titleXemLich, this, textSizeInitialTitle);
+                Graphic.ScaleSize.ResizeNoLocation(originalForm, originalTitle, titleXemLich, this, textSizeInitialTitle);
 
                 foreach (var dataXemLichKham in flowLayoutPanel1.Controls.OfType<DataXemLichKham>().ToList())
                 {
-                    ScaleSize.ResizeNoLocation(originalForm, originalDataXemLichKham, dataXemLichKham, this);
+                    Graphic.ScaleSize.ResizeNoLocation(originalForm, originalDataXemLichKham, dataXemLichKham, this);
+                    dataXemLichKham.Region = Graphic.Draw.RoundedRectangle(0, 0, dataXemLichKham.Width, dataXemLichKham.Height, 30, 30);
                 }
 
             }

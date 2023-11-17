@@ -62,7 +62,7 @@ namespace QLBenhVienDaLieu
                                 break;
 
                             case "ThuKy":
-                                KeToan_Trang thuKyForm = new KeToan_Trang(sDT);
+                                KeToan_Trang thuKyForm = new KeToan_Trang(sDT, functionCaller);
                                 this.Hide();
                                 thuKyForm.ShowDialog();
                                 this.Close();

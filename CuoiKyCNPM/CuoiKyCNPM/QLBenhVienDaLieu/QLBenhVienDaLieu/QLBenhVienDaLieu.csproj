@@ -268,6 +268,18 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GiaoDien\KeToanTrangUI\HoaDonUI\DataHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaoDien\KeToanTrangUI\HoaDonUI\DataHoaDon.Designer.cs">
+      <DependentUpon>DataHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GiaoDien\KeToanTrangUI\HoaDonUI\DanhSachHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaoDien\KeToanTrangUI\HoaDonUI\DanhSachHoaDon.Designer.cs">
+      <DependentUpon>DanhSachHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="GiaoDien\LeTanTrangUI\HoSoBenhNhanUI\AddHoSoBenhNhan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -496,6 +508,18 @@
     <Compile Include="GiaoDien\BenhNhanTrangUI\LichKhamUI\XemLichKhamUI\XemChiTiet.Designer.cs">
       <DependentUpon>XemChiTiet.cs</DependentUpon>
     </Compile>
+    <Compile Include="GiaoDien\KeToanTrangUI\ThongKeUI\ThongKeDoanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaoDien\KeToanTrangUI\ThongKeUI\ThongKeDoanhThu.Designer.cs">
+      <DependentUpon>ThongKeDoanhThu.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="GiaoDien\KeToanTrangUI\HoaDonUI\DataHoaDon.resx">
+      <DependentUpon>DataHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiaoDien\KeToanTrangUI\HoaDonUI\DanhSachHoaDon.resx">
+      <DependentUpon>DanhSachHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GiaoDien\LeTanTrangUI\HoSoBenhNhanUI\AddHoSoBenhNhan.resx">
       <DependentUpon>AddHoSoBenhNhan.cs</DependentUpon>
     </EmbeddedResource>
@@ -599,6 +623,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TaiKhoan_LT.resx">
       <DependentUpon>TaiKhoan_LT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiaoDien\KeToanTrangUI\ThongKeUI\ThongKeDoanhThu.resx">
+      <DependentUpon>ThongKeDoanhThu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">
