@@ -31,7 +31,9 @@ namespace QLBenhVienDaLieu.GiaoDien.LeTanTrangUI.HoSoBenhNhanUI
         private Rectangle originalPanel5;
         private Rectangle originalPanel6;
         private Rectangle originalPanel7;
+        private Rectangle originalPanel8;
         private Rectangle originalButtonEdit;
+        private Rectangle originalButtonAddLichKham;
         private Rectangle originalButtonDelete;
 
         float textSizeInitialTextMaHoSoBenhNhan;
@@ -77,6 +79,7 @@ namespace QLBenhVienDaLieu.GiaoDien.LeTanTrangUI.HoSoBenhNhanUI
             originalDataCCCD = new Rectangle(dataCCCD.Location.X, dataCCCD.Location.Y, dataCCCD.Width, dataCCCD.Height);
             originalDataSoDienThoai = new Rectangle(dataSoDienThoai.Location.X, dataSoDienThoai.Location.Y, dataSoDienThoai.Width, dataSoDienThoai.Height);
             originalButtonEdit = new Rectangle(buttonEdit.Location.X, buttonEdit.Location.Y, buttonEdit.Width, buttonEdit.Height);
+            originalButtonAddLichKham = new Rectangle(buttonAddLichKham.Location.X, buttonAddLichKham.Location.Y, buttonAddLichKham.Width, buttonAddLichKham.Height);
             originalButtonDelete = new Rectangle(buttonDelete.Location.X, buttonDelete.Location.Y, buttonDelete.Width, buttonDelete.Height);
             originalPanel2 = new Rectangle(panel2.Location.X, panel2.Location.Y, panel2.Width, panel2.Height);
             originalPanel3 = new Rectangle(panel3.Location.X, panel3.Location.Y, panel3.Width, panel3.Height);
@@ -84,6 +87,7 @@ namespace QLBenhVienDaLieu.GiaoDien.LeTanTrangUI.HoSoBenhNhanUI
             originalPanel5 = new Rectangle(panel5.Location.X, panel5.Location.Y, panel5.Width, panel5.Height);
             originalPanel6 = new Rectangle(panel6.Location.X, panel6.Location.Y, panel6.Width, panel6.Height);
             originalPanel7 = new Rectangle(panel7.Location.X, panel7.Location.Y, panel7.Width, panel7.Height);
+            originalPanel8 = new Rectangle(panel8.Location.X, panel8.Location.Y, panel8.Width, panel8.Height);
 
             textSizeInitialTextMaHoSoBenhNhan = textMaHoSoBenhNhan.Font.Size;
             textSizeInitialTextHoVaTen = textHoVaTen.Font.Size;
@@ -102,31 +106,29 @@ namespace QLBenhVienDaLieu.GiaoDien.LeTanTrangUI.HoSoBenhNhanUI
 
         private void DataHoSoBenhNhan_Resize(object sender, EventArgs e)
         {
-            if (originalForm.Width != 0 && textNgaySinh.Font.Size != 0)
-            {
-                Graphic.ScaleSize.Resize(originalForm, originalShowHoSoBenhNhan, showHoSoBenhNhan, this);
-                Graphic.ScaleSize.Resize(originalForm, originalTextMaHoSoBenhNhan, textMaHoSoBenhNhan, this, textSizeInitialTextMaHoSoBenhNhan);
-                Graphic.ScaleSize.Resize(originalForm, originalTextHoVaTen, textHoVaTen, this, textSizeInitialTextHoVaTen);
-                Graphic.ScaleSize.Resize(originalForm, originalTextNgaySinh, textNgaySinh, this, textSizeInitialTextNgaySinh);
-                Graphic.ScaleSize.Resize(originalForm, originalTextGioiTinh, textGioiTinh, this, textSizeInitialTextGioiTinh);
-                Graphic.ScaleSize.Resize(originalForm, originalTextCCCD, textCCCD, this, textSizeInitialTextCCCD);
-                Graphic.ScaleSize.Resize(originalForm, originalTextSoDienThoai, textSoDienThoai, this, textSizeInitialTextSoDienThoai);
-                Graphic.ScaleSize.Resize(originalForm, originalDataMaHoSoBenhNhan, dataMaHoSoBenhNhan, this, textSizeInitialDataMaHoSoBenhNhan);
-                Graphic.ScaleSize.Resize(originalForm, originalDataHoVaTen, dataHoVaTen, this, textSizeInitialDataHoVaTen);
-                Graphic.ScaleSize.Resize(originalForm, originalDataGioiTinh, dataGioiTinh, this, textSizeInitialDataGioiTinh);
-                Graphic.ScaleSize.Resize(originalForm, originalDataNgaySinh, dataNgaySinh, this, textSizeInitialDataNgaySinh);
-                Graphic.ScaleSize.Resize(originalForm, originalDataCCCD, dataCCCD, this, textSizeInitialDataCCCD);
-                Graphic.ScaleSize.Resize(originalForm, originalDataSoDienThoai, dataSoDienThoai, this, textSizeInitialDataSoDienThoai);
-                Graphic.ScaleSize.Resize(originalForm, originalPanel2, panel2, this);
-                Graphic.ScaleSize.Resize(originalForm, originalPanel3, panel3, this);
-                Graphic.ScaleSize.Resize(originalForm, originalPanel4, panel4, this);
-                Graphic.ScaleSize.Resize(originalForm, originalPanel5, panel5, this);
-                Graphic.ScaleSize.Resize(originalForm, originalPanel6, panel6, this);
-                Graphic.ScaleSize.Resize(originalForm, originalPanel7, panel7, this);
-                Graphic.ScaleSize.Resize(originalForm, originalButtonEdit, buttonEdit, this);
-                Graphic.ScaleSize.Resize(originalForm, originalButtonDelete, buttonDelete, this);
-
-            }
+            Graphic.ScaleSize.Resize(originalForm, originalShowHoSoBenhNhan, showHoSoBenhNhan, this);
+            Graphic.ScaleSize.Resize(originalForm, originalTextMaHoSoBenhNhan, textMaHoSoBenhNhan, this, textSizeInitialTextMaHoSoBenhNhan);
+            Graphic.ScaleSize.Resize(originalForm, originalTextHoVaTen, textHoVaTen, this, textSizeInitialTextHoVaTen);
+            Graphic.ScaleSize.Resize(originalForm, originalTextNgaySinh, textNgaySinh, this, textSizeInitialTextNgaySinh);
+            Graphic.ScaleSize.Resize(originalForm, originalTextGioiTinh, textGioiTinh, this, textSizeInitialTextGioiTinh);
+            Graphic.ScaleSize.Resize(originalForm, originalTextCCCD, textCCCD, this, textSizeInitialTextCCCD);
+            Graphic.ScaleSize.Resize(originalForm, originalTextSoDienThoai, textSoDienThoai, this, textSizeInitialTextSoDienThoai);
+            Graphic.ScaleSize.Resize(originalForm, originalDataMaHoSoBenhNhan, dataMaHoSoBenhNhan, this, textSizeInitialDataMaHoSoBenhNhan);
+            Graphic.ScaleSize.Resize(originalForm, originalDataHoVaTen, dataHoVaTen, this, textSizeInitialDataHoVaTen);
+            Graphic.ScaleSize.Resize(originalForm, originalDataGioiTinh, dataGioiTinh, this, textSizeInitialDataGioiTinh);
+            Graphic.ScaleSize.Resize(originalForm, originalDataNgaySinh, dataNgaySinh, this, textSizeInitialDataNgaySinh);
+            Graphic.ScaleSize.Resize(originalForm, originalDataCCCD, dataCCCD, this, textSizeInitialDataCCCD);
+            Graphic.ScaleSize.Resize(originalForm, originalDataSoDienThoai, dataSoDienThoai, this, textSizeInitialDataSoDienThoai);
+            Graphic.ScaleSize.Resize(originalForm, originalPanel2, panel2, this);
+            Graphic.ScaleSize.Resize(originalForm, originalPanel3, panel3, this);
+            Graphic.ScaleSize.Resize(originalForm, originalPanel4, panel4, this);
+            Graphic.ScaleSize.Resize(originalForm, originalPanel5, panel5, this);
+            Graphic.ScaleSize.Resize(originalForm, originalPanel6, panel6, this);
+            Graphic.ScaleSize.Resize(originalForm, originalPanel7, panel7, this);
+            Graphic.ScaleSize.Resize(originalForm, originalPanel8, panel8, this);
+            Graphic.ScaleSize.Resize(originalForm, originalButtonEdit, buttonEdit, this);
+            Graphic.ScaleSize.Resize(originalForm, originalButtonAddLichKham, buttonAddLichKham, this);
+            Graphic.ScaleSize.Resize(originalForm, originalButtonDelete, buttonDelete, this);
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
@@ -157,6 +159,24 @@ namespace QLBenhVienDaLieu.GiaoDien.LeTanTrangUI.HoSoBenhNhanUI
 
                 hoSoBenhNhanForm.buttonSearch_Click(null, null);
             }
+        }
+
+        private void buttonAddLichKham_Click(object sender, EventArgs e)
+        {
+            Panel guna2CustomGradientPanel2 = this.leTan_Trang.Guna2CustomGradientPanel2;
+
+            guna2CustomGradientPanel2.Controls.Clear();
+
+            DatLichKhamFormLeTan datLichKhamFormLeTan = new DatLichKhamFormLeTan(this.hoSoBenhNhanForm.TextBoxSearchMaTaiKhoan.Text,
+                dataMaHoSoBenhNhan.Text, this.leTan_Trang, sqlFunctionCaller);
+
+            datLichKhamFormLeTan.TopLevel = false;
+            datLichKhamFormLeTan.Dock = DockStyle.Fill;
+
+            guna2CustomGradientPanel2.Controls.Add(datLichKhamFormLeTan);
+            guna2CustomGradientPanel2.Tag = datLichKhamFormLeTan;
+
+            datLichKhamFormLeTan.Show();
         }
     }
 }

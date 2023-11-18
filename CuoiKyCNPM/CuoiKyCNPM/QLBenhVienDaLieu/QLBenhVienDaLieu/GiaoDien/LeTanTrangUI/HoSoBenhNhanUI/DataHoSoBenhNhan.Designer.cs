@@ -49,6 +49,8 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.buttonAddLichKham = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.showHoSoBenhNhan.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -251,16 +253,16 @@
             this.panel2.Location = new System.Drawing.Point(1074, 75);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(50, 5);
+            this.panel2.Size = new System.Drawing.Size(52, 5);
             this.panel2.TabIndex = 3;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.Location = new System.Drawing.Point(1074, 110);
+            this.panel3.Location = new System.Drawing.Point(1074, 115);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(50, 5);
+            this.panel3.Size = new System.Drawing.Size(51, 5);
             this.panel3.TabIndex = 4;
             // 
             // panel4
@@ -275,10 +277,10 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Black;
-            this.panel5.Location = new System.Drawing.Point(1124, 110);
+            this.panel5.Location = new System.Drawing.Point(1124, 115);
             this.panel5.Margin = new System.Windows.Forms.Padding(0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(5, 50);
+            this.panel5.Size = new System.Drawing.Size(5, 41);
             this.panel5.TabIndex = 6;
             // 
             // panel6
@@ -299,12 +301,37 @@
             this.panel7.Size = new System.Drawing.Size(38, 5);
             this.panel7.TabIndex = 8;
             // 
+            // buttonAddLichKham
+            // 
+            this.buttonAddLichKham.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAddLichKham.BackgroundImage = global::QLBenhVienDaLieu.Properties.Resources.add_lich_kham;
+            this.buttonAddLichKham.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonAddLichKham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddLichKham.Location = new System.Drawing.Point(1161, 75);
+            this.buttonAddLichKham.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonAddLichKham.Name = "buttonAddLichKham";
+            this.buttonAddLichKham.Size = new System.Drawing.Size(75, 45);
+            this.buttonAddLichKham.TabIndex = 9;
+            this.buttonAddLichKham.UseVisualStyleBackColor = false;
+            this.buttonAddLichKham.Click += new System.EventHandler(this.buttonAddLichKham_Click);
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Black;
+            this.panel8.Location = new System.Drawing.Point(1074, 95);
+            this.panel8.Margin = new System.Windows.Forms.Padding(0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(88, 5);
+            this.panel8.TabIndex = 10;
+            // 
             // DataHoSoBenhNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1245, 195);
+            this.Controls.Add(this.panel8);
+            this.Controls.Add(this.buttonAddLichKham);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel5);
@@ -347,5 +374,7 @@
         private System.Windows.Forms.Label textSoDienThoai;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button buttonAddLichKham;
+        private System.Windows.Forms.Panel panel8;
     }
 }

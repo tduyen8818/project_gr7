@@ -337,33 +337,30 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.DatLichKhamUI
 
         private void DatLichKham_Resize(object sender, EventArgs e)
         {
-            if (originalForm.Width != 0 && titleDatLich.Font.Size != 0)
-            {
-                ScaleSize.Resize(originalForm, originalBtnDatLich, btnDatLich, this, textSizeInitialBtnDatLich);
-                ScaleSize.Resize(originalForm, originalTitleDatLich, titleDatLich, this, textSizeInitialTitleDatLich);
-                ScaleSize.Resize(originalForm, originalTextChuyenKhoa, textChuyenKhoa, this, textSizeInitialTextChuyenKhoa);
-                ScaleSize.Resize(originalForm, originalDataChuyenKhoa, dataChuyenKhoa, this, textSizeInitialDataChuyenKhoa);
-                ScaleSize.Resize(originalForm, originalTextDichVu, textDichVu, this, textSizeInitialTextDichVu);
-                ScaleSize.Resize(originalForm, originalDataDichVu, dataDichVu, this, textSizeInitialDataDichVu);
-                ScaleSize.Resize(originalForm, originalTextNgayKham, textNgayKham, this, textSizeInitialTextNgayKham);
-                ScaleSize.Resize(originalForm, originalDataNgayKham, dataNgayKham, this, textSizeInitialDataNgayKham);
-                ScaleSize.Resize(originalForm, originalTextCaKham, textCaKham, this, textSizeInitialTextCaKham);
-                ScaleSize.Resize(originalForm, originalDataCaKham, dataCaKham, this, textSizeInitialDataCaKham);
-                ScaleSize.Resize(originalForm, originalTextHoSoBenhNhan, textHoSoBenhNhan, this, textSizeInitialTextHoSoBenhNhan);
-                ScaleSize.Resize(originalForm, originalShowHoSoBenhNhan, showHoSoBenhNhan, this);
-                ScaleSize.Resize(originalForm, originalTextErrorChuyenKhoa, textErrorChuyenKhoa, this, textSizeInitialTextErrorChuyenKhoa);
-                ScaleSize.Resize(originalForm, originalTextErrorDichVu, textErrorDichVu, this, textSizeInitialTextErrorDichVu);
-                ScaleSize.Resize(originalForm, originalTextErrorCaKham, textErrorCaKham, this, textSizeInitialTextErrorCaKham);
-                ScaleSize.Resize(originalForm, originalTextErrorHoSoBenhNhan, textErrorHoSoBenhNhan, this, textSizeInitialTextErrorHoSoBenhNhan);
-                ScaleSize.Resize(originalForm, originalImageCheck, imageCheck, this);
-                ScaleSize.Resize(originalForm, originalImageCheck1, imageCheck1, this);
-                ScaleSize.Resize(originalForm, originalImageCheck2, imageCheck2, this);
-                ScaleSize.Resize(originalForm, originalImageCheck3, imageCheck3, this);
-                ScaleSize.Resize(originalForm, originalTextTemp, textTemp, this);
+            ScaleSize.Resize(originalForm, originalBtnDatLich, btnDatLich, this, textSizeInitialBtnDatLich);
+            ScaleSize.Resize(originalForm, originalTitleDatLich, titleDatLich, this, textSizeInitialTitleDatLich);
+            ScaleSize.Resize(originalForm, originalTextChuyenKhoa, textChuyenKhoa, this, textSizeInitialTextChuyenKhoa);
+            ScaleSize.Resize(originalForm, originalDataChuyenKhoa, dataChuyenKhoa, this, textSizeInitialDataChuyenKhoa);
+            ScaleSize.Resize(originalForm, originalTextDichVu, textDichVu, this, textSizeInitialTextDichVu);
+            ScaleSize.Resize(originalForm, originalDataDichVu, dataDichVu, this, textSizeInitialDataDichVu);
+            ScaleSize.Resize(originalForm, originalTextNgayKham, textNgayKham, this, textSizeInitialTextNgayKham);
+            ScaleSize.Resize(originalForm, originalDataNgayKham, dataNgayKham, this, textSizeInitialDataNgayKham);
+            ScaleSize.Resize(originalForm, originalTextCaKham, textCaKham, this, textSizeInitialTextCaKham);
+            ScaleSize.Resize(originalForm, originalDataCaKham, dataCaKham, this, textSizeInitialDataCaKham);
+            ScaleSize.Resize(originalForm, originalTextHoSoBenhNhan, textHoSoBenhNhan, this, textSizeInitialTextHoSoBenhNhan);
+            ScaleSize.Resize(originalForm, originalShowHoSoBenhNhan, showHoSoBenhNhan, this);
+            ScaleSize.Resize(originalForm, originalTextErrorChuyenKhoa, textErrorChuyenKhoa, this, textSizeInitialTextErrorChuyenKhoa);
+            ScaleSize.Resize(originalForm, originalTextErrorDichVu, textErrorDichVu, this, textSizeInitialTextErrorDichVu);
+            ScaleSize.Resize(originalForm, originalTextErrorCaKham, textErrorCaKham, this, textSizeInitialTextErrorCaKham);
+            ScaleSize.Resize(originalForm, originalTextErrorHoSoBenhNhan, textErrorHoSoBenhNhan, this, textSizeInitialTextErrorHoSoBenhNhan);
+            ScaleSize.Resize(originalForm, originalImageCheck, imageCheck, this);
+            ScaleSize.Resize(originalForm, originalImageCheck1, imageCheck1, this);
+            ScaleSize.Resize(originalForm, originalImageCheck2, imageCheck2, this);
+            ScaleSize.Resize(originalForm, originalImageCheck3, imageCheck3, this);
+            ScaleSize.Resize(originalForm, originalTextTemp, textTemp, this);
 
-                btnDatLich.Region = Draw.RoundedRectangle(0, 0, btnDatLich.Width, btnDatLich.Height, 50, 50);
-                showHoSoBenhNhan.Region = Draw.RoundedRectangle(0, 0, showHoSoBenhNhan.Width, showHoSoBenhNhan.Height, 30, 30);
-            }
+            btnDatLich.Region = Draw.RoundedRectangle(0, 0, btnDatLich.Width, btnDatLich.Height, 50, 50);
+            showHoSoBenhNhan.Region = Draw.RoundedRectangle(0, 0, showHoSoBenhNhan.Width, showHoSoBenhNhan.Height, 30, 30);
         }
 
     }

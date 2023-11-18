@@ -303,6 +303,16 @@ namespace QLBenhVienDaLieu.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_lich_kham {
+            get {
+                object obj = ResourceManager.GetObject("add_lich_kham", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap arrow_left {
             get {
                 object obj = ResourceManager.GetObject("arrow_left", resourceCulture);

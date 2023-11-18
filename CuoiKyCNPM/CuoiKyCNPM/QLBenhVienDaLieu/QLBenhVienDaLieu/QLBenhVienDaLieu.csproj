@@ -268,6 +268,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GiaoDien\LeTanTrangUI\HoSoBenhNhanUI\DatLichKhamFormLeTan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaoDien\LeTanTrangUI\HoSoBenhNhanUI\DatLichKhamFormLeTan.Designer.cs">
+      <DependentUpon>DatLichKhamFormLeTan.cs</DependentUpon>
+    </Compile>
     <Compile Include="GiaoDien\KeToanTrangUI\HoaDonUI\DataHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -514,6 +520,9 @@
     <Compile Include="GiaoDien\KeToanTrangUI\ThongKeUI\ThongKeDoanhThu.Designer.cs">
       <DependentUpon>ThongKeDoanhThu.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GiaoDien\LeTanTrangUI\HoSoBenhNhanUI\DatLichKhamFormLeTan.resx">
+      <DependentUpon>DatLichKhamFormLeTan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GiaoDien\KeToanTrangUI\HoaDonUI\DataHoaDon.resx">
       <DependentUpon>DataHoaDon.cs</DependentUpon>
     </EmbeddedResource>
@@ -669,6 +678,7 @@
     <None Include="Image\background\grid.png" />
     <None Include="Image\background\arrow_left.png" />
     <Content Include="Image\background\add.png" />
+    <Content Include="Image\background\add_lich_kham.png" />
     <Content Include="Image\background\arrow_right.png" />
     <Content Include="Image\background\delete.png" />
     <Content Include="Image\background\edit.png" />

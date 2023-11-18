@@ -28,7 +28,7 @@ namespace QLBenhVienDaLieu.GiaoDien.LeTanTrangUI.HoSoBenhNhanUI
         private float textSizeInitialTextTextBoxSearchDienThoai;
         private float textSizeInitialTextErrorMaTaiKhoan;
 
-        public TextBox TextBoxSearchSoDienThoai
+        public TextBox TextBoxSearchMaTaiKhoan
         {
             get
             {

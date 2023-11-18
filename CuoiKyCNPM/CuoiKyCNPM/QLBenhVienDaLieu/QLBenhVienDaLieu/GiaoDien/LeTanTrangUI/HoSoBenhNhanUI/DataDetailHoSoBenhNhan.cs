@@ -493,7 +493,7 @@ namespace QLBenhVienDaLieu.GiaoDien.LeTanTrangUI.HoSoBenhNhanUI
             hoSoBenhNhanForm.TopLevel = false;
             hoSoBenhNhanForm.Dock = DockStyle.Fill;
 
-            hoSoBenhNhanForm.TextBoxSearchSoDienThoai.Text = this.hoSoBenhNhan.MaTaiKhoan;
+            hoSoBenhNhanForm.TextBoxSearchMaTaiKhoan.Text = this.hoSoBenhNhan.MaTaiKhoan;
 
             hoSoBenhNhanForm.buttonSearch_Click(null, null);
 

@@ -331,7 +331,7 @@
             this.textDotSoDienThoai.AutoSize = true;
             this.textDotSoDienThoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textDotSoDienThoai.ForeColor = System.Drawing.Color.Red;
-            this.textDotSoDienThoai.Location = new System.Drawing.Point(275, 272);
+            this.textDotSoDienThoai.Location = new System.Drawing.Point(287, 272);
             this.textDotSoDienThoai.Margin = new System.Windows.Forms.Padding(0);
             this.textDotSoDienThoai.Name = "textDotSoDienThoai";
             this.textDotSoDienThoai.Size = new System.Drawing.Size(31, 40);
