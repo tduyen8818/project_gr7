@@ -13,10 +13,16 @@ namespace QLBenhVienDaLieu
     public partial class BS_Kham_Benh : Form
     {
         private string sDT;
+        
         public BS_Kham_Benh(string sDT)
         {
             InitializeComponent();
             this.sDT = sDT;
+        }
+
+        private void BS_Kham_Benh_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void button6_Click(object sender, EventArgs e)
