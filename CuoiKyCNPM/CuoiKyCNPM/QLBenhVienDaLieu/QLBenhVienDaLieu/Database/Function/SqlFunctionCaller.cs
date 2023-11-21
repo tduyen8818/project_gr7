@@ -17,17 +17,36 @@ namespace QLBenhVienDaLieu.Database.Function
 
         public SqlFunctionCaller()
         {
-            const string serverName = "LAPTOP-4M06U5";
-            const string databaseName = "PHONGKHAMDALIEU";
+
+            // -----------------Database của Quang------------------------
+
+            //const string serverName = "LAPTOP-C2CHSH4F";
+            //const string databaseName = "PHONGKHAMDALIEU";
             //const string userName = "quang";
             //const string password = "123";
 
-            this.connectionString = $"Data Source={serverName};" +
-                $"Initial Catalog={databaseName};" + "Initial Catalog=PHONGKHAMDALIEU;Integrated Security=True";
-                //$"User id={userName};" +
-                //$"Password={password};";
+            //this.connectionString = $"Data Source={serverName};" +
+            //$"Initial Catalog={databaseName};" +
+            //$"User id={userName};" +
+            //$"Password={password};";
 
-            this.connection = new SqlConnection(connectionString);
+            //this.connection = new SqlConnection(connectionString);
+
+            
+            //---------------------- Database của Thiên-----------------------
+
+            //const string serverName = "LAPTOP-4M06U5";
+            //const string databaseName = "PHONGKHAMDALIEU";
+
+            //this.connectionString = $"Data Source={serverName};" +
+            //    $"Initial Catalog={databaseName};" + 
+            //    $"Integrated Security=True";
+            //this.connection = new SqlConnection(connectionString);
+
+
+
+
+
 
         }
 
