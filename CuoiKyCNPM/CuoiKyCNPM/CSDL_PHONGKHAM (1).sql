@@ -1122,8 +1122,8 @@ BEGIN
         SELECT @Result = HoVaTen FROM LichLamViec WHERE MaLichLamViec = @MaLichLamViec
     ELSE IF @ParamName = 'MaThanhVien'
         SELECT @Result = MaThanhVien FROM LichLamViec WHERE MaLichLamViec = @MaLichLamViec
-    ELSE IF @ParamName = 'Thang'
-        SELECT @Result = CONVERT(nvarchar(50), Thang, 121) FROM LichLamViec WHERE MaLichLamViec = @MaLichLamViec
+    --ELSE IF @ParamName = 'Thang'
+        --SELECT @Result = CONVERT(nvarchar(50), Thang, 121) FROM LichLamViec WHERE MaLichLamViec = @MaLichLamViec
     ELSE IF @ParamName = 'Ngay'
         SELECT @Result = CONVERT(nvarchar(50), Ngay, 121) FROM LichLamViec WHERE MaLichLamViec = @MaLichLamViec
     ELSE IF @ParamName = 'Ca'
@@ -1137,7 +1137,7 @@ CREATE PROCEDURE UpdateLichLamViec
     @MaLichLamViec varchar(8),
     @HoVaTen nvarchar(30),
     @MaThanhVien varchar(8),
-    @Thang date,
+    --@Thang date,
     @Ngay date,
     @Ca varchar(2)
 AS
@@ -1146,7 +1146,7 @@ BEGIN
     SET
         HoVaTen = @HoVaTen,
         MaThanhVien = @MaThanhVien,
-        Thang = @Thang,
+        --Thang = @Thang,
         Ngay = @Ngay,
         Ca = @Ca
     WHERE MaLichLamViec = @MaLichLamViec;
@@ -1841,3 +1841,21 @@ BEGIN
     INSERT INTO TaiKhoanThanhVien (HoVaTen, MaThanhVien, MatKhau, NgaySinh, GioiTinh, CCCD, SoDienThoai, Email, DiaChi, ChuyenKhoa, ViTri, LoaiTaiKhoan)
     VALUES (@HoVaTen, @mathanhvien, @MatKhau, @NgaySinh, @GioiTinh, @CCCD, @SoDienThoai, @Email, @DiaChi, @ChuyenKhoa, @ViTri, @LoaiTaiKhoan)
 END
+
+CREATE FUNCTION GetLichKhamByCaAndNgay
+(
+    @Ca nvarchar(15),
+    @Date date
+)
+RETURNS TABLE
+AS
+RETURN
+(
+    SELECT
+        *
+    FROM
+        LichKham
+    WHERE
+        Ca = @Ca
+        AND CONVERT(date, KhungGioKham) = @Date
+);
