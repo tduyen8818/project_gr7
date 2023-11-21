@@ -21,6 +21,19 @@ namespace QLBenhVienDaLieu
             this.sDT = sDT;
             dt_ngayKham.Value = DateTime.Now;
             dt_ngayKham.MaxDate = dt_ngayKham.Value;
+            //Change column display size
+            dgv_lichKham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dgv_lichKham.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
+        }
+
+        public BS_Kham_Benh()
+        {
+            InitializeComponent();
+            dt_ngayKham.Value = DateTime.Now;
+            dt_ngayKham.MaxDate = dt_ngayKham.Value;
+            //Change column display size
+            dgv_lichKham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dgv_lichKham.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
         }
 
         private void BS_Kham_Benh_Load(object sender, EventArgs e)
@@ -50,21 +63,17 @@ namespace QLBenhVienDaLieu
             {
                 string ngay = dt_ngayKham.Value.Date.ToString("yyyy-MM-dd");
                 string ca = cb_caKham.SelectedItem.ToString();
-                SqlFunctionCaller lichKham = new SqlFunctionCaller();
+                SqlFunctionCaller funcCall = new SqlFunctionCaller();
 
                 try
                 {
-                    resultTable = lichKham.CallGetLichKhamByNgayAndCa(ngay, ca);
+                    resultTable = funcCall.CallGetLichKhamByNgayAndCa(ngay, ca);
                     dgv_lichKham.DataSource = resultTable;
-                    //Change column display size
-                    dgv_lichKham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-                    dgv_lichKham.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-
             }
         }
 
@@ -72,17 +81,17 @@ namespace QLBenhVienDaLieu
         {
             //Change column display size
             int lastCol = resultTable.Columns.Count;
-            if (this.WindowState == FormWindowState.Maximized)
+            if (this.WindowState == FormWindowState.Maximized && dgv_lichKham.Rows.Count !=0)
             {
                 dgv_lichKham.Columns[lastCol - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
-            else
+            else if (dgv_lichKham.Rows.Count != 0)
             {
                 dgv_lichKham.Columns[lastCol - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             }
         }
 
-        private void dgv_lichKham_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dgv_lichKham_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -92,9 +101,10 @@ namespace QLBenhVienDaLieu
                 // Open the second form and call the method to pass the data
                 BS_Kham_Benh_2 hsbn = new BS_Kham_Benh_2();
                 hsbn.SetMaHoSoBenhNhan(maHoSoBenhNhan, this.WindowState);
+                hsbn.FormClosed += (s, args) => this.Show();
                 hsbn.Show();
+                this.Hide();
             }
-
         }
     }
 }

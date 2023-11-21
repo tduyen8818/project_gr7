@@ -32,16 +32,16 @@ namespace QLBenhVienDaLieu.Database.Function
 
             //this.connection = new SqlConnection(connectionString);
 
-            
+
             //---------------------- Database của Thiên-----------------------
 
-            //const string serverName = "LAPTOP-4M06U5";
-            //const string databaseName = "PHONGKHAMDALIEU";
+            const string serverName = "LAPTOP-4M06U5";
+            const string databaseName = "PHONGKHAMDALIEU";
 
-            //this.connectionString = $"Data Source={serverName};" +
-            //    $"Initial Catalog={databaseName};" + 
-            //    $"Integrated Security=True";
-            //this.connection = new SqlConnection(connectionString);
+            this.connectionString = $"Data Source={serverName};" +
+                $"Initial Catalog={databaseName};" +
+                $"Integrated Security=True";
+            this.connection = new SqlConnection(connectionString);
 
 
 
@@ -3018,7 +3018,7 @@ namespace QLBenhVienDaLieu.Database.Function
                 {
                     command.Connection = connection;
                     command.CommandType = CommandType.Text;
-                    command.CommandText = "SELECT * FROM dbo.SelectHoSoBenhNhan (@MaHoSoBenhNhan varchar(8))";
+                    command.CommandText = "SELECT * FROM dbo.SelectHoSoBenhNhan(@MaHoSoBenhNhan)";
 
                     command.Parameters.AddWithValue("@MaHoSoBenhNhan", maHSBN);
 
