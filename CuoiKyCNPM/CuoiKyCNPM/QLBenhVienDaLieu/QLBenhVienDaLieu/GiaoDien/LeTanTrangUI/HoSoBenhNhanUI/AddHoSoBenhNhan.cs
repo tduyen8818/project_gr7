@@ -273,12 +273,19 @@ namespace QLBenhVienDaLieu.GiaoDien.LeTanTrangUI.HoSoBenhNhanUI
 
         private void dataSoCCCD_TextChanged(object sender, EventArgs e)
         {
-            if (Available.CheckCCCD(dataSoCCCD.Text))
+            try
             {
-                textErrorSoCCCD.Visible = false;
-                imageCheckSoCCCD.BackgroundImage = Image.FromFile("../../Image/check/true.jpg");
-            }
-            else
+                if (Available.CheckCCCD(dataSoCCCD.Text, DateTime.ParseExact(dataNgaySinh.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture), dataGioiTinh.Text))
+                {
+                    textErrorSoCCCD.Visible = false;
+                    imageCheckSoCCCD.BackgroundImage = Image.FromFile("../../Image/check/true.jpg");
+                }
+                else
+                {
+                    textErrorSoCCCD.Visible = true;
+                    imageCheckSoCCCD.BackgroundImage = Image.FromFile("../../Image/check/error.jpg");
+                }
+            } catch(FormatException)
             {
                 textErrorSoCCCD.Visible = true;
                 imageCheckSoCCCD.BackgroundImage = Image.FromFile("../../Image/check/error.jpg");
@@ -323,6 +330,8 @@ namespace QLBenhVienDaLieu.GiaoDien.LeTanTrangUI.HoSoBenhNhanUI
                 {
                     textErrorNgaySinh.Visible = false;
                     imageCheckNgaySinh.BackgroundImage = Image.FromFile("../../Image/check/true.jpg");
+
+                    dataSoCCCD_TextChanged(null, null);
                 }
                 else
                 {
@@ -343,6 +352,8 @@ namespace QLBenhVienDaLieu.GiaoDien.LeTanTrangUI.HoSoBenhNhanUI
             {
                 textErrorGioiTinh.Visible = false;
                 imageCheckGioiTinh.BackgroundImage = Image.FromFile("../../Image/check/true.jpg");
+
+                dataSoCCCD_TextChanged(null, null);
             }
             else
             {
@@ -394,12 +405,20 @@ namespace QLBenhVienDaLieu.GiaoDien.LeTanTrangUI.HoSoBenhNhanUI
                 imageCheckSoDienThoai.BackgroundImage = Image.FromFile("../../Image/check/error.jpg");
             }
 
-            if (Available.CheckCCCD(dataSoCCCD.Text))
+            try
             {
-                textErrorSoCCCD.Visible = false;
-                imageCheckSoCCCD.BackgroundImage = Image.FromFile("../../Image/check/true.jpg");
+                if (Available.CheckCCCD(dataSoCCCD.Text, DateTime.ParseExact(dataNgaySinh.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture), dataGioiTinh.Text))
+                {
+                    textErrorSoCCCD.Visible = false;
+                    imageCheckSoCCCD.BackgroundImage = Image.FromFile("../../Image/check/true.jpg");
+                }
+                else
+                {
+                    textErrorSoCCCD.Visible = true;
+                    imageCheckSoCCCD.BackgroundImage = Image.FromFile("../../Image/check/error.jpg");
+                }
             }
-            else
+            catch (FormatException)
             {
                 textErrorSoCCCD.Visible = true;
                 imageCheckSoCCCD.BackgroundImage = Image.FromFile("../../Image/check/error.jpg");

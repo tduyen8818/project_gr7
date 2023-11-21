@@ -349,8 +349,6 @@ C:\Users\QUANG\Downloads\Compressed\project_gr7-main\CuoiKyCNPM\CuoiKyCNPM\QLBen
 C:\Users\QUANG\Downloads\Compressed\project_gr7-main\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\QUANG\Downloads\Compressed\project_gr7-main\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\bin\Debug\Twilio.xml
 C:\Users\QUANG\Downloads\Compressed\project_gr7-main\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.csproj.AssemblyReference.cache
-C:\Users\QUANG\Downloads\Compressed\project_gr7-main\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.csproj.SuggestedBindingRedirects.cache
-C:\Users\QUANG\Downloads\Compressed\project_gr7-main\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.exe.config
 C:\Users\QUANG\Downloads\Compressed\project_gr7-main\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.Admin_Trang.resources
 C:\Users\QUANG\Downloads\Compressed\project_gr7-main\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.BenhNhan_Trang.resources
 C:\Users\QUANG\Downloads\Compressed\project_gr7-main\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.BS_Kham_Benh.resources
@@ -486,4 +484,4 @@ C:\git\project_gr7\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\bin\D
 C:\git\project_gr7\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\bin\Debug\Twilio.xml
 C:\git\project_gr7\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.csproj.Fody.CopyLocal.cache
 C:\git\project_gr7\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.csproj.CopyComplete
-C:\git\project_gr7\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.BS_Kham_Benh_2.resources
+C:\Users\QUANG\Downloads\Compressed\project_gr7-main\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\bin\Debug\Microsoft.AspNetCore.WebUtilities.xml

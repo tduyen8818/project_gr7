@@ -1773,6 +1773,26 @@ BEGIN
 END
 go
 
+CREATE FUNCTION GetLichKhamByCaAndNgay
+(
+    @Ca nvarchar(15),
+    @Date date
+)
+RETURNS TABLE
+AS
+RETURN
+(
+    SELECT
+        *
+    FROM
+        LichKham
+    WHERE
+        Ca = @Ca
+        AND CONVERT(date, KhungGioKham) = @Date
+);
+
+go
+
 --THEM DU LIEU CHO CAC TABLE 
 -- TABLE DangKyUer
 EXEC DangKyUser_Insert '1', '1'
