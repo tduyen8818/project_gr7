@@ -14,7 +14,7 @@ namespace QLBenhVienDaLieu
     public partial class BS_Kham_Benh : Form
     {
         private string sDT;
-        
+
         public BS_Kham_Benh(string sDT)
         {
             InitializeComponent();
@@ -43,10 +43,10 @@ namespace QLBenhVienDaLieu
             lichLamViec.ShowDialog();
             this.Close();
         }
-
+        DataTable resultTable = new DataTable();
         private void SelectedValue(object sender, EventArgs e)
         {
-            if(cb_caKham.SelectedIndex != -1)
+            if (cb_caKham.SelectedIndex != -1)
             {
                 string ngay = dt_ngayKham.Value.Date.ToString("yyyy-MM-dd");
                 string ca = cb_caKham.SelectedItem.ToString();
@@ -54,8 +54,11 @@ namespace QLBenhVienDaLieu
 
                 try
                 {
-                    DataTable resultTable = lichKham.CallGetLichKhamByNgayAndCa(ngay, ca);
+                    resultTable = lichKham.CallGetLichKhamByNgayAndCa(ngay, ca);
                     dgv_lichKham.DataSource = resultTable;
+                    //Change column display size
+                    dgv_lichKham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+                    dgv_lichKham.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
                 }
                 catch (Exception ex)
                 {
@@ -63,6 +66,35 @@ namespace QLBenhVienDaLieu
                 }
 
             }
+        }
+
+        private void BS_Kham_Benh_Resize(object sender, EventArgs e)
+        {
+            //Change column display size
+            int lastCol = resultTable.Columns.Count;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                dgv_lichKham.Columns[lastCol - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
+            else
+            {
+                dgv_lichKham.Columns[lastCol - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            }
+        }
+
+        private void dgv_lichKham_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dgv_lichKham.Rows[e.RowIndex];
+                string maHoSoBenhNhan = selectedRow.Cells["MaHoSoBenhNhan"].Value.ToString();
+
+                // Open the second form and call the method to pass the data
+                BS_Kham_Benh_2 hsbn = new BS_Kham_Benh_2();
+                hsbn.SetMaHoSoBenhNhan(maHoSoBenhNhan, this.WindowState);
+                hsbn.Show();
+            }
+
         }
     }
 }

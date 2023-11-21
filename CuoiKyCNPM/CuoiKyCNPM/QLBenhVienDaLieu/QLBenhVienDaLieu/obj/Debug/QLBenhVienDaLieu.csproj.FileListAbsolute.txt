@@ -486,3 +486,4 @@ C:\git\project_gr7\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\bin\D
 C:\git\project_gr7\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\bin\Debug\Twilio.xml
 C:\git\project_gr7\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.csproj.Fody.CopyLocal.cache
 C:\git\project_gr7\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.csproj.CopyComplete
+C:\git\project_gr7\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.BS_Kham_Benh_2.resources

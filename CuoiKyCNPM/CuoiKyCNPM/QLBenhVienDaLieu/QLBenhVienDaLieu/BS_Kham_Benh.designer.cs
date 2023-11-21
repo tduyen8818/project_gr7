@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.lb_dsDatLich = new System.Windows.Forms.Label();
             this.lb_caKham = new System.Windows.Forms.Label();
@@ -57,6 +58,9 @@
             // 
             // guna2CustomGradientPanel1
             // 
+            this.guna2CustomGradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2CustomGradientPanel1.BorderRadius = 20;
             this.guna2CustomGradientPanel1.Controls.Add(this.lb_dsDatLich);
             this.guna2CustomGradientPanel1.Controls.Add(this.lb_caKham);
@@ -66,8 +70,9 @@
             this.guna2CustomGradientPanel1.Controls.Add(this.lb_ngayKham);
             this.guna2CustomGradientPanel1.Controls.Add(this.lb_khamBenh);
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(212, 9);
+            this.guna2CustomGradientPanel1.MinimumSize = new System.Drawing.Size(815, 525);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1105, 522);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(815, 542);
             this.guna2CustomGradientPanel1.TabIndex = 6;
             // 
             // lb_dsDatLich
@@ -96,46 +101,67 @@
             // 
             // dgv_lichKham
             // 
+            this.dgv_lichKham.AllowUserToAddRows = false;
+            this.dgv_lichKham.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgv_lichKham.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_lichKham.BackgroundColor = System.Drawing.Color.PaleGreen;
+            this.dgv_lichKham.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_lichKham.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgv_lichKham.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgv_lichKham.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_lichKham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_lichKham.ColumnHeadersHeight = 4;
+            this.dgv_lichKham.ColumnHeadersHeight = 58;
             this.dgv_lichKham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightGray;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_lichKham.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv_lichKham.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgv_lichKham.GridColor = System.Drawing.Color.WhiteSmoke;
             this.dgv_lichKham.Location = new System.Drawing.Point(55, 221);
+            this.dgv_lichKham.MinimumSize = new System.Drawing.Size(696, 252);
             this.dgv_lichKham.Name = "dgv_lichKham";
+            this.dgv_lichKham.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_lichKham.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_lichKham.RowHeadersVisible = false;
-            this.dgv_lichKham.Size = new System.Drawing.Size(988, 150);
+            this.dgv_lichKham.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgv_lichKham.Size = new System.Drawing.Size(696, 275);
             this.dgv_lichKham.TabIndex = 4;
             this.dgv_lichKham.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_lichKham.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.dgv_lichKham.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
             this.dgv_lichKham.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.dgv_lichKham.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgv_lichKham.ThemeStyle.BackColor = System.Drawing.Color.PaleGreen;
-            this.dgv_lichKham.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgv_lichKham.ThemeStyle.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.dgv_lichKham.ThemeStyle.GridColor = System.Drawing.Color.WhiteSmoke;
             this.dgv_lichKham.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgv_lichKham.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_lichKham.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgv_lichKham.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgv_lichKham.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgv_lichKham.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgv_lichKham.ThemeStyle.HeaderStyle.Height = 4;
+            this.dgv_lichKham.ThemeStyle.HeaderStyle.Height = 58;
             this.dgv_lichKham.ThemeStyle.ReadOnly = false;
             this.dgv_lichKham.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_lichKham.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -164,7 +190,7 @@
             "Chiều"});
             this.cb_caKham.Location = new System.Drawing.Point(312, 129);
             this.cb_caKham.Name = "cb_caKham";
-            this.cb_caKham.Size = new System.Drawing.Size(140, 36);
+            this.cb_caKham.Size = new System.Drawing.Size(103, 36);
             this.cb_caKham.TabIndex = 3;
             this.cb_caKham.SelectedIndexChanged += new System.EventHandler(this.SelectedValue);
             // 
@@ -201,11 +227,13 @@
             // 
             // lb_khamBenh
             // 
+            this.lb_khamBenh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_khamBenh.AutoSize = true;
             this.lb_khamBenh.BackColor = System.Drawing.Color.Transparent;
             this.lb_khamBenh.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Bold);
             this.lb_khamBenh.ForeColor = System.Drawing.Color.Green;
-            this.lb_khamBenh.Location = new System.Drawing.Point(406, 29);
+            this.lb_khamBenh.Location = new System.Drawing.Point(306, 23);
             this.lb_khamBenh.Name = "lb_khamBenh";
             this.lb_khamBenh.Size = new System.Drawing.Size(200, 46);
             this.lb_khamBenh.TabIndex = 0;
@@ -213,9 +241,7 @@
             // 
             // guna2CustomGradientPanel2
             // 
-            this.guna2CustomGradientPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2CustomGradientPanel2.AutoSize = true;
             this.guna2CustomGradientPanel2.BorderRadius = 20;
             this.guna2CustomGradientPanel2.Controls.Add(this.button10);
             this.guna2CustomGradientPanel2.Controls.Add(this.button6);
@@ -228,9 +254,9 @@
             this.guna2CustomGradientPanel2.Controls.Add(this.button8);
             this.guna2CustomGradientPanel2.Controls.Add(this.button1);
             this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(12, 9);
-            this.guna2CustomGradientPanel2.MaximumSize = new System.Drawing.Size(194, 522);
+            this.guna2CustomGradientPanel2.MaximumSize = new System.Drawing.Size(194, 525);
             this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
-            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(194, 498);
+            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(194, 525);
             this.guna2CustomGradientPanel2.TabIndex = 7;
             // 
             // button10
@@ -371,20 +397,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(1039, 539);
+            this.ClientSize = new System.Drawing.Size(1039, 561);
             this.Controls.Add(this.guna2CustomGradientPanel2);
             this.Controls.Add(this.guna2CustomGradientPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BS_Kham_Benh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bac_Si_Kham_Benh";
             this.Load += new System.EventHandler(this.BS_Kham_Benh_Load);
+            this.Resize += new System.EventHandler(this.BS_Kham_Benh_Resize);
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.guna2CustomGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lichKham)).EndInit();
             this.guna2CustomGradientPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

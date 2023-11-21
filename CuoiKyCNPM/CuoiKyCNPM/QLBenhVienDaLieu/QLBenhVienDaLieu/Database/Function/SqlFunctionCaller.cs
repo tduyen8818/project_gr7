@@ -2986,5 +2986,31 @@ namespace QLBenhVienDaLieu.Database.Function
 
             return result;
         }
+
+        public DataTable CallGetHoSoBenhNhan(string maHSBN)
+        {
+            DataTable result = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "SELECT * FROM dbo.SelectHoSoBenhNhan (@MaHoSoBenhNhan varchar(8))";
+
+                    command.Parameters.AddWithValue("@MaHoSoBenhNhan", maHSBN);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        result.Load(reader);
+                    }
+                }
+            }
+
+            return result;
+        }
     }
 }
