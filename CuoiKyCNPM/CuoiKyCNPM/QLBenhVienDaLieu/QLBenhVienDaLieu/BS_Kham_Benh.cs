@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLBenhVienDaLieu.Database.Function;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +19,8 @@ namespace QLBenhVienDaLieu
         {
             InitializeComponent();
             this.sDT = sDT;
+            dt_ngayKham.Value = DateTime.Now;
+            dt_ngayKham.MaxDate = dt_ngayKham.Value;
         }
 
         private void BS_Kham_Benh_Load(object sender, EventArgs e)
@@ -39,6 +42,27 @@ namespace QLBenhVienDaLieu
             this.Hide();
             lichLamViec.ShowDialog();
             this.Close();
+        }
+
+        private void SelectedValue(object sender, EventArgs e)
+        {
+            if(cb_caKham.SelectedIndex != -1)
+            {
+                string ngay = dt_ngayKham.Value.Date.ToString("yyyy-MM-dd");
+                string ca = cb_caKham.SelectedItem.ToString();
+                SqlFunctionCaller lichKham = new SqlFunctionCaller();
+
+                try
+                {
+                    DataTable resultTable = lichKham.CallGetLichKhamByNgayAndCa(ngay, ca);
+                    dgv_lichKham.DataSource = resultTable;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
         }
     }
 }

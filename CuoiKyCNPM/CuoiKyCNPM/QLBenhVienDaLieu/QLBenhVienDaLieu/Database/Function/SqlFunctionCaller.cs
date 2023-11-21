@@ -17,15 +17,15 @@ namespace QLBenhVienDaLieu.Database.Function
 
         public SqlFunctionCaller()
         {
-            const string serverName = "LAPTOP-C2CHSH4F";
+            const string serverName = "LAPTOP-4M06U5";
             const string databaseName = "PHONGKHAMDALIEU";
-            const string userName = "quang";
-            const string password = "123";
+            //const string userName = "quang";
+            //const string password = "123";
 
             this.connectionString = $"Data Source={serverName};" +
-                $"Initial Catalog={databaseName};" +
-                $"User id={userName};" +
-                $"Password={password};";
+                $"Initial Catalog={databaseName};" + "Initial Catalog=PHONGKHAMDALIEU;Integrated Security=True";
+                //$"User id={userName};" +
+                //$"Password={password};";
 
             this.connection = new SqlConnection(connectionString);
 
@@ -2960,5 +2960,31 @@ namespace QLBenhVienDaLieu.Database.Function
             }
         }
 
+        public DataTable CallGetLichKhamByNgayAndCa(string ngay, string ca)
+        {
+            DataTable result = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "SELECT * FROM dbo.GetLichKhamByCaAndNgay(@Ca, @Ngay)";
+
+                    command.Parameters.AddWithValue("@Ca", ca);
+                    command.Parameters.AddWithValue("@Ngay", ngay);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        result.Load(reader);
+                    }
+                }
+            }
+
+            return result;
+        }
     }
 }

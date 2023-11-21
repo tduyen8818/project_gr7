@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.lb_dsDatLich = new System.Windows.Forms.Label();
             this.lb_caKham = new System.Windows.Forms.Label();
-            this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dgv_lichKham = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.cb_caKham = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.dt_ngayKham = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.lb_ngayKham = new System.Windows.Forms.Label();
             this.lb_khamBenh = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
@@ -51,21 +51,18 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.guna2CustomGradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_lichKham)).BeginInit();
             this.guna2CustomGradientPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2CustomGradientPanel1
             // 
-            this.guna2CustomGradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2CustomGradientPanel1.BorderRadius = 20;
             this.guna2CustomGradientPanel1.Controls.Add(this.lb_dsDatLich);
             this.guna2CustomGradientPanel1.Controls.Add(this.lb_caKham);
-            this.guna2CustomGradientPanel1.Controls.Add(this.guna2DataGridView1);
-            this.guna2CustomGradientPanel1.Controls.Add(this.guna2ComboBox1);
-            this.guna2CustomGradientPanel1.Controls.Add(this.guna2DateTimePicker1);
+            this.guna2CustomGradientPanel1.Controls.Add(this.dgv_lichKham);
+            this.guna2CustomGradientPanel1.Controls.Add(this.cb_caKham);
+            this.guna2CustomGradientPanel1.Controls.Add(this.dt_ngayKham);
             this.guna2CustomGradientPanel1.Controls.Add(this.lb_ngayKham);
             this.guna2CustomGradientPanel1.Controls.Add(this.lb_khamBenh);
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(212, 9);
@@ -79,7 +76,7 @@
             this.lb_dsDatLich.BackColor = System.Drawing.Color.Transparent;
             this.lb_dsDatLich.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lb_dsDatLich.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_dsDatLich.Location = new System.Drawing.Point(109, 200);
+            this.lb_dsDatLich.Location = new System.Drawing.Point(51, 182);
             this.lb_dsDatLich.Name = "lb_dsDatLich";
             this.lb_dsDatLich.Size = new System.Drawing.Size(156, 23);
             this.lb_dsDatLich.TabIndex = 6;
@@ -91,90 +88,104 @@
             this.lb_caKham.BackColor = System.Drawing.Color.Transparent;
             this.lb_caKham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lb_caKham.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_caKham.Location = new System.Drawing.Point(462, 87);
+            this.lb_caKham.Location = new System.Drawing.Point(308, 91);
             this.lb_caKham.Name = "lb_caKham";
             this.lb_caKham.Size = new System.Drawing.Size(80, 23);
             this.lb_caKham.TabIndex = 5;
             this.lb_caKham.Text = "Ca khám";
             // 
-            // guna2DataGridView1
+            // dgv_lichKham
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.guna2DataGridView1.BackgroundColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.guna2DataGridView1.ColumnHeadersHeight = 4;
-            this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
-            this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(55, 289);
-            this.guna2DataGridView1.Name = "guna2DataGridView1";
-            this.guna2DataGridView1.RowHeadersVisible = false;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.guna2DataGridView1.TabIndex = 4;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.BackColor = System.Drawing.Color.Black;
-            this.guna2DataGridView1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 4;
-            this.guna2DataGridView1.ThemeStyle.ReadOnly = false;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 22;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgv_lichKham.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_lichKham.BackgroundColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_lichKham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_lichKham.ColumnHeadersHeight = 4;
+            this.dgv_lichKham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_lichKham.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_lichKham.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgv_lichKham.Location = new System.Drawing.Point(55, 221);
+            this.dgv_lichKham.Name = "dgv_lichKham";
+            this.dgv_lichKham.RowHeadersVisible = false;
+            this.dgv_lichKham.Size = new System.Drawing.Size(988, 150);
+            this.dgv_lichKham.TabIndex = 4;
+            this.dgv_lichKham.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgv_lichKham.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgv_lichKham.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgv_lichKham.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgv_lichKham.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgv_lichKham.ThemeStyle.BackColor = System.Drawing.Color.PaleGreen;
+            this.dgv_lichKham.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgv_lichKham.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgv_lichKham.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_lichKham.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_lichKham.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgv_lichKham.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgv_lichKham.ThemeStyle.HeaderStyle.Height = 4;
+            this.dgv_lichKham.ThemeStyle.ReadOnly = false;
+            this.dgv_lichKham.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgv_lichKham.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgv_lichKham.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_lichKham.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgv_lichKham.ThemeStyle.RowsStyle.Height = 22;
+            this.dgv_lichKham.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgv_lichKham.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // guna2ComboBox1
+            // cb_caKham
             // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.Location = new System.Drawing.Point(466, 118);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(140, 36);
-            this.guna2ComboBox1.TabIndex = 3;
+            this.cb_caKham.AutoRoundedCorners = true;
+            this.cb_caKham.BackColor = System.Drawing.Color.Transparent;
+            this.cb_caKham.BorderRadius = 17;
+            this.cb_caKham.BorderThickness = 0;
+            this.cb_caKham.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_caKham.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_caKham.FillColor = System.Drawing.Color.PaleGreen;
+            this.cb_caKham.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_caKham.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_caKham.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.cb_caKham.ForeColor = System.Drawing.Color.Black;
+            this.cb_caKham.ItemHeight = 30;
+            this.cb_caKham.Items.AddRange(new object[] {
+            "Sáng",
+            "Chiều"});
+            this.cb_caKham.Location = new System.Drawing.Point(312, 129);
+            this.cb_caKham.Name = "cb_caKham";
+            this.cb_caKham.Size = new System.Drawing.Size(140, 36);
+            this.cb_caKham.TabIndex = 3;
+            this.cb_caKham.SelectedIndexChanged += new System.EventHandler(this.SelectedValue);
             // 
-            // guna2DateTimePicker1
+            // dt_ngayKham
             // 
-            this.guna2DateTimePicker1.Checked = true;
-            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(126, 119);
-            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            this.guna2DateTimePicker1.Size = new System.Drawing.Size(200, 36);
-            this.guna2DateTimePicker1.TabIndex = 2;
-            this.guna2DateTimePicker1.Value = new System.DateTime(2023, 11, 20, 11, 41, 43, 380);
+            this.dt_ngayKham.AutoRoundedCorners = true;
+            this.dt_ngayKham.BackColor = System.Drawing.Color.Transparent;
+            this.dt_ngayKham.BorderRadius = 17;
+            this.dt_ngayKham.Checked = true;
+            this.dt_ngayKham.CustomFormat = "dd/MM/yyyy";
+            this.dt_ngayKham.FillColor = System.Drawing.Color.PaleGreen;
+            this.dt_ngayKham.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.dt_ngayKham.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dt_ngayKham.Location = new System.Drawing.Point(55, 129);
+            this.dt_ngayKham.MaxDate = new System.DateTime(2198, 12, 31, 0, 0, 0, 0);
+            this.dt_ngayKham.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
+            this.dt_ngayKham.Name = "dt_ngayKham";
+            this.dt_ngayKham.Size = new System.Drawing.Size(147, 36);
+            this.dt_ngayKham.TabIndex = 2;
+            this.dt_ngayKham.Value = new System.DateTime(2023, 11, 20, 11, 41, 43, 380);
+            this.dt_ngayKham.ValueChanged += new System.EventHandler(this.SelectedValue);
             // 
             // lb_ngayKham
             // 
@@ -182,7 +193,7 @@
             this.lb_ngayKham.BackColor = System.Drawing.Color.Transparent;
             this.lb_ngayKham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lb_ngayKham.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_ngayKham.Location = new System.Drawing.Point(67, 87);
+            this.lb_ngayKham.Location = new System.Drawing.Point(51, 91);
             this.lb_ngayKham.Name = "lb_ngayKham";
             this.lb_ngayKham.Size = new System.Drawing.Size(102, 23);
             this.lb_ngayKham.TabIndex = 1;
@@ -219,7 +230,7 @@
             this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(12, 9);
             this.guna2CustomGradientPanel2.MaximumSize = new System.Drawing.Size(194, 522);
             this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
-            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(194, 522);
+            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(194, 498);
             this.guna2CustomGradientPanel2.TabIndex = 7;
             // 
             // button10
@@ -360,7 +371,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(1028, 539);
+            this.ClientSize = new System.Drawing.Size(1039, 539);
             this.Controls.Add(this.guna2CustomGradientPanel2);
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -371,7 +382,7 @@
             this.Load += new System.EventHandler(this.BS_Kham_Benh_Load);
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.guna2CustomGradientPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_lichKham)).EndInit();
             this.guna2CustomGradientPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -392,9 +403,9 @@
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
         private System.Windows.Forms.Label lb_dsDatLich;
         private System.Windows.Forms.Label lb_caKham;
-        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
+        private Guna.UI2.WinForms.Guna2DataGridView dgv_lichKham;
+        private Guna.UI2.WinForms.Guna2ComboBox cb_caKham;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dt_ngayKham;
         private System.Windows.Forms.Label lb_ngayKham;
         private System.Windows.Forms.Label lb_khamBenh;
     }
