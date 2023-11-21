@@ -476,6 +476,8 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
                 if (Available.CheckNgaySinh(DateTime.ParseExact(dataNgaySinh.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture)))
                 {
                     InputValid(dataNgaySinh);
+
+                    dataCCCD_TextChanged(null, null);
                 }
                 else
                 {
@@ -499,6 +501,8 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
             if (Available.CheckGioiTinh(dataGioiTinh.Text))
             {
                 InputValid(dataGioiTinh);
+
+                dataCCCD_TextChanged(null, null);
             }
             else
             {
@@ -510,12 +514,18 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
 
         private void dataCCCD_TextChanged(object sender, EventArgs e)
         {
-            if (Available.CheckCCCD(dataCCCD.Text))
+            try
             {
-                InputValid(dataCCCD);
+                if (Available.CheckCCCD(dataCCCD.Text, DateTime.ParseExact(dataNgaySinh.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture), dataGioiTinh.Text))
+                {
+                    InputValid(dataCCCD);
 
-            }
-            else
+                }
+                else
+                {
+                    InputError(dataCCCD);
+                }
+            } catch(FormatException)
             {
                 InputError(dataCCCD);
             }

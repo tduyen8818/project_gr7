@@ -354,7 +354,7 @@
             this.textDotGioiTinh.AutoSize = true;
             this.textDotGioiTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textDotGioiTinh.ForeColor = System.Drawing.Color.Red;
-            this.textDotGioiTinh.Location = new System.Drawing.Point(892, 278);
+            this.textDotGioiTinh.Location = new System.Drawing.Point(907, 278);
             this.textDotGioiTinh.Margin = new System.Windows.Forms.Padding(0);
             this.textDotGioiTinh.Name = "textDotGioiTinh";
             this.textDotGioiTinh.Size = new System.Drawing.Size(31, 40);
