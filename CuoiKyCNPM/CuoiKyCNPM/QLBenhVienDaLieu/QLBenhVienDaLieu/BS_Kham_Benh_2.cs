@@ -1,4 +1,5 @@
-﻿using QLBenhVienDaLieu.Database.Function;
+﻿using QLBenhVienDaLieu.Database.Class;
+using QLBenhVienDaLieu.Database.Function;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -191,11 +192,19 @@ namespace QLBenhVienDaLieu
         {
             if (bt_skb.Checked)
             {
-
+                BS_Them form = new BS_Them();
+                form.SetForm("skb", dgv_skb.SelectedRows[0].Cells["MaHoSoBenhNhan"].Value.ToString());
+                form.FormClosed += (s, args) => this.Show();
+                form.Show();
+                this.Hide();
             }
             if (bt_benhAn.Checked)
             {
-
+                BS_Them form = new BS_Them();
+                form.SetForm("ba", dgv_skb.SelectedRows[0].Cells["MaHoSoBenhNhan"].Value.ToString());
+                form.FormClosed += (s, args) => this.Show();
+                form.Show();
+                this.Hide();
             }
         }
 
@@ -203,11 +212,19 @@ namespace QLBenhVienDaLieu
         {
             if (bt_skb.Checked && dgv_skb.Rows.Count != 0)
             {
-
+                BS_Sua form = new BS_Sua();
+                form.SetForm("skb");
+                form.FormClosed += (s, args) => this.Show();
+                form.Show();
+                this.Hide();
             }
             if (bt_benhAn.Checked && dgv_benhAn.Rows.Count != 0)
             {
-
+                BS_Sua form = new BS_Sua();
+                form.SetForm("ba");
+                form.FormClosed += (s, args) => this.Show();
+                form.Show();
+                this.Hide();
             }
         }
 
@@ -215,11 +232,19 @@ namespace QLBenhVienDaLieu
         {
             if (bt_skb.Checked && dgv_skb.Rows.Count != 0)
             {
-
+                BS_Xoa form = new BS_Xoa();
+                form.SetForm("skb");
+                form.FormClosed += (s, args) => this.Show();
+                form.Show();
+                this.Hide();
             }
             if (bt_benhAn.Checked && dgv_benhAn.Rows.Count != 0)
             {
-
+                BS_Xoa form = new BS_Xoa();
+                form.SetForm("ba");
+                form.FormClosed += (s, args) => this.Show();
+                form.Show();
+                this.Hide();
             }
         }
 

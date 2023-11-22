@@ -16,5 +16,23 @@ namespace QLBenhVienDaLieu
         {
             InitializeComponent();
         }
+
+        private void BS_Sua_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public void SetForm(string type)
+        {
+            switch (type)
+            {
+                case "skb":
+
+                    break;
+                case "ba":
+
+                    break;
+            }
+        }
     }
 }

@@ -16,5 +16,28 @@ namespace QLBenhVienDaLieu
         {
             InitializeComponent();
         }
+
+        private void BS_Them_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public void SetForm(string type, string maHSBN)
+        {
+            switch (type)
+            {
+                case "skb":
+                    tb_skb_maHSBN.Text = maHSBN;
+                    break;
+                case "ba":
+
+                    break;
+            }
+        }
+
+        private void guna2DataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

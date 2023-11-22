@@ -99,7 +99,7 @@ namespace QLBenhVienDaLieu
                 string maHoSoBenhNhan = selectedRow.Cells["MaHoSoBenhNhan"].Value.ToString();
                 string maLichKham = selectedRow.Cells["MaLichKham"].Value.ToString();
 
-                // Open the second form and call the method to pass the data
+                // Open BS_Kham_Benh_2 and call the method to pass the data
                 BS_Kham_Benh_2 hsbn = new BS_Kham_Benh_2();
                 hsbn.SetMaHoSoBenhNhan(maHoSoBenhNhan, maLichKham, this.WindowState);
                 hsbn.FormClosed += (s, args) => this.Show();
