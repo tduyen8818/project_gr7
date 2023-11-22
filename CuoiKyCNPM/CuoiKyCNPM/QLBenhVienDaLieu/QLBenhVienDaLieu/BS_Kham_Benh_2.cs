@@ -13,6 +13,11 @@ namespace QLBenhVienDaLieu
 {
     public partial class BS_Kham_Benh_2 : Form
     {
+        private void BS_Kham_Benh_2_Load(object sender, EventArgs e)
+        {
+
+        }
+
         public BS_Kham_Benh_2()
         {
             InitializeComponent();
@@ -36,6 +41,7 @@ namespace QLBenhVienDaLieu
                 hsbn = funcCall.CallGetHoSoBenhNhan(maHoSoBenhNhan);
                 skb = funcCall.CallGetSoKhamBenh(maHoSoBenhNhan, maLichKham);
                 ba = funcCall.CallGetBenhAn(maHoSoBenhNhan);
+                Load_HSBN(hsbn);
                 //Table so kham benh
                 dgv_skb.DataSource = skb;
                 //Change column display size
@@ -61,6 +67,22 @@ namespace QLBenhVienDaLieu
             }
         }
 
+        private void Load_HSBN(DataTable hsbn)
+        {
+            tb_hoVaTen.Text = hsbn.Rows[0][0].ToString();
+            tb_maHSBN.Text = hsbn.Rows[0][1].ToString();
+            tb_maTK.Text = hsbn.Rows[0][2].ToString();
+            DateTime dt = (DateTime)hsbn.Rows[0][3];
+            tb_ngaySinh.Text = dt.ToString("dd/MM/yyyy");
+            tb_gioiTinh.Text = hsbn.Rows[0][4].ToString();
+            tb_cccd.Text = hsbn.Rows[0][5].ToString();
+            tb_maBHYT.Text = hsbn.Rows[0][6].ToString();
+            tb_nghe.Text = hsbn.Rows[0][7].ToString();
+            tb_sdt.Text = hsbn.Rows[0][8].ToString();
+            tb_mail.Text = hsbn.Rows[0][9].ToString();
+            tb_diaChi.Text = hsbn.Rows[0][10].ToString();
+        }
+
         private void BS_Kham_Benh_2_Resize(object sender, EventArgs e)
         {
             int lastCol = skb.Columns.Count;
@@ -81,11 +103,6 @@ namespace QLBenhVienDaLieu
             {
                 dgv_benhAn.Columns[lastCol - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             }
-        }
-
-        private void BS_Kham_Benh_2_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void dgv_lichKham_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
