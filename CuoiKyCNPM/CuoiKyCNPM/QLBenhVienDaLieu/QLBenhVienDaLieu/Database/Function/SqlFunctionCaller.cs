@@ -3031,5 +3031,58 @@ namespace QLBenhVienDaLieu.Database.Function
 
             return result;
         }
+
+        public DataTable CallGetSoKhamBenh(string maHSBN, string maLK)
+        {
+            DataTable result = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "SELECT * FROM dbo.SelectSoKhamBenh(@MaHoSoBenhNhan, @MaLichKham)";
+
+                    command.Parameters.AddWithValue("@MaHoSoBenhNhan", maHSBN);
+                    command.Parameters.AddWithValue("@MaLichKham", maLK);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        result.Load(reader);
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        public DataTable CallGetBenhAn(string maHSBN)
+        {
+            DataTable result = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "SELECT * FROM dbo.SelectBenhAnByMaHSBN(@MaHoSoBenhNhan)";
+
+                    command.Parameters.AddWithValue("@MaHoSoBenhNhan", maHSBN);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        result.Load(reader);
+                    }
+                }
+            }
+
+            return result;
+        }
     }
 }
