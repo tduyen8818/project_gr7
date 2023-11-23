@@ -369,6 +369,24 @@
     <Compile Include="BS_Kham_Benh_2.Designer.cs">
       <DependentUpon>BS_Kham_Benh_2.cs</DependentUpon>
     </Compile>
+    <Compile Include="BS_Sua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BS_Sua.Designer.cs">
+      <DependentUpon>BS_Sua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BS_Them.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BS_Them.Designer.cs">
+      <DependentUpon>BS_Them.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BS_Xoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BS_Xoa.Designer.cs">
+      <DependentUpon>BS_Xoa.cs</DependentUpon>
+    </Compile>
     <Compile Include="GiaoDien\LeTanTrangUI\HoSoBenhNhanUI\DatLichKhamFormLeTan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -623,6 +641,15 @@
     </Compile>
     <EmbeddedResource Include="BS_Kham_Benh_2.resx">
       <DependentUpon>BS_Kham_Benh_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BS_Sua.resx">
+      <DependentUpon>BS_Sua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BS_Them.resx">
+      <DependentUpon>BS_Them.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BS_Xoa.resx">
+      <DependentUpon>BS_Xoa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GiaoDien\LeTanTrangUI\HoSoBenhNhanUI\DatLichKhamFormLeTan.resx">
       <DependentUpon>DatLichKhamFormLeTan.cs</DependentUpon>
