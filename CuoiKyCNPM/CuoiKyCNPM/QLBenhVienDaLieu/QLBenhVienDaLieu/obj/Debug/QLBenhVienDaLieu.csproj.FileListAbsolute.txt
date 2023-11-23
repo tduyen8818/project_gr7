@@ -488,4 +488,3 @@ C:\Users\QUANG\Downloads\Compressed\project_gr7-main\CuoiKyCNPM\CuoiKyCNPM\QLBen
 C:\git\project_gr7\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.BS_Kham_Benh_2.resources
 C:\git\project_gr7\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.BS_Sua.resources
 C:\git\project_gr7\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.BS_Them.resources
-C:\git\project_gr7\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.BS_Xoa.resources

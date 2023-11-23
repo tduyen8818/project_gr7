@@ -2197,69 +2197,89 @@ namespace QLBenhVienDaLieu.Database.Function
         }
         public void UpdateSoKhamBenh(string maHoSoBenhNhan, string maLichKham, string hoVaTen, string tuoi, string soTheBHYT, string diaChi, string ngheNghiep, string danToc, string trieuChung, string chanDoan, string phuongPhapDieuTri, string bsKhamBenh, string ghiChu)
         {
-            SqlCommand command = new SqlCommand();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using(SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "UpdateSoKhamBenh";
 
-            command.Connection = connection;
-            command.CommandType = CommandType.StoredProcedure;
-            command.CommandText = "UpdateSoKhamBenh";
+                    command.Parameters.AddWithValue("@MaHoSoBenhNhan", maHoSoBenhNhan);
+                    command.Parameters.AddWithValue("@MaLichKham", maLichKham);
+                    command.Parameters.AddWithValue("@HoVaTen", hoVaTen);
+                    command.Parameters.AddWithValue("@Tuoi", tuoi);
+                    command.Parameters.AddWithValue("@SoTheBHYT", soTheBHYT);
+                    command.Parameters.AddWithValue("@DiaChi", diaChi);
+                    command.Parameters.AddWithValue("@NgheNghiep", ngheNghiep);
+                    command.Parameters.AddWithValue("@DanToc", danToc);
+                    command.Parameters.AddWithValue("@TrieuChung", trieuChung);
+                    command.Parameters.AddWithValue("@ChanDoan", chanDoan);
+                    command.Parameters.AddWithValue("@PhuongPhapDieuTri", phuongPhapDieuTri);
+                    command.Parameters.AddWithValue("@BSKhamBenh", bsKhamBenh);
+                    command.Parameters.AddWithValue("@GhiChu", ghiChu);
 
-            command.Parameters.AddWithValue("@MaHoSoBenhNhan", maHoSoBenhNhan);
-            command.Parameters.AddWithValue("@MaLichKham", maLichKham);
-            command.Parameters.AddWithValue("@HoVaTen", hoVaTen);
-            command.Parameters.AddWithValue("@Tuoi", tuoi);
-            command.Parameters.AddWithValue("@SoTheBHYT", soTheBHYT);
-            command.Parameters.AddWithValue("@DiaChi", diaChi);
-            command.Parameters.AddWithValue("@NgheNghiep", ngheNghiep);
-            command.Parameters.AddWithValue("@DanToc", danToc);
-            command.Parameters.AddWithValue("@TrieuChung", trieuChung);
-            command.Parameters.AddWithValue("@ChanDoan", chanDoan);
-            command.Parameters.AddWithValue("@PhuongPhapDieuTri", phuongPhapDieuTri);
-            command.Parameters.AddWithValue("@BSKhamBenh", bsKhamBenh);
-            command.Parameters.AddWithValue("@GhiChu", ghiChu);
-
-            command.ExecuteNonQuery();
-
-
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Lỗi cập nhật dữ liệu: " + ex.Message);
+                    }
+                }
+            }
         }
 
         public void UpdateBenhAn(string maBenhAn, string maHoSoBenhNhan, string doiTuong, DateTime giaTriBHYT, string hoTenThanNhan, string thoiGianVaoVien, string trucTiepVao, string noiGioiThieu, string vaoKhoa, string chuyenKhoa, string tongSoNgayDieuTri, string noiChuyenDen, string kkBorCapCuu, string khiVaoKhoaDieuTri, string ketQuaDieuTri, string giaiPhauBenh, string quaTrinhBenhLy, string tienSuBenh, string toaThan, string trieuChungCoNang, string thuongTonCanBan, string cacCoQuan, string tKetQuaTrinhBenhLy, string tomTatKQXN, string phuongPhapDieuTri, string hoSoPhimAnh)
         {
-            SqlCommand command = new SqlCommand();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "UpdateBenhAn";
 
-            command.Connection = connection;
-            command.CommandType = CommandType.StoredProcedure;
-            command.CommandText = "UpdateBenhAn";
+                    command.Parameters.AddWithValue("@MaBenhAn", maBenhAn);
+                    command.Parameters.AddWithValue("@MaHoSoBenhNhan", maHoSoBenhNhan);
+                    command.Parameters.AddWithValue("@DoiTuong", doiTuong);
+                    command.Parameters.AddWithValue("@GiaTriBHYT", giaTriBHYT);
+                    command.Parameters.AddWithValue("@HoTenThanNhan", hoTenThanNhan);
+                    command.Parameters.AddWithValue("@ThoiGianVaoVien", thoiGianVaoVien);
+                    command.Parameters.AddWithValue("@TrucTiepVao", trucTiepVao);
+                    command.Parameters.AddWithValue("@NoiGioiThieu", noiGioiThieu);
+                    command.Parameters.AddWithValue("@VaoKhoa", vaoKhoa);
+                    command.Parameters.AddWithValue("@ChuyenKhoa", chuyenKhoa);
+                    command.Parameters.AddWithValue("@TongSoNgayDieuTri", tongSoNgayDieuTri);
+                    command.Parameters.AddWithValue("@NoiChuyenDen", noiChuyenDen);
+                    command.Parameters.AddWithValue("@KKBorCapCuu", kkBorCapCuu);
+                    command.Parameters.AddWithValue("@KhiVaoKhoaDieuTri", khiVaoKhoaDieuTri);
+                    command.Parameters.AddWithValue("@KetQuaDieuTri", ketQuaDieuTri);
+                    command.Parameters.AddWithValue("@GiaiPhauBenh", giaiPhauBenh);
+                    command.Parameters.AddWithValue("@QuaTrinhBenhLy", quaTrinhBenhLy);
+                    command.Parameters.AddWithValue("@TienSuBenh", tienSuBenh);
+                    command.Parameters.AddWithValue("@ToaThan", toaThan);
+                    command.Parameters.AddWithValue("@TrieuChungCoNang", trieuChungCoNang);
+                    command.Parameters.AddWithValue("@ThuongTonCanBan", thuongTonCanBan);
+                    command.Parameters.AddWithValue("@CacCoQuan", cacCoQuan);
+                    command.Parameters.AddWithValue("@TKetQuaTrinhBenhLy", tKetQuaTrinhBenhLy);
+                    command.Parameters.AddWithValue("@TomTatKQXN", tomTatKQXN);
+                    command.Parameters.AddWithValue("@PhuongPhapDieuTri", phuongPhapDieuTri);
+                    command.Parameters.AddWithValue("@HoSoPhimAnh", hoSoPhimAnh);
 
-            command.Parameters.AddWithValue("@MaBenhAn", maBenhAn);
-            command.Parameters.AddWithValue("@MaHoSoBenhNhan", maHoSoBenhNhan);
-            command.Parameters.AddWithValue("@DoiTuong", doiTuong);
-            command.Parameters.AddWithValue("@GiaTriBHYT", giaTriBHYT);
-            command.Parameters.AddWithValue("@HoTenThanNhan", hoTenThanNhan);
-            command.Parameters.AddWithValue("@ThoiGianVaoVien", thoiGianVaoVien);
-            command.Parameters.AddWithValue("@TrucTiepVao", trucTiepVao);
-            command.Parameters.AddWithValue("@NoiGioiThieu", noiGioiThieu);
-            command.Parameters.AddWithValue("@VaoKhoa", vaoKhoa);
-            command.Parameters.AddWithValue("@ChuyenKhoa", chuyenKhoa);
-            command.Parameters.AddWithValue("@TongSoNgayDieuTri", tongSoNgayDieuTri);
-            command.Parameters.AddWithValue("@NoiChuyenDen", noiChuyenDen);
-            command.Parameters.AddWithValue("@KKBorCapCuu", kkBorCapCuu);
-            command.Parameters.AddWithValue("@KhiVaoKhoaDieuTri", khiVaoKhoaDieuTri);
-            command.Parameters.AddWithValue("@KetQuaDieuTri", ketQuaDieuTri);
-            command.Parameters.AddWithValue("@GiaiPhauBenh", giaiPhauBenh);
-            command.Parameters.AddWithValue("@QuaTrinhBenhLy", quaTrinhBenhLy);
-            command.Parameters.AddWithValue("@TienSuBenh", tienSuBenh);
-            command.Parameters.AddWithValue("@ToaThan", toaThan);
-            command.Parameters.AddWithValue("@TrieuChungCoNang", trieuChungCoNang);
-            command.Parameters.AddWithValue("@ThuongTonCanBan", thuongTonCanBan);
-            command.Parameters.AddWithValue("@CacCoQuan", cacCoQuan);
-            command.Parameters.AddWithValue("@TKetQuaTrinhBenhLy", tKetQuaTrinhBenhLy);
-            command.Parameters.AddWithValue("@TomTatKQXN", tomTatKQXN);
-            command.Parameters.AddWithValue("@PhuongPhapDieuTri", phuongPhapDieuTri);
-            command.Parameters.AddWithValue("@HoSoPhimAnh", hoSoPhimAnh);
-
-            command.ExecuteNonQuery();
-
-
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Lỗi cập nhật dữ liệu: " + ex.Message);
+                    }
+                }
+            }
         }
 
         public void UpdateToaThuoc(string maToaThuoc, string soThuTu, string maThuoc, string maBenhAn, string tenThuoc, byte soLuong, string dang, string ghiChu)
