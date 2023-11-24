@@ -61,5 +61,15 @@ namespace QLBenhVienDaLieu
             MessageBox.Show("Tạo bệnh án thành công");
             this.Close();
         }
+
+        private void bt_huySKB_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void bt_huyBA_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

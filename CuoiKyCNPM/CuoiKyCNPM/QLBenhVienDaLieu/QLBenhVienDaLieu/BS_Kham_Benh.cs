@@ -24,6 +24,7 @@ namespace QLBenhVienDaLieu
             //Change column display size
             dgv_lichKham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dgv_lichKham.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
+            dgv_lichKham.ReadOnly = true;
         }
 
         public BS_Kham_Benh()
@@ -59,6 +60,7 @@ namespace QLBenhVienDaLieu
         DataTable resultTable = new DataTable();
         private void SelectedValue(object sender, EventArgs e)
         {
+            dgv_lichKham.ReadOnly = false;
             if (cb_caKham.SelectedIndex != -1)
             {
                 string ngay = dt_ngayKham.Value.Date.ToString("yyyy-MM-dd");
@@ -75,6 +77,7 @@ namespace QLBenhVienDaLieu
                     MessageBox.Show(ex.Message);
                 }
             }
+            dgv_lichKham.ReadOnly = true;
         }
 
         private void BS_Kham_Benh_Resize(object sender, EventArgs e)
