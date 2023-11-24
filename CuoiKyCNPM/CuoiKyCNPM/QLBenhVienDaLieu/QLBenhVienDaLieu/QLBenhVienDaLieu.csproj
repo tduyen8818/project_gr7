@@ -381,12 +381,6 @@
     <Compile Include="BS_Them.Designer.cs">
       <DependentUpon>BS_Them.cs</DependentUpon>
     </Compile>
-    <Compile Include="BS_Xoa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BS_Xoa.Designer.cs">
-      <DependentUpon>BS_Xoa.cs</DependentUpon>
-    </Compile>
     <Compile Include="GiaoDien\LeTanTrangUI\HoSoBenhNhanUI\DatLichKhamFormLeTan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -647,9 +641,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BS_Them.resx">
       <DependentUpon>BS_Them.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BS_Xoa.resx">
-      <DependentUpon>BS_Xoa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GiaoDien\LeTanTrangUI\HoSoBenhNhanUI\DatLichKhamFormLeTan.resx">
       <DependentUpon>DatLichKhamFormLeTan.cs</DependentUpon>

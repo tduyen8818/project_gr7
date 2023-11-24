@@ -1,5 +1,6 @@
 ﻿using QLBenhVienDaLieu.Database.Class;
 using QLBenhVienDaLieu.Database.Function;
+using QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.DatLichKhamUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace QLBenhVienDaLieu
@@ -32,6 +34,9 @@ namespace QLBenhVienDaLieu
         DataTable hsbn = new DataTable();
         DataTable skb = new DataTable();
         DataTable ba = new DataTable();
+        string maHSBN = null;
+        string maLK = null;
+
         public void SetMaHoSoBenhNhan(string maHoSoBenhNhan, string maLichKham, FormWindowState state)
         {
             this.WindowState = state;
@@ -42,6 +47,9 @@ namespace QLBenhVienDaLieu
                 hsbn = funcCall.CallGetHoSoBenhNhan(maHoSoBenhNhan);
                 skb = funcCall.CallGetSoKhamBenh(maHoSoBenhNhan, maLichKham);
                 ba = funcCall.CallGetBenhAn(maHoSoBenhNhan);
+                maHSBN = maHoSoBenhNhan;
+                maLK = maLichKham;
+                //Thong tin HSBN
                 Load_HSBN(hsbn);
                 //Table so kham benh
                 dgv_skb.DataSource = skb;
@@ -67,6 +75,7 @@ namespace QLBenhVienDaLieu
                 MessageBox.Show(ex.Message);
             }
         }
+
 
         private void Load_HSBN(DataTable hsbn)
         {
@@ -108,12 +117,7 @@ namespace QLBenhVienDaLieu
 
         private void dgv_lichKham_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow selectedRow = dgv_skb.Rows[e.RowIndex];
-                string cellValue = selectedRow.Cells["ColumnName"].Value.ToString();
-
-            }
+            
         }
 
         private void bt_back_Click(object sender, EventArgs e)
@@ -190,41 +194,61 @@ namespace QLBenhVienDaLieu
 
         private void bt_them_Click(object sender, EventArgs e)
         {
+            BS_Them form = new BS_Them();
             if (bt_skb.Checked)
             {
-                BS_Them form = new BS_Them();
-                form.SetForm("skb", dgv_skb.SelectedRows[0].Cells["MaHoSoBenhNhan"].Value.ToString());
-                form.FormClosed += (s, args) => this.Show();
+                form.SetForm("skb", maHSBN);
+                form.FormClosed += (s, args) => updateSKB_DGV();
                 form.Show();
                 this.Hide();
             }
             if (bt_benhAn.Checked)
             {
-                BS_Them form = new BS_Them();
-                form.SetForm("ba", dgv_skb.SelectedRows[0].Cells["MaHoSoBenhNhan"].Value.ToString());
-                form.FormClosed += (s, args) => this.Show();
+                form.SetForm("ba", maHSBN);
+                form.FormClosed += (s, args) => updateBA_DGV();
                 form.Show();
                 this.Hide();
             }
         }
-
         private void bt_sua_Click(object sender, EventArgs e)
         {
+            BS_Sua form = new BS_Sua();
+            DataGridViewRow selectedRow = new DataGridViewRow();
             if (bt_skb.Checked && dgv_skb.Rows.Count != 0)
             {
-                BS_Sua form = new BS_Sua();
-                form.SetForm("skb");
-                form.FormClosed += (s, args) => this.Show();
-                form.Show();
-                this.Hide();
+                if (dgv_skb.SelectedRows.Count > 0)
+                {
+                    selectedRow = dgv_skb.SelectedRows[0];
+
+                    form.SetForm("skb", selectedRow);
+                    form.FormClosed += (s, args) => updateSKB_DGV();
+                    form.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Không có dữ liệu được chọn");
+                }
             }
-            if (bt_benhAn.Checked && dgv_benhAn.Rows.Count != 0)
+            else if (bt_benhAn.Checked && dgv_benhAn.Rows.Count != 0)
             {
-                BS_Sua form = new BS_Sua();
-                form.SetForm("ba");
-                form.FormClosed += (s, args) => this.Show();
-                form.Show();
-                this.Hide();
+                if (dgv_benhAn.SelectedRows.Count > 0)
+                {
+                    selectedRow = dgv_benhAn.SelectedRows[0];
+
+                    form.SetForm("ba", selectedRow);
+                    form.FormClosed += (s, args) => updateBA_DGV();
+                    form.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Không có dữ liệu được chọn");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu nào trong bảng");
             }
         }
 
@@ -232,54 +256,84 @@ namespace QLBenhVienDaLieu
         {
             if (bt_skb.Checked && dgv_skb.Rows.Count != 0)
             {
-                BS_Xoa form = new BS_Xoa();
-                form.SetForm("skb");
-                form.FormClosed += (s, args) => this.Show();
-                form.Show();
-                this.Hide();
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa sổ khám bệnh này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    DataGridViewRow selectedRow = dgv_skb.SelectedRows[0];
+                    SqlFunctionCaller funcCall = new SqlFunctionCaller();
+                    funcCall.DeleteSoKhamBenh(selectedRow.Cells["MaLichKham"].Value.ToString());
+                    MessageBox.Show("Xóa thành công");
+                }
+
             }
-            if (bt_benhAn.Checked && dgv_benhAn.Rows.Count != 0)
+            else if (bt_benhAn.Checked && dgv_benhAn.Rows.Count != 0)
             {
-                BS_Xoa form = new BS_Xoa();
-                form.SetForm("ba");
-                form.FormClosed += (s, args) => this.Show();
-                form.Show();
-                this.Hide();
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa sổ khám bệnh này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    DataGridViewRow selectedRow = dgv_skb.SelectedRows[0];
+                    SqlFunctionCaller funcCall = new SqlFunctionCaller();
+                    funcCall.DeleteRecordByMaBenhAn(selectedRow.Cells["MaBenhAn"].Value.ToString());
+                    MessageBox.Show("Xóa thành công");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu nào trong bảng");
             }
         }
 
+        private void updateSKB_DGV()
+        {
+            SqlFunctionCaller funcCall = new SqlFunctionCaller();
+            skb = funcCall.CallGetSoKhamBenh(maHSBN, maLK);
+            dgv_skb.DataSource = skb;
+            this.Show();
+        }
+
+        private void updateBA_DGV()
+        {
+            SqlFunctionCaller funcCall = new SqlFunctionCaller();
+            ba = funcCall.CallGetBenhAn(maHSBN);
+            dgv_benhAn.DataSource = ba;
+            this.Show();
+        }
+
+
         private void dgv_skb_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow selectedRow = dgv_skb.Rows[e.RowIndex];
-                string maHoSoBenhNhan = selectedRow.Cells["MaHoSoBenhNhan"].Value.ToString();
-                string maLichKham = selectedRow.Cells["MaLichKham"].Value.ToString();
+            //if (e.RowIndex >= 0)
+            //{
+            //    DataGridViewRow selectedRow = dgv_skb.Rows[e.RowIndex];
+            //    string maHoSoBenhNhan = selectedRow.Cells["MaHoSoBenhNhan"].Value.ToString();
+            //    string maLichKham = selectedRow.Cells["MaLichKham"].Value.ToString();
 
-                // Open the second form and call the method to pass the data
-                BS_Kham_Benh_2 hsbn = new BS_Kham_Benh_2();
-                hsbn.SetMaHoSoBenhNhan(maHoSoBenhNhan, maLichKham, this.WindowState);
-                hsbn.FormClosed += (s, args) => this.Show();
-                hsbn.Show();
-                this.Hide();
-            }
+            //    // Open the second form and call the method to pass the data
+            //    BS_Kham_Benh_2 hsbn = new BS_Kham_Benh_2();
+            //    hsbn.SetMaHoSoBenhNhan(maHoSoBenhNhan, maLichKham, this.WindowState);
+            //    hsbn.FormClosed += (s, args) => this.Show();
+            //    hsbn.Show();
+            //    this.Hide();
+            //}
         }
 
         private void dgv_benhAn_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow selectedRow = dgv_benhAn.Rows[e.RowIndex];
-                string maHoSoBenhNhan = selectedRow.Cells["MaHoSoBenhNhan"].Value.ToString();
-                string maLichKham = selectedRow.Cells["MaLichKham"].Value.ToString();
+            //if (e.RowIndex >= 0)
+            //{
+            //    DataGridViewRow selectedRow = dgv_benhAn.Rows[e.RowIndex];
+            //    string maHoSoBenhNhan = selectedRow.Cells["MaHoSoBenhNhan"].Value.ToString();
+            //    string maLichKham = selectedRow.Cells["MaLichKham"].Value.ToString();
 
-                // Open the second form and call the method to pass the data
-                BS_Kham_Benh_2 hsbn = new BS_Kham_Benh_2();
-                hsbn.SetMaHoSoBenhNhan(maHoSoBenhNhan, maLichKham, this.WindowState);
-                hsbn.FormClosed += (s, args) => this.Show();
-                hsbn.Show();
-                this.Hide();
-            }
+            //    // Open the second form and call the method to pass the data
+            //    BS_Kham_Benh_2 hsbn = new BS_Kham_Benh_2();
+            //    hsbn.SetMaHoSoBenhNhan(maHoSoBenhNhan, maLichKham, this.WindowState);
+            //    hsbn.FormClosed += (s, args) => this.Show();
+            //    hsbn.Show();
+            //    this.Hide();
+            //}
         }
     }
 }
