@@ -1790,6 +1790,16 @@ RETURN
         Ca = @Ca
         AND CONVERT(date, KhungGioKham) = @Date
 );
+go
+
+CREATE FUNCTION SelectBenhAnByMaHSBN (@MaHoSoBenhNhan varchar(8))
+RETURNS TABLE
+AS
+RETURN (
+    SELECT *
+    FROM BenhAn
+    WHERE MaHoSoBenhNhan = @MaHoSoBenhNhan
+);
 
 go
 
