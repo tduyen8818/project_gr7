@@ -57,6 +57,7 @@
             this.lb_skb_maLK = new System.Windows.Forms.Label();
             this.lb_skb_maHSBN = new System.Windows.Forms.Label();
             this.pn_themBA = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.dt_ba_giaTriBHYT = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.tb_ba_hoSoPA = new Guna.UI2.WinForms.Guna2TextBox();
             this.tb_ba_ppDieuTri = new Guna.UI2.WinForms.Guna2TextBox();
             this.tb_ba_tomTat = new Guna.UI2.WinForms.Guna2TextBox();
@@ -108,7 +109,8 @@
             this.lb_ba_giaTriBHYT = new System.Windows.Forms.Label();
             this.lb_ba_doiTuong = new System.Windows.Forms.Label();
             this.lb_ba_maHSBN = new System.Windows.Forms.Label();
-            this.dt_ba_giaTriBHYT = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.bt_huyBA = new Guna.UI2.WinForms.Guna2Button();
+            this.bt_huySKB = new Guna.UI2.WinForms.Guna2Button();
             this.pn_themSKB.SuspendLayout();
             this.pn_themBA.SuspendLayout();
             this.SuspendLayout();
@@ -120,6 +122,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pn_themSKB.BackColor = System.Drawing.Color.Transparent;
             this.pn_themSKB.BorderRadius = 20;
+            this.pn_themSKB.Controls.Add(this.bt_huySKB);
             this.pn_themSKB.Controls.Add(this.bt_themSKB);
             this.pn_themSKB.Controls.Add(this.tb_skb_ghiChu);
             this.pn_themSKB.Controls.Add(this.tb_skb_bs);
@@ -678,6 +681,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pn_themBA.BackColor = System.Drawing.Color.Transparent;
             this.pn_themBA.BorderRadius = 20;
+            this.pn_themBA.Controls.Add(this.bt_huyBA);
             this.pn_themBA.Controls.Add(this.dt_ba_giaTriBHYT);
             this.pn_themBA.Controls.Add(this.tb_ba_hoSoPA);
             this.pn_themBA.Controls.Add(this.tb_ba_ppDieuTri);
@@ -735,6 +739,25 @@
             this.pn_themBA.Name = "pn_themBA";
             this.pn_themBA.Size = new System.Drawing.Size(1323, 587);
             this.pn_themBA.TabIndex = 28;
+            // 
+            // dt_ba_giaTriBHYT
+            // 
+            this.dt_ba_giaTriBHYT.AutoRoundedCorners = true;
+            this.dt_ba_giaTriBHYT.BackColor = System.Drawing.Color.Transparent;
+            this.dt_ba_giaTriBHYT.BorderRadius = 12;
+            this.dt_ba_giaTriBHYT.BorderThickness = 1;
+            this.dt_ba_giaTriBHYT.Checked = true;
+            this.dt_ba_giaTriBHYT.CustomFormat = "dd/MM/yyyy";
+            this.dt_ba_giaTriBHYT.FillColor = System.Drawing.Color.PaleGreen;
+            this.dt_ba_giaTriBHYT.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.dt_ba_giaTriBHYT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dt_ba_giaTriBHYT.Location = new System.Drawing.Point(226, 120);
+            this.dt_ba_giaTriBHYT.MaxDate = new System.DateTime(2198, 12, 31, 0, 0, 0, 0);
+            this.dt_ba_giaTriBHYT.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
+            this.dt_ba_giaTriBHYT.Name = "dt_ba_giaTriBHYT";
+            this.dt_ba_giaTriBHYT.Size = new System.Drawing.Size(424, 27);
+            this.dt_ba_giaTriBHYT.TabIndex = 52;
+            this.dt_ba_giaTriBHYT.Value = new System.DateTime(2023, 11, 20, 11, 41, 43, 380);
             // 
             // tb_ba_hoSoPA
             // 
@@ -1684,24 +1707,49 @@
             this.lb_ba_maHSBN.TabIndex = 1;
             this.lb_ba_maHSBN.Text = "Mã hồ sơ bệnh nhân:";
             // 
-            // dt_ba_giaTriBHYT
+            // bt_huyBA
             // 
-            this.dt_ba_giaTriBHYT.AutoRoundedCorners = true;
-            this.dt_ba_giaTriBHYT.BackColor = System.Drawing.Color.Transparent;
-            this.dt_ba_giaTriBHYT.BorderRadius = 12;
-            this.dt_ba_giaTriBHYT.BorderThickness = 1;
-            this.dt_ba_giaTriBHYT.Checked = true;
-            this.dt_ba_giaTriBHYT.CustomFormat = "dd/MM/yyyy";
-            this.dt_ba_giaTriBHYT.FillColor = System.Drawing.Color.PaleGreen;
-            this.dt_ba_giaTriBHYT.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.dt_ba_giaTriBHYT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dt_ba_giaTriBHYT.Location = new System.Drawing.Point(226, 120);
-            this.dt_ba_giaTriBHYT.MaxDate = new System.DateTime(2198, 12, 31, 0, 0, 0, 0);
-            this.dt_ba_giaTriBHYT.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
-            this.dt_ba_giaTriBHYT.Name = "dt_ba_giaTriBHYT";
-            this.dt_ba_giaTriBHYT.Size = new System.Drawing.Size(424, 27);
-            this.dt_ba_giaTriBHYT.TabIndex = 52;
-            this.dt_ba_giaTriBHYT.Value = new System.DateTime(2023, 11, 20, 11, 41, 43, 380);
+            this.bt_huyBA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_huyBA.AutoRoundedCorners = true;
+            this.bt_huyBA.BackColor = System.Drawing.Color.Transparent;
+            this.bt_huyBA.BorderColor = System.Drawing.Color.Transparent;
+            this.bt_huyBA.BorderRadius = 16;
+            this.bt_huyBA.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_huyBA.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_huyBA.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_huyBA.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_huyBA.FillColor = System.Drawing.Color.Silver;
+            this.bt_huyBA.FocusedColor = System.Drawing.Color.LimeGreen;
+            this.bt_huyBA.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_huyBA.ForeColor = System.Drawing.Color.Black;
+            this.bt_huyBA.Location = new System.Drawing.Point(1095, 505);
+            this.bt_huyBA.Name = "bt_huyBA";
+            this.bt_huyBA.Size = new System.Drawing.Size(76, 35);
+            this.bt_huyBA.TabIndex = 53;
+            this.bt_huyBA.Text = "Hủy";
+            this.bt_huyBA.Click += new System.EventHandler(this.bt_huyBA_Click);
+            // 
+            // bt_huySKB
+            // 
+            this.bt_huySKB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_huySKB.AutoRoundedCorners = true;
+            this.bt_huySKB.BackColor = System.Drawing.Color.Transparent;
+            this.bt_huySKB.BorderColor = System.Drawing.Color.Transparent;
+            this.bt_huySKB.BorderRadius = 16;
+            this.bt_huySKB.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_huySKB.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_huySKB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_huySKB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_huySKB.FillColor = System.Drawing.Color.Silver;
+            this.bt_huySKB.FocusedColor = System.Drawing.Color.LimeGreen;
+            this.bt_huySKB.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_huySKB.ForeColor = System.Drawing.Color.Black;
+            this.bt_huySKB.Location = new System.Drawing.Point(1095, 505);
+            this.bt_huySKB.Name = "bt_huySKB";
+            this.bt_huySKB.Size = new System.Drawing.Size(76, 35);
+            this.bt_huySKB.TabIndex = 54;
+            this.bt_huySKB.Text = "Hủy";
+            this.bt_huySKB.Click += new System.EventHandler(this.bt_huySKB_Click);
             // 
             // BS_Them
             // 
@@ -1805,5 +1853,7 @@
         private System.Windows.Forms.Label lb_ba_giaiPhau;
         private System.Windows.Forms.Label lb_ba_kq;
         private Guna.UI2.WinForms.Guna2DateTimePicker dt_ba_giaTriBHYT;
+        private Guna.UI2.WinForms.Guna2Button bt_huyBA;
+        private Guna.UI2.WinForms.Guna2Button bt_huySKB;
     }
 }

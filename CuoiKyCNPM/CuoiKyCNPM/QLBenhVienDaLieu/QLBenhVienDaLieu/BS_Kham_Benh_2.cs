@@ -27,9 +27,11 @@ namespace QLBenhVienDaLieu
             pn_hoSo.Hide();
             dgv_skb.Hide();
             dgv_benhAn.Hide();
+            bt_hoSo.Checked = true;
             bt_sua.Hide();
             bt_xoa.Hide();
             bt_them.Hide();
+            disReadOnlyDGV();
         }
         DataTable hsbn = new DataTable();
         DataTable skb = new DataTable();
@@ -41,7 +43,7 @@ namespace QLBenhVienDaLieu
         {
             this.WindowState = state;
             SqlFunctionCaller funcCall = new SqlFunctionCaller();
-
+            enaReadOnlyDGV();
             try
             {
                 hsbn = funcCall.CallGetHoSoBenhNhan(maHoSoBenhNhan);
@@ -61,19 +63,21 @@ namespace QLBenhVienDaLieu
                 //Change column display size
                 dgv_benhAn.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
                 dgv_benhAn.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
-                //Hide all displays
-                pn_hoSo.Hide();
+                //Hide all datagridviews
                 dgv_skb.Hide();
                 dgv_benhAn.Hide();
                 //Hide them sua xoa buttons
                 bt_sua.Hide();
                 bt_xoa.Hide();
                 bt_them.Hide();
+
+                bt_hoSo.Checked = true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            disReadOnlyDGV();
         }
 
 
@@ -95,6 +99,7 @@ namespace QLBenhVienDaLieu
 
         private void BS_Kham_Benh_2_Resize(object sender, EventArgs e)
         {
+            enaReadOnlyDGV();
             int lastCol = skb.Columns.Count;
             if (this.WindowState == FormWindowState.Maximized && dgv_skb.Rows.Count != 0)
             {
@@ -113,6 +118,7 @@ namespace QLBenhVienDaLieu
             {
                 dgv_benhAn.Columns[lastCol - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             }
+            disReadOnlyDGV();
         }
 
         private void dgv_lichKham_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -263,6 +269,7 @@ namespace QLBenhVienDaLieu
                     DataGridViewRow selectedRow = dgv_skb.SelectedRows[0];
                     SqlFunctionCaller funcCall = new SqlFunctionCaller();
                     funcCall.DeleteSoKhamBenh(selectedRow.Cells["MaLichKham"].Value.ToString());
+                    updateSKB_DGV();
                     MessageBox.Show("Xóa thành công");
                 }
 
@@ -273,9 +280,10 @@ namespace QLBenhVienDaLieu
 
                 if (result == DialogResult.Yes)
                 {
-                    DataGridViewRow selectedRow = dgv_skb.SelectedRows[0];
+                    DataGridViewRow selectedRow = dgv_benhAn.SelectedRows[0];
                     SqlFunctionCaller funcCall = new SqlFunctionCaller();
                     funcCall.DeleteRecordByMaBenhAn(selectedRow.Cells["MaBenhAn"].Value.ToString());
+                    updateBA_DGV();
                     MessageBox.Show("Xóa thành công");
                 }
             }
@@ -287,18 +295,22 @@ namespace QLBenhVienDaLieu
 
         private void updateSKB_DGV()
         {
+            enaReadOnlyDGV();
             SqlFunctionCaller funcCall = new SqlFunctionCaller();
             skb = funcCall.CallGetSoKhamBenh(maHSBN, maLK);
             dgv_skb.DataSource = skb;
             this.Show();
+            disReadOnlyDGV();
         }
 
         private void updateBA_DGV()
         {
+            enaReadOnlyDGV();
             SqlFunctionCaller funcCall = new SqlFunctionCaller();
             ba = funcCall.CallGetBenhAn(maHSBN);
             dgv_benhAn.DataSource = ba;
             this.Show();
+            disReadOnlyDGV();
         }
 
 
@@ -334,6 +346,18 @@ namespace QLBenhVienDaLieu
             //    hsbn.Show();
             //    this.Hide();
             //}
+        }
+
+        private void enaReadOnlyDGV()
+        {
+            dgv_skb.ReadOnly = true;
+            dgv_benhAn.ReadOnly = true;
+        }
+
+        private void disReadOnlyDGV()
+        {
+            dgv_skb.ReadOnly = false;
+            dgv_benhAn.ReadOnly = false;
         }
     }
 }

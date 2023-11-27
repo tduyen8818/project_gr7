@@ -1,6 +1,7 @@
 ﻿//PHẦN HÀM SHOW TẤT CẢ THÔNG TIN CỦA 1 BẢNG DỰA VÀO NHẬP MÃ SỐ
 using Guna.UI2.WinForms;
 using QLBenhVienDaLieu.Database.Class;
+using QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.LichKhamUI.DatLichKhamUI;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -1993,32 +1994,52 @@ namespace QLBenhVienDaLieu.Database.Function
 
         public void DeleteSoKhamBenh(string maLichKham)
         {
-            SqlCommand command = new SqlCommand();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "DeleteSoKhamBenh";
 
-            command.Connection = connection;
-            command.CommandType = CommandType.StoredProcedure;
-            command.CommandText = "DeleteSoKhamBenh";
+                    command.Parameters.AddWithValue("@MaLichKham", maLichKham);
 
-            command.Parameters.AddWithValue("@MaLichKham", maLichKham);
-
-            command.ExecuteNonQuery();
-
-
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Lỗi cập nhật dữ liệu: " + ex.Message);
+                    }
+                }
+            }
         }
 
         public void DeleteRecordByMaBenhAn(string maBenhAn)
         {
-            SqlCommand command = new SqlCommand();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "DeleteRecordByMaBenhAn";
 
-            command.Connection = connection;
-            command.CommandType = CommandType.StoredProcedure;
-            command.CommandText = "DeleteRecordByMaBenhAn";
+                    command.Parameters.AddWithValue("@MaBenhAn", maBenhAn);
 
-            command.Parameters.AddWithValue("@MaBenhAn", maBenhAn);
-
-            command.ExecuteNonQuery();
-
-
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Lỗi cập nhật dữ liệu: " + ex.Message);
+                    }
+                }
+            }
         }
 
         public void DeleteToaThuoc(string maToaThuoc)
