@@ -633,6 +633,12 @@
     <Compile Include="GiaoDien\KeToanTrangUI\ThongKeUI\ThongKeDoanhThu.Designer.cs">
       <DependentUpon>ThongKeDoanhThu.cs</DependentUpon>
     </Compile>
+    <Compile Include="BS_ThemToaThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BS_ThemToaThuoc.Designer.cs">
+      <DependentUpon>BS_ThemToaThuoc.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BS_Kham_Benh_2.resx">
       <DependentUpon>BS_Kham_Benh_2.cs</DependentUpon>
     </EmbeddedResource>
@@ -757,6 +763,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GiaoDien\KeToanTrangUI\ThongKeUI\ThongKeDoanhThu.resx">
       <DependentUpon>ThongKeDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BS_ThemToaThuoc.resx">
+      <DependentUpon>BS_ThemToaThuoc.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="packages.config" />

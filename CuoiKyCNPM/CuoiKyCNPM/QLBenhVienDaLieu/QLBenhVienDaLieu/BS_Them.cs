@@ -57,7 +57,7 @@ namespace QLBenhVienDaLieu
 
         private void bt_themBA_Click(object sender, EventArgs e)
         {
-            funcCall.InsertBenhAn(tb_ba_maHSBN.Text, tb_ba_doiTuong.Text, dt_ba_giaTriBHYT.Value, tb_ba_hoTenThanNhan.Text, tb_ba_tgVaoVien.Text, tb_ba_ttVao.Text, tb_ba_noiGT.Text, tb_ba_khoa.Text, tb_ba_chuyenKhoa.Text, tb_ba_tongSoNgay.Text, tb_ba_noiChuyen.Text, tb_ba_KKBhoacCC.Text, tb_ba_dieuTri.Text, tb_ba_kq.Text, tb_ba_giaiPhau.Text, tb_ba_benhLy.Text, tb_ba_tienSu.Text, tb_ba_toanThan.Text, tb_ba_coNang.Text, tb_ba_thuongTonCB.Text, tb_ba_coQuan.Text, tb_ba_tongKet.Text, tb_ba_tomTat.Text, tb_ba_ppDieuTri.Text, tb_ba_hoSoPA.Text);
+            funcCall.InsertBenhAn(tb_ba_maHSBN.Text, tb_ba_doiTuong.Text, dt_ba_giaTriBHYT.Value, tb_ba_hoTenThanNhan.Text, dt_ba_tgVaoVien.Value.ToString(), tb_ba_ttVao.Text, tb_ba_noiGT.Text, tb_ba_khoa.Text, tb_ba_chuyenKhoa.Text, tb_ba_tongSoNgay.Text, tb_ba_noiChuyen.Text, tb_ba_KKBhoacCC.Text, tb_ba_dieuTri.Text, tb_ba_kq.Text, tb_ba_giaiPhau.Text, tb_ba_benhLy.Text, tb_ba_tienSu.Text, tb_ba_toanThan.Text, tb_ba_coNang.Text, tb_ba_thuongTonCB.Text, tb_ba_coQuan.Text, tb_ba_tongKet.Text, tb_ba_tomTat.Text, tb_ba_ppDieuTri.Text, tb_ba_hoSoPA.Text);
             MessageBox.Show("Tạo bệnh án thành công");
             this.Close();
         }
