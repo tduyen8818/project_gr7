@@ -16,9 +16,17 @@ namespace QLBenhVienDaLieu
 {
     public partial class BS_Kham_Benh_2 : Form
     {
+        private string sDT;
+
         private void BS_Kham_Benh_2_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public BS_Kham_Benh_2(string sDT)
+        {
+            InitializeComponent();
+            this.sDT = sDT;
         }
 
         public BS_Kham_Benh_2()
@@ -31,6 +39,7 @@ namespace QLBenhVienDaLieu
             bt_sua.Hide();
             bt_xoa.Hide();
             bt_them.Hide();
+            bt_themToaThuoc.Hide();
             disReadOnlyDGV();
         }
         DataTable hsbn = new DataTable();
@@ -39,8 +48,9 @@ namespace QLBenhVienDaLieu
         string maHSBN = null;
         string maLK = null;
 
-        public void SetMaHoSoBenhNhan(string maHoSoBenhNhan, string maLichKham, FormWindowState state)
+        public void SetMaHoSoBenhNhan(string maHoSoBenhNhan, string maLichKham, FormWindowState state, string sDT)
         {
+            this.sDT = sDT;
             this.WindowState = state;
             SqlFunctionCaller funcCall = new SqlFunctionCaller();
             enaReadOnlyDGV();
@@ -186,6 +196,7 @@ namespace QLBenhVienDaLieu
                 bt_sua.Show();
                 bt_xoa.Show();
                 bt_them.Show();
+                bt_themToaThuoc.Show();
 
                 dgv_benhAn.Show();
             }
@@ -195,6 +206,7 @@ namespace QLBenhVienDaLieu
                 bt_sua.Hide();
                 bt_xoa.Hide();
                 bt_them.Hide();
+                bt_themToaThuoc.Hide();
             }
         }
 
@@ -293,6 +305,17 @@ namespace QLBenhVienDaLieu
             }
         }
 
+        private void bt_themToaThuoc_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow selectedRow = dgv_benhAn.SelectedRows[0];
+
+            BS_ThemToaThuoc themTT = new BS_ThemToaThuoc();
+            themTT.FormClosed += (s, args) => this.Show();
+            themTT.SetInfo(selectedRow.Cells["MaBenhAn"].Value.ToString());
+            themTT.Show();
+            this.Hide();
+        }
+
         private void updateSKB_DGV()
         {
             enaReadOnlyDGV();
@@ -358,6 +381,22 @@ namespace QLBenhVienDaLieu
         {
             dgv_skb.ReadOnly = false;
             dgv_benhAn.ReadOnly = false;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            TaiKhoan_BS taiKhoanForm = new TaiKhoan_BS(sDT);
+            this.Hide();
+            taiKhoanForm.ShowDialog();
+            this.Close();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            LichLamViec_BS lichLamViec = new LichLamViec_BS(sDT);
+            this.Hide();
+            lichLamViec.ShowDialog();
+            this.Close();
         }
     }
 }

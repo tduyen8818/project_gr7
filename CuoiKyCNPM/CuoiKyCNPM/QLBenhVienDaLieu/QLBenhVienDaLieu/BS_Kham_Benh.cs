@@ -104,7 +104,7 @@ namespace QLBenhVienDaLieu
 
                 // Open BS_Kham_Benh_2 and call the method to pass the data
                 BS_Kham_Benh_2 hsbn = new BS_Kham_Benh_2();
-                hsbn.SetMaHoSoBenhNhan(maHoSoBenhNhan, maLichKham, this.WindowState);
+                hsbn.SetMaHoSoBenhNhan(maHoSoBenhNhan, maLichKham, this.WindowState, sDT);
                 hsbn.FormClosed += (s, args) => this.Show();
                 hsbn.Show();
                 this.Hide();

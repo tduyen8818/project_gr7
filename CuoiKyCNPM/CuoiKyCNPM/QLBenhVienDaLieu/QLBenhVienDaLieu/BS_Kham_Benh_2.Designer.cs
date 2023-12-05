@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle65 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle66 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BS_Kham_Benh_2));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle70 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle71 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle72 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.button10 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -83,6 +83,7 @@
             this.dgv_skb = new Guna.UI2.WinForms.Guna2DataGridView();
             this.lb_ttBenhNhan = new System.Windows.Forms.Label();
             this.lb_hoSoBN = new System.Windows.Forms.Label();
+            this.bt_themToaThuoc = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CustomGradientPanel2.SuspendLayout();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.pn_hoSo.SuspendLayout();
@@ -135,6 +136,7 @@
             this.button6.Size = new System.Drawing.Size(178, 46);
             this.button6.TabIndex = 5;
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button9
             // 
@@ -148,6 +150,7 @@
             this.button9.Size = new System.Drawing.Size(178, 46);
             this.button9.TabIndex = 8;
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button3
             // 
@@ -246,6 +249,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2CustomGradientPanel1.BorderRadius = 20;
+            this.guna2CustomGradientPanel1.Controls.Add(this.bt_themToaThuoc);
             this.guna2CustomGradientPanel1.Controls.Add(this.bt_them);
             this.guna2CustomGradientPanel1.Controls.Add(this.bt_sua);
             this.guna2CustomGradientPanel1.Controls.Add(this.bt_xoa);
@@ -259,9 +263,9 @@
             this.guna2CustomGradientPanel1.Controls.Add(this.lb_ttBenhNhan);
             this.guna2CustomGradientPanel1.Controls.Add(this.lb_hoSoBN);
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(212, 9);
-            this.guna2CustomGradientPanel1.MinimumSize = new System.Drawing.Size(815, 525);
+            this.guna2CustomGradientPanel1.MinimumSize = new System.Drawing.Size(960, 542);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(815, 542);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(960, 542);
             this.guna2CustomGradientPanel1.TabIndex = 8;
             // 
             // bt_them
@@ -279,7 +283,7 @@
             this.bt_them.FocusedColor = System.Drawing.Color.LimeGreen;
             this.bt_them.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.bt_them.ForeColor = System.Drawing.Color.Black;
-            this.bt_them.Location = new System.Drawing.Point(533, 130);
+            this.bt_them.Location = new System.Drawing.Point(678, 130);
             this.bt_them.Name = "bt_them";
             this.bt_them.Size = new System.Drawing.Size(76, 35);
             this.bt_them.TabIndex = 13;
@@ -301,7 +305,7 @@
             this.bt_sua.FocusedColor = System.Drawing.Color.LimeGreen;
             this.bt_sua.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.bt_sua.ForeColor = System.Drawing.Color.Black;
-            this.bt_sua.Location = new System.Drawing.Point(615, 130);
+            this.bt_sua.Location = new System.Drawing.Point(760, 130);
             this.bt_sua.Name = "bt_sua";
             this.bt_sua.Size = new System.Drawing.Size(65, 35);
             this.bt_sua.TabIndex = 12;
@@ -323,7 +327,7 @@
             this.bt_xoa.FocusedColor = System.Drawing.Color.LimeGreen;
             this.bt_xoa.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.bt_xoa.ForeColor = System.Drawing.Color.Black;
-            this.bt_xoa.Location = new System.Drawing.Point(686, 130);
+            this.bt_xoa.Location = new System.Drawing.Point(831, 130);
             this.bt_xoa.Name = "bt_xoa";
             this.bt_xoa.Size = new System.Drawing.Size(65, 35);
             this.bt_xoa.TabIndex = 11;
@@ -358,9 +362,9 @@
             this.pn_hoSo.FillColor = System.Drawing.Color.Silver;
             this.pn_hoSo.FillColor4 = System.Drawing.Color.Silver;
             this.pn_hoSo.Location = new System.Drawing.Point(55, 197);
-            this.pn_hoSo.MinimumSize = new System.Drawing.Size(696, 290);
+            this.pn_hoSo.MinimumSize = new System.Drawing.Size(841, 301);
             this.pn_hoSo.Name = "pn_hoSo";
-            this.pn_hoSo.Size = new System.Drawing.Size(696, 301);
+            this.pn_hoSo.Size = new System.Drawing.Size(841, 301);
             this.pn_hoSo.TabIndex = 10;
             // 
             // tb_diaChi
@@ -388,7 +392,7 @@
             this.tb_diaChi.PlaceholderText = "";
             this.tb_diaChi.ReadOnly = true;
             this.tb_diaChi.SelectedText = "";
-            this.tb_diaChi.Size = new System.Drawing.Size(617, 23);
+            this.tb_diaChi.Size = new System.Drawing.Size(762, 23);
             this.tb_diaChi.TabIndex = 21;
             // 
             // tb_mail
@@ -416,7 +420,7 @@
             this.tb_mail.PlaceholderText = "";
             this.tb_mail.ReadOnly = true;
             this.tb_mail.SelectedText = "";
-            this.tb_mail.Size = new System.Drawing.Size(621, 23);
+            this.tb_mail.Size = new System.Drawing.Size(766, 23);
             this.tb_mail.TabIndex = 20;
             // 
             // tb_sdt
@@ -444,7 +448,7 @@
             this.tb_sdt.PlaceholderText = "";
             this.tb_sdt.ReadOnly = true;
             this.tb_sdt.SelectedText = "";
-            this.tb_sdt.Size = new System.Drawing.Size(568, 23);
+            this.tb_sdt.Size = new System.Drawing.Size(713, 23);
             this.tb_sdt.TabIndex = 19;
             // 
             // tb_nghe
@@ -472,7 +476,7 @@
             this.tb_nghe.PlaceholderText = "";
             this.tb_nghe.ReadOnly = true;
             this.tb_nghe.SelectedText = "";
-            this.tb_nghe.Size = new System.Drawing.Size(569, 23);
+            this.tb_nghe.Size = new System.Drawing.Size(714, 23);
             this.tb_nghe.TabIndex = 18;
             // 
             // tb_maBHYT
@@ -500,7 +504,7 @@
             this.tb_maBHYT.PlaceholderText = "";
             this.tb_maBHYT.ReadOnly = true;
             this.tb_maBHYT.SelectedText = "";
-            this.tb_maBHYT.Size = new System.Drawing.Size(535, 23);
+            this.tb_maBHYT.Size = new System.Drawing.Size(680, 23);
             this.tb_maBHYT.TabIndex = 17;
             // 
             // tb_cccd
@@ -528,7 +532,7 @@
             this.tb_cccd.PlaceholderText = "";
             this.tb_cccd.ReadOnly = true;
             this.tb_cccd.SelectedText = "";
-            this.tb_cccd.Size = new System.Drawing.Size(521, 23);
+            this.tb_cccd.Size = new System.Drawing.Size(666, 23);
             this.tb_cccd.TabIndex = 16;
             // 
             // tb_gioiTinh
@@ -556,7 +560,7 @@
             this.tb_gioiTinh.PlaceholderText = "";
             this.tb_gioiTinh.ReadOnly = true;
             this.tb_gioiTinh.SelectedText = "";
-            this.tb_gioiTinh.Size = new System.Drawing.Size(604, 23);
+            this.tb_gioiTinh.Size = new System.Drawing.Size(749, 23);
             this.tb_gioiTinh.TabIndex = 15;
             // 
             // tb_ngaySinh
@@ -584,7 +588,7 @@
             this.tb_ngaySinh.PlaceholderText = "";
             this.tb_ngaySinh.ReadOnly = true;
             this.tb_ngaySinh.SelectedText = "";
-            this.tb_ngaySinh.Size = new System.Drawing.Size(593, 23);
+            this.tb_ngaySinh.Size = new System.Drawing.Size(738, 23);
             this.tb_ngaySinh.TabIndex = 14;
             // 
             // tb_hoVaTen
@@ -612,7 +616,7 @@
             this.tb_hoVaTen.PlaceholderText = "";
             this.tb_hoVaTen.ReadOnly = true;
             this.tb_hoVaTen.SelectedText = "";
-            this.tb_hoVaTen.Size = new System.Drawing.Size(595, 23);
+            this.tb_hoVaTen.Size = new System.Drawing.Size(740, 23);
             this.tb_hoVaTen.TabIndex = 13;
             // 
             // tb_maTK
@@ -640,7 +644,7 @@
             this.tb_maTK.PlaceholderText = "";
             this.tb_maTK.ReadOnly = true;
             this.tb_maTK.SelectedText = "";
-            this.tb_maTK.Size = new System.Drawing.Size(569, 23);
+            this.tb_maTK.Size = new System.Drawing.Size(714, 23);
             this.tb_maTK.TabIndex = 12;
             // 
             // tb_maHSBN
@@ -668,7 +672,7 @@
             this.tb_maHSBN.PlaceholderText = "";
             this.tb_maHSBN.ReadOnly = true;
             this.tb_maHSBN.SelectedText = "";
-            this.tb_maHSBN.Size = new System.Drawing.Size(510, 23);
+            this.tb_maHSBN.Size = new System.Drawing.Size(655, 23);
             this.tb_maHSBN.TabIndex = 11;
             // 
             // lb_diaChi
@@ -796,50 +800,50 @@
             // 
             this.dgv_benhAn.AllowUserToAddRows = false;
             this.dgv_benhAn.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgv_benhAn.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle65.BackColor = System.Drawing.Color.White;
+            this.dgv_benhAn.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle65;
             this.dgv_benhAn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_benhAn.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_benhAn.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgv_benhAn.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_benhAn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle66.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle66.BackColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle66.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle66.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle66.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle66.SelectionBackColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle66.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle66.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_benhAn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle66;
             this.dgv_benhAn.ColumnHeadersHeight = 58;
             this.dgv_benhAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_benhAn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle67.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle67.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle67.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle67.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle67.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle67.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle67.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle67.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_benhAn.DefaultCellStyle = dataGridViewCellStyle67;
             this.dgv_benhAn.GridColor = System.Drawing.Color.WhiteSmoke;
             this.dgv_benhAn.Location = new System.Drawing.Point(55, 197);
             this.dgv_benhAn.MinimumSize = new System.Drawing.Size(696, 252);
             this.dgv_benhAn.Name = "dgv_benhAn";
             this.dgv_benhAn.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_benhAn.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle68.BackColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle68.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle68.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle68.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle68.SelectionBackColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle68.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle68.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_benhAn.RowHeadersDefaultCellStyle = dataGridViewCellStyle68;
             this.dgv_benhAn.RowHeadersVisible = false;
             this.dgv_benhAn.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dgv_benhAn.Size = new System.Drawing.Size(696, 290);
+            this.dgv_benhAn.Size = new System.Drawing.Size(841, 290);
             this.dgv_benhAn.TabIndex = 9;
             this.dgv_benhAn.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_benhAn.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -950,50 +954,50 @@
             // 
             this.dgv_skb.AllowUserToAddRows = false;
             this.dgv_skb.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            this.dgv_skb.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle69.BackColor = System.Drawing.Color.White;
+            this.dgv_skb.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle69;
             this.dgv_skb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_skb.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_skb.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgv_skb.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_skb.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle70.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle70.BackColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle70.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle70.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle70.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle70.SelectionBackColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle70.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle70.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_skb.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle70;
             this.dgv_skb.ColumnHeadersHeight = 58;
             this.dgv_skb.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_skb.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle71.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle71.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle71.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle71.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle71.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle71.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle71.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle71.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_skb.DefaultCellStyle = dataGridViewCellStyle71;
             this.dgv_skb.GridColor = System.Drawing.Color.WhiteSmoke;
             this.dgv_skb.Location = new System.Drawing.Point(55, 197);
             this.dgv_skb.MinimumSize = new System.Drawing.Size(696, 252);
             this.dgv_skb.Name = "dgv_skb";
             this.dgv_skb.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_skb.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle72.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle72.BackColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle72.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle72.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle72.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle72.SelectionBackColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle72.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle72.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_skb.RowHeadersDefaultCellStyle = dataGridViewCellStyle72;
             this.dgv_skb.RowHeadersVisible = false;
             this.dgv_skb.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dgv_skb.Size = new System.Drawing.Size(696, 290);
+            this.dgv_skb.Size = new System.Drawing.Size(841, 290);
             this.dgv_skb.TabIndex = 4;
             this.dgv_skb.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_skb.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -1032,15 +1036,39 @@
             // 
             // lb_hoSoBN
             // 
-            this.lb_hoSoBN.AutoSize = true;
+            this.lb_hoSoBN.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_hoSoBN.BackColor = System.Drawing.Color.Transparent;
             this.lb_hoSoBN.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Bold);
             this.lb_hoSoBN.ForeColor = System.Drawing.Color.Green;
-            this.lb_hoSoBN.Location = new System.Drawing.Point(306, 23);
+            this.lb_hoSoBN.Location = new System.Drawing.Point(359, 23);
             this.lb_hoSoBN.Name = "lb_hoSoBN";
             this.lb_hoSoBN.Size = new System.Drawing.Size(290, 46);
             this.lb_hoSoBN.TabIndex = 0;
             this.lb_hoSoBN.Text = "Hồ sơ bệnh nhân";
+            this.lb_hoSoBN.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bt_themToaThuoc
+            // 
+            this.bt_themToaThuoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_themToaThuoc.AutoRoundedCorners = true;
+            this.bt_themToaThuoc.BackColor = System.Drawing.Color.Transparent;
+            this.bt_themToaThuoc.BorderColor = System.Drawing.Color.Transparent;
+            this.bt_themToaThuoc.BorderRadius = 16;
+            this.bt_themToaThuoc.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_themToaThuoc.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_themToaThuoc.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_themToaThuoc.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_themToaThuoc.FillColor = System.Drawing.Color.Pink;
+            this.bt_themToaThuoc.FocusedColor = System.Drawing.Color.LimeGreen;
+            this.bt_themToaThuoc.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_themToaThuoc.ForeColor = System.Drawing.Color.Black;
+            this.bt_themToaThuoc.Location = new System.Drawing.Point(520, 130);
+            this.bt_themToaThuoc.Name = "bt_themToaThuoc";
+            this.bt_themToaThuoc.Size = new System.Drawing.Size(152, 35);
+            this.bt_themToaThuoc.TabIndex = 55;
+            this.bt_themToaThuoc.Text = "Thêm toa thuốc";
+            this.bt_themToaThuoc.Click += new System.EventHandler(this.bt_themToaThuoc_Click);
             // 
             // BS_Kham_Benh_2
             // 
@@ -1048,7 +1076,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(1039, 561);
+            this.ClientSize = new System.Drawing.Size(1184, 561);
             this.Controls.Add(this.guna2CustomGradientPanel2);
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Name = "BS_Kham_Benh_2";
@@ -1116,5 +1144,6 @@
         private Guna.UI2.WinForms.Guna2Button bt_sua;
         private Guna.UI2.WinForms.Guna2Button bt_xoa;
         private Guna.UI2.WinForms.Guna2Button bt_them;
+        private Guna.UI2.WinForms.Guna2Button bt_themToaThuoc;
     }
 }

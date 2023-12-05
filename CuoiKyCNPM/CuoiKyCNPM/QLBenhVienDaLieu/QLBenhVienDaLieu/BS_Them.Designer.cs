@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pn_themSKB = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.bt_huySKB = new Guna.UI2.WinForms.Guna2Button();
             this.bt_themSKB = new Guna.UI2.WinForms.Guna2Button();
             this.tb_skb_ghiChu = new Guna.UI2.WinForms.Guna2TextBox();
             this.tb_skb_bs = new Guna.UI2.WinForms.Guna2TextBox();
@@ -57,6 +58,7 @@
             this.lb_skb_maLK = new System.Windows.Forms.Label();
             this.lb_skb_maHSBN = new System.Windows.Forms.Label();
             this.pn_themBA = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.bt_huyBA = new Guna.UI2.WinForms.Guna2Button();
             this.dt_ba_giaTriBHYT = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.tb_ba_hoSoPA = new Guna.UI2.WinForms.Guna2TextBox();
             this.tb_ba_ppDieuTri = new Guna.UI2.WinForms.Guna2TextBox();
@@ -91,7 +93,6 @@
             this.tb_ba_khoa = new Guna.UI2.WinForms.Guna2TextBox();
             this.tb_ba_noiGT = new Guna.UI2.WinForms.Guna2TextBox();
             this.tb_ba_ttVao = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tb_ba_tgVaoVien = new Guna.UI2.WinForms.Guna2TextBox();
             this.tb_ba_hoTenThanNhan = new Guna.UI2.WinForms.Guna2TextBox();
             this.tb_ba_giaTriBHYT = new Guna.UI2.WinForms.Guna2TextBox();
             this.tb_ba_doiTuong = new Guna.UI2.WinForms.Guna2TextBox();
@@ -109,8 +110,7 @@
             this.lb_ba_giaTriBHYT = new System.Windows.Forms.Label();
             this.lb_ba_doiTuong = new System.Windows.Forms.Label();
             this.lb_ba_maHSBN = new System.Windows.Forms.Label();
-            this.bt_huyBA = new Guna.UI2.WinForms.Guna2Button();
-            this.bt_huySKB = new Guna.UI2.WinForms.Guna2Button();
+            this.dt_ba_tgVaoVien = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.pn_themSKB.SuspendLayout();
             this.pn_themBA.SuspendLayout();
             this.SuspendLayout();
@@ -155,6 +155,28 @@
             this.pn_themSKB.Name = "pn_themSKB";
             this.pn_themSKB.Size = new System.Drawing.Size(1323, 587);
             this.pn_themSKB.TabIndex = 0;
+            // 
+            // bt_huySKB
+            // 
+            this.bt_huySKB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_huySKB.AutoRoundedCorners = true;
+            this.bt_huySKB.BackColor = System.Drawing.Color.Transparent;
+            this.bt_huySKB.BorderColor = System.Drawing.Color.Transparent;
+            this.bt_huySKB.BorderRadius = 16;
+            this.bt_huySKB.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_huySKB.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_huySKB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_huySKB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_huySKB.FillColor = System.Drawing.Color.Silver;
+            this.bt_huySKB.FocusedColor = System.Drawing.Color.LimeGreen;
+            this.bt_huySKB.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_huySKB.ForeColor = System.Drawing.Color.Black;
+            this.bt_huySKB.Location = new System.Drawing.Point(1095, 505);
+            this.bt_huySKB.Name = "bt_huySKB";
+            this.bt_huySKB.Size = new System.Drawing.Size(76, 35);
+            this.bt_huySKB.TabIndex = 54;
+            this.bt_huySKB.Text = "Hủy";
+            this.bt_huySKB.Click += new System.EventHandler(this.bt_huySKB_Click);
             // 
             // bt_themSKB
             // 
@@ -681,6 +703,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pn_themBA.BackColor = System.Drawing.Color.Transparent;
             this.pn_themBA.BorderRadius = 20;
+            this.pn_themBA.Controls.Add(this.dt_ba_tgVaoVien);
             this.pn_themBA.Controls.Add(this.bt_huyBA);
             this.pn_themBA.Controls.Add(this.dt_ba_giaTriBHYT);
             this.pn_themBA.Controls.Add(this.tb_ba_hoSoPA);
@@ -716,7 +739,6 @@
             this.pn_themBA.Controls.Add(this.tb_ba_khoa);
             this.pn_themBA.Controls.Add(this.tb_ba_noiGT);
             this.pn_themBA.Controls.Add(this.tb_ba_ttVao);
-            this.pn_themBA.Controls.Add(this.tb_ba_tgVaoVien);
             this.pn_themBA.Controls.Add(this.tb_ba_hoTenThanNhan);
             this.pn_themBA.Controls.Add(this.tb_ba_giaTriBHYT);
             this.pn_themBA.Controls.Add(this.tb_ba_doiTuong);
@@ -739,6 +761,28 @@
             this.pn_themBA.Name = "pn_themBA";
             this.pn_themBA.Size = new System.Drawing.Size(1323, 587);
             this.pn_themBA.TabIndex = 28;
+            // 
+            // bt_huyBA
+            // 
+            this.bt_huyBA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_huyBA.AutoRoundedCorners = true;
+            this.bt_huyBA.BackColor = System.Drawing.Color.Transparent;
+            this.bt_huyBA.BorderColor = System.Drawing.Color.Transparent;
+            this.bt_huyBA.BorderRadius = 16;
+            this.bt_huyBA.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_huyBA.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_huyBA.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_huyBA.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_huyBA.FillColor = System.Drawing.Color.Silver;
+            this.bt_huyBA.FocusedColor = System.Drawing.Color.LimeGreen;
+            this.bt_huyBA.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_huyBA.ForeColor = System.Drawing.Color.Black;
+            this.bt_huyBA.Location = new System.Drawing.Point(1095, 505);
+            this.bt_huyBA.Name = "bt_huyBA";
+            this.bt_huyBA.Size = new System.Drawing.Size(76, 35);
+            this.bt_huyBA.TabIndex = 53;
+            this.bt_huyBA.Text = "Hủy";
+            this.bt_huyBA.Click += new System.EventHandler(this.bt_huyBA_Click);
             // 
             // dt_ba_giaTriBHYT
             // 
@@ -1437,31 +1481,6 @@
             this.tb_ba_ttVao.Size = new System.Drawing.Size(481, 27);
             this.tb_ba_ttVao.TabIndex = 19;
             // 
-            // tb_ba_tgVaoVien
-            // 
-            this.tb_ba_tgVaoVien.AutoRoundedCorners = true;
-            this.tb_ba_tgVaoVien.BorderColor = System.Drawing.Color.Black;
-            this.tb_ba_tgVaoVien.BorderRadius = 12;
-            this.tb_ba_tgVaoVien.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tb_ba_tgVaoVien.DefaultText = "";
-            this.tb_ba_tgVaoVien.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tb_ba_tgVaoVien.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tb_ba_tgVaoVien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tb_ba_tgVaoVien.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tb_ba_tgVaoVien.FillColor = System.Drawing.Color.PaleGreen;
-            this.tb_ba_tgVaoVien.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb_ba_tgVaoVien.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.tb_ba_tgVaoVien.ForeColor = System.Drawing.Color.Black;
-            this.tb_ba_tgVaoVien.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb_ba_tgVaoVien.Location = new System.Drawing.Point(210, 190);
-            this.tb_ba_tgVaoVien.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tb_ba_tgVaoVien.Name = "tb_ba_tgVaoVien";
-            this.tb_ba_tgVaoVien.PasswordChar = '\0';
-            this.tb_ba_tgVaoVien.PlaceholderText = "";
-            this.tb_ba_tgVaoVien.SelectedText = "";
-            this.tb_ba_tgVaoVien.Size = new System.Drawing.Size(440, 27);
-            this.tb_ba_tgVaoVien.TabIndex = 18;
-            // 
             // tb_ba_hoTenThanNhan
             // 
             this.tb_ba_hoTenThanNhan.AutoRoundedCorners = true;
@@ -1707,49 +1726,24 @@
             this.lb_ba_maHSBN.TabIndex = 1;
             this.lb_ba_maHSBN.Text = "Mã hồ sơ bệnh nhân:";
             // 
-            // bt_huyBA
+            // dt_ba_tgVaoVien
             // 
-            this.bt_huyBA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bt_huyBA.AutoRoundedCorners = true;
-            this.bt_huyBA.BackColor = System.Drawing.Color.Transparent;
-            this.bt_huyBA.BorderColor = System.Drawing.Color.Transparent;
-            this.bt_huyBA.BorderRadius = 16;
-            this.bt_huyBA.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bt_huyBA.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bt_huyBA.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bt_huyBA.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bt_huyBA.FillColor = System.Drawing.Color.Silver;
-            this.bt_huyBA.FocusedColor = System.Drawing.Color.LimeGreen;
-            this.bt_huyBA.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_huyBA.ForeColor = System.Drawing.Color.Black;
-            this.bt_huyBA.Location = new System.Drawing.Point(1095, 505);
-            this.bt_huyBA.Name = "bt_huyBA";
-            this.bt_huyBA.Size = new System.Drawing.Size(76, 35);
-            this.bt_huyBA.TabIndex = 53;
-            this.bt_huyBA.Text = "Hủy";
-            this.bt_huyBA.Click += new System.EventHandler(this.bt_huyBA_Click);
-            // 
-            // bt_huySKB
-            // 
-            this.bt_huySKB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bt_huySKB.AutoRoundedCorners = true;
-            this.bt_huySKB.BackColor = System.Drawing.Color.Transparent;
-            this.bt_huySKB.BorderColor = System.Drawing.Color.Transparent;
-            this.bt_huySKB.BorderRadius = 16;
-            this.bt_huySKB.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bt_huySKB.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bt_huySKB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bt_huySKB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bt_huySKB.FillColor = System.Drawing.Color.Silver;
-            this.bt_huySKB.FocusedColor = System.Drawing.Color.LimeGreen;
-            this.bt_huySKB.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_huySKB.ForeColor = System.Drawing.Color.Black;
-            this.bt_huySKB.Location = new System.Drawing.Point(1095, 505);
-            this.bt_huySKB.Name = "bt_huySKB";
-            this.bt_huySKB.Size = new System.Drawing.Size(76, 35);
-            this.bt_huySKB.TabIndex = 54;
-            this.bt_huySKB.Text = "Hủy";
-            this.bt_huySKB.Click += new System.EventHandler(this.bt_huySKB_Click);
+            this.dt_ba_tgVaoVien.AutoRoundedCorners = true;
+            this.dt_ba_tgVaoVien.BackColor = System.Drawing.Color.Transparent;
+            this.dt_ba_tgVaoVien.BorderRadius = 12;
+            this.dt_ba_tgVaoVien.BorderThickness = 1;
+            this.dt_ba_tgVaoVien.Checked = true;
+            this.dt_ba_tgVaoVien.CustomFormat = "dd/MM/yyyy";
+            this.dt_ba_tgVaoVien.FillColor = System.Drawing.Color.PaleGreen;
+            this.dt_ba_tgVaoVien.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.dt_ba_tgVaoVien.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dt_ba_tgVaoVien.Location = new System.Drawing.Point(209, 190);
+            this.dt_ba_tgVaoVien.MaxDate = new System.DateTime(2198, 12, 31, 0, 0, 0, 0);
+            this.dt_ba_tgVaoVien.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
+            this.dt_ba_tgVaoVien.Name = "dt_ba_tgVaoVien";
+            this.dt_ba_tgVaoVien.Size = new System.Drawing.Size(441, 27);
+            this.dt_ba_tgVaoVien.TabIndex = 55;
+            this.dt_ba_tgVaoVien.Value = new System.DateTime(2023, 11, 20, 11, 41, 43, 380);
             // 
             // BS_Them
             // 
@@ -1810,7 +1804,6 @@
         private Guna.UI2.WinForms.Guna2TextBox tb_ba_khoa;
         private Guna.UI2.WinForms.Guna2TextBox tb_ba_noiGT;
         private Guna.UI2.WinForms.Guna2TextBox tb_ba_ttVao;
-        private Guna.UI2.WinForms.Guna2TextBox tb_ba_tgVaoVien;
         private Guna.UI2.WinForms.Guna2TextBox tb_ba_hoTenThanNhan;
         private Guna.UI2.WinForms.Guna2TextBox tb_ba_giaTriBHYT;
         private Guna.UI2.WinForms.Guna2TextBox tb_ba_doiTuong;
@@ -1855,5 +1848,6 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker dt_ba_giaTriBHYT;
         private Guna.UI2.WinForms.Guna2Button bt_huyBA;
         private Guna.UI2.WinForms.Guna2Button bt_huySKB;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dt_ba_tgVaoVien;
     }
 }
