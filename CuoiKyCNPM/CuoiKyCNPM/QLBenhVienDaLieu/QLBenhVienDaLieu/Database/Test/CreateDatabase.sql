@@ -1805,9 +1805,7 @@ go
 
 --THEM DU LIEU CHO CAC TABLE 
 -- TABLE DangKyUer
-EXEC DangKyUser_Insert '1', '1'
-EXEC DangKyUser_Insert '0123456789', 'Abcd@123'
-EXEC DangKyUser_Insert '0111111111', 'Abcd@123'
+EXEC DangKyUser_Insert '0182831345', 'Abcd@123'
 EXEC DangKyUser_Insert '0987654321', 'P@ssw0rd'
 EXEC DangKyUser_Insert '0369852147', 'Secure!12'
 EXEC DangKyUser_Insert '0765432198', 'Qwerty@1'
@@ -1824,48 +1822,49 @@ EXEC DangKyUser_Insert '0765432981', 'Qwerty@123'
 EXEC DangKyUser_Insert '0987654320', 'Abcde!12'
 
 -- TABLE HoSoBenhNhan
-EXEC HoSoBenhNhan_Insert N'Nguyễn Văn A', '0123456789', '1990-05-15', N'Nam', '123456789012', 'BHYT123456789', N'Kỹ sư', '0123456789', 'nguyenvana@example.com', N'123 Đường ABC'
-EXEC HoSoBenhNhan_Insert N'Nguyễn Văn B', '0123456789', '1940-05-15', N'Nam', '143456789012', 'BHYT123411789', N'Nông dân', '0123451789', 'nguyenvanb@example.com', N'941 Đường ABC'
-EXEC HoSoBenhNhan_Insert N'Trần Thị B', '0987654321', '1985-10-20', N'Nữ', '234567890123', 'BHYT234567890', N'Giáo viên', '0987654321', 'tranthib@example.com', N'456 Đường XYZ'
-EXEC HoSoBenhNhan_Insert N'Lê Văn C', '0369852147', '1992-03-25', N'Nam', '345678901234', 'BHYT345678901', N'Bác sĩ', '0369852147', 'levanc@example.com', N'789 Đường DEF'
-EXEC HoSoBenhNhan_Insert N'Phạm Thị D', '0765432198', '1988-12-10', N'Nữ', '456789012345', 'BHYT456789012', N'Y tá', '0765432198', 'phamthid@example.com', N'101 Đường GHI'
-EXEC HoSoBenhNhan_Insert N'Hoàng Văn E', '0932145678', '1995-07-05', N'Nam', '567890123456', 'BHYT567890123', N'Kỹ sư', '0932145678', 'hoangvane@example.com', N'202 Đường JKL'
-EXEC HoSoBenhNhan_Insert N'Võ Thị F', '0846512379', '1983-04-30', N'Nữ', '678901234567', 'BHYT678901234', N'Chuyên viên kinh doanh', '0846512379', 'vothif@example.com', N'303 Đường MNO'
-EXEC HoSoBenhNhan_Insert N'Đặng Văn G', '0654321890', '1993-11-18', N'Nam', '789012345678', 'BHYT789012345', N'Nhân viên văn phòng', '0654321890', 'dangvang@example.com', N'404 Đường PQR'
-EXEC HoSoBenhNhan_Insert N'Mai Thị H', '0312456879', '1991-09-22', N'Nữ', '890123456789', 'BHYT890123456', N'Luật sư', '0312456879', 'maithih@example.com', N'505 Đường STU'
-EXEC HoSoBenhNhan_Insert N'Lý Văn I', '0975318642', '1987-08-12', N'Nam', '901234567890', 'BHYT901234567', N'Kỹ sư xây dựng', '0975318642', 'lyvani@example.com', N'606 Đường VWX'
-EXEC HoSoBenhNhan_Insert N'Nguyễn Thị K', '0624875139', '1996-06-08', N'Nữ', '012345678912', 'BHYT012345678', N'Bác sĩ', '0624875139', 'nguyenthik@example.com', N'707 Đường YZ'
-EXEC HoSoBenhNhan_Insert N'Trần Văn L', '0392187456', '1994-02-14', N'Nam', '123456789123', 'BHYT123456789', N'Giáo viên', '0392187456', 'tranvanl@example.com', N'808 Đường ABC'
-EXEC HoSoBenhNhan_Insert N'Đinh Thị M', '0856123497', '1986-03-03', N'Nữ', '234567890234', 'BHYT234567890', N'Y tá', '0856123497', 'dinhthim@example.com', N'909 Đường XYZ'
-EXEC HoSoBenhNhan_Insert N'Lê Văn N', '0912345678', '1989-07-19', N'Nam', '345678901345', 'BHYT345678901', N'Kỹ sư', '0912345678', 'levann@example.com', N'1010 Đường DEF'
-EXEC HoSoBenhNhan_Insert N'Võ Thị O', '0765432981', '1997-09-28', N'Nữ', '456789012456', 'BHYT456789012', N'Chuyên viên kinh doanh', '0765432981', 'vothio@example.com', N'1111 Đường GHI'
-EXEC HoSoBenhNhan_Insert N'Phan Văn P', '0987654320', '1998-12-01', N'Nam', '567890123567', 'BHYT567890123', N'Sinh viên', '0987654320', 'phanvanp@example.com', N'1212 Đường JKL'
+EXEC HoSoBenhNhan_Insert N'Nguyễn Văn An', '0182831345', '1990-05-15', N'Nam', '053137827346', 'BHYT0321344414', N'Kỹ sư', '0182831345', 'nguyenvanan123@gmail.com', N'Bình Hưng, Bình Chánh, Thành phố HCM'
+EXEC HoSoBenhNhan_Insert N'Trần Mỹ Nữ', '0987654321', '1985-10-20', N'Nữ', '056263748129', 'BHYT0827281342', N'Giáo viên', '0987654321', 'mynu9823@gmail.com', N'Bình Hưng, Bình Chánh, Thành phố HCM'
+EXEC HoSoBenhNhan_Insert N'Lê Văn Luyện', '0369852147', '1992-03-25', N'Nam', '056182342383', 'BHYT0192781634', N'Bác sĩ', '0369852147', 'vanluyen192@gamil.com', N'Boulevard, Quận 1, Thành phố HCM'
+EXEC HoSoBenhNhan_Insert N'Phạm Thị Kim Tiến', '0765432198', '1988-12-10', N'Nữ', '052983674513', 'BHYT0454372749', N'Y tá', '0765432198', 'phamthikimtien123@gmail.com', N'Phường 12, Quận 10, Thành phố HCM'
+EXEC HoSoBenhNhan_Insert N'Hoàng Ngọc Quý', '0932145678', '1995-07-05', N'Nam', '058716293874', 'BHYT0817321244', N'Kỹ sư', '0932145678', 'hoangquy95@gmail.com', N'Bình Trị Đông B, Bình Tân, Thành phố HCM'
+EXEC HoSoBenhNhan_Insert N'Võ Duyên Trúc', '0846512379', '1983-04-30', N'Nữ', '054712481844', 'BHYT0318321845', N'Chuyên viên kinh doanh', '0846512379', 'voduyentruc1983@gamil.com', N'KCN Đức Hoà 1, ấp 5, Đức Hòa, Long An'
+EXEC HoSoBenhNhan_Insert N'Đặng Minh Thắng', '0654321890', '1993-11-18', N'Nam', '053281836111', 'BHYT0192814245', N'Nhân viên văn phòng', '0654321890', 'dangthang@gmail.com', N'Thống Nhất, Thành phố Biên Hòa, Đồng Nai'
+EXEC HoSoBenhNhan_Insert N'Mai Thị Thuỷ', '0312456879', '1991-09-22', N'Nữ', '057172718322', 'BHYT0239421445', N'Luật sư', '0312456879', 'maithithuy2312@gmail.com', N'Đa Kao, Quận 1, Thành phố HCM'
+EXEC HoSoBenhNhan_Insert N'Lý Văn Nguyên', '0975318642', '1987-08-12', N'Nam', '056173281324', 'BHYT0987371633', N'Kỹ sư xây dựng', '0975318642', 'lyvannguyen342@gmail.com', N'P. Bình An, Quận 2, Thành phố HCM'
+EXEC HoSoBenhNhan_Insert N'Nguyễn Thị Thuý', '0624875139', '1996-06-08', N'Nữ', '056981887816', 'BHYT0918274124', N'Bác sĩ', '0624875139', 'nguyenthithuy0213482@gmail.com', N'Phú Mỹ Hưng, Quận 7, Thành phố HCM'
+EXEC HoSoBenhNhan_Insert N'Trần Nhân Tâm', '0392187456', '1994-02-14', N'Nam', '056813920132', 'BHYT0127471562', N'Giáo viên', '0392187456', 'trannhantam2222@gmail.com', N'Tân Phú, Quận 7, Thành phố HCM'
+EXEC HoSoBenhNhan_Insert N'Đinh Thị Mai Đinh', '0856123497', '1986-03-03', N'Nữ', '053727183388', 'BHYT0918271413', N'Y tá', '0856123497', 'dinhthimaidinh@gmail.com', N'Tân Hưng, Quận 7, Thành phố HCM'
+EXEC HoSoBenhNhan_Insert N'Lê Hoàng Ngọc', '0912345678', '1989-07-19', N'Nam', '056727277713', 'BHYT0234141246', N'Kỹ sư', '0912345678', 'hoangngoc1323@gmail.com', N'Phường 12, Quận 4, Thành phố HCM'
+EXEC HoSoBenhNhan_Insert N'Võ Mỹ Kim Thoa', '0765432981', '1997-09-28', N'Nữ', '052128318445', 'BHYT0918274123', N'Chuyên viên kinh doanh', '0765432981', 'vokimthoaw23@gmail.com', N'Phường 22, Bình Thạnh, Thành phố HCM'
+EXEC HoSoBenhNhan_Insert N'Phan Văn Hội', '0987654320', '1998-12-01', N'Nam', '058172563721', 'BHYT0362783945', N'Sinh viên', '0987654320', 'phanvanhoi@gmail.com', N'Hiệp Bình Chánh, Thủ Đức, Thành phố HCM'
 -- KHUYEN MAI
-EXEC InsertKhuyenMai N'Giảm giá dịch vụ da liễu', null, N'Giảm 20% cho các dịch vụ điều trị da liễu', '2023-11-01 08:00:00', '2023-11-15 17:00:00'
-EXEC InsertKhuyenMai N'Combo chăm sóc da', '20%', N'Mua bất kỳ sản phẩm nào và nhận 1 lần spa da miễn phí', '2023-12-05 10:00:00', '2023-12-20 19:00:00'
-EXEC InsertKhuyenMai N'Đánh giá da miễn phí', '40%' , N'Nhận đánh giá da miễn phí từ các chuyên gia da liễu', '2023-09-10 09:30:00', '2023-09-30 18:00:00'
-EXEC InsertKhuyenMai N'Phòng ngừa mụn', '10%' , N'Hướng dẫn cách chăm sóc da để ngừa mụn miễn phí', '2023-10-15 14:00:00', '2023-10-31 20:00:00'
-EXEC InsertKhuyenMai N'Giảm giá các sản phẩm da liễu', null , N'Giảm 15% cho tất cả các sản phẩm chăm sóc da liễu', '2023-11-20 11:30:00', '2023-12-05 22:00:00'
+EXEC InsertKhuyenMai N'Giảm giá dịch vụ da liễu', '100000',N'Giảm 20% cho các dịch vụ điều trị da liễu', '2023-11-01 08:00:00', '2023-11-15 17:00:00'
+EXEC InsertKhuyenMai N'Combo chăm sóc da', '300000', N'Mua bất kỳ combo nào và nhận 1 lần spa da miễn phí', '2023-12-05 10:00:00', '2023-12-20 19:00:00'
+EXEC InsertKhuyenMai N'Đánh giá da miễn phí', '100000', N'Nhận đánh giá da miễn phí từ các chuyên gia da liễu', '2023-09-10 09:30:00', '2023-09-30 18:00:00'
+EXEC InsertKhuyenMai N'Phòng ngừa mụn', '100000', N'Hướng dẫn cách chăm sóc da để ngừa mụn', '2023-10-15 14:00:00', '2023-10-31 20:00:00'
+EXEC InsertKhuyenMai N'Giảm giá các sản phẩm da liễu', '200000', N'Giảm 15% cho tất cả các sản phẩm chăm sóc da liễu', '2023-11-20 11:30:00', '2023-12-05 22:00:00'
+EXEC InsertKhuyenMai N'Ưu đãi mùa lễ hội', '300000', N'Giảm giá 25% cho tất cả các dịch vụ và sản phẩm cao cấp chuyên dùng', '2023-12-21 09:00:00', '2023-12-30 18:00:00'
+
 -- CHUYEN KHOA
-EXEC InsertChuyenKhoa N'Chăm sóc da trẻ em', 'KM000001'
+EXEC InsertChuyenKhoa N'Chăm sóc da trẻ em', 'KM00001'
 EXEC InsertChuyenKhoa N'Chăm sóc da người già', NULL
-EXEC InsertChuyenKhoa N'Điều trị mụn', 'KM000004'
-EXEC InsertChuyenKhoa N'Laser điều trị da', 'KM000002'
+EXEC InsertChuyenKhoa N'Điều trị mụn', 'KM00004'
+EXEC InsertChuyenKhoa N'Laser điều trị da', 'KM00002'
 EXEC InsertChuyenKhoa N'Chăm sóc da sau phẫu thuật', NULL
-EXEC InsertChuyenKhoa N'Chăm sóc da tự nhiên', 'KM000005'
+EXEC InsertChuyenKhoa N'Chăm sóc da tự nhiên', 'KM00005'
 EXEC InsertChuyenKhoa N'Chăm sóc da mặt', NULL
-EXEC InsertChuyenKhoa N'Chăm sóc da cơ bản', 'KM000003'
+EXEC InsertChuyenKhoa N'Chăm sóc da cơ bản', 'KM00003'
 EXEC InsertChuyenKhoa N'Chăm sóc da chuyên sâu', NULL
-EXEC InsertChuyenKhoa N'Chăm sóc da từ trong ra ngoài', 'KM000001'
+EXEC InsertChuyenKhoa N'Chăm sóc da từ trong ra ngoài', 'KM00001'
 -- BENH AN
-EXEC BenhAn_Insert 'BN000001', N'BHYT', '2023-12-31', N'Nguyễn Văn A', '2023-10-25 09:00:00', N'Cấp cứu', N'Phòng khám đa khoa A', N'Da liễu', N'Chăm sóc da trẻ em', '7', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Mụn trứng cá', N'Không có', N'Bình thường', N'Ngứa', N'Không có', N'Không có', N'Không có', N'Không có', N'Thuốc và kem chăm sóc da', N'Không có'
-EXEC BenhAn_Insert 'BN000002', N'BHYT', '2023-12-31', N'Trần Thị B', '2023-11-03 14:30:00', N'Khám thường xuyên', N'Phòng khám đa khoa B', N'Da liễu', N'Chăm sóc da người già', '10', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Nổi mụn', N'Không có', N'Bình thường', N'Đỏ và ngứa', N'Không có', N'Không có', N'Không có', N'Không có', N'Thuốc chống dị ứng và kem chăm sóc da', N'Không có'
-EXEC BenhAn_Insert 'BN000003', N'BHYT', '2023-12-31', N'Lê Văn C', '2023-10-29 11:15:00', N'Cấp cứu', N'Phòng khám đa khoa C', N'Da liễu', N'Chăm sóc da người già', '5', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Dị ứng da', N'Không có', N'Bình thường', N'Ngứa và đỏ', N'Không có', N'Không có', N'Không có', N'Không có', N'Thuốc chống dị ứng và kem chăm sóc da', N'Không có'
-EXEC BenhAn_Insert 'BN000004', N'BHYT', '2023-12-31', N'Phạm Thị D', '2023-11-12 08:45:00', N'Khám thường xuyên', N'Phòng khám đa khoa D', N'Da liễu', N'Chăm sóc da trẻ em', '8', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Nổi mụn nước', N'Không có', N'Bình thường', N'Ngứa và đỏ', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có'
-EXEC BenhAn_Insert 'BN000005', N'BHYT', '2023-12-31', N'Hoàng Văn E', '2023-11-18 10:20:00', N'Cấp cứu', N'Phòng khám đa khoa E', N'Da liễu', N'Chăm sóc da người già', '6', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Nổi mụn nước và đỏ', N'Không có', N'Bình thường', N'Ngứa và đỏ', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có'
-EXEC BenhAn_Insert 'BN000006', N'BHYT', '2023-12-31', N'Võ Thị F', '2023-10-30 15:10:00', N'Khám thường xuyên', N'Phòng khám đa khoa F', N'Da liễu', N'Chăm sóc da trẻ em', '4', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Dị ứng da', N'Không có', N'Bình thường', N'Ngứa và đỏ', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có'
-EXEC BenhAn_Insert 'BN000007', N'BHYT', '2023-12-31', N'Đặng Văn G', '2023-11-20 11:45:00', N'Cấp cứu', N'Phòng khám đa khoa G', N'Da liễu', N'Chăm sóc da người già', '9', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Nổi mụn và đỏ', N'Không có', N'Bình thường', N'Ngứa và đỏ', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có'
-EXEC BenhAn_Insert 'BN000008', N'BHYT', '2023-12-31', N'Mai Thị H', '2023-11-25 13:30:00', N'Cấp cứu', N'Phòng khám đa khoa H', N'Da liễu', N'Chăm sóc da trẻ em', '3', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Dị ứng da', N'Không có', N'Bình thường', N'Ngứa và đỏ', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có'
+EXEC BenhAn_Insert 'BN000001', N'BHYT', '2023-12-31', N'Nguyễn Văn An', '2023-10-25 09:00:00', N'Cấp cứu', N'Phòng khám đa khoa A', N'Da liễu', N'Chăm sóc da trẻ em', '7', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Mụn trứng cá', N'Không có', N'Bình thường', N'Ngứa', N'Không có', N'Không có', N'Không có', N'Không có', N'Thuốc và kem chăm sóc da', N'Không có'
+EXEC BenhAn_Insert 'BN000002', N'BHYT', '2023-12-31', N'Trần Mỹ Nữ', '2023-11-03 14:30:00', N'Khám thường xuyên', N'Phòng khám đa khoa B', N'Da liễu', N'Chăm sóc da người già', '10', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Nổi mụn', N'Không có', N'Bình thường', N'Đỏ và ngứa', N'Không có', N'Không có', N'Không có', N'Không có', N'Thuốc chống dị ứng và kem chăm sóc da', N'Không có'
+EXEC BenhAn_Insert 'BN000003', N'BHYT', '2023-12-31', N'Lê Văn Luyện', '2023-10-29 11:15:00', N'Cấp cứu', N'Phòng khám đa khoa C', N'Da liễu', N'Chăm sóc da người già', '5', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Dị ứng da', N'Không có', N'Bình thường', N'Ngứa và đỏ', N'Không có', N'Không có', N'Không có', N'Không có', N'Thuốc chống dị ứng và kem chăm sóc da', N'Không có'
+EXEC BenhAn_Insert 'BN000004', N'BHYT', '2023-12-31', N'Phạm Thị Kim Tiến', '2023-11-12 08:45:00', N'Khám thường xuyên', N'Phòng khám đa khoa D', N'Da liễu', N'Chăm sóc da trẻ em', '8', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Nổi mụn nước', N'Không có', N'Bình thường', N'Ngứa và đỏ', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có'
+EXEC BenhAn_Insert 'BN000005', N'BHYT', '2023-12-31', N'Hoàng Ngọc Quý', '2023-11-18 10:20:00', N'Cấp cứu', N'Phòng khám đa khoa E', N'Da liễu', N'Chăm sóc da người già', '6', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Nổi mụn nước và đỏ', N'Không có', N'Bình thường', N'Ngứa và đỏ', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có'
+EXEC BenhAn_Insert 'BN000006', N'BHYT', '2023-12-31', N'Võ Duyên Trúc', '2023-10-30 15:10:00', N'Khám thường xuyên', N'Phòng khám đa khoa F', N'Da liễu', N'Chăm sóc da trẻ em', '4', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Dị ứng da', N'Không có', N'Bình thường', N'Ngứa và đỏ', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có'
+EXEC BenhAn_Insert 'BN000007', N'BHYT', '2023-12-31', N'Đặng Minh Thắng', '2023-11-20 11:45:00', N'Cấp cứu', N'Phòng khám đa khoa G', N'Da liễu', N'Chăm sóc da người già', '9', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Nổi mụn và đỏ', N'Không có', N'Bình thường', N'Ngứa và đỏ', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có'
+EXEC BenhAn_Insert 'BN000008', N'BHYT', '2023-12-31', N'Mai Thị Thuỷ', '2023-11-25 13:30:00', N'Cấp cứu', N'Phòng khám đa khoa H', N'Da liễu', N'Chăm sóc da trẻ em', '3', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Dị ứng da', N'Không có', N'Bình thường', N'Ngứa và đỏ', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có'
 -- ADMIN 
 EXEC InsertADMIN_Manager 'ADMINPKDL', 'P@ssW0rd123'
 --DICH VU
@@ -1877,6 +1876,12 @@ EXEC InsertDichVu N'Chăm sóc da toàn diện', N'Rửa mặt, tẩy trang, đi
 EXEC InsertDichVu N'Điều trị nám và tàn nhang', N'Điều trị và giảm thiểu vết nám và tàn nhang trên da', 300000
 EXEC InsertDichVu N'Chăm sóc da mặt cho trẻ em', N'Chăm sóc và bảo vệ làn da của trẻ em', 120000
 EXEC InsertDichVu N'Điều trị viêm da cơ địa', N'Điều trị các triệu chứng viêm và kích ứng trên da', 220000
+EXEC InsertDichVu N'Chăm sóc da mắt', N'Đặt liệu pháp chăm sóc da vùng mắt, giảm quầng thâm và nếp nhăn', 120000
+EXEC InsertDichVu N'Tẩy tế bào chết', N'Áp dụng phương pháp tẩy tế bào chết nhẹ nhàng cho làn da mềm mại', 160000
+EXEC InsertDichVu N'Chăm sóc da cơ bản', N'Rửa mặt, tẩy trang và dùng kem chăm sóc da hàng ngày', 80000
+EXEC InsertDichVu N'Làm sáng da', N'Điều trị và làm sáng da, giảm tình trạng da tối màu', 180000
+EXEC InsertDichVu N'Chăm sóc da toàn diện VIP', N'Rửa mặt, tẩy trang, điều trị mụn, áp dụng mặt nạ và masage chăm sóc da', 350000
+
 -- LICH KHAM
 EXEC InsertLichKham 'BN000001', 'CK000001', 'DV000001', '2023-10-01', N'Sáng', '2023-10-01 09:00:00'
 EXEC InsertLichKham 'BN000002', 'CK000002', 'DV000002', '2023-10-02', N'Chiều', '2023-10-02 15:00:00'
@@ -1895,58 +1900,76 @@ EXEC InsertLichKham 'BN000007', 'CK000001', 'DV000002', '2023-10-14', N'Chiều'
 EXEC InsertLichKham 'BN000008', 'CK000003', 'DV000001', '2023-10-15', N'Sáng', '2023-10-15 11:30:00'
 -- HOA DON
 EXEC InsertHoaDon 'LK000001', 200000, N'Tiền mặt'
-EXEC InsertHoaDon 'LK000002', 150000, N'Thẻ tín dụng'
-EXEC InsertHoaDon 'LK000003', 180000, N'Tiền mặt'
-EXEC InsertHoaDon 'LK000004', 220000, N'Thẻ tín dụng'
+EXEC InsertHoaDon  'LK000002', 150000, N'Thẻ tín dụng'
+EXEC InsertHoaDon  'LK000003', 180000, N'Tiền mặt'
+EXEC InsertHoaDon  'LK000004', 220000, N'Thẻ tín dụng'
 EXEC InsertHoaDon 'LK000005', 250000, N'Tiền mặt'
-EXEC InsertHoaDon 'LK000006', 280000, N'Thẻ tín dụng'
+EXEC InsertHoaDon  'LK000006', 280000, N'Thẻ tín dụng'
 EXEC InsertHoaDon 'LK000007', 200000, N'Tiền mặt'
-EXEC InsertHoaDon 'LK000008', 300000, N'Thẻ tín dụng'
-EXEC InsertHoaDon 'LK000009', 270000, N'Tiền mặt'
-EXEC InsertHoaDon 'LK000010', 190000, N'Thẻ tín dụng'
-EXEC InsertHoaDon 'LK000011', 210000, N'Tiền mặt'
-EXEC InsertHoaDon 'LK000012', 240000, N'Thẻ tín dụng'
+EXEC InsertHoaDon  'LK000008', 300000, N'Thẻ tín dụng'
+EXEC InsertHoaDon  'LK000009', 270000, N'Tiền mặt'
+EXEC InsertHoaDon  'LK000010', 190000, N'Thẻ tín dụng'
+EXEC InsertHoaDon  'LK000011', 210000, N'Tiền mặt'
+EXEC InsertHoaDon  'LK000012', 240000, N'Thẻ tín dụng'
 EXEC InsertHoaDon 'LK000013', 260000, N'Tiền mặt'
 EXEC InsertHoaDon 'LK000014', 290000, N'Thẻ tín dụng'
-EXEC InsertHoaDon 'LK000015', 220000, N'Tiền mặt'
+EXEC InsertHoaDon  'LK000015', 220000, N'Tiền mặt'
 -- TOA THUOC
-EXEC InsertToaThuoc '1', 'TH000001', 'BA000001', N'Thuốc A', 3, N'Viên', N'Uống sau ăn'
-EXEC InsertToaThuoc '2', 'TH000002', 'BA000002', N'Thuốc B', 2, N'Thuốc lỏng', N'Uống trước khi đi ngủ'
-EXEC InsertToaThuoc '3', 'TH000003', 'BA000003', N'Thuốc C', 1, N'Viên', N'Uống vào buổi sáng'
-EXEC InsertToaThuoc '1', 'TH000004', 'BA000004', N'Thuốc D', 4, N'Thuốc lỏng', N'Uống trước khi ăn'
-EXEC InsertToaThuoc '2', 'TH000005', 'BA000005', N'Thuốc E', 3, N'Viên', N'Uống sau khi ăn'
-EXEC InsertToaThuoc '1', 'TH000006', 'BA000006', N'Thuốc F', 2, N'Viên', N'Uống vào buổi sáng'
-EXEC InsertToaThuoc '2', 'TH000007', 'BA000007', N'Thuốc G', 1, N'Thuốc lỏng', N'Uống trước khi đi ngủ'
-EXEC InsertToaThuoc '1', 'TH000008', 'BA000008', N'Thuốc H', 3, N'Viên', N'Uống sau khi ăn'
+EXEC InsertToaThuoc '1', 'TH000001', 'BA000001', N'Thuốc Innerb Aqua Rich', 3, N'Viên', N'Uống sau ăn'
+EXEC InsertToaThuoc '2', 'TH000002', 'BA000002', N'Thuốc Puritan’s Pride', 2, N'Thuốc lỏng', N'Uống trước khi đi ngủ'
+EXEC InsertToaThuoc '3', 'TH000003', 'BA000003', N'Thuốc Bounty', 1, N'Viên', N'Uống vào buổi sáng'
+EXEC InsertToaThuoc '4', 'TH000004', 'BA000004', N'Thuốc Royal Jelly', 4, N'Thuốc lỏng', N'Uống trước khi ăn'
+EXEC InsertToaThuoc '5', 'TH000005', 'BA000005', N'Thuốc L Glutathione', 3, N'Viên', N'Uống sau khi ăn'
+EXEC InsertToaThuoc '6', 'TH000006', 'BA000006', N'Thuốc Blackmores Insolar', 2, N'Viên', N'Uống vào buổi sáng'
+EXEC InsertToaThuoc '7', 'TH000007', 'BA000007', N'Thuốc Shiseid White', 1, N'Thuốc lỏng', N'Uống trước khi đi ngủ'
+EXEC InsertToaThuoc '8', 'TH000008', 'BA000008', N'Thuốc Perles de Peau', 3, N'Viên', N'Uống sau khi ăn'
+EXEC InsertToaThuoc '9', 'TH000009', 'BA000001', N'Thuốc Collagen DHC', 2, N'Thuốc lỏng', N'Uống trước khi đi ngủ'
+EXEC InsertToaThuoc '10', 'TH000010', 'BA000002', N'Thuốc Vitamin E Nipro', 3, N'Viên', N'Uống sau khi ăn'
+EXEC InsertToaThuoc '11', 'TH000011', 'BA000008', N'Thuốc Murad Age Reform', 1, N'Thuốc lỏng', N'Uống trước khi đi ngủ'
+EXEC InsertToaThuoc '12', 'TH000012', 'BA000003', N'Thuốc Glutathione', 4, N'Viên', N'Uống sau khi ăn'
+EXEC InsertToaThuoc '13', 'TH000013', 'BA000005', N'Thuốc Peau Radieuse', 2, N'Viên', N'Uống vào buổi sáng'
+EXEC InsertToaThuoc '14', 'TH000014', 'BA000006', N'Thuốc L-Glutathione', 3, N'Thuốc lỏng', N'Uống trước khi đi ngủ'
+EXEC InsertToaThuoc '15', 'TH000015', 'BA000007', N'Thuốc Bounty', 1, N'Viên', N'Uống vào buổi sáng'
+EXEC InsertToaThuoc '16', 'TH000016', 'BA000004', N'Thuốc Royal Jelly', 2, N'Viên', N'Uống vào buổi sáng'
+
 -- TAI KHOAN THANH VIEN
-EXEC InsertTaiKhoanThanhVien N'Nguyễn Văn LT', '2', '1990-05-15', N'Nam', '123456789012', '2', 'nguyenvana@gmail.com', N'Số 1, Đường ABC, Quận XYZ, Thành phố HCM', N'Không', N'Lễ tân', 'TV'
-EXEC InsertTaiKhoanThanhVien N'Nguyễn Văn BS', '3', '1990-05-15', N'Nam', '123456789012', '3', 'nguyenvana@gmail.com', N'Số 1, Đường ABC, Quận XYZ, Thành phố HCM', N'Da liễu', N'Bác sĩ', 'BS'
-EXEC InsertTaiKhoanThanhVien N'Nguyễn Văn KT', '4', '1990-05-15', N'Nam', '123456789012', '4', 'nguyenvana@gmail.com', N'Số 1, Đường ABC, Quận XYZ, Thành phố HCM', N'Da liễu', N'Kế toán', 'KT'
-EXEC InsertTaiKhoanThanhVien N'Nguyễn Văn A', 'Abc@1234', '1990-05-15', N'Nam', '123456789012', '0987654321', 'nguyenvana@gmail.com', N'Số 1, Đường ABC, Quận XYZ, Thành phố HCM', N'Da liễu', N'Bác sĩ', 'BS'
-EXEC InsertTaiKhoanThanhVien N'Trần Thị B', 'Bcd@5678', '1985-07-20', N'Nữ', '234567890123', '0987123456', 'tranthib@gmail.com', N'Số 2, Đường XYZ, Quận ABC, Thành phố HCM', N'Da liễu', N'Bác sĩ', 'BS'
-EXEC InsertTaiKhoanThanhVien N'Lê Văn C', 'Cde@9012', '1988-03-10', N'Nam', '345678901234', '0909123456', 'levanc@gmail.com', N'Số 3, Đường XYZ, Quận ABC, Thành phố HCM', N'Da liễu', N'Bác sĩ', 'BS'
-EXEC InsertTaiKhoanThanhVien N'Phạm Thị D', 'Def@3456', '1992-09-05', N'Nữ', '456789012345', '0908456123', 'phamthid@gmail.com', N'Số 4, Đường XYZ, Quận ABC, Thành phố HCM', N'Da liễu', N'Bác sĩ', 'BS'
-EXEC InsertTaiKhoanThanhVien N'Hoàng Văn E', 'Efg@6789', '1995-01-25', N'Nam', '567890123456', '0908123456', 'hoangvane@gmail.com', N'Số 5, Đường XYZ, Quận ABC, Thành phố HCM', N'Da liễu', N'Kế toán', 'KT'
-EXEC InsertTaiKhoanThanhVien N'Võ Thị F', 'Fgh@7890', '1989-08-15', N'Nữ', '678901234567', '0908789123', 'vothif@gmail.com', N'Số 6, Đường XYZ, Quận ABC, Thành phố HCM', N'Da liễu', N'Kế toán', 'KT'
-EXEC InsertTaiKhoanThanhVien N'Đặng Văn G', 'Ghi@1234', '1987-03-02', N'Nam', '789012345678', '0908789456', 'dangvang@gmail.com', N'Số 7, Đường XYZ, Quận ABC, Thành phố HCM', N'Da liễu', N'Kế toán', 'KT'
-EXEC InsertTaiKhoanThanhVien N'Mai Thị H', 'Hik@5678', '1986-11-12', N'Nữ', '890123456789', '0908456223', 'maithih@gmail.com', N'Số 8, Đường XYZ, Quận ABC, Thành phố HCM', N'Không', N'Lễ tân', 'TV'
-EXEC InsertTaiKhoanThanhVien N'Nguyễn Thị I', 'Ijk@7890', '1984-10-05', N'Nữ', '901234567890', '0908567123', 'nguyenthii@gmail.com', N'Số 9, Đường XYZ, Quận ABC, Thành phố HCM', N'Da liễu', N'Thư ký', 'KT'
-EXEC InsertTaiKhoanThanhVien N'Trần Văn J', 'Jlm@1234', '1983-12-30', N'Nam', '012345678901', '0908123789', 'tranvanj@gmail.com', N'Số 10, Đường XYZ, Quận ABC, Thành phố HCM', N'Da liễu', N'Thư ký', 'KT'
+EXEC InsertTaiKhoanThanhVien N'Nguyễn Hoàng Nam', 'Abc@1234', '1990-05-15', N'Nam', '056162641224', '0987654132', 'namnguyen@gmail.com', N'Phường 13, Bình Thạnh, Thành phố HCM', N'Da liễu', N'Bác sĩ', 'BS'
+EXEC InsertTaiKhoanThanhVien N'Trần Diễm Quỳnh', 'Bcd@5678', '1985-07-20', N'Nữ', '056727182433', '0987123415', 'quynhdiem@gmail.com', N'Phường 14, Bình Thạnh, Thành phố HCM', N'Da liễu', N'Bác sĩ', 'BS'
+EXEC InsertTaiKhoanThanhVien N'Lê Nguyễn Nam', 'Cde@9012', '1988-03-10', N'Nam', '052827361224', '0909988219', 'lenam@gmail.com', N'Phường 10, Phú Nhuận, Thành phố HCM', N'Da liễu', N'Bác sĩ', 'BS'
+EXEC InsertTaiKhoanThanhVien N'Phạm Thị Duyên', 'Def@3456', '1992-09-05', N'Nữ', '051272841255', '0871656243', 'phamthiduyen@gmail.com', N'Phường 2, Tân Bình, Thành phố HCM', N'Da liễu', N'Bác sĩ', 'BS'
+EXEC InsertTaiKhoanThanhVien N'Hoàng Văn Thụ', 'Efg@6789', '1995-01-25', N'Nam', '056909182742', '0172614217', 'hoangvanthu@gmail.com', N'Phường 13, Tân Bình, Thành phố HCM', N'Da liễu', N'Kế toán', 'KT'
+EXEC InsertTaiKhoanThanhVien N'Võ Mai', 'Fgh@7890', '1989-08-15', N'Nữ', '054712719322', '0817262478', 'vomai@gmail.com', N'Tây Thạnh, Tân Phú, Thành phố HCM', N'Da liễu', N'Kế toán', 'KT'
+EXEC InsertTaiKhoanThanhVien N'Đặng Văn Lâm', 'Ghi@1234', '1987-03-02', N'Nam', '051832622432', '08176535237', 'dangvanlam@gmail.com', N'Tân Quý, Tân Phú, Thành phố HCM', N'Da liễu', N'Kế toán', 'KT'
+EXEC InsertTaiKhoanThanhVien N'Mai Nguyễn Trà', 'Hik@5678', '1986-11-12', N'Nữ', '056187264125', '0987274128', 'maitra@gmail.com', N'Phú Thạnh, Tân Phú,Thành phố HCM', N'Không', N'Lễ tân', 'TV'
+EXEC InsertTaiKhoanThanhVien N'Nguyễn Nữ', 'Ijk@7890', '1984-10-05', N'Nữ', '056717827429', '0898716244', 'nguyennu@gmail.com', N'Bình Hưng Hoà, Bình Tân, Thành phố HCM', N'Da liễu', N'Thư ký', 'KT'
+EXEC InsertTaiKhoanThanhVien N'Trần Đình Nhân', 'Jlm@1234', '1983-12-30', N'Nam', '056718721488', '0891872425', 'trandinhnhan@gmail.com', N'Tân Tạo A, Bình Tân, Thành phố HCM', N'Da liễu', N'Thư ký', 'KT'
+EXEC InsertTaiKhoanThanhVien N'Trần Hưng', 'Thung@1234', '1983-12-30', N'Nam', '301884688123', '0898134671', 'tranhung@gmail.com', N'Tân Tạo B, Bình Tân, Thành phố HCM', N'Da liễu', N'Bác sĩ', 'BS'
+
+
 -- SO KHAM BENH
-EXEC SoKhamBenh_Insert 'BN000001', 'LK000001', N'Nguyễn Văn A', '33', 'BHYT123456789', N'Số 1, Đường ABC, Quận XYZ, Thành phố HCM', N'Kỹ sư', N'Kinh', N'Nổi mụn đỏ và ngứa da', N'Bị dị ứng da', N'Sử dụng thuốc chống dị ứng và tránh tiếp xúc với chất kích thích', N'Lê Văn C', NULL
-EXEC SoKhamBenh_Insert 'BN000002', 'LK000002', N'Trần Thị B', '38', 'BHYT234567890', N'Số 2, Đường XYZ, Quận ABC, Thành phố HCM', N'Giáo viên', N'Kinh', N'Da sưng, đỏ và ngứa', N'Bị viêm da cơ địa', N'Sử dụng thuốc chống viêm và tránh tiếp xúc với chất kích thích', N'Lê Văn C', NULL
-EXEC SoKhamBenh_Insert 'BN000003', 'LK000003', N'Lê Văn C', '35', 'BHYT345678901', N'Số 3, Đường XYZ, Quận ABC, Thành phố HCM', N'Bác sĩ', N'Kinh', N'Mụn nước và đau rát', N'Bị nấm da', N'Sử dụng thuốc chống nấm và tuân thủ vệ sinh cá nhân', N'Lê Văn C', NULL
-EXEC SoKhamBenh_Insert 'BN000004', 'LK000004', N'Phạm Thị D', '29', 'BHYT456789012', N'Số 4, Đường XYZ, Quận ABC, Thành phố HCM', N'Y tá', N'Kinh', N'Sưng và đỏ da', N'Bị viêm da dị ứng', N'Sử dụng thuốc chống viêm và tránh tiếp xúc với chất kích thích', N'Lê Văn C', NULL
-EXEC SoKhamBenh_Insert 'BN000005', 'LK000005', N'Hoàng Văn E', '28', 'BHYT567890123', N'Số 5, Đường XYZ, Quận ABC, Thành phố HCM', N'Kỹ sư', N'Kinh', N'Đau và khó chịu da', N'Bị viêm da', N'Sử dụng thuốc chống viêm và tuân thủ vệ sinh cá nhân', N'Lê Văn C', NULL
-EXEC SoKhamBenh_Insert 'BN000006', 'LK000006', N'Võ Thị F', '31', 'BHYT678901234', N'Số 6, Đường XYZ, Quận ABC, Thành phố HCM', N'Chuyên viên kinh doanh', N'Kinh', N'Da khô và ngứa', N'Bị viêm da khô', N'Sử dụng thuốc chống viêm và giữ ẩm da', N'Lê Văn C', NULL
-EXEC SoKhamBenh_Insert 'BN000007', 'LK000007', N'Đặng Văn G', '34', 'BHYT789012345', N'Số 7, Đường XYZ, Quận ABC, Thành phố HCM', N'Nhân viên văn phòng', N'Kinh', N'Da nổi mụn và đau', N'Bị mụn trứng cá', N'Sử dụng thuốc chống viêm và tránh tiếp xúc với chất kích thích', N'Lê Văn C', NULL
-EXEC SoKhamBenh_Insert 'BN000008', 'LK000008', N'Mai Thị H', '39', 'BHYT890123456', N'Số 8, Đường XYZ, Quận ABC, Thành phố HCM', N'Luật sư', N'Kinh', N'Da bị nổi mụn và đỏ', N'Bị viêm da dị ứng', N'Sử dụng thuốc chống viêm và tránh tiếp xúc với chất kích thích', N'Lê Văn C', NULL
+EXEC SoKhamBenh_Insert 'BN000001', 'LK000001', N'Nguyễn Văn An', '33', 'BHYT0321344414', N'Bình Hưng, Bình Chánh, Thành phố HCM', N'Kỹ sư', N'Kinh', N'Nổi mụn đỏ và ngứa da', N'Bị dị ứng da', N'Sử dụng thuốc chống dị ứng và tránh tiếp xúc với chất kích thích', N'Nguyễn Hoàng Nam', NULL
+EXEC SoKhamBenh_Insert 'BN000002', 'LK000002', N'Trần Mỹ Nữ', '38', 'BHYT0827281342', N'Bình Hưng, Bình Chánh, Thành phố HCM', N'Giáo viên', N'Kinh', N'Da sưng, đỏ và ngứa', N'Bị viêm da cơ địa', N'Sử dụng thuốc chống viêm và tránh tiếp xúc với chất kích thích', N'Phạm Thị Duyên', NULL
+EXEC SoKhamBenh_Insert 'BN000003', 'LK000003', N'Lê Văn Luyện', '35', 'BHYT0192781634', N'Boulevard, Quận 1, Thành phố HCM', N'Bác sĩ', N'Kinh', N'Mụn nước và đau rát', N'Bị nấm da', N'Sử dụng thuốc chống nấm và tuân thủ vệ sinh cá nhân', N'Trần Diễm Quỳnh', NULL
+EXEC SoKhamBenh_Insert 'BN000004', 'LK000004', N'Phạm Thị Kim Tiến', '29', 'BHYT0454372749', N'Phường 12, Quận 10, Thành phố HCM', N'Y tá', N'Kinh', N'Sưng và đỏ da', N'Bị viêm da dị ứng', N'Sử dụng thuốc chống viêm và tránh tiếp xúc với chất kích thích', N'Trần Diễm Quỳnh', NULL
+EXEC SoKhamBenh_Insert 'BN000005', 'LK000005', N'Hoàng Ngọc Quý', '28', 'BHYT0817321244', N'Bình Trị Đông B, Bình Tân, Thành phố HCM', N'Kỹ sư', N'Kinh', N'Đau và khó chịu da', N'Bị viêm da', N'Sử dụng thuốc chống viêm và tuân thủ vệ sinh cá nhân', N'Trần Diễm Quỳnh', NULL
+EXEC SoKhamBenh_Insert 'BN000006', 'LK000006', N'Võ Duyên Trúc', '31', 'BHYT0318321845', N'KCN Đức Hoà 1, ấp 5, Đức Hòa, Long An', N'Chuyên viên kinh doanh', N'Kinh', N'Da khô và ngứa', N'Bị viêm da khô', N'Sử dụng thuốc chống viêm và giữ ẩm da', N'Trần Diễm Quỳnh', NULL
+EXEC SoKhamBenh_Insert 'BN000007', 'LK000007', N'Đặng Minh Thắng', '34', 'BHYT0192814245', N'Thống Nhất, Thành phố Biên Hòa, Đồng Nai', N'Nhân viên văn phòng', N'Kinh', N'Da nổi mụn và đau', N'Bị mụn trứng cá', N'Sử dụng thuốc chống viêm và tránh tiếp xúc với chất kích thích', N'Phạm Thị Duyên', NULL
+EXEC SoKhamBenh_Insert 'BN000008', 'LK000008', N'Mai Thị Thuỷ', '39', 'BHYT0239421445', N'Đa Kao, Quận 1, Thành phố HCM', N'Luật sư', N'Kinh', N'Da bị nổi mụn và đỏ', N'Bị viêm da dị ứng', N'Sử dụng thuốc chống viêm và tránh tiếp xúc với chất kích thích', N'Lê Nguyễn Nam', NULL
+EXEC SoKhamBenh_Insert 'BN000009', 'LK000009', N'Lý Văn Nguyên', '45', 'BHYT0987371633', N'Bình An, Quận 2, Thành phố HCM', N'Kỹ sư', N'Kinh', N'Da bị đau và ngứa', N'Bị nấm da', N'Sử dụng thuốc chống nấm và tuân thủ vệ sinh cá nhân', N'Nguyễn Hoàng Nam', NULL
+EXEC SoKhamBenh_Insert 'BN000010', 'LK000010', N'Nguyễn Thị Thuý', '32', 'BHYT0918274124', N'Phú Mỹ Hưng, Quận 7, Thành phố HCM', N'Giáo viên', N'Kinh', N'Nổi mụn và đau rát da', N'Bị viêm da', N'Sử dụng thuốc chống viêm và tránh tiếp xúc với chất kích thích', N'Nguyễn Hoàng Nam', NULL
+EXEC SoKhamBenh_Insert 'BN000011', 'LK000011', N'Trần Nhân Tâm', '29', 'BHYT0127471562', N'Tân Phú, Quận 7, Thành phố HCM', N'Trình dược viên', N'Kinh', N'Da khô và ngứa', N'Bị viêm da khô', N'Sử dụng thuốc chống viêm và giữ ẩm da', N'Trần Diễm Quỳnh', NULL
+EXEC SoKhamBenh_Insert 'BN000012', 'LK000012', N'Đinh Thị Mai Đinh', '38', 'BHYT0918271413', N'Tân Hưng, Quận 7, Thành phố HCM', N'Kỹ sư', N'Kinh', N'Da nổi mụn và đau', N'Bị mụn trứng cá', N'Sử dụng thuốc chống viêm và tránh tiếp xúc với chất kích thích', N'TPhạm Thị Duyên', NULL
+EXEC SoKhamBenh_Insert 'BN000013', 'LK000013', N'Lê Hoàng Ngọc', '27', 'BHYT0234141246', N'Phường 12, Quận 4, Thành phố HCM', N'Thợ may', N'Kinh', N'Da bị nổi mụn và đỏ', N'Bị viêm da dị ứng', N'Sử dụng thuốc chống viêm và tránh tiếp xúc với chất kích thích', N'Trần Diễm Quỳnh', NULL
+EXEC SoKhamBenh_Insert 'BN000014', 'LK000014', N'Võ Mỹ Kim Thoa', '35', 'BHYT0918274123', N'Phường 22, Bình Thạnh, Thành phố HCM', N'Nhân viên kinh doanh', N'Kinh', N'Da nổi mụn và đau', N'Bị mụn trứng cá', N'Sử dụng thuốc chống viêm và tránh tiếp xúc với chất kích thích', N'Trần Diễm Quỳnh', NULL
+EXEC SoKhamBenh_Insert 'BN000015', 'LK000015', N'Phan Văn Hội', '41', 'BHYT0362783945', N'Hiệp Bình Chánh, Thủ Đức, Thành phố HCM', N'Nhân viên bảo vệ', N'Kinh', N'Da bị đau và ngứa', N'Bị nấm da', N'Sử dụng thuốc chống nấm và tuân thủ vệ sinh cá nhân', N'Lê Nguyễn Nam', NULL
+
+
 -- LICH LAM VIEC
-EXEC InsertLichLamViec N'Nguyễn Văn A', 'BS000001', '2023-10-01', 'S'
-EXEC InsertLichLamViec N'Trần Thị B', 'BS000002', '2023-10-02', 'C'
-EXEC InsertLichLamViec N'Lê Văn C', 'BS000003', '2023-10-03', 'S'
-EXEC InsertLichLamViec N'Phạm Thị D', 'BS000004', '2023-10-04', 'S'
-EXEC InsertLichLamViec N'Nguyễn Văn A', 'BS000001', '2023-10-01', 'S'
-EXEC InsertLichLamViec N'Trần Thị B', 'BS000002', '2023-10-02', 'C'
-EXEC InsertLichLamViec N'Lê Văn C', 'BS000003', '2023-10-03', 'S'
-EXEC InsertLichLamViec N'Phạm Thị D', 'BS000004', '2023-10-04', 'C'
+EXEC InsertLichLamViec N'Nguyễn Hoàng Nam', 'BS000001', '2023-10-01', 'S'
+EXEC InsertLichLamViec N'Trần Diễm Quỳnh', 'BS000002', '2023-10-02', 'C'
+EXEC InsertLichLamViec N'Lê Nguyễn Nam', 'BS000003', '2023-10-03', 'S'
+EXEC InsertLichLamViec N'Phạm Thị Duyên', 'BS000004', '2023-10-04', 'C'
+EXEC InsertLichLamViec N'Nguyễn Hoàng Nam', 'BS000001', '2023-10-01', 'S'
+EXEC InsertLichLamViec N'Trần Diễm Quỳnh', 'BS000002', '2023-10-02', 'C'
+EXEC InsertLichLamViec N'Lê Nguyễn Nam', 'BS000003', '2023-10-03', 'S'
+EXEC InsertLichLamViec N'Phạm Thị Duyên', 'BS000004', '2023-10-04', 'C'

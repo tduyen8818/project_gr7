@@ -111,7 +111,7 @@ namespace QLBenhVienDaLieu
         {
             enaReadOnlyDGV();
             int lastCol = skb.Columns.Count;
-            if (this.WindowState == FormWindowState.Maximized && dgv_skb.Rows.Count != 0)
+            if (this.WindowState == FormWindowState.Maximized && dgv_skb.Rows.Count != 0 && dgv_skb.DisplayedColumnCount(false) == dgv_skb.RowCount)
             {
                 dgv_skb.Columns[lastCol - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
@@ -120,7 +120,7 @@ namespace QLBenhVienDaLieu
                 dgv_skb.Columns[lastCol - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             }
             lastCol = ba.Columns.Count;
-            if (this.WindowState == FormWindowState.Maximized && dgv_benhAn.Rows.Count != 0)
+            if (this.WindowState == FormWindowState.Maximized && dgv_benhAn.Rows.Count != 0 && dgv_benhAn.DisplayedColumnCount(false) == dgv_benhAn.RowCount)
             {
                 dgv_benhAn.Columns[lastCol - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
