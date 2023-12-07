@@ -226,5 +226,10 @@ namespace QLBenhVienDaLieu
             // Tự động thực hiện tìm kiếm khi người dùng thay đổi nội dung trường tìm kiếm
             btn_TimKiem_Click(sender, e);
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
