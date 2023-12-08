@@ -13,7 +13,7 @@ namespace QLBenhVienDaLieu
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BS_Kham_Benh());
+            Application.Run(new DangNhap());
         }
     }
 }

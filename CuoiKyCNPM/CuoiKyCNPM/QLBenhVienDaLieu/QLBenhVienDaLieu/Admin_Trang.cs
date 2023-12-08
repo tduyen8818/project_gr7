@@ -226,5 +226,21 @@ namespace QLBenhVienDaLieu
             // Tự động thực hiện tìm kiếm khi người dùng thay đổi nội dung trường tìm kiếm
             btn_TimKiem_Click(sender, e);
         }
+
+        private void btn_LichLamViec_Click(object sender, EventArgs e)
+        {
+            LichLamViec_Trang LichLamViec = new LichLamViec_Trang();
+            this.Hide();
+            LichLamViec.ShowDialog();
+            this.Close();
+        }
+
+        private void btn_TaiKhoan_Click(object sender, EventArgs e)
+        {
+            TaiKhoan_Admin TaiKhoan = new TaiKhoan_Admin();
+            this.Hide();
+            TaiKhoan.ShowDialog();
+            this.Close();
+        }
     }
 }

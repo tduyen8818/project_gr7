@@ -525,6 +525,12 @@
     <Compile Include="LichLamViec_Trang.Designer.cs">
       <DependentUpon>LichLamViec_Trang.cs</DependentUpon>
     </Compile>
+    <Compile Include="TaiKhoan_Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaiKhoan_Admin.Designer.cs">
+      <DependentUpon>TaiKhoan_Admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="TaiKhoan_BS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -751,6 +757,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LichLamViec_Trang.resx">
       <DependentUpon>LichLamViec_Trang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaiKhoan_Admin.resx">
+      <DependentUpon>TaiKhoan_Admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TaiKhoan_BS.resx">
       <DependentUpon>TaiKhoan_BS.cs</DependentUpon>

@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button2 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.btn_LichLamViec = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btn_TaiKhoan = new System.Windows.Forms.Button();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.comboBox_LoaiTaiKhoan = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -103,18 +103,19 @@
             this.button10.TabIndex = 9;
             this.button10.UseVisualStyleBackColor = false;
             // 
-            // button9
+            // btn_LichLamViec
             // 
-            this.button9.BackColor = System.Drawing.Color.White;
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Image = global::QLBenhVienDaLieu.Properties.Resources.lichlamviec;
-            this.button9.Location = new System.Drawing.Point(11, 324);
-            this.button9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(237, 57);
-            this.button9.TabIndex = 8;
-            this.button9.UseVisualStyleBackColor = false;
+            this.btn_LichLamViec.BackColor = System.Drawing.Color.White;
+            this.btn_LichLamViec.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_LichLamViec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_LichLamViec.Image = global::QLBenhVienDaLieu.Properties.Resources.lichlamviec;
+            this.btn_LichLamViec.Location = new System.Drawing.Point(11, 324);
+            this.btn_LichLamViec.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_LichLamViec.Name = "btn_LichLamViec";
+            this.btn_LichLamViec.Size = new System.Drawing.Size(237, 57);
+            this.btn_LichLamViec.TabIndex = 8;
+            this.btn_LichLamViec.UseVisualStyleBackColor = false;
+            this.btn_LichLamViec.Click += new System.EventHandler(this.btn_LichLamViec_Click);
             // 
             // button4
             // 
@@ -181,18 +182,19 @@
             this.button5.TabIndex = 4;
             this.button5.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // btn_TaiKhoan
             // 
-            this.button6.BackColor = System.Drawing.Color.White;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Image = global::QLBenhVienDaLieu.Properties.Resources._7;
-            this.button6.Location = new System.Drawing.Point(11, 384);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(237, 57);
-            this.button6.TabIndex = 5;
-            this.button6.UseVisualStyleBackColor = false;
+            this.btn_TaiKhoan.BackColor = System.Drawing.Color.White;
+            this.btn_TaiKhoan.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_TaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_TaiKhoan.Image = global::QLBenhVienDaLieu.Properties.Resources._7;
+            this.btn_TaiKhoan.Location = new System.Drawing.Point(11, 384);
+            this.btn_TaiKhoan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_TaiKhoan.Name = "btn_TaiKhoan";
+            this.btn_TaiKhoan.Size = new System.Drawing.Size(237, 57);
+            this.btn_TaiKhoan.TabIndex = 5;
+            this.btn_TaiKhoan.UseVisualStyleBackColor = false;
+            this.btn_TaiKhoan.Click += new System.EventHandler(this.btn_TaiKhoan_Click);
             // 
             // guna2CustomGradientPanel1
             // 
@@ -202,8 +204,8 @@
             this.guna2CustomGradientPanel1.BorderRadius = 20;
             this.guna2CustomGradientPanel1.Controls.Add(this.button2);
             this.guna2CustomGradientPanel1.Controls.Add(this.button10);
-            this.guna2CustomGradientPanel1.Controls.Add(this.button6);
-            this.guna2CustomGradientPanel1.Controls.Add(this.button9);
+            this.guna2CustomGradientPanel1.Controls.Add(this.btn_TaiKhoan);
+            this.guna2CustomGradientPanel1.Controls.Add(this.btn_LichLamViec);
             this.guna2CustomGradientPanel1.Controls.Add(this.button5);
             this.guna2CustomGradientPanel1.Controls.Add(this.button4);
             this.guna2CustomGradientPanel1.Controls.Add(this.button1);
@@ -747,27 +749,27 @@
             // 
             // guna2DataGridView1
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.guna2DataGridView1.BackgroundColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.guna2DataGridView1.ColumnHeadersHeight = 4;
             this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.Location = new System.Drawing.Point(247, 377);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
@@ -839,13 +841,13 @@
         #endregion
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btn_LichLamViec;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btn_TaiKhoan;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
         private System.Windows.Forms.Label label1;

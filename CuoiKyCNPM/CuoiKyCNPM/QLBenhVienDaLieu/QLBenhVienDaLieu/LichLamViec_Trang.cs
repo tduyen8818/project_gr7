@@ -212,7 +212,10 @@ namespace QLBenhVienDaLieu
 
         private void btn_TaiKhoan_Click(object sender, EventArgs e)
         {
-
+            TaiKhoan_Admin TaiKhoan = new TaiKhoan_Admin();
+            this.Hide();
+            TaiKhoan.ShowDialog();
+            this.Close();
         }
     }
 
