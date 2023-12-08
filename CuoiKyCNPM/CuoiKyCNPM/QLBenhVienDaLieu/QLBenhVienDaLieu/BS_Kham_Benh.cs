@@ -42,21 +42,6 @@ namespace QLBenhVienDaLieu
 
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            TaiKhoan_BS taiKhoanForm = new TaiKhoan_BS(sDT);
-            this.Hide();
-            taiKhoanForm.ShowDialog();
-            this.Close();
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            LichLamViec_BS lichLamViec = new LichLamViec_BS(sDT);
-            this.Hide();
-            lichLamViec.ShowDialog();
-            this.Close();
-        }
         DataTable resultTable = new DataTable();
         private void SelectedValue(object sender, EventArgs e)
         {
@@ -117,6 +102,22 @@ namespace QLBenhVienDaLieu
             bskb.FormClosed += (s, args) => this.Show();
             bskb.Show();
             this.Hide();
+        }
+
+        private void btn_LichLamViec_Click(object sender, EventArgs e)
+        {
+            LichLamViec_BS lichLamViec = new LichLamViec_BS(sDT);
+            this.Hide();
+            lichLamViec.ShowDialog();
+            this.Close();
+        }
+
+        private void btn_taiKhoan_Click(object sender, EventArgs e)
+        {
+            TaiKhoan_BS taiKhoanForm = new TaiKhoan_BS(sDT);
+            this.Hide();
+            taiKhoanForm.ShowDialog();
+            this.Close();
         }
     }
 }

@@ -70,7 +70,7 @@
             this.guna2CustomGradientPanel1.Controls.Add(this.lb_ngayKham);
             this.guna2CustomGradientPanel1.Controls.Add(this.lb_khamBenh);
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(283, 11);
-            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2CustomGradientPanel1.MinimumSize = new System.Drawing.Size(1087, 646);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1087, 667);
@@ -136,7 +136,7 @@
             this.dgv_lichKham.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_lichKham.GridColor = System.Drawing.Color.WhiteSmoke;
             this.dgv_lichKham.Location = new System.Drawing.Point(73, 272);
-            this.dgv_lichKham.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv_lichKham.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_lichKham.MinimumSize = new System.Drawing.Size(928, 310);
             this.dgv_lichKham.Name = "dgv_lichKham";
             this.dgv_lichKham.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -194,7 +194,7 @@
             "Sáng",
             "Chiều"});
             this.cb_caKham.Location = new System.Drawing.Point(416, 159);
-            this.cb_caKham.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_caKham.Margin = new System.Windows.Forms.Padding(4);
             this.cb_caKham.Name = "cb_caKham";
             this.cb_caKham.Size = new System.Drawing.Size(136, 36);
             this.cb_caKham.TabIndex = 3;
@@ -211,7 +211,7 @@
             this.dt_ngayKham.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.dt_ngayKham.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dt_ngayKham.Location = new System.Drawing.Point(73, 159);
-            this.dt_ngayKham.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dt_ngayKham.Margin = new System.Windows.Forms.Padding(4);
             this.dt_ngayKham.MaxDate = new System.DateTime(2198, 12, 31, 0, 0, 0, 0);
             this.dt_ngayKham.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.dt_ngayKham.Name = "dt_ngayKham";
@@ -263,7 +263,7 @@
             this.guna2CustomGradientPanel2.Controls.Add(this.button8);
             this.guna2CustomGradientPanel2.Controls.Add(this.button1);
             this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(16, 11);
-            this.guna2CustomGradientPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2CustomGradientPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2CustomGradientPanel2.MaximumSize = new System.Drawing.Size(259, 646);
             this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
             this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(259, 646);
@@ -294,7 +294,7 @@
             this.btn_taiKhoan.Size = new System.Drawing.Size(237, 57);
             this.btn_taiKhoan.TabIndex = 5;
             this.btn_taiKhoan.UseVisualStyleBackColor = false;
-            this.btn_taiKhoan.Click += new System.EventHandler(this.button6_Click);
+            this.btn_taiKhoan.Click += new System.EventHandler(this.btn_taiKhoan_Click);
             // 
             // btn_LichLamViec
             // 
@@ -308,7 +308,7 @@
             this.btn_LichLamViec.Size = new System.Drawing.Size(237, 57);
             this.btn_LichLamViec.TabIndex = 8;
             this.btn_LichLamViec.UseVisualStyleBackColor = false;
-            this.btn_LichLamViec.Click += new System.EventHandler(this.button9_Click);
+            this.btn_LichLamViec.Click += new System.EventHandler(this.btn_LichLamViec_Click);
             // 
             // button3
             // 
