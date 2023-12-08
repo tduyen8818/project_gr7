@@ -54,6 +54,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
         private Rectangle originalButtonDelete;
         private Rectangle originalButtonAdd;
         private Rectangle originalImageProfile;
+        private Rectangle originalButtonDangXuat;
 
         float textSizeInitialTitleHoSoBenhNhan;
         float textSizeInitialTextTongSoHoSo;
@@ -81,6 +82,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
         float textSizeInitialDataSoDienThoai;
         float textSizeInitialDataEmail;
         float textSizeInitialDataDiaChi;
+        float textSizeInitialButtonDangXuat;
 
         public Label DataTongSoHoSo
         {
@@ -273,6 +275,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
             originalButtonDelete = new Rectangle(buttonDelete.Location.X, buttonDelete.Location.Y, buttonDelete.Width, buttonDelete.Height);
             originalButtonAdd = new Rectangle(buttonAdd.Location.X, buttonAdd.Location.Y, buttonAdd.Width, buttonAdd.Height);
             originalImageProfile = new Rectangle(imageProfile.Location.X, imageProfile.Location.Y, imageProfile.Width, imageProfile.Height);
+            originalButtonDangXuat = new Rectangle(buttonDangXuat.Location.X, buttonDangXuat.Location.Y, buttonDangXuat.Width, buttonDangXuat.Height);
 
             textSizeInitialTitleHoSoBenhNhan = titleHoSoBenhNhan.Font.Size;
             textSizeInitialTextTongSoHoSo = textTongSoHoSo.Font.Size;
@@ -300,6 +303,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
             textSizeInitialDataSoDienThoai = dataSoDienThoai.Font.Size;
             textSizeInitialDataEmail = dataEmail.Font.Size;
             textSizeInitialDataDiaChi = dataDiaChi.Font.Size;
+            textSizeInitialButtonDangXuat = buttonDangXuat.Font.Size;
 
             buttonAdd.Region = Graphic.Draw.RoundedRectangle(0, 0, buttonAdd.Width, buttonAdd.Height, 20, 20);
 
@@ -644,9 +648,20 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
                 Graphic.ScaleSize.Resize(originalForm, originalButtonDelete, buttonDelete, this);
                 Graphic.ScaleSize.Resize(originalForm, originalButtonAdd, buttonAdd, this);
                 Graphic.ScaleSize.Resize(originalForm, originalImageProfile, imageProfile, this);
+                Graphic.ScaleSize.Resize(originalForm, originalButtonDangXuat, buttonDangXuat, this, textSizeInitialButtonDangXuat);
 
                 buttonAdd.Region = Graphic.Draw.RoundedRectangle(0, 0, buttonAdd.Width, buttonAdd.Height, 20, 20);
             }
+        }
+
+        private void buttonDangXuat_Click(object sender, EventArgs e)
+        {
+            this.benhNhan_Trang.Hide();
+
+            DangNhap dangNhap = new DangNhap();
+            dangNhap.ShowDialog();
+
+            this.Close();
         }
     }
 }

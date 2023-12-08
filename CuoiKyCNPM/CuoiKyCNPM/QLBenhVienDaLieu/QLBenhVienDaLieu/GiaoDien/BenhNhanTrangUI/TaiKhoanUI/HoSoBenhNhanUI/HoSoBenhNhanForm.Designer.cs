@@ -64,6 +64,7 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
             this.buttonAdd = new System.Windows.Forms.Button();
             this.dataNumberHoSoBenhNhan = new System.Windows.Forms.Label();
             this.titleHoSoBenhNhan = new System.Windows.Forms.Label();
+            this.buttonDangXuat = new System.Windows.Forms.Button();
             this.showHoSoBenhNhan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageProfile)).BeginInit();
             this.SuspendLayout();
@@ -521,12 +522,26 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
             this.titleHoSoBenhNhan.Text = "HỒ SƠ BỆNH NHÂN";
             this.titleHoSoBenhNhan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // buttonDangXuat
+            // 
+            this.buttonDangXuat.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.buttonDangXuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDangXuat.ForeColor = System.Drawing.Color.White;
+            this.buttonDangXuat.Location = new System.Drawing.Point(614, 895);
+            this.buttonDangXuat.Name = "buttonDangXuat";
+            this.buttonDangXuat.Size = new System.Drawing.Size(181, 58);
+            this.buttonDangXuat.TabIndex = 49;
+            this.buttonDangXuat.Text = "Đăng xuất";
+            this.buttonDangXuat.UseVisualStyleBackColor = false;
+            this.buttonDangXuat.Click += new System.EventHandler(this.buttonDangXuat_Click);
+            // 
             // HoSoBenhNhanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(1367, 991);
+            this.Controls.Add(this.buttonDangXuat);
             this.Controls.Add(this.titleHoSoBenhNhan);
             this.Controls.Add(this.dataNumberHoSoBenhNhan);
             this.Controls.Add(this.buttonAdd);
@@ -583,5 +598,6 @@ namespace QLBenhVienDaLieu.GiaoDien.BenhNhanTrangUI.TaiKhoanUI.HoSoBenhNhanUI
         private System.Windows.Forms.TextBox dataDiaChi;
         private System.Windows.Forms.Button buttonSave;
         private Label titleHoSoBenhNhan;
+        private Button buttonDangXuat;
     }
 }
