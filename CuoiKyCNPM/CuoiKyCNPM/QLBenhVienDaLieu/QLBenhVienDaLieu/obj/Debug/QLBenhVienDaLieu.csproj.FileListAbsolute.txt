@@ -585,3 +585,4 @@ D:\2023\project_gr7\project_gr7\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVie
 D:\2023\project_gr7\project_gr7\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.csproj.CopyComplete
 D:\2023\project_gr7\project_gr7\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.exe
 D:\2023\project_gr7\project_gr7\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.pdb
+C:\git\project_gr7\CuoiKyCNPM\CuoiKyCNPM\QLBenhVienDaLieu\QLBenhVienDaLieu\obj\Debug\QLBenhVienDaLieu.TaiKhoan_Admin.resources
