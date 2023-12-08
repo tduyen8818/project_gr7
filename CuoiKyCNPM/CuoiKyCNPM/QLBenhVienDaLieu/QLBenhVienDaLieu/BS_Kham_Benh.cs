@@ -30,11 +30,13 @@ namespace QLBenhVienDaLieu
         public BS_Kham_Benh()
         {
             InitializeComponent();
+            this.sDT = "123";
             dt_ngayKham.Value = DateTime.Now;
             dt_ngayKham.MaxDate = dt_ngayKham.Value;
             //Change column display size
             dgv_lichKham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dgv_lichKham.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
+            dgv_lichKham.ReadOnly = true;
         }
 
         private void BS_Kham_Benh_Load(object sender, EventArgs e)
@@ -113,10 +115,7 @@ namespace QLBenhVienDaLieu
 
         private void btn_DichVu_Click(object sender, EventArgs e)
         {
-            BS_Kham_Benh bskb = new BS_Kham_Benh();
-            bskb.FormClosed += (s, args) => this.Show();
-            bskb.Show();
-            this.Hide();
+            
         }
     }
 }

@@ -36,23 +36,23 @@ namespace QLBenhVienDaLieu.Database.Function
 
             //---------------------- Database của Thiên-----------------------
 
-            /*const string serverName = "LAPTOP-4M06U5";
-            const string databaseName = "PHONGKHAMDALIEU";
-
-            this.connectionString = $"Data Source={serverName};" +
-                $"Initial Catalog={databaseName};" +
-                $"Integrated Security=True";
-            this.connection = new SqlConnection(connectionString);*/
-            //---------------------- Database của Chương-----------------------
-
-            const string serverName = "LAPTOP-8AHD28S0\\CHUONG";
-            const string userName = "LAPTOP-8AHD28S0\\huynh";
+            const string serverName = "LAPTOP-4M06U5";
             const string databaseName = "PHONGKHAMDALIEU";
 
             this.connectionString = $"Data Source={serverName};" +
                 $"Initial Catalog={databaseName};" +
                 $"Integrated Security=True";
             this.connection = new SqlConnection(connectionString);
+            //---------------------- Database của Chương-----------------------
+
+            /*const string serverName = "LAPTOP-8AHD28S0\\CHUONG";
+            const string userName = "LAPTOP-8AHD28S0\\huynh";
+            const string databaseName = "PHONGKHAMDALIEU";
+
+            this.connectionString = $"Data Source={serverName};" +
+                $"Initial Catalog={databaseName};" +
+                $"Integrated Security=True";
+            this.connection = new SqlConnection(connectionString);*/
 
         }
 
