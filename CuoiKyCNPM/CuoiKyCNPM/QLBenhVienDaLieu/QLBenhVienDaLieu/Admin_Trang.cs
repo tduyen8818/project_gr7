@@ -227,6 +227,7 @@ namespace QLBenhVienDaLieu
             btn_TimKiem_Click(sender, e);
         }
 
+<<<<<<< HEAD
         private void btn_LichLamViec_Click(object sender, EventArgs e)
         {
             LichLamViec_Trang LichLamViec = new LichLamViec_Trang();
@@ -241,6 +242,11 @@ namespace QLBenhVienDaLieu
             this.Hide();
             TaiKhoan.ShowDialog();
             this.Close();
+=======
+        private void button9_Click(object sender, EventArgs e)
+        {
+
+>>>>>>> 0806c22f559ac34cfcdec0566c0fb39f72b0a529
         }
     }
 }
