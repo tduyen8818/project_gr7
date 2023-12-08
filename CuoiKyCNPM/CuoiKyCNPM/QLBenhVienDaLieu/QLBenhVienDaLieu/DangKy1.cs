@@ -25,9 +25,9 @@ namespace QLBenhVienDaLieu
             {
 
                 // Thay đổi thông tin tài khoản Twilio của bạn
-                string accountSid = "AC4d5fb5f8d08bf654fbfba35370ca5dba";
-                string authToken = "fa058f7bb604fcdb8fb7e8be7f448901";
-                string twilioPhoneNumber = "+12032759991"; // Số điện thoại Twilio đã cung cấp
+                string accountSid = "AC8c409975f31b38baad27e6b1c480b32b";
+                string authToken = "4af34b894d9d4073648c4cb4f4669530";
+                string twilioPhoneNumber = "+16062632008"; // Số điện thoại Twilio đã cung cấp
 
                 TwilioClient.Init(accountSid, authToken);
 
