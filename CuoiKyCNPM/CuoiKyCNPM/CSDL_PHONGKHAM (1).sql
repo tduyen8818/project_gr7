@@ -1,6 +1,11 @@
-﻿CREATE DATABASE PHONGKHAMDALIEU
+﻿
+use master
+go
+CREATE DATABASE PHONGKHAMDALIEU
+go
 --//////////////////////////// dtb
 USE PHONGKHAMDALIEU
+go
 --DROP DATABASE PHONGKHAMDALIEU
 --////////////////////////////
 -- TAO BANG --
@@ -10,6 +15,7 @@ CREATE TABLE DangKyUser
 	MatKhau varchar(8),
 )
 ALTER TABLE DangKyUser ADD PRIMARY KEY (SoDienThoai)
+go
 --=================FUNCTION
 CREATE FUNCTION SelectDangKyUser (@SoDienThoai varchar(10))
 RETURNS TABLE
@@ -20,7 +26,7 @@ RETURN (
     WHERE SoDienThoai = @SoDienThoai
 );
 
-
+go
 CREATE FUNCTION GetDangKyUserByParam(@ParamName varchar(50)) RETURNS varchar(50)
 AS
 BEGIN
@@ -33,6 +39,7 @@ BEGIN
         SET @Result = 'Invalid Parameter'
     RETURN @Result
 END
+go
 --#####################PROCEDURE INSERT
 CREATE PROCEDURE DangKyUser_Insert
     @SoDienThoai varchar(10),
@@ -42,7 +49,7 @@ BEGIN
     INSERT INTO DangKyUser (SoDienThoai, MatKhau)
     VALUES (@SoDienThoai, @MatKhau)
 END
-
+go
 CREATE PROCEDURE UpdateDangKyUser
     @SoDienThoai varchar(10),
     @MatKhau varchar(8)
@@ -52,7 +59,7 @@ BEGIN
     SET MatKhau = @MatKhau
     WHERE SoDienThoai = @SoDienThoai;
 END
-
+go
 CREATE PROCEDURE DeleteDangKyUser
     @SoDienThoai varchar(10)
 AS
@@ -67,7 +74,7 @@ BEGIN
         PRINT 'Không tìm thấy bản ghi với SoDienThoai = ' + @SoDienThoai;
     END
 END
-
+go
 --/////////////////// Ho so benh nhan
 CREATE TABLE HoSoBenhNhan
 (
@@ -84,7 +91,8 @@ CREATE TABLE HoSoBenhNhan
 	DiaChi nvarchar(50)
 )
 ALTER TABLE HoSoBenhNhan ADD PRIMARY KEY (MaHoSoBenhNhan);
-ALTER TABLE HoSoBenhNhan ADD CONSTRAINT FK_HoSoBenhNhanUser FOREIGN KEY (MaTaiKhoan) REFERENCES DangKyUser(SoDienThoai)
+ALTER TABLE HoSoBenhNhan ADD CONSTRAINT FK_HoSoBenhNhanUser FOREIGN KEY (MaTaiKhoan) REFERENCES DangKyUser(SoDienThoai) ON DELETE CASCADE
+go
 --=================FUNCTION
 CREATE FUNCTION SelectHoSoBenhNhan (@MaHoSoBenhNhan varchar(8))
 RETURNS TABLE
@@ -95,7 +103,7 @@ RETURN (
     WHERE MaHoSoBenhNhan = @MaHoSoBenhNhan
 );
 
-
+go
 CREATE FUNCTION GetHoSoBenhNhanByParam(@MaHoSoBenhNhan varchar(8), @ParamName varchar(50)) RETURNS varchar(50)
 AS
 BEGIN
@@ -125,7 +133,7 @@ BEGIN
     RETURN @Result
 END
 --#########INSERT
-
+go
 CREATE PROCEDURE UpdateHoSoBenhNhan
     @MaHoSoBenhNhan varchar(8),
     @HoVaTen nvarchar(30),
@@ -154,7 +162,7 @@ BEGIN
         DiaChi = @DiaChi
     WHERE MaHoSoBenhNhan = @MaHoSoBenhNhan;
 END
-
+go
 CREATE PROCEDURE DeleteHoSoBenhNhan
     @MaHoSoBenhNhan varchar(8)
 AS
@@ -169,7 +177,7 @@ BEGIN
         PRINT 'Không tìm thấy bản ghi với MaHoSoBenhNhan = ' + @MaHoSoBenhNhan;
     END
 END
-
+go
 
 --**********************TRIGGER
 
@@ -193,7 +201,8 @@ CREATE TABLE SoKhamBenh
 	GhiChu nvarchar(50)
 )
 ALTER TABLE SoKhamBenh ADD CONSTRAINT PK_SoKhamBenh PRIMARY KEY (MaHoSoBenhNhan, MaLichKham)
-ALTER TABLE SoKhamBenh ADD CONSTRAINT FK_SoKhamBenhHoSoBenhNhan FOREIGN KEY (MaHoSoBenhNhan) REFERENCES HoSoBenhNhan(MaHoSoBenhNhan);
+ALTER TABLE SoKhamBenh ADD CONSTRAINT FK_SoKhamBenhHoSoBenhNhan FOREIGN KEY (MaHoSoBenhNhan) REFERENCES HoSoBenhNhan(MaHoSoBenhNhan) ON DELETE CASCADE;
+go
 --=================FUNCTION
 CREATE FUNCTION SelectSoKhamBenh (@MaHoSoBenhNhan varchar(8), @MaLichKham varchar(8))
 RETURNS TABLE
@@ -203,7 +212,7 @@ RETURN (
     FROM SoKhamBenh
     WHERE MaHoSoBenhNhan = @MaHoSoBenhNhan AND MaLichKham = @MaLichKham
 );
-
+go
 
 CREATE FUNCTION GetSoKhamBenhByParam(@MaHoSoBenhNhan varchar(8), @MaLichKham varchar(8), @ParamName varchar(50)) RETURNS varchar(50)
 AS
@@ -235,7 +244,7 @@ BEGIN
         SET @Result = 'Invalid Parameter'
     RETURN @Result
 END
-
+go
 
 CREATE PROCEDURE UpdateSoKhamBenh
     @MaHoSoBenhNhan varchar(8),
@@ -268,7 +277,7 @@ BEGIN
         GhiChu = @GhiChu
     WHERE MaHoSoBenhNhan = @MaHoSoBenhNhan AND MaLichKham = @MaLichKham;
 END
-
+go
 CREATE PROCEDURE DeleteSoKhamBenh
     @MaLichKham varchar(8)
 AS
@@ -283,7 +292,7 @@ BEGIN
         PRINT 'Không tìm thấy bản ghi với MaLichKham = ' + @MaLichKham;
     END
 END
-
+go
 --**********************TRIGGER
 
 
@@ -296,7 +305,7 @@ CREATE TABLE BenhAn
 	DoiTuong nvarchar(8),
 	GiaTriBHYT date,
 	HoTenThanNhan nvarchar(30),
-	ThoiGianVaoVien nvarchar(30),
+	ThoiGianVaoVien date,
 	TrucTiepVao nvarchar(30),
 	NoiGioiThieu nvarchar(30),
 	VaoKhoa nvarchar(30),
@@ -309,7 +318,7 @@ CREATE TABLE BenhAn
 	GiaiPhauBenh nvarchar(30),
 	QuaTrinhBenhLy nvarchar(30),
 	TienSuBenh nvarchar(30),
-	ToaThan nvarchar(30),
+	ToanThan nvarchar(30),
 	TrieuChungCoNang nvarchar(30),
 	ThuongTonCanBan nvarchar(30),
 	CacCoQuan nvarchar(30),
@@ -319,7 +328,8 @@ CREATE TABLE BenhAn
 	HoSoPhimAnh nvarchar(30)
 )
 ALTER TABLE BenhAn ADD CONSTRAINT PK_BenhAn PRIMARY KEY (MaBenhAn)
-ALTER TABLE BenhAn ADD CONSTRAINT FK_BenhAnHoSoBenhNhan FOREIGN KEY (MaHoSoBenhNhan) REFERENCES HoSoBenhNhan(MaHoSoBenhNhan)
+ALTER TABLE BenhAn ADD CONSTRAINT FK_BenhAnHoSoBenhNhan FOREIGN KEY (MaHoSoBenhNhan) REFERENCES HoSoBenhNhan(MaHoSoBenhNhan) ON DELETE CASCADE
+go
 --=================FUNCTION
 CREATE FUNCTION SelectBenhAn (@MaBenhAn varchar(8))
 RETURNS TABLE
@@ -329,7 +339,7 @@ RETURN (
     FROM BenhAn
     WHERE MaBenhAn = @MaBenhAn
 );
-
+go
 
 CREATE FUNCTION GetBenhAnByParam(@MaBenhAn varchar(8), @ParamName varchar(50)) RETURNS varchar(50)
 AS
@@ -369,8 +379,8 @@ BEGIN
         SELECT @Result = QuaTrinhBenhLy FROM BenhAn WHERE MaBenhAn = @MaBenhAn
     ELSE IF @ParamName = 'TienSuBenh'
         SELECT @Result = TienSuBenh FROM BenhAn WHERE MaBenhAn = @MaBenhAn
-    ELSE IF @ParamName = 'ToaThan'
-        SELECT @Result = ToaThan FROM BenhAn WHERE MaBenhAn = @MaBenhAn
+    ELSE IF @ParamName = 'ToanThan'
+        SELECT @Result = ToanThan FROM BenhAn WHERE MaBenhAn = @MaBenhAn
     ELSE IF @ParamName = 'TrieuChungCoNang'
         SELECT @Result = TrieuChungCoNang FROM BenhAn WHERE MaBenhAn = @MaBenhAn
     ELSE IF @ParamName = 'ThuongTonCanBan'
@@ -389,14 +399,14 @@ BEGIN
         SET @Result = 'Invalid Parameter'
     RETURN @Result
 END
-
+go
 CREATE PROCEDURE UpdateBenhAn
     @MaBenhAn varchar(8),
     @MaHoSoBenhNhan varchar(8),
     @DoiTuong nvarchar(8),
     @GiaTriBHYT date,
     @HoTenThanNhan nvarchar(30),
-    @ThoiGianVaoVien nvarchar(30),
+    @ThoiGianVaoVien date,
     @TrucTiepVao nvarchar(30),
     @NoiGioiThieu nvarchar(30),
     @VaoKhoa nvarchar(30),
@@ -409,7 +419,7 @@ CREATE PROCEDURE UpdateBenhAn
     @GiaiPhauBenh nvarchar(30),
     @QuaTrinhBenhLy nvarchar(30),
     @TienSuBenh nvarchar(30),
-    @ToaThan nvarchar(30),
+    @ToanThan nvarchar(30),
     @TrieuChungCoNang nvarchar(30),
     @ThuongTonCanBan nvarchar(30),
     @CacCoQuan nvarchar(30),
@@ -438,7 +448,7 @@ BEGIN
         GiaiPhauBenh = @GiaiPhauBenh,
         QuaTrinhBenhLy = @QuaTrinhBenhLy,
         TienSuBenh = @TienSuBenh,
-        ToaThan = @ToaThan,
+        ToanThan = @ToanThan,
         TrieuChungCoNang = @TrieuChungCoNang,
         ThuongTonCanBan = @ThuongTonCanBan,
         CacCoQuan = @CacCoQuan,
@@ -448,7 +458,7 @@ BEGIN
         HoSoPhimAnh = @HoSoPhimAnh
     WHERE MaBenhAn = @MaBenhAn;
 END
-
+go
 CREATE PROCEDURE DeleteRecordByMaBenhAn
     @MaBenhAn varchar(8)
 AS
@@ -467,7 +477,7 @@ BEGIN
         PRINT N'Không tìm thấy bản ghi với MaBenhAn = ' + @MaBenhAn;
     END
 END
-
+go
 --**********************TRIGGER
 
 --/////////////////// Toa Thuoc
@@ -483,7 +493,8 @@ CREATE TABLE ToaThuoc
 	GhiChu nvarchar(50)
 )
 ALTER TABLE ToaThuoc ADD CONSTRAINT PK_ToaThuoc PRIMARY KEY (MaToaThuoc, MaThuoc)
-ALTER TABLE ToaThuoc ADD CONSTRAINT FK_ToaThuocBenhAn FOREIGN KEY (MaBenhAn) REFERENCES BenhAn(MaBenhAn)
+ALTER TABLE ToaThuoc ADD CONSTRAINT FK_ToaThuocBenhAn FOREIGN KEY (MaBenhAn) REFERENCES BenhAn(MaBenhAn) ON DELETE CASCADE
+go
 --=================FUNCTION
 CREATE FUNCTION SelectToaThuoc (@MaToaThuoc varchar(8))
 RETURNS TABLE
@@ -493,7 +504,7 @@ RETURN (
     FROM ToaThuoc
     WHERE MaToaThuoc = @MaToaThuoc
 );
-
+go
 
 CREATE FUNCTION GetToaThuocByParam(@MaToaThuoc varchar(8), @ParamName varchar(50)) RETURNS nvarchar(50)
 AS
@@ -517,7 +528,7 @@ BEGIN
         SET @Result = 'Invalid Parameter'
     RETURN @Result
 END
-
+go
 CREATE PROCEDURE UpdateToaThuoc
     @MaToaThuoc varchar(8),
     @SoThuTu varchar(10),
@@ -540,7 +551,7 @@ BEGIN
         GhiChu = @GhiChu
     WHERE MaToaThuoc = @MaToaThuoc;
 END
-
+go
 CREATE PROCEDURE DeleteToaThuoc
     @MaToaThuoc varchar(8)
 AS
@@ -555,7 +566,7 @@ BEGIN
         PRINT 'Không tìm thấy bản ghi với MaToaThuoc = ' + @MaToaThuoc;
     END
 END
-
+go
 --**********************TRIGGER
 
 
@@ -564,14 +575,14 @@ END
 CREATE TABLE HoaDon
 (
 	MaHoaDon varchar(8) NOT NULL,
-	MaMaHoSoBenhNhan varchar(8),
 	MaLichKham varchar(8),
 	TongTien int,
 	HinhThucThanhToan nvarchar(30)
 )
 ALTER TABLE HoaDon ADD CONSTRAINT PK_HoaDon PRIMARY KEY (MaHoaDon)
-ALTER TABLE HoaDon ADD CONSTRAINT FK_HoaDonHoSoBenhNhan FOREIGN KEY (MaMaHoSoBenhNhan) REFERENCES HoSoBenhNhan(MaHoSoBenhNhan)
-ALTER TABLE HoaDon ADD CONSTRAINT FK_HoaDonLichKham FOREIGN KEY (MaLichKham) REFERENCES LichKham(MaLichKham)
+
+
+go
 --=================FUNCTION
 CREATE FUNCTION SelectHoaDon (@MaHoaDon varchar(8))
 RETURNS TABLE
@@ -581,15 +592,13 @@ RETURN (
     FROM HoaDon
     WHERE MaHoaDon = @MaHoaDon
 );
-
+go
 
 CREATE FUNCTION GetHoaDonByParam(@MaHoaDon varchar(8), @ParamName varchar(50)) RETURNS nvarchar(50)
 AS
 BEGIN
     DECLARE @Result nvarchar(50)
-    IF @ParamName = 'MaMaHoSoBenhNhan'
-        SELECT @Result = MaMaHoSoBenhNhan FROM HoaDon WHERE MaHoaDon = @MaHoaDon
-    ELSE IF @ParamName = 'MaLichKham'
+    IF @ParamName = 'MaLichKham'
         SELECT @Result = MaLichKham FROM HoaDon WHERE MaHoaDon = @MaHoaDon
     ELSE IF @ParamName = 'TongTien'
         SELECT @Result = CONVERT(nvarchar(50), TongTien) FROM HoaDon WHERE MaHoaDon = @MaHoaDon
@@ -599,10 +608,9 @@ BEGIN
         SET @Result = 'Invalid Parameter'
     RETURN @Result
 END
-
+go
 CREATE PROCEDURE UpdateHoaDon
     @MaHoaDon varchar(8),
-    @MaMaHoSoBenhNhan varchar(8),
     @MaLichKham varchar(8),
     @TongTien int,
     @HinhThucThanhToan nvarchar(30)
@@ -610,13 +618,12 @@ AS
 BEGIN
     UPDATE HoaDon
     SET 
-        MaMaHoSoBenhNhan = @MaMaHoSoBenhNhan,
         MaLichKham = @MaLichKham,
         TongTien = @TongTien,
         HinhThucThanhToan = @HinhThucThanhToan
     WHERE MaHoaDon = @MaHoaDon;
 END
-
+go
 CREATE PROCEDURE DeleteHoaDon
     @MaHoaDon varchar(8)
 AS
@@ -631,7 +638,7 @@ BEGIN
         PRINT 'Không tìm thấy bản ghi với MaHoaDon = ' + @MaHoaDon;
     END
 END
-
+go
 --**********************TRIGGER
 
 
@@ -641,11 +648,13 @@ CREATE TABLE KhuyenMai
 (
 	MaKhuyenMai varchar(8) NOT NULL,
 	TenChuongTrinhKM nvarchar(30),
+    GiaKhuyenMai VARCHAR(10),
 	NoiDungKM nvarchar(50),
 	ThoiGianBatDau datetime,
 	ThoiGianKetThuc datetime
 )
 ALTER TABLE KhuyenMai ADD CONSTRAINT PK_KhuyenMai PRIMARY KEY (MaKhuyenMai)
+go
 --=================FUNCTION
 CREATE FUNCTION SelectKhuyenMai (@MaKhuyenMai varchar(8))
 RETURNS TABLE
@@ -655,7 +664,7 @@ RETURN (
     FROM KhuyenMai
     WHERE MaKhuyenMai = @MaKhuyenMai
 );
-
+go
 
 CREATE FUNCTION GetKhuyenMaiByParam(@MaKhuyenMai varchar(8), @ParamName varchar(50)) RETURNS nvarchar(50)
 AS
@@ -663,6 +672,8 @@ BEGIN
     DECLARE @Result nvarchar(50)
     IF @ParamName = 'TenChuongTrinhKM'
         SELECT @Result = TenChuongTrinhKM FROM KhuyenMai WHERE MaKhuyenMai = @MaKhuyenMai
+    ELSE IF @ParamName = 'GiaKhuyenMai'
+        SELECT @Result = GiaKhuyenMai FROM KhuyenMai WHERE MaKhuyenMai = @MaKhuyenMai
     ELSE IF @ParamName = 'NoiDungKM'
         SELECT @Result = NoiDungKM FROM KhuyenMai WHERE MaKhuyenMai = @MaKhuyenMai
     ELSE IF @ParamName = 'ThoiGianBatDau'
@@ -673,10 +684,11 @@ BEGIN
         SET @Result = 'Invalid Parameter'
     RETURN @Result
 END
-
+go
 CREATE PROCEDURE UpdateKhuyenMai
     @MaKhuyenMai varchar(8),
     @TenChuongTrinhKM nvarchar(30),
+    @GiaKhuyenMai VARCHAR(10),
     @NoiDungKM nvarchar(50),
     @ThoiGianBatDau datetime,
     @ThoiGianKetThuc datetime
@@ -685,12 +697,13 @@ BEGIN
     UPDATE KhuyenMai
     SET 
         TenChuongTrinhKM = @TenChuongTrinhKM,
+        GiaKhuyenMai = @GiaKhuyenMai,
         NoiDungKM = @NoiDungKM,
         ThoiGianBatDau = @ThoiGianBatDau,
         ThoiGianKetThuc = @ThoiGianKetThuc
     WHERE MaKhuyenMai = @MaKhuyenMai;
 END
-
+go
 CREATE PROCEDURE DeleteKhuyenMai
     @MaKhuyenMai varchar(8)
 AS
@@ -706,7 +719,7 @@ BEGIN
     END
 END
 
-
+go
 --**********************TRIGGER
 
 
@@ -720,6 +733,7 @@ CREATE TABLE DichVu
 	GiaDichVu int
 )
 ALTER TABLE DichVu ADD CONSTRAINT PK_DichVu PRIMARY KEY (MaDichVu)
+go
 --=================FUNCTION
 CREATE FUNCTION SelectDichVu (@MaDichVu varchar(8))
 RETURNS TABLE
@@ -729,7 +743,7 @@ RETURN (
     FROM DichVu
     WHERE MaDichVu = @MaDichVu
 );
-
+go
 
 CREATE FUNCTION GetDichVuByParam(@MaDichVu varchar(8), @ParamName varchar(50)) RETURNS nvarchar(50)
 AS
@@ -746,7 +760,7 @@ BEGIN
     RETURN @Result
 END
 
-
+go
 
 CREATE PROCEDURE UpdateDichVu
     @MaDichVu varchar(8),
@@ -762,7 +776,7 @@ BEGIN
         GiaDichVu = @GiaDichVu
     WHERE MaDichVu = @MaDichVu;
 END
-
+go
 CREATE PROCEDURE DeleteDichVu
     @MaDichVu varchar(8)
 AS
@@ -777,7 +791,7 @@ BEGIN
         PRINT 'Không tìm thấy bản ghi với MaDichVu = ' + @MaDichVu;
     END
 END
-
+go
 --**********************TRIGGER
 
 
@@ -791,6 +805,7 @@ CREATE TABLE ChuyenKhoa
 )
 ALTER TABLE ChuyenKhoa ADD CONSTRAINT PK_ChuyenKhoa PRIMARY KEY (MaChuyenKhoa)
 ALTER TABLE ChuyenKhoa ALTER COLUMN TenChuyenKhoa nvarchar(200)
+go
 --=================FUNCTION
 CREATE FUNCTION SelectChuyenKhoa (@MaChuyenKhoa varchar(8))
 RETURNS TABLE
@@ -800,7 +815,7 @@ RETURN (
     FROM ChuyenKhoa
     WHERE MaChuyenKhoa = @MaChuyenKhoa
 );
-
+go
 
 CREATE FUNCTION GetChuyenKhoaByParam(@MaChuyenKhoa varchar(8), @ParamName varchar(50)) RETURNS nvarchar(50)
 AS
@@ -814,7 +829,7 @@ BEGIN
         SET @Result = 'Invalid Parameter'
     RETURN @Result
 END
-
+go
 
 CREATE PROCEDURE UpdateChuyenKhoa
     @MaChuyenKhoa varchar(8),
@@ -828,7 +843,7 @@ BEGIN
         MaKhuyenMai = @MaKhuyenMai
     WHERE MaChuyenKhoa = @MaChuyenKhoa;
 END
-
+go
 CREATE PROCEDURE DeleteChuyenKhoa
     @MaChuyenKhoa varchar(8)
 AS
@@ -844,7 +859,7 @@ BEGIN
     END
 END
 
-
+go
 --**********************TRIGGER
 
 
@@ -860,11 +875,13 @@ CREATE TABLE LichKham
 	Ca nvarchar(15),
 	KhungGioKham datetime
 )
-ALTER TABLE LichKham ADD CONSTRAINT PK_LichKham PRIMARY KEY (MaLichKham)
-ALTER TABLE LichKham ADD CONSTRAINT FK_LichKhamHoSoBenhNhan FOREIGN KEY (MaHoSoBenhNhan) REFERENCES HoSoBenhNhan(MaHoSoBenhNhan)
-ALTER TABLE LichKham ADD CONSTRAINT FK_LichKhamHoSoBenhNhan FOREIGN KEY (MaHoSoBenhNhan) REFERENCES HoSoBenhNhan(MaHoSoBenhNhan)
-ALTER TABLE LichKham ADD CONSTRAINT FK_LichKhamChuyenKhoa FOREIGN KEY (MaChuyenKhoa) REFERENCES ChuyenKhoa(MaChuyenKhoa)
-ALTER TABLE LichKham ADD CONSTRAINT FK_LichKhamDichVu FOREIGN KEY (MaDichVu) REFERENCES DichVu(MaDichVu)
+
+ALTER TABLE LichKham ADD CONSTRAINT PK_LichKham PRIMARY KEY (MaLichKham) 
+ALTER TABLE HoaDon ADD CONSTRAINT FK_HoaDonLichKham FOREIGN KEY (MaLichKham) REFERENCES LichKham(MaLichKham) ON DELETE CASCADE
+ALTER TABLE LichKham ADD CONSTRAINT FK_LichKhamHoSoBenhNhan FOREIGN KEY (MaHoSoBenhNhan) REFERENCES HoSoBenhNhan(MaHoSoBenhNhan) ON DELETE CASCADE
+ALTER TABLE LichKham ADD CONSTRAINT FK_LichKhamChuyenKhoa FOREIGN KEY (MaChuyenKhoa) REFERENCES ChuyenKhoa(MaChuyenKhoa) ON DELETE CASCADE
+ALTER TABLE LichKham ADD CONSTRAINT FK_LichKhamDichVu FOREIGN KEY (MaDichVu) REFERENCES DichVu(MaDichVu) ON DELETE CASCADE
+go
 --=================FUNCTION
 CREATE FUNCTION SelectLichKham (@MaLichKham varchar(8))
 RETURNS TABLE
@@ -874,7 +891,7 @@ RETURN (
     FROM LichKham
     WHERE MaLichKham = @MaLichKham
 );
-
+go
 
 CREATE FUNCTION GetLichKhamByParam(@MaLichKham varchar(8), @ParamName varchar(50)) RETURNS nvarchar(50)
 AS
@@ -896,7 +913,7 @@ BEGIN
         SET @Result = 'Invalid Parameter'
     RETURN @Result
 END
-
+go
 CREATE PROCEDURE UpdateLichKham
     @MaLichKham varchar(8),
     @MaHoSoBenhNhan varchar(8),
@@ -917,7 +934,7 @@ BEGIN
         KhungGioKham = @KhungGioKham
     WHERE MaLichKham = @MaLichKham;
 END
-
+go
 CREATE PROCEDURE DeleteLichKham
     @MaLichKham varchar(8)
 AS
@@ -932,7 +949,7 @@ BEGIN
         PRINT 'Không tìm thấy bản ghi với MaLichKham = ' + @MaLichKham;
     END
 END
-
+go
 --**********************TRIGGER
 
 
@@ -944,6 +961,7 @@ CREATE TABLE ADMIN_Manager
 	MatKhau varchar(8),
 )
 ALTER TABLE ADMIN_Manager ADD CONSTRAINT PK_ADMINMananger PRIMARY KEY (MaAdmin)
+go
 --=================FUNCTION
 CREATE FUNCTION SelectAdminManager (@MaAdmin varchar(8))
 RETURNS TABLE
@@ -953,7 +971,7 @@ RETURN (
     FROM ADMIN_Manager
     WHERE MaAdmin = @MaAdmin
 );
-
+go
 
 CREATE FUNCTION GetAdminManagerByParam(@MaAdmin varchar(8), @ParamName varchar(50)) RETURNS nvarchar(50)
 AS
@@ -965,7 +983,7 @@ BEGIN
         SET @Result = 'Invalid Parameter'
     RETURN @Result
 END
-
+go
 
 CREATE PROCEDURE UpdateAdminManager
     @MaAdmin varchar(8),
@@ -977,7 +995,7 @@ BEGIN
         MatKhau = @MatKhau
     WHERE MaAdmin = @MaAdmin;
 END
-
+go
 
 --**********************TRIGGER
 
@@ -999,6 +1017,7 @@ CREATE TABLE TaiKhoanThanhVien
 	LoaiTaiKhoan varchar(10)
 )
 ALTER TABLE TaiKhoanThanhVien ADD CONSTRAINT PK_TaiKhoanThanhVien PRIMARY KEY (MaThanhVien)
+go
 --=================FUNCTION
 CREATE FUNCTION SelectTaiKhoanThanhVien (@MaThanhVien varchar(8))
 RETURNS TABLE
@@ -1008,7 +1027,7 @@ RETURN (
     FROM TaiKhoanThanhVien
     WHERE MaThanhVien = @MaThanhVien
 );
-
+go
 
 CREATE FUNCTION GetTaiKhoanThanhVienByParam(@MaThanhVien varchar(8), @ParamName varchar(50)) RETURNS nvarchar(50)
 AS
@@ -1040,7 +1059,7 @@ BEGIN
         SET @Result = 'Invalid Parameter'
     RETURN @Result
 END
-
+go
 
 CREATE PROCEDURE UpdateTaiKhoanThanhVien
     @MaThanhVien varchar(8),
@@ -1069,10 +1088,10 @@ BEGIN
         DiaChi = @DiaChi,
         ChuyenKhoa = @ChuyenKhoa,
         ViTri = @ViTri,
-        LoaiTaiKhoan = @LoaiTaiKhoa
+        LoaiTaiKhoan = @LoaiTaiKhoan
     WHERE MaThanhVien = @MaThanhVien;
 END
-
+go
 CREATE PROCEDURE DeleteTaiKhoanThanhVien
     @MaThanhVien varchar(8)
 AS
@@ -1087,7 +1106,7 @@ BEGIN
         PRINT 'Không tìm thấy bản ghi với MaThanhVien = ' + @MaThanhVien;
     END
 END
-
+go
 
 --**********************TRIGGER
 
@@ -1098,11 +1117,12 @@ CREATE TABLE LichLamViec
 	MaLichLamViec varchar(8) NOT NULL,
 	HoVaTen nvarchar(30),
 	MaThanhVien varchar(8),
-	Ngay date,
+	NgayLamViec date,
 	Ca varchar(2)
 )
 ALTER TABLE LichLamViec ADD CONSTRAINT PK_LichLamViec PRIMARY KEY (MaLichLamViec)
-ALTER TABLE LichLamViec ADD CONSTRAINT FK_LichViecTaiKhoanThanhVien FOREIGN KEY (MaThanhVien) REFERENCES TaiKhoanThanhVien(MaThanhVien)
+ALTER TABLE LichLamViec ADD CONSTRAINT FK_LichViecTaiKhoanThanhVien FOREIGN KEY (MaThanhVien) REFERENCES TaiKhoanThanhVien(MaThanhVien) ON DELETE CASCADE
+go
 --=================FUNCTION
 CREATE FUNCTION SelectLichLamViec (@MaLichLamViec varchar(8))
 RETURNS TABLE
@@ -1113,7 +1133,7 @@ RETURN (
     WHERE MaLichLamViec = @MaLichLamViec
 );
 
-
+go
 CREATE FUNCTION GetLichLamViecByParam(@MaLichLamViec varchar(8), @ParamName varchar(50)) RETURNS nvarchar(50)
 AS
 BEGIN
@@ -1122,23 +1142,20 @@ BEGIN
         SELECT @Result = HoVaTen FROM LichLamViec WHERE MaLichLamViec = @MaLichLamViec
     ELSE IF @ParamName = 'MaThanhVien'
         SELECT @Result = MaThanhVien FROM LichLamViec WHERE MaLichLamViec = @MaLichLamViec
-    --ELSE IF @ParamName = 'Thang'
-        --SELECT @Result = CONVERT(nvarchar(50), Thang, 121) FROM LichLamViec WHERE MaLichLamViec = @MaLichLamViec
-    ELSE IF @ParamName = 'Ngay'
-        SELECT @Result = CONVERT(nvarchar(50), Ngay, 121) FROM LichLamViec WHERE MaLichLamViec = @MaLichLamViec
+    ELSE IF @ParamName = 'NgayLamViec'
+        SELECT @Result = CONVERT(nvarchar(50), NgayLamViec, 121) FROM LichLamViec WHERE MaLichLamViec = @MaLichLamViec
     ELSE IF @ParamName = 'Ca'
         SELECT @Result = Ca FROM LichLamViec WHERE MaLichLamViec = @MaLichLamViec
     ELSE
         SET @Result = 'Invalid Parameter'
     RETURN @Result
 END
-
+go
 CREATE PROCEDURE UpdateLichLamViec
     @MaLichLamViec varchar(8),
     @HoVaTen nvarchar(30),
     @MaThanhVien varchar(8),
-    --@Thang date,
-    @Ngay date,
+    @NgayLamViec date,
     @Ca varchar(2)
 AS
 BEGIN
@@ -1146,12 +1163,11 @@ BEGIN
     SET
         HoVaTen = @HoVaTen,
         MaThanhVien = @MaThanhVien,
-        --Thang = @Thang,
-        Ngay = @Ngay,
+        NgayLamViec = @NgayLamViec,
         Ca = @Ca
     WHERE MaLichLamViec = @MaLichLamViec;
 END
-
+go
 CREATE PROCEDURE DeleteLichLamViec
     @MaLichLamViec varchar(8)
 AS
@@ -1166,7 +1182,7 @@ BEGIN
         PRINT 'Không tìm thấy bản ghi với MaLichLamViec = ' + @MaLichLamViec;
     END
 END
-
+go
 --**********************TRIGGER
 
 
@@ -1197,6 +1213,7 @@ BEGIN
 		SET @mabenhan = 'BA' + CAST(@STT AS varchar(6))
 	RETURN @mabenhan
 END
+go
 CREATE FUNCTION getNewMaHoSoBenhNhan()
 RETURNS varchar(8)
 AS
@@ -1215,12 +1232,13 @@ BEGIN
 		SET @mahosobenhnhan = 'BN' + '000' + CAST(@STT AS varchar(3))
 	else if(@STT < 10000)
 		SET @mahosobenhnhan = 'BN' + '00' + CAST(@STT AS varchar(4))
-	else if(@STT < 10000)
+	else if(@STT < 100000)
 		SET @mahosobenhnhan = 'BN' + '0' + CAST(@STT AS varchar(5))
 	else
 		SET @mahosobenhnhan = 'BN' + CAST(@STT AS varchar(6))
 	RETURN @mahosobenhnhan
 END
+go
 --[[[[[[[[[[[[[[
 CREATE FUNCTION GetNewMaToaThuoc()
 RETURNS varchar(8)
@@ -1246,6 +1264,7 @@ BEGIN
         SET @maToaThuoc = 'TT' + CAST(@STT AS varchar(6))
     RETURN @maToaThuoc
 END
+go
 --[[[[[[[[[[[[[
 CREATE FUNCTION GetNewMaHoaDon()
 RETURNS varchar(8)
@@ -1271,6 +1290,7 @@ BEGIN
         SET @maHoaDon = 'HD' + CAST(@STT AS varchar(6))
     RETURN @maHoaDon
 END
+go
 --[[[[[[[[[[[[[[[
 CREATE FUNCTION GetNewMaKhuyenMai()
 RETURNS varchar(8)
@@ -1296,6 +1316,7 @@ BEGIN
         SET @maKhuyenMai = 'KM' + CAST(@STT AS varchar(6))
     RETURN @maKhuyenMai
 END
+go
 --[[[[[[[[[[[[[[
 CREATE FUNCTION getNewMaDichVu()
 RETURNS varchar(8)
@@ -1315,12 +1336,13 @@ BEGIN
 		SET @madichvu = 'DV' + '000' + CAST(@STT AS varchar(3))
 	else if(@STT < 10000)
 		SET @madichvu = 'DV' + '00' + CAST(@STT AS varchar(4))
-	else if(@STT < 10000)
+	else if(@STT < 100000)
 		SET @madichvu = 'DV' + '0' + CAST(@STT AS varchar(5))
 	else
 		SET @madichvu = 'DV' + CAST(@STT AS varchar(6))
 	RETURN @madichvu
 END
+go
 --[[[[[[[[[[[[[[
 CREATE FUNCTION GetNewMaChuyenKhoa()
 RETURNS varchar(8)
@@ -1346,6 +1368,7 @@ BEGIN
         SET @maChuyenKhoa = 'CK' + CAST(@STT AS varchar(6))
     RETURN @maChuyenKhoa
 END
+go
 --[[[[[[[[[[[[[
 CREATE FUNCTION GetNewMaLichKham()
 RETURNS varchar(8)
@@ -1371,374 +1394,8 @@ BEGIN
         SET @maLichKham = 'LK' + CAST(@STT AS varchar(6))
     RETURN @maLichKham
 END
+go
 --[[[[[[[[[[[[[[[[[
-
---[[[[[[[[[[[[[[[[[
-CREATE FUNCTION GetNewMaLichLamViec()
-RETURNS varchar(8)
-AS
-BEGIN
-    DECLARE @maLichLamViec varchar(8)
-    SET @maLichLamViec = (SELECT TOP 1 MaLichLamViec FROM LichLamViec ORDER BY MaLichLamViec DESC)
-    DECLARE @STT int
-    if @maLichLamViec is null
-        return 'LLV00001'
-    SET @STT = CAST(RIGHT(@maLichLamViec, 5) as int) + 1
-    if (@STT < 10)
-        SET @maLichLamViec = 'LLV' + '0000' + CAST(@STT AS varchar(1))
-    else if(@STT < 100)
-        SET @maLichLamViec = 'LLV' + '000' + CAST(@STT AS varchar(2))
-    else if(@STT < 1000)
-        SET @maLichLamViec = 'LLV' + '00' + CAST(@STT AS varchar(3))
-    else if(@STT < 10000)
-        SET @maLichLamViec = 'LLV' + '0' + CAST(@STT AS varchar(4))
-    else
-        SET @maLichLamViec = 'LLV' + CAST(@STT AS varchar(6))
-    RETURN @maLichLamViec
-END
-
---################ PROCEDURE INSERT
-CREATE PROCEDURE InsertADMIN_Manager
-    @MaAdmin varchar(8),
-    @MatKhau varchar(8)
-AS
-BEGIN
-    INSERT INTO ADMIN_Manager (MaAdmin, MatKhau)
-    VALUES (@MaAdmin, @MatKhau)
-END
-
-CREATE PROCEDURE HoSoBenhNhan_Insert
-    @HoVaTen nvarchar(30),
-    @MaTaiKhoan varchar(10),
-    @NgaySinh date,
-    @GioiTinh nvarchar(3),
-    @CCCD varchar(12),
-    @MaBHYT varchar(15),
-    @NgheNghiep nvarchar(30),
-    @SoDienThoai varchar(10),
-    @Email varchar(30),
-    @DiaChi nvarchar(50)
-AS
-BEGIN
-	DECLARE @mahosobenhnhan varchar(8)
-	SET @mahosobenhnhan = dbo.getNewMaHoSoBenhNhan()
-    INSERT INTO HoSoBenhNhan (HoVaTen, MaHoSoBenhNhan, MaTaiKhoan, NgaySinh, GioiTinh, CCCD, MaBHYT, NgheNghiep, SoDienThoai, Email, DiaChi)
-    VALUES (@HoVaTen, @mahosobenhnhan, @MaTaiKhoan, @NgaySinh, @GioiTinh, @CCCD, @MaBHYT, @NgheNghiep, @SoDienThoai, @Email, @DiaChi)
-END
---################ PROCEDURE INSERT
-CREATE PROCEDURE SoKhamBenh_Insert
-    @MaHoSoBenhNhan varchar(8),
-    @MaLichKham varchar(8),
-    @HoVaTen nvarchar(30),
-    @Tuoi varchar(3),
-    @SoTheBHYT varchar(15),
-    @DiaChi nvarchar(50),
-    @NgheNghiep nvarchar(30),
-    @DanToc nvarchar(10),
-    @TrieuChung nvarchar(50),
-    @ChanDoan nvarchar(50),
-    @PhuongPhapDieuTri nvarchar(50),
-    @BSKhamBenh nvarchar(30),
-    @GhiChu nvarchar(50)
-AS
-BEGIN
-    INSERT INTO SoKhamBenh (MaHoSoBenhNhan, MaLichKham, HoVaTen, Tuoi, SoTheBHYT, DiaChi, NgheNghiep, DanToc, TrieuChung, ChanDoan, PhuongPhapDieuTri, BSKhamBenh, GhiChu)
-    VALUES (@MaHoSoBenhNhan, @MaLichKham, @HoVaTen, @Tuoi, @SoTheBHYT, @DiaChi, @NgheNghiep, @DanToc, @TrieuChung, @ChanDoan, @PhuongPhapDieuTri, @BSKhamBenh, @GhiChu)
-END
---################### PROCEDURE INSERT
-CREATE PROCEDURE BenhAn_Insert
-    @MaHoSoBenhNhan varchar(8),
-    @DoiTuong nvarchar(8),
-    @GiaTriBHYT date,
-    @HoTenThanNhan nvarchar(30),
-    @ThoiGianVaoVien nvarchar(30),
-    @TrucTiepVao nvarchar(30),
-    @NoiGioiThieu nvarchar(30),
-    @VaoKhoa nvarchar(30),
-    @ChuyenKhoa nvarchar(30),
-    @TongSoNgayDieuTri varchar(3),
-    @NoiChuyenDen nvarchar(30),
-    @KKBorCapCuu nvarchar(30),
-    @KhiVaoKhoaDieuTri nvarchar(30),
-    @KetQuaDieuTri nvarchar(30),
-    @GiaiPhauBenh nvarchar(30),
-    @QuaTrinhBenhLy nvarchar(30),
-    @TienSuBenh nvarchar(30),
-    @ToaThan nvarchar(30),
-    @TrieuChungCoNang nvarchar(30),
-    @ThuongTonCanBan nvarchar(30),
-    @CacCoQuan nvarchar(30),
-    @TKetQuaTrinhBenhLy nvarchar(30),
-    @TomTatKQXN nvarchar(30),
-    @PhuongPhapDieuTri nvarchar(30),
-    @HoSoPhimAnh nvarchar(30)
-AS
-BEGIN
-	DECLARE @mabenhan varchar(8)
-	SET @mabenhan = dbo.getNewMaBenhAn()
-    INSERT INTO BenhAn (MaBenhAn, MaHoSoBenhNhan, DoiTuong, GiaTriBHYT, HoTenThanNhan, ThoiGianVaoVien, TrucTiepVao, NoiGioiThieu, VaoKhoa, ChuyenKhoa, TongSoNgayDieuTri, NoiChuyenDen, KKBorCapCuu, KhiVaoKhoaDieuTri, KetQuaDieuTri, GiaiPhauBenh, QuaTrinhBenhLy, TienSuBenh, ToaThan, TrieuChungCoNang, ThuongTonCanBan, CacCoQuan, TKetQuaTrinhBenhLy, TomTatKQXN, PhuongPhapDieuTri, HoSoPhimAnh)
-    VALUES (@mabenhan, @MaHoSoBenhNhan, @DoiTuong, @GiaTriBHYT, @HoTenThanNhan, @ThoiGianVaoVien, @TrucTiepVao, @NoiGioiThieu, @VaoKhoa, @ChuyenKhoa, @TongSoNgayDieuTri, @NoiChuyenDen, @KKBorCapCuu, @KhiVaoKhoaDieuTri, @KetQuaDieuTri, @GiaiPhauBenh, @QuaTrinhBenhLy, @TienSuBenh, @ToaThan, @TrieuChungCoNang, @ThuongTonCanBan, @CacCoQuan, @TKetQuaTrinhBenhLy, @TomTatKQXN, @PhuongPhapDieuTri, @HoSoPhimAnh)
-END
-
---################ PROCEDURE INSERT
-CREATE PROCEDURE InsertToaThuoc
-    @SoThuTu varchar(10),
-    @MaThuoc varchar(8),
-    @MaBenhAn varchar(8),
-    @TenThuoc nvarchar(30),
-    @SoLuong tinyint,
-    @Dang nvarchar(10),
-    @GhiChu nvarchar(50)
-AS
-BEGIN
-	DECLARE @matoathuoc varchar(8)
-	SET @matoathuoc = dbo.GetNewMaToaThuoc()
-    INSERT INTO ToaThuoc (SoThuTu, MaToaThuoc, MaThuoc, MaBenhAn, TenThuoc, SoLuong, Dang, GhiChu)
-    VALUES (@SoThuTu, @matoathuoc, @MaThuoc, @MaBenhAn, @TenThuoc, @SoLuong, @Dang, @GhiChu)
-END
---################ PROCEDURE INSERT
-CREATE PROCEDURE InsertHoaDon
-    @MaMaHoSoBenhNhan varchar(8),
-    @MaLichKham varchar(8),
-    @TongTien int,
-    @HinhThucThanhToan nvarchar(30)
-AS
-BEGIN
-	DECLARE @mahoadon varchar(8)
-	SET @mahoadon = dbo.GetNewMaHoaDon()
-    INSERT INTO HoaDon (MaHoaDon, MaMaHoSoBenhNhan, MaLichKham, TongTien, HinhThucThanhToan)
-    VALUES (@mahoadon, @MaMaHoSoBenhNhan, @MaLichKham, @TongTien, @HinhThucThanhToan)
-END
-
---################ PROCEDURE INSERT
-CREATE PROCEDURE InsertKhuyenMai
-    @TenChuongTrinhKM nvarchar(30),
-    @NoiDungKM nvarchar(50),
-    @ThoiGianBatDau datetime,
-    @ThoiGianKetThuc datetime
-AS
-BEGIN
-	DECLARE @makhuyenmai varchar(8)
-	SET @makhuyenmai = dbo.GetNewMaKhuyenMai()
-    INSERT INTO KhuyenMai (MaKhuyenMai, TenChuongTrinhKM, NoiDungKM, ThoiGianBatDau, ThoiGianKetThuc)
-    VALUES (@makhuyenmai, @TenChuongTrinhKM, @NoiDungKM, @ThoiGianBatDau, @ThoiGianKetThuc)
-END
-
-
---################ PROCEDURE INSERT
-CREATE PROCEDURE InsertDichVu
-    @TenDichVu nvarchar(30),
-    @NoiDungDichVu nvarchar(50),
-    @GiaDichVu int
-AS
-BEGIN
-	DECLARE @madichvu varchar(8)
-	SET @madichvu = dbo.GetNewMaDichVu()
-    INSERT INTO DichVu (MaDichVu, TenDichVu, NoiDungDichVu, GiaDichVu)
-    VALUES (@madichvu, @TenDichVu, @NoiDungDichVu, @GiaDichVu)
-END
-
---################ PROCEDURE INSERT
-CREATE PROCEDURE InsertChuyenKhoa
-    @TenChuyenKhoa nvarchar(30),
-    @MaKhuyenMai varchar(8)
-AS
-BEGIN
-	DECLARE @machuyenkhoa varchar(8)
-	SET @machuyenkhoa = dbo.GetNewMaChuyenKhoa()
-    INSERT INTO ChuyenKhoa (MaChuyenKhoa, TenChuyenKhoa, MaKhuyenMai)
-    VALUES (@machuyenkhoa, @TenChuyenKhoa, @MaKhuyenMai)
-END
-
---################ PROCEDURE INSERT
-CREATE PROCEDURE InsertLichKham
-    @MaHoSoBenhNhan varchar(8),
-    @MaChuyenKhoa varchar(8),
-    @MaDichVu varchar(8),
-    @NgayDangKy date,
-    @Ca nvarchar(15),
-    @KhungGioKham datetime
-AS
-BEGIN
-	DECLARE @malichkham varchar(8)
-	SET @malichkham = dbo.GetNewMaLichKham()
-    INSERT INTO LichKham (MaLichKham, MaHoSoBenhNhan, MaChuyenKhoa, MaDichVu, NgayDangKy, Ca, KhungGioKham)
-    VALUES (@malichkham, @MaHoSoBenhNhan, @MaChuyenKhoa, @MaDichVu, @NgayDangKy, @Ca, @KhungGioKham)
-END
-
---################ PROCEDURE INSERT
-
-
---################ PROCEDURE INSERT
-CREATE PROCEDURE InsertLichLamViec
-    @HoVaTen nvarchar(30),
-    @MaThanhVien varchar(8),
-    @Ngay date,
-    @Ca varchar(2)
-AS
-BEGIN
-	DECLARE @malichlamviec varchar(8)
-	SET @malichlamviec = dbo.GetNewMaLichLamViec()
-    INSERT INTO LichLamViec (MaLichLamViec, HoVaTen, MaThanhVien, Ngay, Ca)
-    VALUES (@malichlamviec, @HoVaTen, @MaThanhVien, @Ngay, @Ca)
-END
-
---THEM DU LIEU CHO CAC TABLE 
--- TABLE DangKyUer
-EXEC DangKyUser_Insert '0123456789', 'Abcd@123'
-EXEC DangKyUser_Insert '0987654321', 'P@ssw0rd'
-EXEC DangKyUser_Insert '0369852147', 'Secure!12'
-EXEC DangKyUser_Insert '0765432198', 'Qwerty@1'
-EXEC DangKyUser_Insert '0932145678', 'Mypass!23'
-EXEC DangKyUser_Insert '0846512379', 'Abcdef@9'
-EXEC DangKyUser_Insert '0654321890', 'Passw0rd!'
-EXEC DangKyUser_Insert '0312456879', 'Ch@ngeMe'
-EXEC DangKyUser_Insert '0975318642', 'S3cur1ty@'
-EXEC DangKyUser_Insert '0624875139', 'MyP@ss'
-EXEC DangKyUser_Insert '0392187456', 'Pa$$w0rd'
-EXEC DangKyUser_Insert '0856123497', 'SecureP@ss'
-EXEC DangKyUser_Insert '0912345678', 'P@ssw0rd!'
-EXEC DangKyUser_Insert '0765432981', 'Qwerty@123'
-EXEC DangKyUser_Insert '0987654320', 'Abcde!12'
-
--- TABLE HoSoBenhNhan
-EXEC HoSoBenhNhan_Insert N'Nguyễn Văn A', '0123456789', '1990-05-15', N'Nam', '123456789012', 'BHYT123456789', N'Kỹ sư', '0123456789', 'nguyenvana@example.com', N'123 Đường ABC'
-EXEC HoSoBenhNhan_Insert N'Trần Thị B', '0987654321', '1985-10-20', N'Nữ', '234567890123', 'BHYT234567890', N'Giáo viên', '0987654321', 'tranthib@example.com', N'456 Đường XYZ'
-EXEC HoSoBenhNhan_Insert N'Lê Văn C', '0369852147', '1992-03-25', N'Nam', '345678901234', 'BHYT345678901', N'Bác sĩ', '0369852147', 'levanc@example.com', N'789 Đường DEF'
-EXEC HoSoBenhNhan_Insert N'Phạm Thị D', '0765432198', '1988-12-10', N'Nữ', '456789012345', 'BHYT456789012', N'Y tá', '0765432198', 'phamthid@example.com', N'101 Đường GHI'-- Ví dụ 5
-EXEC HoSoBenhNhan_Insert N'Hoàng Văn E', '0932145678', '1995-07-05', N'Nam', '567890123456', 'BHYT567890123', N'Kỹ sư', '0932145678', 'hoangvane@example.com', N'202 Đường JKL'
-EXEC HoSoBenhNhan_Insert N'Võ Thị F', '0846512379', '1983-04-30', N'Nữ', '678901234567', 'BHYT678901234', N'Chuyên viên kinh doanh', '0846512379', 'vothif@example.com', N'303 Đường MNO'
-EXEC HoSoBenhNhan_Insert N'Đặng Văn G', '0654321890', '1993-11-18', N'Nam', '789012345678', 'BHYT789012345', N'Nhân viên văn phòng', '0654321890', 'dangvang@example.com', N'404 Đường PQR'
-EXEC HoSoBenhNhan_Insert N'Mai Thị H', '0312456879', '1991-09-22', N'Nữ', '890123456789', 'BHYT890123456', N'Luật sư', '0312456879', 'maithih@example.com', N'505 Đường STU'
-EXEC HoSoBenhNhan_Insert N'Lý Văn I', '0975318642', '1987-08-12', N'Nam', '901234567890', 'BHYT901234567', N'Kỹ sư xây dựng', '0975318642', 'lyvani@example.com', N'606 Đường VWX'
-EXEC HoSoBenhNhan_Insert N'Nguyễn Thị K', '0624875139', '1996-06-08', N'Nữ', '012345678912', 'BHYT012345678', N'Bác sĩ', '0624875139', 'nguyenthik@example.com', N'707 Đường YZ'
-EXEC HoSoBenhNhan_Insert N'Trần Văn L', '0392187456', '1994-02-14', N'Nam', '123456789123', 'BHYT123456789', N'Giáo viên', '0392187456', 'tranvanl@example.com', N'808 Đường ABC'
-EXEC HoSoBenhNhan_Insert N'Đinh Thị M', '0856123497', '1986-03-03', N'Nữ', '234567890234', 'BHYT234567890', N'Y tá', '0856123497', 'dinhthim@example.com', N'909 Đường XYZ'
-EXEC HoSoBenhNhan_Insert N'Lê Văn N', '0912345678', '1989-07-19', N'Nam', '345678901345', 'BHYT345678901', N'Kỹ sư', '0912345678', 'levann@example.com', N'1010 Đường DEF'
-EXEC HoSoBenhNhan_Insert N'Võ Thị O', '0765432981', '1997-09-28', N'Nữ', '456789012456', 'BHYT456789012', N'Chuyên viên kinh doanh', '0765432981', 'vothio@example.com', N'1111 Đường GHI'
-EXEC HoSoBenhNhan_Insert N'Phan Văn P', '0987654320', '1998-12-01', N'Nam', '567890123567', 'BHYT567890123', N'Sinh viên', '0987654320', 'phanvanp@example.com', N'1212 Đường JKL'
--- KHUYEN MAI
-EXEC InsertKhuyenMai N'Giảm giá dịch vụ da liễu', N'Giảm 20% cho các dịch vụ điều trị da liễu', '2023-11-01 08:00:00', '2023-11-15 17:00:00'
-EXEC InsertKhuyenMai N'Combo chăm sóc da', N'Mua bất kỳ sản phẩm nào và nhận 1 lần spa da miễn phí', '2023-12-05 10:00:00', '2023-12-20 19:00:00'
-EXEC InsertKhuyenMai N'Đánh giá da miễn phí', N'Nhận đánh giá da miễn phí từ các chuyên gia da liễu', '2023-09-10 09:30:00', '2023-09-30 18:00:00'
-EXEC InsertKhuyenMai N'Phòng ngừa mụn', N'Hướng dẫn cách chăm sóc da để ngừa mụn miễn phí', '2023-10-15 14:00:00', '2023-10-31 20:00:00'
-EXEC InsertKhuyenMai N'Giảm giá các sản phẩm da liễu', N'Giảm 15% cho tất cả các sản phẩm chăm sóc da liễu', '2023-11-20 11:30:00', '2023-12-05 22:00:00'
--- CHUYEN KHOA
-EXEC InsertChuyenKhoa N'Chăm sóc da trẻ em', 'KM00001'
-EXEC InsertChuyenKhoa N'Chăm sóc da người già', NULL
-EXEC InsertChuyenKhoa N'Điều trị mụn', 'KM00004'
-EXEC InsertChuyenKhoa N'Laser điều trị da', 'KM00002'
-EXEC InsertChuyenKhoa N'Chăm sóc da sau phẫu thuật', NULL
-EXEC InsertChuyenKhoa N'Chăm sóc da tự nhiên', 'KM00005'
-EXEC InsertChuyenKhoa N'Chăm sóc da mặt', NULL
-EXEC InsertChuyenKhoa N'Chăm sóc da cơ bản', 'KM00003'
-EXEC InsertChuyenKhoa N'Chăm sóc da chuyên sâu', NULL
-EXEC InsertChuyenKhoa N'Chăm sóc da từ trong ra ngoài', 'KM00001'
--- BENH AN
-EXEC BenhAn_Insert 'BN000001', N'BHYT', '2023-12-31', N'Nguyễn Văn A', '2023-10-25 09:00:00', N'Cấp cứu', N'Phòng khám đa khoa A', N'Da liễu', N'Chăm sóc da trẻ em', '7', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Mụn trứng cá', N'Không có', N'Bình thường', N'Ngứa', N'Không có', N'Không có', N'Không có', N'Không có', N'Thuốc và kem chăm sóc da', N'Không có'
-EXEC BenhAn_Insert 'BN000002', N'BHYT', '2023-12-31', N'Trần Thị B', '2023-11-03 14:30:00', N'Khám thường xuyên', N'Phòng khám đa khoa B', N'Da liễu', N'Chăm sóc da người già', '10', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Nổi mụn', N'Không có', N'Bình thường', N'Đỏ và ngứa', N'Không có', N'Không có', N'Không có', N'Không có', N'Thuốc chống dị ứng và kem chăm sóc da', N'Không có'
-EXEC BenhAn_Insert 'BN000003', N'BHYT', '2023-12-31', N'Lê Văn C', '2023-10-29 11:15:00', N'Cấp cứu', N'Phòng khám đa khoa C', N'Da liễu', N'Chăm sóc da người già', '5', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Dị ứng da', N'Không có', N'Bình thường', N'Ngứa và đỏ', N'Không có', N'Không có', N'Không có', N'Không có', N'Thuốc chống dị ứng và kem chăm sóc da', N'Không có'
-EXEC BenhAn_Insert 'BN000004', N'BHYT', '2023-12-31', N'Phạm Thị D', '2023-11-12 08:45:00', N'Khám thường xuyên', N'Phòng khám đa khoa D', N'Da liễu', N'Chăm sóc da trẻ em', '8', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Nổi mụn nước', N'Không có', N'Bình thường', N'Ngứa và đỏ', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có'
-EXEC BenhAn_Insert 'BN000005', N'BHYT', '2023-12-31', N'Hoàng Văn E', '2023-11-18 10:20:00', N'Cấp cứu', N'Phòng khám đa khoa E', N'Da liễu', N'Chăm sóc da người già', '6', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Nổi mụn nước và đỏ', N'Không có', N'Bình thường', N'Ngứa và đỏ', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có'
-EXEC BenhAn_Insert 'BN000006', N'BHYT', '2023-12-31', N'Võ Thị F', '2023-10-30 15:10:00', N'Khám thường xuyên', N'Phòng khám đa khoa F', N'Da liễu', N'Chăm sóc da trẻ em', '4', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Dị ứng da', N'Không có', N'Bình thường', N'Ngứa và đỏ', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có'
-EXEC BenhAn_Insert 'BN000007', N'BHYT', '2023-12-31', N'Đặng Văn G', '2023-11-20 11:45:00', N'Cấp cứu', N'Phòng khám đa khoa G', N'Da liễu', N'Chăm sóc da người già', '9', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Nổi mụn và đỏ', N'Không có', N'Bình thường', N'Ngứa và đỏ', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có'
-EXEC BenhAn_Insert 'BN000008', N'BHYT', '2023-12-31', N'Mai Thị H', '2023-11-25 13:30:00', N'Cấp cứu', N'Phòng khám đa khoa H', N'Da liễu', N'Chăm sóc da trẻ em', '3', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Dị ứng da', N'Không có', N'Bình thường', N'Ngứa và đỏ', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có'
--- ADMIN 
-EXEC InsertADMIN_Manager 'ADMINPKDL', 'P@ssW0rd123'
---DICH VU
-EXEC InsertDichVu N'Kiểm tra da thường xuyên', N'Kiểm tra tình trạng da và tư vấn chăm sóc da', 100000
-EXEC InsertDichVu N'Chăm sóc da mặt', N'Rửa mặt, tẩy trang, và áp dụng mặt nạ chăm sóc da', 150000
-EXEC InsertDichVu N'Điều trị mụn trứng cá', N'Điều trị và loại bỏ mụn trứng cá', 200000
-EXEC InsertDichVu N'Peeling da', N'Áp dụng kỹ thuật peeling để loại bỏ tế bào chết', 180000
-EXEC InsertDichVu N'Chăm sóc da toàn diện', N'Rửa mặt, tẩy trang, điều trị mụn và áp dụng mặt nạ chăm sóc da', 250000
-EXEC InsertDichVu N'Điều trị nám và tàn nhang', N'Điều trị và giảm thiểu vết nám và tàn nhang trên da', 300000
-EXEC InsertDichVu N'Chăm sóc da mặt cho trẻ em', N'Chăm sóc và bảo vệ làn da của trẻ em', 120000
-EXEC InsertDichVu N'Điều trị viêm da cơ địa', N'Điều trị các triệu chứng viêm và kích ứng trên da', 220000
--- LICH KHAM
-EXEC InsertLichKham 'BN000001', 'CK000001', 'DV000001', '2023-10-01', N'Sáng', '2023-10-01 09:00:00'
-EXEC InsertLichKham 'BN000002', 'CK000002', 'DV000002', '2023-10-02', N'Chiều', '2023-10-02 15:00:00'
-EXEC InsertLichKham 'BN000003', 'CK000001', 'DV000003', '2023-10-03', N'Sáng', '2023-10-03 10:30:00'
-EXEC InsertLichKham 'BN000004', 'CK000003', 'DV000004', '2023-10-04', N'Chiều', '2023-10-04 16:00:00'
-EXEC InsertLichKham 'BN000005', 'CK000001', 'DV000005', '2023-10-05', N'Sáng', '2023-10-05 11:30:00'
-EXEC InsertLichKham 'BN000006', 'CK000002', 'DV000006', '2023-10-06', N'Chiều', '2023-10-06 14:30:00'
-EXEC InsertLichKham 'BN000007', 'CK000003', 'DV000007', '2023-10-07', N'Sáng', '2023-10-07 10:00:00'
-EXEC InsertLichKham 'BN000008', 'CK000001', 'DV000008', '2023-10-08', N'Chiều', '2023-10-08 15:30:00'
-EXEC InsertLichKham 'BN000001', 'CK000002', 'DV000006', '2023-10-09', N'Sáng', '2023-10-09 11:00:00'
-EXEC InsertLichKham 'BN000005', 'CK000001', 'DV000007', '2023-10-10', N'Chiều', '2023-10-10 14:00:00'
-EXEC InsertLichKham 'BN000003', 'CK000001', 'DV000004', '2023-10-11', N'Sáng', '2023-10-11 09:30:00'
-EXEC InsertLichKham 'BN000004', 'CK000002', 'DV000005', '2023-10-12', N'Chiều', '2023-10-12 16:30:00'
-EXEC InsertLichKham 'BN000002', 'CK000003', 'DV000003', '2023-10-13', N'Sáng', '2023-10-13 10:00:00'
-EXEC InsertLichKham 'BN000007', 'CK000001', 'DV000002', '2023-10-14', N'Chiều', '2023-10-14 14:30:00'
-EXEC InsertLichKham 'BN000008', 'CK000003', 'DV000001', '2023-10-15', N'Sáng', '2023-10-15 11:30:00'
--- HOA DON
-EXEC InsertHoaDon 'BN000001', 'LK000001', 200000, N'Tiền mặt'
-EXEC InsertHoaDon 'BN000002', 'LK000002', 150000, N'Thẻ tín dụng'
-EXEC InsertHoaDon 'BN000003', 'LK000003', 180000, N'Tiền mặt'
-EXEC InsertHoaDon 'BN000004', 'LK000004', 220000, N'Thẻ tín dụng'
-EXEC InsertHoaDon 'BN000005', 'LK000005', 250000, N'Tiền mặt'
-EXEC InsertHoaDon 'BN000006', 'LK000006', 280000, N'Thẻ tín dụng'
-EXEC InsertHoaDon 'BN000007', 'LK000007', 200000, N'Tiền mặt'
-EXEC InsertHoaDon 'BN000008', 'LK000008', 300000, N'Thẻ tín dụng'
-EXEC InsertHoaDon 'BN000001', 'LK000009', 270000, N'Tiền mặt'
-EXEC InsertHoaDon 'BN000002', 'LK000010', 190000, N'Thẻ tín dụng'
-EXEC InsertHoaDon 'BN000003', 'LK000011', 210000, N'Tiền mặt'
-EXEC InsertHoaDon 'BN000004', 'LK000012', 240000, N'Thẻ tín dụng'
-EXEC InsertHoaDon 'BN000005', 'LK000013', 260000, N'Tiền mặt'
-EXEC InsertHoaDon 'BN000006', 'LK000014', 290000, N'Thẻ tín dụng'
-EXEC InsertHoaDon 'BN000007', 'LK000015', 220000, N'Tiền mặt'
--- TOA THUOC
-EXEC InsertToaThuoc '1', 'TH000001', 'BA000001', N'Thuốc A', 3, N'Viên', N'Uống sau ăn'
-EXEC InsertToaThuoc '2', 'TH000002', 'BA000002', N'Thuốc B', 2, N'Thuốc lỏng', N'Uống trước khi đi ngủ'
-EXEC InsertToaThuoc '3', 'TH000003', 'BA000003', N'Thuốc C', 1, N'Viên', N'Uống vào buổi sáng'
-EXEC InsertToaThuoc '1', 'TH000004', 'BA000004', N'Thuốc D', 4, N'Thuốc lỏng', N'Uống trước khi ăn'
-EXEC InsertToaThuoc '2', 'TH000005', 'BA000005', N'Thuốc E', 3, N'Viên', N'Uống sau khi ăn'
-EXEC InsertToaThuoc '1', 'TH000006', 'BA000006', N'Thuốc F', 2, N'Viên', N'Uống vào buổi sáng'
-EXEC InsertToaThuoc '2', 'TH000007', 'BA000007', N'Thuốc G', 1, N'Thuốc lỏng', N'Uống trước khi đi ngủ'
-EXEC InsertToaThuoc '1', 'TH000008', 'BA000008', N'Thuốc H', 3, N'Viên', N'Uống sau khi ăn'
--- TAI KHOAN THANH VIEN
-EXEC InsertTaiKhoanThanhVien N'Nguyễn Văn A', 'Abc@1234', '1990-05-15', N'Nam', '123456789012', '0987654321', 'nguyenvana@gmail.com', N'Số 1, Đường ABC, Quận XYZ, Thành phố HCM', N'Da liễu', N'Bác sĩ', 'BS'
-EXEC InsertTaiKhoanThanhVien N'Trần Thị B', 'Bcd@5678', '1985-07-20', N'Nữ', '234567890123', '0987123456', 'tranthib@gmail.com', N'Số 2, Đường XYZ, Quận ABC, Thành phố HCM', N'Da liễu', N'Bác sĩ', 'BS'
-EXEC InsertTaiKhoanThanhVien N'Lê Văn C', 'Cde@9012', '1988-03-10', N'Nam', '345678901234', '0909123456', 'levanc@gmail.com', N'Số 3, Đường XYZ, Quận ABC, Thành phố HCM', N'Da liễu', N'Bác sĩ', 'BS'
-EXEC InsertTaiKhoanThanhVien N'Phạm Thị D', 'Def@3456', '1992-09-05', N'Nữ', '456789012345', '0908456123', 'phamthid@gmail.com', N'Số 4, Đường XYZ, Quận ABC, Thành phố HCM', N'Da liễu', N'Bác sĩ', 'BS'
-EXEC InsertTaiKhoanThanhVien N'Hoàng Văn E', 'Efg@6789', '1995-01-25', N'Nam', '567890123456', '0908123456', 'hoangvane@gmail.com', N'Số 5, Đường XYZ, Quận ABC, Thành phố HCM', N'Da liễu', N'Kế toán', 'KT'
-EXEC InsertTaiKhoanThanhVien N'Võ Thị F', 'Fgh@7890', '1989-08-15', N'Nữ', '678901234567', '0908789123', 'vothif@gmail.com', N'Số 6, Đường XYZ, Quận ABC, Thành phố HCM', N'Da liễu', N'Kế toán', 'KT'
-EXEC InsertTaiKhoanThanhVien N'Đặng Văn G', 'Ghi@1234', '1987-03-02', N'Nam', '789012345678', '0908789456', 'dangvang@gmail.com', N'Số 7, Đường XYZ, Quận ABC, Thành phố HCM', N'Da liễu', N'Kế toán', 'KT'
-EXEC InsertTaiKhoanThanhVien N'Mai Thị H', 'Hik@5678', '1986-11-12', N'Nữ', '890123456789', '0908456123', 'maithih@gmail.com', N'Số 8, Đường XYZ, Quận ABC, Thành phố HCM', N'Không', N'Lễ tân', 'TV'
-EXEC InsertTaiKhoanThanhVien N'Nguyễn Thị I', 'Ijk@7890', '1984-10-05', N'Nữ', '901234567890', '0908567123', 'nguyenthii@gmail.com', N'Số 9, Đường XYZ, Quận ABC, Thành phố HCM', N'Da liễu', N'Thư ký', 'KT'
-EXEC InsertTaiKhoanThanhVien N'Trần Văn J', 'Jlm@1234', '1983-12-30', N'Nam', '012345678901', '0908123789', 'tranvanj@gmail.com', N'Số 10, Đường XYZ, Quận ABC, Thành phố HCM', N'Da liễu', N'Thư ký', 'KT'
-EXEC InsertTaiKhoanThanhVien N'Trần Văn U', 'Jlm@1234', '1983-12-30', N'Nam', '012345678901', '0908123789', 'tranvanj@gmail.com', N'Số 10, Đường XYZ, Quận ABC, Thành phố HCM', N'Da liễu', N'Thư ký', 'KT'
-
--- SO KHAM BENH
-EXEC SoKhamBenh_Insert 'BN000001', 'LK000001', N'Nguyễn Văn A', '33', 'BHYT123456789', N'Số 1, Đường ABC, Quận XYZ, Thành phố HCM', N'Kỹ sư', N'Kinh', N'Nổi mụn đỏ và ngứa da', N'Bị dị ứng da', N'Sử dụng thuốc chống dị ứng và tránh tiếp xúc với chất kích thích', N'Lê Văn C', NULL
-EXEC SoKhamBenh_Insert 'BN000002', 'LK000002', N'Trần Thị B', '38', 'BHYT234567890', N'Số 2, Đường XYZ, Quận ABC, Thành phố HCM', N'Giáo viên', N'Kinh', N'Da sưng, đỏ và ngứa', N'Bị viêm da cơ địa', N'Sử dụng thuốc chống viêm và tránh tiếp xúc với chất kích thích', N'Lê Văn C', NULL
-EXEC SoKhamBenh_Insert 'BN000003', 'LK000003', N'Lê Văn C', '35', 'BHYT345678901', N'Số 3, Đường XYZ, Quận ABC, Thành phố HCM', N'Bác sĩ', N'Kinh', N'Mụn nước và đau rát', N'Bị nấm da', N'Sử dụng thuốc chống nấm và tuân thủ vệ sinh cá nhân', N'Lê Văn C', NULL
-EXEC SoKhamBenh_Insert 'BN000004', 'LK000004', N'Phạm Thị D', '29', 'BHYT456789012', N'Số 4, Đường XYZ, Quận ABC, Thành phố HCM', N'Y tá', N'Kinh', N'Sưng và đỏ da', N'Bị viêm da dị ứng', N'Sử dụng thuốc chống viêm và tránh tiếp xúc với chất kích thích', N'Lê Văn C', NULL
-EXEC SoKhamBenh_Insert 'BN000005', 'LK000005', N'Hoàng Văn E', '28', 'BHYT567890123', N'Số 5, Đường XYZ, Quận ABC, Thành phố HCM', N'Kỹ sư', N'Kinh', N'Đau và khó chịu da', N'Bị viêm da', N'Sử dụng thuốc chống viêm và tuân thủ vệ sinh cá nhân', N'Lê Văn C', NULL
-EXEC SoKhamBenh_Insert 'BN000006', 'LK000006', N'Võ Thị F', '31', 'BHYT678901234', N'Số 6, Đường XYZ, Quận ABC, Thành phố HCM', N'Chuyên viên kinh doanh', N'Kinh', N'Da khô và ngứa', N'Bị viêm da khô', N'Sử dụng thuốc chống viêm và giữ ẩm da', N'Lê Văn C', NULL
-EXEC SoKhamBenh_Insert 'BN000007', 'LK000007', N'Đặng Văn G', '34', 'BHYT789012345', N'Số 7, Đường XYZ, Quận ABC, Thành phố HCM', N'Nhân viên văn phòng', N'Kinh', N'Da nổi mụn và đau', N'Bị mụn trứng cá', N'Sử dụng thuốc chống viêm và tránh tiếp xúc với chất kích thích', N'Lê Văn C', NULL
-EXEC SoKhamBenh_Insert 'BN000008', 'LK000008', N'Mai Thị H', '39', 'BHYT890123456', N'Số 8, Đường XYZ, Quận ABC, Thành phố HCM', N'Luật sư', N'Kinh', N'Da bị nổi mụn và đỏ', N'Bị viêm da dị ứng', N'Sử dụng thuốc chống viêm và tránh tiếp xúc với chất kích thích', N'Lê Văn C', NULL
--- LICH LAM VIEC
-EXEC InsertLichLamViec N'Nguyễn Văn A', 'BS000001', '2023-10-01', 'S'
-EXEC InsertLichLamViec N'Trần Thị B', 'BS000002', '2023-10-02', 'C'
-EXEC InsertLichLamViec N'Lê Văn C', 'BS000003', '2023-10-03', 'S'
-EXEC InsertLichLamViec N'Phạm Thị D', 'BS000004', '2023-10-04', 'C'
-EXEC InsertLichLamViec N'Nguyễn Văn A', 'BS000001', '2023-10-01', 'S'
-EXEC InsertLichLamViec N'Trần Thị B', 'BS000002', '2023-10-02', 'C'
-EXEC InsertLichLamViec N'Lê Văn C', 'BS000003', '2023-10-03', 'S'
-EXEC InsertLichLamViec N'Phạm Thị D', 'BS000004', '2023-10-04', 'C'
-DROP FUNCTION GetNewMaThanhVien
-DROP FUNCTION GetNewMaThanhVienBacSi
-DROP FUNCTION GetNewMaThanhVienKeToan
----SUA LOI
-DROP FUNCTION GetNewMaThanhVien
-DROP FUNCTION GetNewMaThanhVienBacSi
-DROP FUNCTION GetNewMaThanhVienKeToan
-DELETE FROM TaiKhoanThanhVien WHERE MaThanhVien = 'KT000005'
-DELETE FROM TaiKhoanThanhVien WHERE MaThanhVien = 'KT000006'
-DELETE FROM TaiKhoanThanhVien WHERE MaThanhVien = 'KT000007'
-DELETE FROM TaiKhoanThanhVien WHERE MaThanhVien = 'TV000008'
-DELETE FROM TaiKhoanThanhVien WHERE MaThanhVien = 'KT000009'
-
 CREATE FUNCTION GetNewMaThanhVien()
 RETURNS varchar(8)
 AS
@@ -1763,6 +1420,7 @@ BEGIN
         SET @maThanhVien = 'TV' + CAST(@STT AS varchar(6))
     RETURN @maThanhVien
 END
+go
 CREATE FUNCTION GetNewMaThanhVienBacSi()
 RETURNS varchar(8)
 AS
@@ -1787,6 +1445,7 @@ BEGIN
         SET @maThanhVien = 'BS' + CAST(@STT AS varchar(6))
     RETURN @maThanhVien
 END
+go
 CREATE FUNCTION GetNewMaThanhVienKeToan()
 RETURNS varchar(8)
 AS
@@ -1811,6 +1470,204 @@ BEGIN
         SET @maThanhVien = 'KT' + CAST(@STT AS varchar(6))
     RETURN @maThanhVien
 END
+go
+--[[[[[[[[[[[[[[[[[
+CREATE FUNCTION GetNewMaLichLamViec()
+RETURNS varchar(8)
+AS
+BEGIN
+    DECLARE @maLichLamViec varchar(8)
+    SET @maLichLamViec = (SELECT TOP 1 MaLichLamViec FROM LichLamViec ORDER BY MaLichLamViec DESC)
+    DECLARE @STT int
+    if @maLichLamViec is null
+        return 'LLV00001'
+    SET @STT = CAST(RIGHT(@maLichLamViec, 5) as int) + 1
+    if (@STT < 10)
+        SET @maLichLamViec = 'LLV' + '0000' + CAST(@STT AS varchar(1))
+    else if(@STT < 100)
+        SET @maLichLamViec = 'LLV' + '000' + CAST(@STT AS varchar(2))
+    else if(@STT < 1000)
+        SET @maLichLamViec = 'LLV' + '00' + CAST(@STT AS varchar(3))
+    else if(@STT < 10000)
+        SET @maLichLamViec = 'LLV' + '0' + CAST(@STT AS varchar(4))
+    else
+        SET @maLichLamViec = 'LLV' + CAST(@STT AS varchar(6))
+    RETURN @maLichLamViec
+END
+go
+--################ PROCEDURE INSERT
+CREATE PROCEDURE InsertADMIN_Manager
+    @MaAdmin varchar(8),
+    @MatKhau varchar(8)
+AS
+BEGIN
+    INSERT INTO ADMIN_Manager (MaAdmin, MatKhau)
+    VALUES (@MaAdmin, @MatKhau)
+END
+go
+CREATE PROCEDURE HoSoBenhNhan_Insert
+    @HoVaTen nvarchar(30),
+    @MaTaiKhoan varchar(10),
+    @NgaySinh date,
+    @GioiTinh nvarchar(3),
+    @CCCD varchar(12),
+    @MaBHYT varchar(15),
+    @NgheNghiep nvarchar(30),
+    @SoDienThoai varchar(10),
+    @Email varchar(30),
+    @DiaChi nvarchar(50)
+AS
+BEGIN
+	DECLARE @mahosobenhnhan varchar(8)
+	SET @mahosobenhnhan = dbo.getNewMaHoSoBenhNhan()
+    INSERT INTO HoSoBenhNhan (HoVaTen, MaHoSoBenhNhan, MaTaiKhoan, NgaySinh, GioiTinh, CCCD, MaBHYT, NgheNghiep, SoDienThoai, Email, DiaChi)
+    VALUES (@HoVaTen, @mahosobenhnhan, @MaTaiKhoan, @NgaySinh, @GioiTinh, @CCCD, @MaBHYT, @NgheNghiep, @SoDienThoai, @Email, @DiaChi)
+END
+go
+--################ PROCEDURE INSERT
+CREATE PROCEDURE SoKhamBenh_Insert
+    @MaHoSoBenhNhan varchar(8),
+    @MaLichKham varchar(8),
+    @HoVaTen nvarchar(30),
+    @Tuoi varchar(3),
+    @SoTheBHYT varchar(15),
+    @DiaChi nvarchar(50),
+    @NgheNghiep nvarchar(30),
+    @DanToc nvarchar(10),
+    @TrieuChung nvarchar(50),
+    @ChanDoan nvarchar(50),
+    @PhuongPhapDieuTri nvarchar(50),
+    @BSKhamBenh nvarchar(30),
+    @GhiChu nvarchar(50)
+AS
+BEGIN
+    INSERT INTO SoKhamBenh (MaHoSoBenhNhan, MaLichKham, HoVaTen, Tuoi, SoTheBHYT, DiaChi, NgheNghiep, DanToc, TrieuChung, ChanDoan, PhuongPhapDieuTri, BSKhamBenh, GhiChu)
+    VALUES (@MaHoSoBenhNhan, @MaLichKham, @HoVaTen, @Tuoi, @SoTheBHYT, @DiaChi, @NgheNghiep, @DanToc, @TrieuChung, @ChanDoan, @PhuongPhapDieuTri, @BSKhamBenh, @GhiChu)
+END
+go
+--################### PROCEDURE INSERT
+CREATE PROCEDURE BenhAn_Insert
+    @MaHoSoBenhNhan varchar(8),
+    @DoiTuong nvarchar(8),
+    @GiaTriBHYT date,
+    @HoTenThanNhan nvarchar(30),
+    @ThoiGianVaoVien date,
+    @TrucTiepVao nvarchar(30),
+    @NoiGioiThieu nvarchar(30),
+    @VaoKhoa nvarchar(30),
+    @ChuyenKhoa nvarchar(30),
+    @TongSoNgayDieuTri varchar(3),
+    @NoiChuyenDen nvarchar(30),
+    @KKBorCapCuu nvarchar(30),
+    @KhiVaoKhoaDieuTri nvarchar(30),
+    @KetQuaDieuTri nvarchar(30),
+    @GiaiPhauBenh nvarchar(30),
+    @QuaTrinhBenhLy nvarchar(30),
+    @TienSuBenh nvarchar(30),
+    @ToanThan nvarchar(30),
+    @TrieuChungCoNang nvarchar(30),
+    @ThuongTonCanBan nvarchar(30),
+    @CacCoQuan nvarchar(30),
+    @TKetQuaTrinhBenhLy nvarchar(30),
+    @TomTatKQXN nvarchar(30),
+    @PhuongPhapDieuTri nvarchar(30),
+    @HoSoPhimAnh nvarchar(30)
+AS
+BEGIN
+	DECLARE @mabenhan varchar(8)
+	SET @mabenhan = dbo.getNewMaBenhAn()
+    INSERT INTO BenhAn (MaBenhAn, MaHoSoBenhNhan, DoiTuong, GiaTriBHYT, HoTenThanNhan, ThoiGianVaoVien, TrucTiepVao, NoiGioiThieu, VaoKhoa, ChuyenKhoa, TongSoNgayDieuTri, NoiChuyenDen, KKBorCapCuu, KhiVaoKhoaDieuTri, KetQuaDieuTri, GiaiPhauBenh, QuaTrinhBenhLy, TienSuBenh, ToanThan, TrieuChungCoNang, ThuongTonCanBan, CacCoQuan, TKetQuaTrinhBenhLy, TomTatKQXN, PhuongPhapDieuTri, HoSoPhimAnh)
+    VALUES (@mabenhan, @MaHoSoBenhNhan, @DoiTuong, @GiaTriBHYT, @HoTenThanNhan, @ThoiGianVaoVien, @TrucTiepVao, @NoiGioiThieu, @VaoKhoa, @ChuyenKhoa, @TongSoNgayDieuTri, @NoiChuyenDen, @KKBorCapCuu, @KhiVaoKhoaDieuTri, @KetQuaDieuTri, @GiaiPhauBenh, @QuaTrinhBenhLy, @TienSuBenh, @ToanThan, @TrieuChungCoNang, @ThuongTonCanBan, @CacCoQuan, @TKetQuaTrinhBenhLy, @TomTatKQXN, @PhuongPhapDieuTri, @HoSoPhimAnh)
+END
+go
+--################ PROCEDURE INSERT
+CREATE PROCEDURE InsertToaThuoc
+    @SoThuTu varchar(10),
+    @MaThuoc varchar(8),
+    @MaBenhAn varchar(8),
+    @TenThuoc nvarchar(30),
+    @SoLuong tinyint,
+    @Dang nvarchar(10),
+    @GhiChu nvarchar(50)
+AS
+BEGIN
+	DECLARE @matoathuoc varchar(8)
+	SET @matoathuoc = dbo.GetNewMaToaThuoc()
+    INSERT INTO ToaThuoc (SoThuTu, MaToaThuoc, MaThuoc, MaBenhAn, TenThuoc, SoLuong, Dang, GhiChu)
+    VALUES (@SoThuTu, @matoathuoc, @MaThuoc, @MaBenhAn, @TenThuoc, @SoLuong, @Dang, @GhiChu)
+END
+go
+--################ PROCEDURE INSERT
+CREATE PROCEDURE InsertHoaDon
+    @MaLichKham varchar(8),
+    @TongTien int,
+    @HinhThucThanhToan nvarchar(30)
+AS
+BEGIN
+	DECLARE @mahoadon varchar(8)
+	SET @mahoadon = dbo.GetNewMaHoaDon()
+    INSERT INTO HoaDon (MaHoaDon, MaLichKham, TongTien, HinhThucThanhToan)
+    VALUES (@mahoadon, @MaLichKham, @TongTien, @HinhThucThanhToan)
+END
+go
+--################ PROCEDURE INSERT
+CREATE PROCEDURE InsertKhuyenMai
+    @TenChuongTrinhKM nvarchar(30),
+    @GiaKhuyenMai VARCHAR(10),
+    @NoiDungKM nvarchar(50),
+    @ThoiGianBatDau datetime,
+    @ThoiGianKetThuc datetime
+AS
+BEGIN
+	DECLARE @makhuyenmai varchar(8)
+	SET @makhuyenmai = dbo.GetNewMaKhuyenMai()
+    INSERT INTO KhuyenMai (MaKhuyenMai, TenChuongTrinhKM, GiaKhuyenMai, NoiDungKM, ThoiGianBatDau, ThoiGianKetThuc)
+    VALUES (@makhuyenmai, @TenChuongTrinhKM, @GiaKhuyenMai , @NoiDungKM, @ThoiGianBatDau, @ThoiGianKetThuc)
+END
+
+go
+--################ PROCEDURE INSERT
+CREATE PROCEDURE InsertDichVu
+    @TenDichVu nvarchar(30),
+    @NoiDungDichVu nvarchar(50),
+    @GiaDichVu int
+AS
+BEGIN
+	DECLARE @madichvu varchar(8)
+	SET @madichvu = dbo.GetNewMaDichVu()
+    INSERT INTO DichVu (MaDichVu, TenDichVu, NoiDungDichVu, GiaDichVu)
+    VALUES (@madichvu, @TenDichVu, @NoiDungDichVu, @GiaDichVu)
+END
+go
+--################ PROCEDURE INSERT
+CREATE PROCEDURE InsertChuyenKhoa
+    @TenChuyenKhoa nvarchar(30),
+    @MaKhuyenMai varchar(8)
+AS
+BEGIN
+	DECLARE @machuyenkhoa varchar(8)
+	SET @machuyenkhoa = dbo.GetNewMaChuyenKhoa()
+    INSERT INTO ChuyenKhoa (MaChuyenKhoa, TenChuyenKhoa, MaKhuyenMai)
+    VALUES (@machuyenkhoa, @TenChuyenKhoa, @MaKhuyenMai)
+END
+go
+--################ PROCEDURE INSERT
+CREATE PROCEDURE InsertLichKham
+    @MaHoSoBenhNhan varchar(8),
+    @MaChuyenKhoa varchar(8),
+    @MaDichVu varchar(8),
+    @NgayDangKy date,
+    @Ca nvarchar(15),
+    @KhungGioKham datetime
+AS
+BEGIN
+	DECLARE @malichkham varchar(8)
+	SET @malichkham = dbo.GetNewMaLichKham()
+    INSERT INTO LichKham (MaLichKham, MaHoSoBenhNhan, MaChuyenKhoa, MaDichVu, NgayDangKy, Ca, KhungGioKham)
+    VALUES (@malichkham, @MaHoSoBenhNhan, @MaChuyenKhoa, @MaDichVu, @NgayDangKy, @Ca, @KhungGioKham)
+END
+go
+--################ PROCEDURE INSERT
 CREATE PROCEDURE InsertTaiKhoanThanhVien
     @HoVaTen nvarchar(30),
     @MatKhau varchar(8),
@@ -1842,6 +1699,81 @@ BEGIN
     VALUES (@HoVaTen, @mathanhvien, @MatKhau, @NgaySinh, @GioiTinh, @CCCD, @SoDienThoai, @Email, @DiaChi, @ChuyenKhoa, @ViTri, @LoaiTaiKhoan)
 END
 
+go
+--################ PROCEDURE INSERT
+CREATE PROCEDURE InsertLichLamViec
+    @HoVaTen nvarchar(30),
+    @MaThanhVien varchar(8),
+    @NgayLamViec date,
+    @Ca varchar(2)
+AS
+BEGIN
+	DECLARE @malichlamviec varchar(8)
+	SET @malichlamviec = dbo.GetNewMaLichLamViec()
+    INSERT INTO LichLamViec (MaLichLamViec, HoVaTen, MaThanhVien, NgayLamViec, Ca)
+    VALUES (@malichlamviec, @HoVaTen, @MaThanhVien, @NgayLamViec, @Ca)
+END
+go
+
+CREATE PROCEDURE searchTaiKhoanThanhVien
+    @SearchKeyword nvarchar(255)
+AS
+BEGIN
+    SELECT *
+    FROM TaiKhoanThanhVien
+    WHERE
+        HoVaTen LIKE '%' + @SearchKeyword + '%' OR       
+		MaThanhVien LIKE '%' + @SearchKeyword + '%' OR
+        MatKhau LIKE '%' + @SearchKeyword + '%' OR
+        GioiTinh LIKE '%' + @SearchKeyword + '%' OR
+        CCCD LIKE '%' + @SearchKeyword + '%' OR
+        SoDienThoai LIKE '%' + @SearchKeyword + '%' OR
+        Email LIKE '%' + @SearchKeyword + '%' OR
+        DiaChi LIKE '%' + @SearchKeyword + '%' OR
+        ChuyenKhoa LIKE '%' + @SearchKeyword + '%' OR
+        ViTri LIKE '%' + @SearchKeyword + '%' OR
+        LoaiTaiKhoan LIKE '%' + @SearchKeyword + '%'
+END
+go
+CREATE PROCEDURE CheckDuplicateLichLamViec
+    @MaThanhVien varchar(8),
+    @NgayLamViec date,
+    @Ca nvarchar(8)
+AS
+BEGIN
+    IF EXISTS (
+        SELECT 1
+        FROM LichLamViec
+        WHERE MaThanhVien = @MaThanhVien
+        AND NgayLamViec = @NgayLamViec
+        AND Ca = @Ca
+    )
+    BEGIN
+        -- Nếu có bản ghi trùng lặp, trả về 1
+        SELECT 1;
+    END
+    ELSE
+    BEGIN
+        -- Nếu không tìm thấy bản ghi trùng lặp, trả về 0
+        SELECT 0;
+    END
+END
+go
+
+CREATE PROCEDURE searchLichLamViec
+    @SearchKeyword NVARCHAR(255)
+AS
+BEGIN
+    SELECT *
+    FROM LichLamViec
+    WHERE HoVaTen LIKE '%' + @SearchKeyword + '%'
+	OR MaLichLamViec LIKE '%' + @SearchKeyword + '%'
+	OR MaThanhVien LIKE '%' + @SearchKeyword + '%'
+    OR NgayLamViec LIKE '%' + @SearchKeyword + '%'
+    OR Ca LIKE '%' + @SearchKeyword + '%'
+END
+go
+
 CREATE FUNCTION GetLichKhamByCaAndNgay
 (
     @Ca nvarchar(15),
@@ -1860,13 +1792,174 @@ RETURN
         AND CONVERT(date, KhungGioKham) = @Date
 );
 
-CREATE FUNCTION SelectBenhAnByMaHSBN (@MaHoSoBenhNhan varchar(8))
-RETURNS TABLE
-AS
-RETURN (
-    SELECT *
-    FROM BenhAn
-    WHERE MaHoSoBenhNhan = @MaHoSoBenhNhan
-);
+go
 
-drop function SelectBenhAnByMaHSBN
+
+EXEC DangKyUser_Insert '0182831345', 'Abcd@123'
+EXEC DangKyUser_Insert '0987654321', 'P@ssw0rd'
+EXEC DangKyUser_Insert '0369852147', 'Secure!12'
+EXEC DangKyUser_Insert '0765432198', 'Qwerty@1'
+EXEC DangKyUser_Insert '0932145678', 'Mypass!23'
+EXEC DangKyUser_Insert '0846512379', 'Abcdef@9'
+EXEC DangKyUser_Insert '0654321890', 'Passw0rd!'
+EXEC DangKyUser_Insert '0312456879', 'Ch@ngeMe'
+EXEC DangKyUser_Insert '0975318642', 'S3cur1ty@'
+EXEC DangKyUser_Insert '0624875139', 'MyP@ss'
+EXEC DangKyUser_Insert '0392187456', 'Pa$$w0rd'
+EXEC DangKyUser_Insert '0856123497', 'SecureP@ss'
+EXEC DangKyUser_Insert '0912345678', 'P@ssw0rd!'
+EXEC DangKyUser_Insert '0765432981', 'Qwerty@123'
+EXEC DangKyUser_Insert '0987654320', 'Abcde!12'
+
+-- TABLE HoSoBenhNhan
+EXEC HoSoBenhNhan_Insert N'Nguyễn Văn An', '0182831345', '1990-05-15', N'Nam', '053137827346', 'BHYT0321344414', N'Kỹ sư', '0182831345', 'nguyenvanan123@gmail.com', N'Bình Hưng, Bình Chánh, Thành phố HCM'
+EXEC HoSoBenhNhan_Insert N'Trần Mỹ Nữ', '0987654321', '1985-10-20', N'Nữ', '056263748129', 'BHYT0827281342', N'Giáo viên', '0987654321', 'mynu9823@gmail.com', N'Bình Hưng, Bình Chánh, Thành phố HCM'
+EXEC HoSoBenhNhan_Insert N'Lê Văn Luyện', '0369852147', '1992-03-25', N'Nam', '056182342383', 'BHYT0192781634', N'Bác sĩ', '0369852147', 'vanluyen192@gamil.com', N'Boulevard, Quận 1, Thành phố HCM'
+EXEC HoSoBenhNhan_Insert N'Phạm Thị Kim Tiến', '0765432198', '1988-12-10', N'Nữ', '052983674513', 'BHYT0454372749', N'Y tá', '0765432198', 'phamthikimtien123@gmail.com', N'Phường 12, Quận 10, Thành phố HCM'
+EXEC HoSoBenhNhan_Insert N'Hoàng Ngọc Quý', '0932145678', '1995-07-05', N'Nam', '058716293874', 'BHYT0817321244', N'Kỹ sư', '0932145678', 'hoangquy95@gmail.com', N'Bình Trị Đông B, Bình Tân, Thành phố HCM'
+EXEC HoSoBenhNhan_Insert N'Võ Duyên Trúc', '0846512379', '1983-04-30', N'Nữ', '054712481844', 'BHYT0318321845', N'Chuyên viên kinh doanh', '0846512379', 'voduyentruc1983@gamil.com', N'KCN Đức Hoà 1, ấp 5, Đức Hòa, Long An'
+EXEC HoSoBenhNhan_Insert N'Đặng Minh Thắng', '0654321890', '1993-11-18', N'Nam', '053281836111', 'BHYT0192814245', N'Nhân viên văn phòng', '0654321890', 'dangthang@gmail.com', N'Thống Nhất, Thành phố Biên Hòa, Đồng Nai'
+EXEC HoSoBenhNhan_Insert N'Mai Thị Thuỷ', '0312456879', '1991-09-22', N'Nữ', '057172718322', 'BHYT0239421445', N'Luật sư', '0312456879', 'maithithuy2312@gmail.com', N'Đa Kao, Quận 1, Thành phố HCM'
+EXEC HoSoBenhNhan_Insert N'Lý Văn Nguyên', '0975318642', '1987-08-12', N'Nam', '056173281324', 'BHYT0987371633', N'Kỹ sư xây dựng', '0975318642', 'lyvannguyen342@gmail.com', N'P. Bình An, Quận 2, Thành phố HCM'
+EXEC HoSoBenhNhan_Insert N'Nguyễn Thị Thuý', '0624875139', '1996-06-08', N'Nữ', '056981887816', 'BHYT0918274124', N'Bác sĩ', '0624875139', 'nguyenthithuy0213482@gmail.com', N'Phú Mỹ Hưng, Quận 7, Thành phố HCM'
+EXEC HoSoBenhNhan_Insert N'Trần Nhân Tâm', '0392187456', '1994-02-14', N'Nam', '056813920132', 'BHYT0127471562', N'Giáo viên', '0392187456', 'trannhantam2222@gmail.com', N'Tân Phú, Quận 7, Thành phố HCM'
+EXEC HoSoBenhNhan_Insert N'Đinh Thị Mai Đinh', '0856123497', '1986-03-03', N'Nữ', '053727183388', 'BHYT0918271413', N'Y tá', '0856123497', 'dinhthimaidinh@gmail.com', N'Tân Hưng, Quận 7, Thành phố HCM'
+EXEC HoSoBenhNhan_Insert N'Lê Hoàng Ngọc', '0912345678', '1989-07-19', N'Nam', '056727277713', 'BHYT0234141246', N'Kỹ sư', '0912345678', 'hoangngoc1323@gmail.com', N'Phường 12, Quận 4, Thành phố HCM'
+EXEC HoSoBenhNhan_Insert N'Võ Mỹ Kim Thoa', '0765432981', '1997-09-28', N'Nữ', '052128318445', 'BHYT0918274123', N'Chuyên viên kinh doanh', '0765432981', 'vokimthoaw23@gmail.com', N'Phường 22, Bình Thạnh, Thành phố HCM'
+EXEC HoSoBenhNhan_Insert N'Phan Văn Hội', '0987654320', '1998-12-01', N'Nam', '058172563721', 'BHYT0362783945', N'Sinh viên', '0987654320', 'phanvanhoi@gmail.com', N'Hiệp Bình Chánh, Thủ Đức, Thành phố HCM'
+-- KHUYEN MAI
+EXEC InsertKhuyenMai N'Giảm giá dịch vụ da liễu', '100000',N'Giảm 20% cho các dịch vụ điều trị da liễu', '2023-11-01 08:00:00', '2023-11-15 17:00:00'
+EXEC InsertKhuyenMai N'Combo chăm sóc da', '300000', N'Mua bất kỳ combo nào và nhận 1 lần spa da miễn phí', '2023-12-05 10:00:00', '2023-12-20 19:00:00'
+EXEC InsertKhuyenMai N'Đánh giá da miễn phí', '100000', N'Nhận đánh giá da miễn phí từ các chuyên gia da liễu', '2023-09-10 09:30:00', '2023-09-30 18:00:00'
+EXEC InsertKhuyenMai N'Phòng ngừa mụn', '100000', N'Hướng dẫn cách chăm sóc da để ngừa mụn', '2023-10-15 14:00:00', '2023-10-31 20:00:00'
+EXEC InsertKhuyenMai N'Giảm giá các sản phẩm da liễu', '200000', N'Giảm 15% cho tất cả các sản phẩm chăm sóc da liễu', '2023-11-20 11:30:00', '2023-12-05 22:00:00'
+EXEC InsertKhuyenMai N'Ưu đãi mùa lễ hội', '300000', N'Giảm giá 25% cho tất cả các dịch vụ và sản phẩm cao cấp chuyên dùng', '2023-12-21 09:00:00', '2023-12-30 18:00:00'
+
+-- CHUYEN KHOA
+EXEC InsertChuyenKhoa N'Chăm sóc da trẻ em', 'KM00001'
+EXEC InsertChuyenKhoa N'Chăm sóc da người già', NULL
+EXEC InsertChuyenKhoa N'Điều trị mụn', 'KM00004'
+EXEC InsertChuyenKhoa N'Laser điều trị da', 'KM00002'
+EXEC InsertChuyenKhoa N'Chăm sóc da sau phẫu thuật', NULL
+EXEC InsertChuyenKhoa N'Chăm sóc da tự nhiên', 'KM00005'
+EXEC InsertChuyenKhoa N'Chăm sóc da mặt', NULL
+EXEC InsertChuyenKhoa N'Chăm sóc da cơ bản', 'KM00003'
+EXEC InsertChuyenKhoa N'Chăm sóc da chuyên sâu', NULL
+EXEC InsertChuyenKhoa N'Chăm sóc da từ trong ra ngoài', 'KM00001'
+-- BENH AN
+EXEC BenhAn_Insert 'BN000001', N'BHYT', '2023-12-31', N'Nguyễn Văn An', '2023-10-25 09:00:00', N'Cấp cứu', N'Phòng khám đa khoa A', N'Da liễu', N'Chăm sóc da trẻ em', '7', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Mụn trứng cá', N'Không có', N'Bình thường', N'Ngứa', N'Không có', N'Không có', N'Không có', N'Không có', N'Thuốc và kem chăm sóc da', N'Không có'
+EXEC BenhAn_Insert 'BN000002', N'BHYT', '2023-12-31', N'Trần Mỹ Nữ', '2023-11-03 14:30:00', N'Khám thường xuyên', N'Phòng khám đa khoa B', N'Da liễu', N'Chăm sóc da người già', '10', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Nổi mụn', N'Không có', N'Bình thường', N'Đỏ và ngứa', N'Không có', N'Không có', N'Không có', N'Không có', N'Thuốc chống dị ứng và kem chăm sóc da', N'Không có'
+EXEC BenhAn_Insert 'BN000003', N'BHYT', '2023-12-31', N'Lê Văn Luyện', '2023-10-29 11:15:00', N'Cấp cứu', N'Phòng khám đa khoa C', N'Da liễu', N'Chăm sóc da người già', '5', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Dị ứng da', N'Không có', N'Bình thường', N'Ngứa và đỏ', N'Không có', N'Không có', N'Không có', N'Không có', N'Thuốc chống dị ứng và kem chăm sóc da', N'Không có'
+EXEC BenhAn_Insert 'BN000004', N'BHYT', '2023-12-31', N'Phạm Thị Kim Tiến', '2023-11-12 08:45:00', N'Khám thường xuyên', N'Phòng khám đa khoa D', N'Da liễu', N'Chăm sóc da trẻ em', '8', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Nổi mụn nước', N'Không có', N'Bình thường', N'Ngứa và đỏ', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có'
+EXEC BenhAn_Insert 'BN000005', N'BHYT', '2023-12-31', N'Hoàng Ngọc Quý', '2023-11-18 10:20:00', N'Cấp cứu', N'Phòng khám đa khoa E', N'Da liễu', N'Chăm sóc da người già', '6', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Nổi mụn nước và đỏ', N'Không có', N'Bình thường', N'Ngứa và đỏ', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có'
+EXEC BenhAn_Insert 'BN000006', N'BHYT', '2023-12-31', N'Võ Duyên Trúc', '2023-10-30 15:10:00', N'Khám thường xuyên', N'Phòng khám đa khoa F', N'Da liễu', N'Chăm sóc da trẻ em', '4', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Dị ứng da', N'Không có', N'Bình thường', N'Ngứa và đỏ', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có'
+EXEC BenhAn_Insert 'BN000007', N'BHYT', '2023-12-31', N'Đặng Minh Thắng', '2023-11-20 11:45:00', N'Cấp cứu', N'Phòng khám đa khoa G', N'Da liễu', N'Chăm sóc da người già', '9', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Nổi mụn và đỏ', N'Không có', N'Bình thường', N'Ngứa và đỏ', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có'
+EXEC BenhAn_Insert 'BN000008', N'BHYT', '2023-12-31', N'Mai Thị Thuỷ', '2023-11-25 13:30:00', N'Cấp cứu', N'Phòng khám đa khoa H', N'Da liễu', N'Chăm sóc da trẻ em', '3', N'Không chuyển', N'Không có', N'Nguyên trạng', N'Đã hồi phục', N'Không có', N'Dị ứng da', N'Không có', N'Bình thường', N'Ngứa và đỏ', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có', N'Không có'
+-- ADMIN 
+EXEC InsertADMIN_Manager 'ADMINPKDL', 'P@ssW0rd123'
+--DICH VU
+EXEC InsertDichVu N'Kiểm tra da thường xuyên', N'Kiểm tra tình trạng da và tư vấn chăm sóc da', 100000
+EXEC InsertDichVu N'Chăm sóc da mặt', N'Rửa mặt, tẩy trang, và áp dụng mặt nạ chăm sóc da', 150000
+EXEC InsertDichVu N'Điều trị mụn trứng cá', N'Điều trị và loại bỏ mụn trứng cá', 200000
+EXEC InsertDichVu N'Peeling da', N'Áp dụng kỹ thuật peeling để loại bỏ tế bào chết', 180000
+EXEC InsertDichVu N'Chăm sóc da toàn diện', N'Rửa mặt, tẩy trang, điều trị mụn và áp dụng mặt nạ chăm sóc da', 250000
+EXEC InsertDichVu N'Điều trị nám và tàn nhang', N'Điều trị và giảm thiểu vết nám và tàn nhang trên da', 300000
+EXEC InsertDichVu N'Chăm sóc da mặt cho trẻ em', N'Chăm sóc và bảo vệ làn da của trẻ em', 120000
+EXEC InsertDichVu N'Điều trị viêm da cơ địa', N'Điều trị các triệu chứng viêm và kích ứng trên da', 220000
+EXEC InsertDichVu N'Chăm sóc da mắt', N'Đặt liệu pháp chăm sóc da vùng mắt, giảm quầng thâm và nếp nhăn', 120000
+EXEC InsertDichVu N'Tẩy tế bào chết', N'Áp dụng phương pháp tẩy tế bào chết nhẹ nhàng cho làn da mềm mại', 160000
+EXEC InsertDichVu N'Chăm sóc da cơ bản', N'Rửa mặt, tẩy trang và dùng kem chăm sóc da hàng ngày', 80000
+EXEC InsertDichVu N'Làm sáng da', N'Điều trị và làm sáng da, giảm tình trạng da tối màu', 180000
+EXEC InsertDichVu N'Chăm sóc da toàn diện VIP', N'Rửa mặt, tẩy trang, điều trị mụn, áp dụng mặt nạ và masage chăm sóc da', 350000
+
+-- LICH KHAM
+EXEC InsertLichKham 'BN000001', 'CK000001', 'DV000001', '2023-10-01', N'Sáng', '2023-10-01 09:00:00'
+EXEC InsertLichKham 'BN000002', 'CK000002', 'DV000002', '2023-10-02', N'Chiều', '2023-10-02 15:00:00'
+EXEC InsertLichKham 'BN000003', 'CK000001', 'DV000003', '2023-10-03', N'Sáng', '2023-10-03 10:30:00'
+EXEC InsertLichKham 'BN000004', 'CK000003', 'DV000004', '2023-10-04', N'Chiều', '2023-10-04 16:00:00'
+EXEC InsertLichKham 'BN000005', 'CK000001', 'DV000005', '2023-10-05', N'Sáng', '2023-10-05 11:30:00'
+EXEC InsertLichKham 'BN000006', 'CK000002', 'DV000006', '2023-10-06', N'Chiều', '2023-10-06 14:30:00'
+EXEC InsertLichKham 'BN000007', 'CK000003', 'DV000007', '2023-10-07', N'Sáng', '2023-10-07 10:00:00'
+EXEC InsertLichKham 'BN000008', 'CK000001', 'DV000008', '2023-10-08', N'Chiều', '2023-10-08 15:30:00'
+EXEC InsertLichKham 'BN000001', 'CK000002', 'DV000006', '2023-10-09', N'Sáng', '2023-10-09 11:00:00'
+EXEC InsertLichKham 'BN000005', 'CK000001', 'DV000007', '2023-10-10', N'Chiều', '2023-10-10 14:00:00'
+EXEC InsertLichKham 'BN000003', 'CK000001', 'DV000004', '2023-10-11', N'Sáng', '2023-10-11 09:30:00'
+EXEC InsertLichKham 'BN000004', 'CK000002', 'DV000005', '2023-10-12', N'Chiều', '2023-10-12 16:30:00'
+EXEC InsertLichKham 'BN000002', 'CK000003', 'DV000003', '2023-10-13', N'Sáng', '2023-10-13 10:00:00'
+EXEC InsertLichKham 'BN000007', 'CK000001', 'DV000002', '2023-10-14', N'Chiều', '2023-10-14 14:30:00'
+EXEC InsertLichKham 'BN000008', 'CK000003', 'DV000001', '2023-10-15', N'Sáng', '2023-10-15 11:30:00'
+-- HOA DON
+EXEC InsertHoaDon 'LK000001', 200000, N'Tiền mặt'
+EXEC InsertHoaDon  'LK000002', 150000, N'Thẻ tín dụng'
+EXEC InsertHoaDon  'LK000003', 180000, N'Tiền mặt'
+EXEC InsertHoaDon  'LK000004', 220000, N'Thẻ tín dụng'
+EXEC InsertHoaDon 'LK000005', 250000, N'Tiền mặt'
+EXEC InsertHoaDon  'LK000006', 280000, N'Thẻ tín dụng'
+EXEC InsertHoaDon 'LK000007', 200000, N'Tiền mặt'
+EXEC InsertHoaDon  'LK000008', 300000, N'Thẻ tín dụng'
+EXEC InsertHoaDon  'LK000009', 270000, N'Tiền mặt'
+EXEC InsertHoaDon  'LK000010', 190000, N'Thẻ tín dụng'
+EXEC InsertHoaDon  'LK000011', 210000, N'Tiền mặt'
+EXEC InsertHoaDon  'LK000012', 240000, N'Thẻ tín dụng'
+EXEC InsertHoaDon 'LK000013', 260000, N'Tiền mặt'
+EXEC InsertHoaDon 'LK000014', 290000, N'Thẻ tín dụng'
+EXEC InsertHoaDon  'LK000015', 220000, N'Tiền mặt'
+-- TOA THUOC
+EXEC InsertToaThuoc '1', 'TH000001', 'BA000001', N'Thuốc Innerb Aqua Rich', 3, N'Viên', N'Uống sau ăn'
+EXEC InsertToaThuoc '2', 'TH000002', 'BA000002', N'Thuốc Puritan’s Pride', 2, N'Thuốc lỏng', N'Uống trước khi đi ngủ'
+EXEC InsertToaThuoc '3', 'TH000003', 'BA000003', N'Thuốc Bounty', 1, N'Viên', N'Uống vào buổi sáng'
+EXEC InsertToaThuoc '4', 'TH000004', 'BA000004', N'Thuốc Royal Jelly', 4, N'Thuốc lỏng', N'Uống trước khi ăn'
+EXEC InsertToaThuoc '5', 'TH000005', 'BA000005', N'Thuốc L Glutathione', 3, N'Viên', N'Uống sau khi ăn'
+EXEC InsertToaThuoc '6', 'TH000006', 'BA000006', N'Thuốc Blackmores Insolar', 2, N'Viên', N'Uống vào buổi sáng'
+EXEC InsertToaThuoc '7', 'TH000007', 'BA000007', N'Thuốc Shiseid White', 1, N'Thuốc lỏng', N'Uống trước khi đi ngủ'
+EXEC InsertToaThuoc '8', 'TH000008', 'BA000008', N'Thuốc Perles de Peau', 3, N'Viên', N'Uống sau khi ăn'
+EXEC InsertToaThuoc '9', 'TH000009', 'BA000001', N'Thuốc Collagen DHC', 2, N'Thuốc lỏng', N'Uống trước khi đi ngủ'
+EXEC InsertToaThuoc '10', 'TH000010', 'BA000002', N'Thuốc Vitamin E Nipro', 3, N'Viên', N'Uống sau khi ăn'
+EXEC InsertToaThuoc '11', 'TH000011', 'BA000008', N'Thuốc Murad Age Reform', 1, N'Thuốc lỏng', N'Uống trước khi đi ngủ'
+EXEC InsertToaThuoc '12', 'TH000012', 'BA000003', N'Thuốc Glutathione', 4, N'Viên', N'Uống sau khi ăn'
+EXEC InsertToaThuoc '13', 'TH000013', 'BA000005', N'Thuốc Peau Radieuse', 2, N'Viên', N'Uống vào buổi sáng'
+EXEC InsertToaThuoc '14', 'TH000014', 'BA000006', N'Thuốc L-Glutathione', 3, N'Thuốc lỏng', N'Uống trước khi đi ngủ'
+EXEC InsertToaThuoc '15', 'TH000015', 'BA000007', N'Thuốc Bounty', 1, N'Viên', N'Uống vào buổi sáng'
+EXEC InsertToaThuoc '16', 'TH000016', 'BA000004', N'Thuốc Royal Jelly', 2, N'Viên', N'Uống vào buổi sáng'
+
+-- TAI KHOAN THANH VIEN
+EXEC InsertTaiKhoanThanhVien N'Nguyễn Hoàng Nam', 'Abc@1234', '1990-05-15', N'Nam', '056162641224', '0987654132', 'namnguyen@gmail.com', N'Phường 13, Bình Thạnh, Thành phố HCM', N'Da liễu', N'Bác sĩ', 'BS'
+EXEC InsertTaiKhoanThanhVien N'Trần Diễm Quỳnh', 'Bcd@5678', '1985-07-20', N'Nữ', '056727182433', '0987123415', 'quynhdiem@gmail.com', N'Phường 14, Bình Thạnh, Thành phố HCM', N'Da liễu', N'Bác sĩ', 'BS'
+EXEC InsertTaiKhoanThanhVien N'Lê Nguyễn Nam', 'Cde@9012', '1988-03-10', N'Nam', '052827361224', '0909988219', 'lenam@gmail.com', N'Phường 10, Phú Nhuận, Thành phố HCM', N'Da liễu', N'Bác sĩ', 'BS'
+EXEC InsertTaiKhoanThanhVien N'Phạm Thị Duyên', 'Def@3456', '1992-09-05', N'Nữ', '051272841255', '0871656243', 'phamthiduyen@gmail.com', N'Phường 2, Tân Bình, Thành phố HCM', N'Da liễu', N'Bác sĩ', 'BS'
+EXEC InsertTaiKhoanThanhVien N'Hoàng Văn Thụ', 'Efg@6789', '1995-01-25', N'Nam', '056909182742', '0172614217', 'hoangvanthu@gmail.com', N'Phường 13, Tân Bình, Thành phố HCM', N'Da liễu', N'Kế toán', 'KT'
+EXEC InsertTaiKhoanThanhVien N'Võ Mai', 'Fgh@7890', '1989-08-15', N'Nữ', '054712719322', '0817262478', 'vomai@gmail.com', N'Tây Thạnh, Tân Phú, Thành phố HCM', N'Da liễu', N'Kế toán', 'KT'
+EXEC InsertTaiKhoanThanhVien N'Đặng Văn Lâm', 'Ghi@1234', '1987-03-02', N'Nam', '051832622432', '08176535237', 'dangvanlam@gmail.com', N'Tân Quý, Tân Phú, Thành phố HCM', N'Da liễu', N'Kế toán', 'KT'
+EXEC InsertTaiKhoanThanhVien N'Mai Nguyễn Trà', 'Hik@5678', '1986-11-12', N'Nữ', '056187264125', '0987274128', 'maitra@gmail.com', N'Phú Thạnh, Tân Phú,Thành phố HCM', N'Không', N'Lễ tân', 'TV'
+EXEC InsertTaiKhoanThanhVien N'Nguyễn Nữ', 'Ijk@7890', '1984-10-05', N'Nữ', '056717827429', '0898716244', 'nguyennu@gmail.com', N'Bình Hưng Hoà, Bình Tân, Thành phố HCM', N'Da liễu', N'Thư ký', 'KT'
+EXEC InsertTaiKhoanThanhVien N'Trần Đình Nhân', 'Jlm@1234', '1983-12-30', N'Nam', '056718721488', '0891872425', 'trandinhnhan@gmail.com', N'Tân Tạo A, Bình Tân, Thành phố HCM', N'Da liễu', N'Thư ký', 'KT'
+EXEC InsertTaiKhoanThanhVien N'Trần Hưng', 'Thung@1234', '1983-12-30', N'Nam', '301884688123', '0898134671', 'tranhung@gmail.com', N'Tân Tạo B, Bình Tân, Thành phố HCM', N'Da liễu', N'Bác sĩ', 'BS'
+
+
+-- SO KHAM BENH
+EXEC SoKhamBenh_Insert 'BN000001', 'LK000001', N'Nguyễn Văn An', '33', 'BHYT0321344414', N'Bình Hưng, Bình Chánh, Thành phố HCM', N'Kỹ sư', N'Kinh', N'Nổi mụn đỏ và ngứa da', N'Bị dị ứng da', N'Sử dụng thuốc chống dị ứng và tránh tiếp xúc với chất kích thích', N'Nguyễn Hoàng Nam', NULL
+EXEC SoKhamBenh_Insert 'BN000002', 'LK000002', N'Trần Mỹ Nữ', '38', 'BHYT0827281342', N'Bình Hưng, Bình Chánh, Thành phố HCM', N'Giáo viên', N'Kinh', N'Da sưng, đỏ và ngứa', N'Bị viêm da cơ địa', N'Sử dụng thuốc chống viêm và tránh tiếp xúc với chất kích thích', N'Phạm Thị Duyên', NULL
+EXEC SoKhamBenh_Insert 'BN000003', 'LK000003', N'Lê Văn Luyện', '35', 'BHYT0192781634', N'Boulevard, Quận 1, Thành phố HCM', N'Bác sĩ', N'Kinh', N'Mụn nước và đau rát', N'Bị nấm da', N'Sử dụng thuốc chống nấm và tuân thủ vệ sinh cá nhân', N'Trần Diễm Quỳnh', NULL
+EXEC SoKhamBenh_Insert 'BN000004', 'LK000004', N'Phạm Thị Kim Tiến', '29', 'BHYT0454372749', N'Phường 12, Quận 10, Thành phố HCM', N'Y tá', N'Kinh', N'Sưng và đỏ da', N'Bị viêm da dị ứng', N'Sử dụng thuốc chống viêm và tránh tiếp xúc với chất kích thích', N'Trần Diễm Quỳnh', NULL
+EXEC SoKhamBenh_Insert 'BN000005', 'LK000005', N'Hoàng Ngọc Quý', '28', 'BHYT0817321244', N'Bình Trị Đông B, Bình Tân, Thành phố HCM', N'Kỹ sư', N'Kinh', N'Đau và khó chịu da', N'Bị viêm da', N'Sử dụng thuốc chống viêm và tuân thủ vệ sinh cá nhân', N'Trần Diễm Quỳnh', NULL
+EXEC SoKhamBenh_Insert 'BN000006', 'LK000006', N'Võ Duyên Trúc', '31', 'BHYT0318321845', N'KCN Đức Hoà 1, ấp 5, Đức Hòa, Long An', N'Chuyên viên kinh doanh', N'Kinh', N'Da khô và ngứa', N'Bị viêm da khô', N'Sử dụng thuốc chống viêm và giữ ẩm da', N'Trần Diễm Quỳnh', NULL
+EXEC SoKhamBenh_Insert 'BN000007', 'LK000007', N'Đặng Minh Thắng', '34', 'BHYT0192814245', N'Thống Nhất, Thành phố Biên Hòa, Đồng Nai', N'Nhân viên văn phòng', N'Kinh', N'Da nổi mụn và đau', N'Bị mụn trứng cá', N'Sử dụng thuốc chống viêm và tránh tiếp xúc với chất kích thích', N'Phạm Thị Duyên', NULL
+EXEC SoKhamBenh_Insert 'BN000008', 'LK000008', N'Mai Thị Thuỷ', '39', 'BHYT0239421445', N'Đa Kao, Quận 1, Thành phố HCM', N'Luật sư', N'Kinh', N'Da bị nổi mụn và đỏ', N'Bị viêm da dị ứng', N'Sử dụng thuốc chống viêm và tránh tiếp xúc với chất kích thích', N'Lê Nguyễn Nam', NULL
+EXEC SoKhamBenh_Insert 'BN000009', 'LK000009', N'Lý Văn Nguyên', '45', 'BHYT0987371633', N'Bình An, Quận 2, Thành phố HCM', N'Kỹ sư', N'Kinh', N'Da bị đau và ngứa', N'Bị nấm da', N'Sử dụng thuốc chống nấm và tuân thủ vệ sinh cá nhân', N'Nguyễn Hoàng Nam', NULL
+EXEC SoKhamBenh_Insert 'BN000010', 'LK000010', N'Nguyễn Thị Thuý', '32', 'BHYT0918274124', N'Phú Mỹ Hưng, Quận 7, Thành phố HCM', N'Giáo viên', N'Kinh', N'Nổi mụn và đau rát da', N'Bị viêm da', N'Sử dụng thuốc chống viêm và tránh tiếp xúc với chất kích thích', N'Nguyễn Hoàng Nam', NULL
+EXEC SoKhamBenh_Insert 'BN000011', 'LK000011', N'Trần Nhân Tâm', '29', 'BHYT0127471562', N'Tân Phú, Quận 7, Thành phố HCM', N'Trình dược viên', N'Kinh', N'Da khô và ngứa', N'Bị viêm da khô', N'Sử dụng thuốc chống viêm và giữ ẩm da', N'Trần Diễm Quỳnh', NULL
+EXEC SoKhamBenh_Insert 'BN000012', 'LK000012', N'Đinh Thị Mai Đinh', '38', 'BHYT0918271413', N'Tân Hưng, Quận 7, Thành phố HCM', N'Kỹ sư', N'Kinh', N'Da nổi mụn và đau', N'Bị mụn trứng cá', N'Sử dụng thuốc chống viêm và tránh tiếp xúc với chất kích thích', N'TPhạm Thị Duyên', NULL
+EXEC SoKhamBenh_Insert 'BN000013', 'LK000013', N'Lê Hoàng Ngọc', '27', 'BHYT0234141246', N'Phường 12, Quận 4, Thành phố HCM', N'Thợ may', N'Kinh', N'Da bị nổi mụn và đỏ', N'Bị viêm da dị ứng', N'Sử dụng thuốc chống viêm và tránh tiếp xúc với chất kích thích', N'Trần Diễm Quỳnh', NULL
+EXEC SoKhamBenh_Insert 'BN000014', 'LK000014', N'Võ Mỹ Kim Thoa', '35', 'BHYT0918274123', N'Phường 22, Bình Thạnh, Thành phố HCM', N'Nhân viên kinh doanh', N'Kinh', N'Da nổi mụn và đau', N'Bị mụn trứng cá', N'Sử dụng thuốc chống viêm và tránh tiếp xúc với chất kích thích', N'Trần Diễm Quỳnh', NULL
+EXEC SoKhamBenh_Insert 'BN000015', 'LK000015', N'Phan Văn Hội', '41', 'BHYT0362783945', N'Hiệp Bình Chánh, Thủ Đức, Thành phố HCM', N'Nhân viên bảo vệ', N'Kinh', N'Da bị đau và ngứa', N'Bị nấm da', N'Sử dụng thuốc chống nấm và tuân thủ vệ sinh cá nhân', N'Lê Nguyễn Nam', NULL
+
+
+-- LICH LAM VIEC
+EXEC InsertLichLamViec N'Nguyễn Hoàng Nam', 'BS000001', '2023-10-01', 'S'
+EXEC InsertLichLamViec N'Trần Diễm Quỳnh', 'BS000002', '2023-10-02', 'C'
+EXEC InsertLichLamViec N'Lê Nguyễn Nam', 'BS000003', '2023-10-03', 'S'
+EXEC InsertLichLamViec N'Phạm Thị Duyên', 'BS000004', '2023-10-04', 'C'
+EXEC InsertLichLamViec N'Nguyễn Hoàng Nam', 'BS000001', '2023-10-01', 'S'
+EXEC InsertLichLamViec N'Trần Diễm Quỳnh', 'BS000002', '2023-10-02', 'C'
+EXEC InsertLichLamViec N'Lê Nguyễn Nam', 'BS000003', '2023-10-03', 'S'
+EXEC InsertLichLamViec N'Phạm Thị Duyên', 'BS000004', '2023-10-04', 'C'

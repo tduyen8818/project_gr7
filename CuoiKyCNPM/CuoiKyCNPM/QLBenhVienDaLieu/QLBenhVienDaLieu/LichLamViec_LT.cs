@@ -60,6 +60,7 @@ namespace QLBenhVienDaLieu
 
         private void btn_HoSoBenhNhan_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             HoSoBenhNhanForm hoSoBenhNhanForm = new HoSoBenhNhanForm(guna2CustomGradientPanel2, functionCaller);
 
             hoSoBenhNhanForm.TopLevel = false;
@@ -70,6 +71,9 @@ namespace QLBenhVienDaLieu
             guna2CustomGradientPanel2.Tag = hoSoBenhNhanForm;
 
             hoSoBenhNhanForm.Show();
+=======
+
+>>>>>>> c8204abb776dd56d25d74f0d3e411a8b492eb68b
         }
     }
 }

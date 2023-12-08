@@ -11,6 +11,7 @@ namespace QLBenhVienDaLieu
     public partial class TaiKhoan_KT : Form
     {
         private SqlFunctionCaller functionCaller;
+        private SqlFunctionCaller sqlFunctionCaller;
         private string SDT;
         public TaiKhoan_KT(string sDT)
         {
@@ -69,12 +70,21 @@ namespace QLBenhVienDaLieu
 
         private void btn_HoaDon_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             DanhSachHoaDon danhSachHoaDon = new DanhSachHoaDon(functionCaller);
+=======
+            guna2CustomGradientPanel2.Controls.Clear();
+
+            DanhSachHoaDon danhSachHoaDon = new DanhSachHoaDon(sqlFunctionCaller);
+>>>>>>> c8204abb776dd56d25d74f0d3e411a8b492eb68b
 
             danhSachHoaDon.TopLevel = false;
             danhSachHoaDon.Dock = DockStyle.Fill;
 
+<<<<<<< HEAD
             guna2CustomGradientPanel2.Controls.Clear();
+=======
+>>>>>>> c8204abb776dd56d25d74f0d3e411a8b492eb68b
             guna2CustomGradientPanel2.Controls.Add(danhSachHoaDon);
             guna2CustomGradientPanel2.Tag = danhSachHoaDon;
 
@@ -83,12 +93,21 @@ namespace QLBenhVienDaLieu
 
         private void btn_ThongKe_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             ThongKeDoanhThu thongKeDoanhThu = new ThongKeDoanhThu(functionCaller);
+=======
+            guna2CustomGradientPanel2.Controls.Clear();
+
+            ThongKeDoanhThu thongKeDoanhThu = new ThongKeDoanhThu(sqlFunctionCaller);
+>>>>>>> c8204abb776dd56d25d74f0d3e411a8b492eb68b
 
             thongKeDoanhThu.TopLevel = false;
             thongKeDoanhThu.Dock = DockStyle.Fill;
 
+<<<<<<< HEAD
             guna2CustomGradientPanel2.Controls.Clear();
+=======
+>>>>>>> c8204abb776dd56d25d74f0d3e411a8b492eb68b
             guna2CustomGradientPanel2.Controls.Add(thongKeDoanhThu);
             guna2CustomGradientPanel2.Tag = thongKeDoanhThu;
 

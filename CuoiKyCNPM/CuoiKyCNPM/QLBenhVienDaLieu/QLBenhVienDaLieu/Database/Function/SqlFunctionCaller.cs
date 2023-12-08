@@ -36,6 +36,7 @@ namespace QLBenhVienDaLieu.Database.Function
 
             //---------------------- Database của Thiên-----------------------
 
+<<<<<<< HEAD
 
             //const string serverName = "LAPTOP-4M06U5";
             //const string databaseName = "PHONGKHAMDALIEU";
@@ -57,6 +58,25 @@ namespace QLBenhVienDaLieu.Database.Function
             //    $"Integrated Security=True";
             //this.connection = new SqlConnection(connectionString);
 
+=======
+            const string serverName = "LAPTOP-4M06U5";
+            const string databaseName = "PHONGKHAMDALIEU";
+
+            this.connectionString = $"Data Source={serverName};" +
+                $"Initial Catalog={databaseName};" +
+                $"Integrated Security=True";
+            this.connection = new SqlConnection(connectionString);
+            //---------------------- Database của Chương-----------------------
+
+            /*const string serverName = "LAPTOP-8AHD28S0\\CHUONG";
+            const string userName = "LAPTOP-8AHD28S0\\huynh";
+            const string databaseName = "PHONGKHAMDALIEU";
+
+            this.connectionString = $"Data Source={serverName};" +
+                $"Initial Catalog={databaseName};" +
+                $"Integrated Security=True";
+            this.connection = new SqlConnection(connectionString);*/
+>>>>>>> c8204abb776dd56d25d74f0d3e411a8b492eb68b
 
         }
 
@@ -1964,15 +1984,21 @@ namespace QLBenhVienDaLieu.Database.Function
 
         public void DeleteLichLamViec(string maLichLamViec)
         {
-            SqlCommand command = new SqlCommand();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
 
-            command.Connection = connection;
-            command.CommandType = CommandType.StoredProcedure;
-            command.CommandText = "DeleteLichLamViec";
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "DeleteLichLamViec";
 
-            command.Parameters.AddWithValue("@MaLichLamViec", maLichLamViec);
+                    command.Parameters.AddWithValue("@MaLichLamViec", maLichLamViec);
 
-            command.ExecuteNonQuery();
+                    command.ExecuteNonQuery();
+                }
+            }
 
 
         }

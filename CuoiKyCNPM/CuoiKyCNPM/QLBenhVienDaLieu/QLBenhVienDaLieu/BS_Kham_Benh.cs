@@ -30,11 +30,13 @@ namespace QLBenhVienDaLieu
         public BS_Kham_Benh()
         {
             InitializeComponent();
+            this.sDT = "123";
             dt_ngayKham.Value = DateTime.Now;
             dt_ngayKham.MaxDate = dt_ngayKham.Value;
             //Change column display size
             dgv_lichKham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dgv_lichKham.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
+            dgv_lichKham.ReadOnly = true;
         }
 
         private void BS_Kham_Benh_Load(object sender, EventArgs e)
@@ -42,21 +44,6 @@ namespace QLBenhVienDaLieu
 
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            TaiKhoan_BS taiKhoanForm = new TaiKhoan_BS(sDT);
-            this.Hide();
-            taiKhoanForm.ShowDialog();
-            this.Close();
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            LichLamViec_BS lichLamViec = new LichLamViec_BS(sDT);
-            this.Hide();
-            lichLamViec.ShowDialog();
-            this.Close();
-        }
         DataTable resultTable = new DataTable();
         private void SelectedValue(object sender, EventArgs e)
         {
@@ -109,6 +96,27 @@ namespace QLBenhVienDaLieu
                 hsbn.Show();
                 this.Hide();
             }
+        }
+
+        private void btn_DichVu_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btn_LichLamViec_Click(object sender, EventArgs e)
+        {
+            LichLamViec_BS lichLamViec = new LichLamViec_BS(sDT);
+            this.Hide();
+            lichLamViec.ShowDialog();
+            this.Close();
+        }
+
+        private void btn_taiKhoan_Click(object sender, EventArgs e)
+        {
+            TaiKhoan_BS taiKhoanForm = new TaiKhoan_BS(sDT);
+            this.Hide();
+            taiKhoanForm.ShowDialog();
+            this.Close();
         }
     }
 }

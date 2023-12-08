@@ -335,7 +335,7 @@
             this.Controls.Add(this.guna2CustomGradientPanel2);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "LichLamViec_KT";
-            this.Text = "LichLamViec_KT";
+            this.Text = "A";
             this.Load += new System.EventHandler(this.LichLamViec_KT_Load);
             this.guna2CustomGradientPanel2.ResumeLayout(false);
             this.guna2CustomGradientPanel2.PerformLayout();
