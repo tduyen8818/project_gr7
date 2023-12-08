@@ -11,7 +11,8 @@ namespace QLBenhVienDaLieu.GiaoDien.LeTanTrangUI.HoSoBenhNhanUI
     public partial class HoSoBenhNhanForm : Form
     {
         private SqlFunctionCaller sqlFunctionCaller;
-        private LeTan_Trang leTan_Trang;
+
+        private Panel panel;
 
         List<DataHoSoBenhNhan> listDataHoSoBenhNhan = new List<DataHoSoBenhNhan>();
 
@@ -41,10 +42,10 @@ namespace QLBenhVienDaLieu.GiaoDien.LeTanTrangUI.HoSoBenhNhanUI
             }
         }
 
-        public HoSoBenhNhanForm(LeTan_Trang leTan_Trang, SqlFunctionCaller sqlFunctionCaller)
+        public HoSoBenhNhanForm(Panel panel, SqlFunctionCaller sqlFunctionCaller)
         {
             this.sqlFunctionCaller = sqlFunctionCaller;
-            this.leTan_Trang = leTan_Trang;
+            this.panel = panel;
 
             InitializeComponent();
 
@@ -60,8 +61,6 @@ namespace QLBenhVienDaLieu.GiaoDien.LeTanTrangUI.HoSoBenhNhanUI
             textSizeInitialTitleHoSoBenhNhan = titleHoSoBenhNhan.Font.Size;
             textSizeInitialTextTextBoxSearchDienThoai = textBoxSearchMaTaiKhoan.Font.Size;
             textSizeInitialTextErrorMaTaiKhoan = textErrorMaTaiKhoan.Font.Size;
-
-
         }
 
         private void HoSoBenhNhanForm_Resize(object sender, EventArgs e)
@@ -136,7 +135,7 @@ namespace QLBenhVienDaLieu.GiaoDien.LeTanTrangUI.HoSoBenhNhanUI
 
                 foreach (HoSoBenhNhan hoSoBenhNhan in listHoSoBenhNhan)
                 {
-                    DataHoSoBenhNhan dataHoSoBenhNhan = new DataHoSoBenhNhan(this.leTan_Trang, this, sqlFunctionCaller);
+                    DataHoSoBenhNhan dataHoSoBenhNhan = new DataHoSoBenhNhan(this.panel, this, sqlFunctionCaller);
                     dataHoSoBenhNhan.DataMaHoSoBenhNhan.Text = hoSoBenhNhan.MaHoSoBenhNhan;
                     dataHoSoBenhNhan.DataHoVaTen.Text = hoSoBenhNhan.HoVaTen;
                     dataHoSoBenhNhan.DataSoDienThoai.Text = hoSoBenhNhan.SoDienThoai;
@@ -172,17 +171,15 @@ namespace QLBenhVienDaLieu.GiaoDien.LeTanTrangUI.HoSoBenhNhanUI
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            Panel guna2CustomGradientPanel2 = this.leTan_Trang.Guna2CustomGradientPanel2;
+            panel.Controls.Clear();
 
-            guna2CustomGradientPanel2.Controls.Clear();
-
-            AddHoSoBenhNhan addHoSoBenhNhan = new AddHoSoBenhNhan(textBoxSearchMaTaiKhoan.Text, this.leTan_Trang, sqlFunctionCaller);
+            AddHoSoBenhNhan addHoSoBenhNhan = new AddHoSoBenhNhan(textBoxSearchMaTaiKhoan.Text, this.panel, sqlFunctionCaller);
 
             addHoSoBenhNhan.TopLevel = false;
             addHoSoBenhNhan.Dock = DockStyle.Fill;
 
-            guna2CustomGradientPanel2.Controls.Add(addHoSoBenhNhan);
-            guna2CustomGradientPanel2.Tag = addHoSoBenhNhan;
+            panel.Controls.Add(addHoSoBenhNhan);
+            panel.Tag = addHoSoBenhNhan;
 
             addHoSoBenhNhan.Show();
         }

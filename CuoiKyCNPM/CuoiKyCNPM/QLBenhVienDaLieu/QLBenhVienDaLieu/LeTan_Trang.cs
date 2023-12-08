@@ -63,7 +63,7 @@ namespace QLBenhVienDaLieu
         {
             guna2CustomGradientPanel2.Controls.Clear();
 
-            HoSoBenhNhanForm hoSoBenhNhanForm = new HoSoBenhNhanForm(this, sqlFunctionCaller);
+            HoSoBenhNhanForm hoSoBenhNhanForm = new HoSoBenhNhanForm(guna2CustomGradientPanel2, sqlFunctionCaller);
 
             hoSoBenhNhanForm.TopLevel = false;
             hoSoBenhNhanForm.Dock = DockStyle.Fill;

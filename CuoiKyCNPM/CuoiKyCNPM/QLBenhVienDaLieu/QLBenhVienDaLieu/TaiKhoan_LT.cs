@@ -1,4 +1,5 @@
 ﻿using QLBenhVienDaLieu.Database.Function;
+using QLBenhVienDaLieu.GiaoDien.LeTanTrangUI.HoSoBenhNhanUI;
 using System;
 using System.Data;
 using System.Drawing;
@@ -63,6 +64,20 @@ namespace QLBenhVienDaLieu
             this.Hide();
             LichLamViec.ShowDialog();
             this.Close();
+        }
+
+        private void buttonHSBN_Click(object sender, EventArgs e)
+        {
+            HoSoBenhNhanForm hoSoBenhNhanForm = new HoSoBenhNhanForm(guna2CustomGradientPanel2, functionCaller);
+
+            hoSoBenhNhanForm.TopLevel = false;
+            hoSoBenhNhanForm.Dock = DockStyle.Fill;
+
+            guna2CustomGradientPanel2.Controls.Clear();
+            guna2CustomGradientPanel2.Controls.Add(hoSoBenhNhanForm);
+            guna2CustomGradientPanel2.Tag = hoSoBenhNhanForm;
+
+            hoSoBenhNhanForm.Show();
         }
     }
 }

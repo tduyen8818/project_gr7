@@ -1,4 +1,5 @@
 ﻿using QLBenhVienDaLieu.Database.Function;
+using QLBenhVienDaLieu.GiaoDien.LeTanTrangUI.HoSoBenhNhanUI;
 using System;
 using System.Data;
 using System.Drawing;
@@ -16,6 +17,7 @@ namespace QLBenhVienDaLieu
             this.Size = new Size(1350, 800);
             this.sDT = sDT; // Gán số điện thoại
             functionCaller = new SqlFunctionCaller();
+            functionCaller.Connect();
         }
 
         private void LichLamViec_LT_Load(object sender, EventArgs e)
@@ -54,6 +56,20 @@ namespace QLBenhVienDaLieu
             this.Hide();
             TaiKhoan.ShowDialog();
             this.Close();
+        }
+
+        private void btn_HoSoBenhNhan_Click(object sender, EventArgs e)
+        {
+            HoSoBenhNhanForm hoSoBenhNhanForm = new HoSoBenhNhanForm(guna2CustomGradientPanel2, functionCaller);
+
+            hoSoBenhNhanForm.TopLevel = false;
+            hoSoBenhNhanForm.Dock = DockStyle.Fill;
+
+            guna2CustomGradientPanel2.Controls.Clear();
+            guna2CustomGradientPanel2.Controls.Add( hoSoBenhNhanForm );
+            guna2CustomGradientPanel2.Tag = hoSoBenhNhanForm;
+
+            hoSoBenhNhanForm.Show();
         }
     }
 }
