@@ -1960,15 +1960,21 @@ namespace QLBenhVienDaLieu.Database.Function
 
         public void DeleteLichLamViec(string maLichLamViec)
         {
-            SqlCommand command = new SqlCommand();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
 
-            command.Connection = connection;
-            command.CommandType = CommandType.StoredProcedure;
-            command.CommandText = "DeleteLichLamViec";
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "DeleteLichLamViec";
 
-            command.Parameters.AddWithValue("@MaLichLamViec", maLichLamViec);
+                    command.Parameters.AddWithValue("@MaLichLamViec", maLichLamViec);
 
-            command.ExecuteNonQuery();
+                    command.ExecuteNonQuery();
+                }
+            }
 
 
         }
