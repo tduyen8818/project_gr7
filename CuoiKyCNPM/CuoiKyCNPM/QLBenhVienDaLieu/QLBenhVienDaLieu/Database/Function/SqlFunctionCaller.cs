@@ -21,21 +21,22 @@ namespace QLBenhVienDaLieu.Database.Function
 
             // -----------------Database của Quang------------------------
 
-            //const string serverName = "LAPTOP-C2CHSH4F";
-            //const string databaseName = "PHONGKHAMDALIEU";
-            //const string userName = "quang";
-            //const string password = "123";
+            const string serverName = "LAPTOP-C2CHSH4F";
+            const string databaseName = "PHONGKHAMDALIEU";
+            const string userName = "quang";
+            const string password = "123";
 
-            //this.connectionString = $"Data Source={serverName};" +
-            //$"Initial Catalog={databaseName};" +
-            //$"User id={userName};" +
-            //$"Password={password};";
+            this.connectionString = $"Data Source={serverName};" +
+            $"Initial Catalog={databaseName};" +
+            $"User id={userName};" +
+            $"Password={password};";
 
-            //this.connection = new SqlConnection(connectionString);
+            this.connection = new SqlConnection(connectionString);
 
 
             //---------------------- Database của Thiên-----------------------
 
+<<<<<<< HEAD
             /*const string serverName = "LAPTOP-4M06U5";
             const string databaseName = "PHONGKHAMDALIEU";
 
@@ -53,7 +54,29 @@ namespace QLBenhVienDaLieu.Database.Function
                 $"Initial Catalog={databaseName};" +
                 $"Integrated Security=True";
             this.connection = new SqlConnection(connectionString);
+=======
 
+
+            //const string serverName = "LAPTOP-4M06U5";
+            //const string databaseName = "PHONGKHAMDALIEU";
+
+            //this.connectionString = $"Data Source={serverName};" +
+            //    $"Initial Catalog={databaseName};" +
+            //    $"Integrated Security=True";
+            //this.connection = new SqlConnection(connectionString);
+
+
+            //---------------------- Database của Chương-----------------------
+
+            //const string serverName = "LAPTOP-8AHD28S0\\CHUONG";
+            //const string userName = "LAPTOP-8AHD28S0\\huynh";
+            //const string databaseName = "PHONGKHAMDALIEU";
+>>>>>>> e9b31c6d1c2fd42b764866a25278457a61c44d6a
+
+            //this.connectionString = $"Data Source={serverName};" +
+            //    $"Initial Catalog={databaseName};" +
+            //    $"Integrated Security=True";
+            //this.connection = new SqlConnection(connectionString);
         }
 
         public SqlFunctionCaller(string connectionString)

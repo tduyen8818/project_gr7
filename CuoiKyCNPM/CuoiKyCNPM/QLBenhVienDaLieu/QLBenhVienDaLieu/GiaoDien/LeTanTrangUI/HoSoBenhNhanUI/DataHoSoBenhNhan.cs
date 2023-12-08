@@ -9,7 +9,7 @@ namespace QLBenhVienDaLieu.GiaoDien.LeTanTrangUI.HoSoBenhNhanUI
     {
         private SqlFunctionCaller sqlFunctionCaller;
         private HoSoBenhNhanForm hoSoBenhNhanForm;
-        private LeTan_Trang leTan_Trang;
+        private Panel panel;
 
         private Rectangle originalForm;
         private Rectangle originalShowHoSoBenhNhan;
@@ -56,11 +56,11 @@ namespace QLBenhVienDaLieu.GiaoDien.LeTanTrangUI.HoSoBenhNhanUI
         public Label DataCCCD { get { return this.dataCCCD; } set { this.dataCCCD = value; } }
         public Label DataSoDienThoai { get { return this.dataSoDienThoai; } set { this.dataSoDienThoai = value; } }
 
-        public DataHoSoBenhNhan(LeTan_Trang leTan_Trang, HoSoBenhNhanForm hoSoBenhNhanForm, SqlFunctionCaller sqlFunctionCaller)
+        public DataHoSoBenhNhan(Panel panel, HoSoBenhNhanForm hoSoBenhNhanForm, SqlFunctionCaller sqlFunctionCaller)
         {
             this.sqlFunctionCaller = sqlFunctionCaller;
             this.hoSoBenhNhanForm = hoSoBenhNhanForm;
-            this.leTan_Trang = leTan_Trang;
+            this.panel = panel;
 
             InitializeComponent();
 
@@ -133,17 +133,17 @@ namespace QLBenhVienDaLieu.GiaoDien.LeTanTrangUI.HoSoBenhNhanUI
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
-            Panel guna2CustomGradientPanel2 = this.leTan_Trang.Guna2CustomGradientPanel2;
+            Panel panel = this.panel;
 
-            guna2CustomGradientPanel2.Controls.Clear();
+            panel.Controls.Clear();
 
-            DataDetailHoSoBenhNhan dataDetailHoSoBenhNhan = new DataDetailHoSoBenhNhan(dataMaHoSoBenhNhan.Text , this.leTan_Trang, sqlFunctionCaller);
+            DataDetailHoSoBenhNhan dataDetailHoSoBenhNhan = new DataDetailHoSoBenhNhan(dataMaHoSoBenhNhan.Text , this.panel, sqlFunctionCaller);
 
             dataDetailHoSoBenhNhan.TopLevel = false;
             dataDetailHoSoBenhNhan.Dock = DockStyle.Fill;
 
-            guna2CustomGradientPanel2.Controls.Add(dataDetailHoSoBenhNhan);
-            guna2CustomGradientPanel2.Tag = dataDetailHoSoBenhNhan;
+            panel.Controls.Add(dataDetailHoSoBenhNhan);
+            panel.Tag = dataDetailHoSoBenhNhan;
 
             dataDetailHoSoBenhNhan.Show();
         }
@@ -163,18 +163,16 @@ namespace QLBenhVienDaLieu.GiaoDien.LeTanTrangUI.HoSoBenhNhanUI
 
         private void buttonAddLichKham_Click(object sender, EventArgs e)
         {
-            Panel guna2CustomGradientPanel2 = this.leTan_Trang.Guna2CustomGradientPanel2;
-
-            guna2CustomGradientPanel2.Controls.Clear();
+            panel.Controls.Clear();
 
             DatLichKhamFormLeTan datLichKhamFormLeTan = new DatLichKhamFormLeTan(this.hoSoBenhNhanForm.TextBoxSearchMaTaiKhoan.Text,
-                dataMaHoSoBenhNhan.Text, this.leTan_Trang, sqlFunctionCaller);
+                dataMaHoSoBenhNhan.Text, this.panel, sqlFunctionCaller);
 
             datLichKhamFormLeTan.TopLevel = false;
             datLichKhamFormLeTan.Dock = DockStyle.Fill;
 
-            guna2CustomGradientPanel2.Controls.Add(datLichKhamFormLeTan);
-            guna2CustomGradientPanel2.Tag = datLichKhamFormLeTan;
+            panel.Controls.Add(datLichKhamFormLeTan);
+            panel.Tag = datLichKhamFormLeTan;
 
             datLichKhamFormLeTan.Show();
         }

@@ -19,6 +19,7 @@ namespace QLBenhVienDaLieu
             this.Size = new Size(1350, 800);
             this.sDT = sDT; // Gán số điện thoại
             functionCaller = new SqlFunctionCaller();
+            functionCaller.Connect();
         }
 
         private void LichLamViec_KT_Load(object sender, EventArgs e)
@@ -59,21 +60,6 @@ namespace QLBenhVienDaLieu
 
         }
 
-        private void btn_ThongKe_Click(object sender, EventArgs e)
-        {
-            guna2CustomGradientPanel2.Controls.Clear();
-
-            ThongKeDoanhThu thongKeDoanhThu = new ThongKeDoanhThu(sqlFunctionCaller);
-
-            thongKeDoanhThu.TopLevel = false;
-            thongKeDoanhThu.Dock = DockStyle.Fill;
-
-            guna2CustomGradientPanel2.Controls.Add(thongKeDoanhThu);
-            guna2CustomGradientPanel2.Tag = thongKeDoanhThu;
-
-            thongKeDoanhThu.Show();
-        }
-
         private void btn_HoaDon_Click(object sender, EventArgs e)
         {
             guna2CustomGradientPanel2.Controls.Clear();
@@ -83,10 +69,25 @@ namespace QLBenhVienDaLieu
             danhSachHoaDon.TopLevel = false;
             danhSachHoaDon.Dock = DockStyle.Fill;
 
+
             guna2CustomGradientPanel2.Controls.Add(danhSachHoaDon);
             guna2CustomGradientPanel2.Tag = danhSachHoaDon;
 
             danhSachHoaDon.Show();
+        }
+
+        private void btn_ThongKe_Click(object sender, EventArgs e)
+        {
+            ThongKeDoanhThu thongKeDoanhThu = new ThongKeDoanhThu(functionCaller);
+
+            thongKeDoanhThu.TopLevel = false;
+            thongKeDoanhThu.Dock = DockStyle.Fill;
+
+            guna2CustomGradientPanel2.Controls.Clear();
+            guna2CustomGradientPanel2.Controls.Add(thongKeDoanhThu);
+            guna2CustomGradientPanel2.Tag = thongKeDoanhThu;
+
+            thongKeDoanhThu.Show();
         }
     }
 }

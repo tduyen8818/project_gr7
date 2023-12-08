@@ -241,6 +241,14 @@ namespace QLBenhVienDaLieu
             this.Hide();
             TaiKhoan.ShowDialog();
             this.Close();
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
+
+
         }
     }
 }

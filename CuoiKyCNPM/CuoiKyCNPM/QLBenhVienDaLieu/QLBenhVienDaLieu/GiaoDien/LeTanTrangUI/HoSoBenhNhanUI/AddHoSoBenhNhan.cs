@@ -19,7 +19,7 @@ namespace QLBenhVienDaLieu.GiaoDien.LeTanTrangUI.HoSoBenhNhanUI
 
         private SqlFunctionCaller sqlFunctionCaller;
         private string maTaiKhoan;
-        private LeTan_Trang leTan_Trang;
+        private Panel panel;
 
         private Rectangle originalForm;
         private Rectangle originalTitleThemHoSoBenhNhan;
@@ -102,11 +102,11 @@ namespace QLBenhVienDaLieu.GiaoDien.LeTanTrangUI.HoSoBenhNhanUI
         private float textSizeInitialTextDotNgaySinh;
         private float textSizeInitialTextDotGioiTinh;
 
-        public AddHoSoBenhNhan(string maTaiKhoan, LeTan_Trang leTan_Trang, SqlFunctionCaller sqlFunctionCaller)
+        public AddHoSoBenhNhan(string maTaiKhoan, Panel panel, SqlFunctionCaller sqlFunctionCaller)
         {
             this.sqlFunctionCaller = sqlFunctionCaller;
             this.maTaiKhoan = maTaiKhoan;
-            this.leTan_Trang = leTan_Trang;
+            this.panel = panel;
 
             InitializeComponent();
 
@@ -471,11 +471,9 @@ namespace QLBenhVienDaLieu.GiaoDien.LeTanTrangUI.HoSoBenhNhanUI
 
         private void buttonReturn_Click(object sender, EventArgs e)
         {
-            Panel guna2CustomGradientPanel2 = this.leTan_Trang.Guna2CustomGradientPanel2;
+            panel.Controls.Clear();
 
-            guna2CustomGradientPanel2.Controls.Clear();
-
-            HoSoBenhNhanForm hoSoBenhNhanForm = new HoSoBenhNhanForm(this.leTan_Trang, sqlFunctionCaller);
+            HoSoBenhNhanForm hoSoBenhNhanForm = new HoSoBenhNhanForm(this.panel, sqlFunctionCaller);
 
             hoSoBenhNhanForm.TopLevel = false;
             hoSoBenhNhanForm.Dock = DockStyle.Fill;
@@ -484,8 +482,8 @@ namespace QLBenhVienDaLieu.GiaoDien.LeTanTrangUI.HoSoBenhNhanUI
 
             hoSoBenhNhanForm.buttonSearch_Click(null, null);
 
-            guna2CustomGradientPanel2.Controls.Add(hoSoBenhNhanForm);
-            guna2CustomGradientPanel2.Tag = hoSoBenhNhanForm;
+            panel.Controls.Add(hoSoBenhNhanForm);
+            panel.Tag = hoSoBenhNhanForm;
 
             hoSoBenhNhanForm.Show();
         }

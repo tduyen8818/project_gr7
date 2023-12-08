@@ -19,7 +19,7 @@ namespace QLBenhVienDaLieu.GiaoDien.LeTanTrangUI.HoSoBenhNhanUI
     {
         private SqlFunctionCaller sqlFunctionCaller;
         private string maHoSoBenhNhan;
-        private LeTan_Trang leTan_Trang;
+        private Panel panel;
 
         HoSoBenhNhan hoSoBenhNhan;
 
@@ -110,11 +110,11 @@ namespace QLBenhVienDaLieu.GiaoDien.LeTanTrangUI.HoSoBenhNhanUI
         private float textSizeInitialTextDotNgaySinh;
         private float textSizeInitialTextDotGioiTinh;
 
-        public DataDetailHoSoBenhNhan(string maHoSoBenhNhan, LeTan_Trang leTan_Trang, SqlFunctionCaller sqlFunctionCaller)
+        public DataDetailHoSoBenhNhan(string maHoSoBenhNhan, Panel panel, SqlFunctionCaller sqlFunctionCaller)
         {
             this.sqlFunctionCaller = sqlFunctionCaller;
             this.maHoSoBenhNhan = maHoSoBenhNhan;
-            this.leTan_Trang = leTan_Trang;
+            this.panel = panel;
 
             InitializeComponent();
 
@@ -503,11 +503,10 @@ namespace QLBenhVienDaLieu.GiaoDien.LeTanTrangUI.HoSoBenhNhanUI
 
         private void buttonReturn_Click(object sender, EventArgs e)
         {
-            Panel guna2CustomGradientPanel2 = this.leTan_Trang.Guna2CustomGradientPanel2;
 
-            guna2CustomGradientPanel2.Controls.Clear();
+           panel.Controls.Clear();
 
-            HoSoBenhNhanForm hoSoBenhNhanForm = new HoSoBenhNhanForm(this.leTan_Trang, sqlFunctionCaller);
+            HoSoBenhNhanForm hoSoBenhNhanForm = new HoSoBenhNhanForm(panel, sqlFunctionCaller);
 
             hoSoBenhNhanForm.TopLevel = false;
             hoSoBenhNhanForm.Dock = DockStyle.Fill;
@@ -516,8 +515,8 @@ namespace QLBenhVienDaLieu.GiaoDien.LeTanTrangUI.HoSoBenhNhanUI
 
             hoSoBenhNhanForm.buttonSearch_Click(null, null);
 
-            guna2CustomGradientPanel2.Controls.Add(hoSoBenhNhanForm);
-            guna2CustomGradientPanel2.Tag = hoSoBenhNhanForm;
+           panel.Controls.Add(hoSoBenhNhanForm);
+           panel.Tag = hoSoBenhNhanForm;
 
             hoSoBenhNhanForm.Show();
         }

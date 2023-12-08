@@ -230,7 +230,7 @@ namespace QLBenhVienDaLieu.Database.Check
 
         public static bool CheckEmail(string email)
         {
-            if (Regex.Match(email, @"^[a-zA-Z]+\@gmail.com\z").Success)
+            if (Regex.Match(email, @"^[a-zA-Z]+\d*\@gmail.com\z").Success)
             {
                 return true;
             }
