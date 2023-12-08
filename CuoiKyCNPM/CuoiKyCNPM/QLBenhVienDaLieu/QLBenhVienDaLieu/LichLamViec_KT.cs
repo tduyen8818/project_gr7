@@ -1,4 +1,6 @@
 ﻿using QLBenhVienDaLieu.Database.Function;
+using QLBenhVienDaLieu.GiaoDien.KeToanTrangUI.HoaDonUI;
+using QLBenhVienDaLieu.GiaoDien.KeToanTrangUI.ThongKeUI;
 using System;
 using System.Data;
 using System.Drawing;
@@ -9,6 +11,7 @@ namespace QLBenhVienDaLieu
     public partial class LichLamViec_KT : Form
     {
         private SqlFunctionCaller functionCaller;
+        private SqlFunctionCaller sqlFunctionCaller;
         private string sDT;
         public LichLamViec_KT(string sDT)
         {
@@ -54,6 +57,36 @@ namespace QLBenhVienDaLieu
         private void btn_TrangChu_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_ThongKe_Click(object sender, EventArgs e)
+        {
+            guna2CustomGradientPanel2.Controls.Clear();
+
+            ThongKeDoanhThu thongKeDoanhThu = new ThongKeDoanhThu(sqlFunctionCaller);
+
+            thongKeDoanhThu.TopLevel = false;
+            thongKeDoanhThu.Dock = DockStyle.Fill;
+
+            guna2CustomGradientPanel2.Controls.Add(thongKeDoanhThu);
+            guna2CustomGradientPanel2.Tag = thongKeDoanhThu;
+
+            thongKeDoanhThu.Show();
+        }
+
+        private void btn_HoaDon_Click(object sender, EventArgs e)
+        {
+            guna2CustomGradientPanel2.Controls.Clear();
+
+            DanhSachHoaDon danhSachHoaDon = new DanhSachHoaDon(sqlFunctionCaller);
+
+            danhSachHoaDon.TopLevel = false;
+            danhSachHoaDon.Dock = DockStyle.Fill;
+
+            guna2CustomGradientPanel2.Controls.Add(danhSachHoaDon);
+            guna2CustomGradientPanel2.Tag = danhSachHoaDon;
+
+            danhSachHoaDon.Show();
         }
     }
 }

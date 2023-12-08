@@ -110,5 +110,13 @@ namespace QLBenhVienDaLieu
                 this.Hide();
             }
         }
+
+        private void btn_DichVu_Click(object sender, EventArgs e)
+        {
+            BS_Kham_Benh bskb = new BS_Kham_Benh();
+            bskb.FormClosed += (s, args) => this.Show();
+            bskb.Show();
+            this.Hide();
+        }
     }
 }

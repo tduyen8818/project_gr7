@@ -699,6 +699,7 @@
             this.btn_ThongKe.Size = new System.Drawing.Size(225, 57);
             this.btn_ThongKe.TabIndex = 7;
             this.btn_ThongKe.UseVisualStyleBackColor = false;
+            this.btn_ThongKe.Click += new System.EventHandler(this.btn_ThongKe_Click);
             // 
             // button1
             // 
@@ -725,6 +726,7 @@
             this.btn_HoaDon.Size = new System.Drawing.Size(225, 57);
             this.btn_HoaDon.TabIndex = 6;
             this.btn_HoaDon.UseVisualStyleBackColor = false;
+            this.btn_HoaDon.Click += new System.EventHandler(this.btn_HoaDon_Click);
             // 
             // button8
             // 

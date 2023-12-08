@@ -55,5 +55,10 @@ namespace QLBenhVienDaLieu
             TaiKhoan.ShowDialog();
             this.Close();
         }
+
+        private void btn_HoSoBenhNhan_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
