@@ -36,7 +36,7 @@ namespace QLBenhVienDaLieu.Database.Function
 
             //---------------------- Database của Thiên-----------------------
 
-<<<<<<< HEAD
+
 
             //const string serverName = "LAPTOP-4M06U5";
             //const string databaseName = "PHONGKHAMDALIEU";
@@ -57,27 +57,6 @@ namespace QLBenhVienDaLieu.Database.Function
             //    $"Initial Catalog={databaseName};" +
             //    $"Integrated Security=True";
             //this.connection = new SqlConnection(connectionString);
-
-=======
-            const string serverName = "LAPTOP-4M06U5";
-            const string databaseName = "PHONGKHAMDALIEU";
-
-            this.connectionString = $"Data Source={serverName};" +
-                $"Initial Catalog={databaseName};" +
-                $"Integrated Security=True";
-            this.connection = new SqlConnection(connectionString);
-            //---------------------- Database của Chương-----------------------
-
-            /*const string serverName = "LAPTOP-8AHD28S0\\CHUONG";
-            const string userName = "LAPTOP-8AHD28S0\\huynh";
-            const string databaseName = "PHONGKHAMDALIEU";
-
-            this.connectionString = $"Data Source={serverName};" +
-                $"Initial Catalog={databaseName};" +
-                $"Integrated Security=True";
-            this.connection = new SqlConnection(connectionString);*/
->>>>>>> c8204abb776dd56d25d74f0d3e411a8b492eb68b
-
         }
 
         public SqlFunctionCaller(string connectionString)

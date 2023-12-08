@@ -60,31 +60,6 @@ namespace QLBenhVienDaLieu
 
         }
 
-<<<<<<< HEAD
-        private void btn_HoaDon_Click(object sender, EventArgs e)
-        {
-            DanhSachHoaDon danhSachHoaDon = new DanhSachHoaDon(functionCaller);
-            
-            danhSachHoaDon.TopLevel = false;
-            danhSachHoaDon.Dock = DockStyle.Fill;
-
-            guna2CustomGradientPanel2.Controls.Clear();
-=======
-        private void btn_ThongKe_Click(object sender, EventArgs e)
-        {
-            guna2CustomGradientPanel2.Controls.Clear();
-
-            ThongKeDoanhThu thongKeDoanhThu = new ThongKeDoanhThu(sqlFunctionCaller);
-
-            thongKeDoanhThu.TopLevel = false;
-            thongKeDoanhThu.Dock = DockStyle.Fill;
-
-            guna2CustomGradientPanel2.Controls.Add(thongKeDoanhThu);
-            guna2CustomGradientPanel2.Tag = thongKeDoanhThu;
-
-            thongKeDoanhThu.Show();
-        }
-
         private void btn_HoaDon_Click(object sender, EventArgs e)
         {
             guna2CustomGradientPanel2.Controls.Clear();
@@ -94,13 +69,12 @@ namespace QLBenhVienDaLieu
             danhSachHoaDon.TopLevel = false;
             danhSachHoaDon.Dock = DockStyle.Fill;
 
->>>>>>> c8204abb776dd56d25d74f0d3e411a8b492eb68b
+
             guna2CustomGradientPanel2.Controls.Add(danhSachHoaDon);
             guna2CustomGradientPanel2.Tag = danhSachHoaDon;
 
             danhSachHoaDon.Show();
         }
-<<<<<<< HEAD
 
         private void btn_ThongKe_Click(object sender, EventArgs e)
         {
@@ -114,9 +88,6 @@ namespace QLBenhVienDaLieu
             guna2CustomGradientPanel2.Tag = thongKeDoanhThu;
 
             thongKeDoanhThu.Show();
-
         }
-=======
->>>>>>> c8204abb776dd56d25d74f0d3e411a8b492eb68b
     }
 }
