@@ -64,7 +64,7 @@ namespace QLBenhVienDaLieu
 
         private void btn_DichVu_Click(object sender, EventArgs e)
         {
-            BS_Kham_Benh bskb = new BS_Kham_Benh();
+            BS_Kham_Benh bskb = new BS_Kham_Benh(sDT);
             bskb.FormClosed += (s, args) => this.Close();
             this.Hide();
             bskb.Show();

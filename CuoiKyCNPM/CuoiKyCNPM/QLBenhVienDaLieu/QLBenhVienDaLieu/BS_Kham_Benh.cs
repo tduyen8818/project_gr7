@@ -30,7 +30,7 @@ namespace QLBenhVienDaLieu
         public BS_Kham_Benh()
         {
             InitializeComponent();
-            this.sDT = "123";
+            this.sDT = "";
             dt_ngayKham.Value = DateTime.Now;
             dt_ngayKham.MaxDate = dt_ngayKham.Value;
             //Change column display size

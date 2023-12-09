@@ -339,36 +339,12 @@ namespace QLBenhVienDaLieu
 
         private void dgv_skb_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //if (e.RowIndex >= 0)
-            //{
-            //    DataGridViewRow selectedRow = dgv_skb.Rows[e.RowIndex];
-            //    string maHoSoBenhNhan = selectedRow.Cells["MaHoSoBenhNhan"].Value.ToString();
-            //    string maLichKham = selectedRow.Cells["MaLichKham"].Value.ToString();
-
-            //    // Open the second form and call the method to pass the data
-            //    BS_Kham_Benh_2 hsbn = new BS_Kham_Benh_2();
-            //    hsbn.SetMaHoSoBenhNhan(maHoSoBenhNhan, maLichKham, this.WindowState);
-            //    hsbn.FormClosed += (s, args) => this.Show();
-            //    hsbn.Show();
-            //    this.Hide();
-            //}
+            
         }
 
         private void dgv_benhAn_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //if (e.RowIndex >= 0)
-            //{
-            //    DataGridViewRow selectedRow = dgv_benhAn.Rows[e.RowIndex];
-            //    string maHoSoBenhNhan = selectedRow.Cells["MaHoSoBenhNhan"].Value.ToString();
-            //    string maLichKham = selectedRow.Cells["MaLichKham"].Value.ToString();
-
-            //    // Open the second form and call the method to pass the data
-            //    BS_Kham_Benh_2 hsbn = new BS_Kham_Benh_2();
-            //    hsbn.SetMaHoSoBenhNhan(maHoSoBenhNhan, maLichKham, this.WindowState);
-            //    hsbn.FormClosed += (s, args) => this.Show();
-            //    hsbn.Show();
-            //    this.Hide();
-            //}
+            
         }
 
         private void enaReadOnlyDGV()
