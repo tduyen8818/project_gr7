@@ -24,14 +24,22 @@ namespace QLBenhVienDaLieu
             // Số điện thoại nhập từ TextBox
             string inputPhoneNumber = textBox_SoDienThoai.Text;
 
+            const string serverName = "LAPTOP-C2CHSH4F";
+            const string databaseName = "PHONGKHAMDALIEU";
+            const string userName = "quang";
+            const string password = "123";
+
             // Kết nối đến cơ sở dữ liệu SQL Server
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""D:\2023\TH CNPM\DeTai\QLBenhVienDaLieu\QLBenhVienDaLieu\Database1.mdf"";Integrated Security=True"; // Thay thế bằng chuỗi kết nối cơ sở dữ liệu thực tế
+            string connectionString = $"Data Source={serverName};" +
+            $"Initial Catalog={databaseName};" +
+            $"User id={userName};" +
+            $"Password={password};"; // Thay thế bằng chuỗi kết nối cơ sở dữ liệu thực tế
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
 
                 // Kiểm tra xem số điện thoại có tồn tại trong cơ sở dữ liệu hay không
-                string query = "SELECT COUNT(*) FROM TaiKhoan WHERE SoDienThoai = @SoDienThoai";
+                string query = "SELECT COUNT(*) FROM DangKyUser WHERE SoDienThoai = @SoDienThoai";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@SoDienThoai", inputPhoneNumber);
@@ -45,9 +53,9 @@ namespace QLBenhVienDaLieu
                         try
                         {
                             // Thay đổi thông tin tài khoản Twilio của bạn
-                            string accountSid = "AC4d5fb5f8d08bf654fbfba35370ca5dba";
-                            string authToken = "44de545b6757df806b9333182654b769";
-                            string twilioPhoneNumber = "+12032759991"; // Số điện thoại Twilio đã cung cấp
+                            string accountSid = "AC8c409975f31b38baad27e6b1c480b32b";
+                            string authToken = "4af34b894d9d4073648c4cb4f4669530";
+                            string twilioPhoneNumber = "+16062632008"; // Số điện thoại Twilio đã cung cấp
 
                             TwilioClient.Init(accountSid, authToken);
 

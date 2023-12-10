@@ -339,36 +339,12 @@ namespace QLBenhVienDaLieu
 
         private void dgv_skb_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //if (e.RowIndex >= 0)
-            //{
-            //    DataGridViewRow selectedRow = dgv_skb.Rows[e.RowIndex];
-            //    string maHoSoBenhNhan = selectedRow.Cells["MaHoSoBenhNhan"].Value.ToString();
-            //    string maLichKham = selectedRow.Cells["MaLichKham"].Value.ToString();
-
-            //    // Open the second form and call the method to pass the data
-            //    BS_Kham_Benh_2 hsbn = new BS_Kham_Benh_2();
-            //    hsbn.SetMaHoSoBenhNhan(maHoSoBenhNhan, maLichKham, this.WindowState);
-            //    hsbn.FormClosed += (s, args) => this.Show();
-            //    hsbn.Show();
-            //    this.Hide();
-            //}
+            
         }
 
         private void dgv_benhAn_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //if (e.RowIndex >= 0)
-            //{
-            //    DataGridViewRow selectedRow = dgv_benhAn.Rows[e.RowIndex];
-            //    string maHoSoBenhNhan = selectedRow.Cells["MaHoSoBenhNhan"].Value.ToString();
-            //    string maLichKham = selectedRow.Cells["MaLichKham"].Value.ToString();
-
-            //    // Open the second form and call the method to pass the data
-            //    BS_Kham_Benh_2 hsbn = new BS_Kham_Benh_2();
-            //    hsbn.SetMaHoSoBenhNhan(maHoSoBenhNhan, maLichKham, this.WindowState);
-            //    hsbn.FormClosed += (s, args) => this.Show();
-            //    hsbn.Show();
-            //    this.Hide();
-            //}
+            
         }
 
         private void enaReadOnlyDGV()
@@ -383,20 +359,52 @@ namespace QLBenhVienDaLieu
             dgv_benhAn.ReadOnly = false;
         }
 
+        TaiKhoan_BS taiKhoanForm;
+        LichLamViec_BS lichLamViec;
+
         private void button6_Click(object sender, EventArgs e)
         {
-            TaiKhoan_BS taiKhoanForm = new TaiKhoan_BS(sDT);
-            this.Hide();
-            taiKhoanForm.ShowDialog();
-            this.Close();
+            //taiKhoanForm = new TaiKhoan_BS(sDT);
+            //this.Hide();
+            //taiKhoanForm.ShowDialog();
+            //this.Close();
+            if (taiKhoanForm == null || taiKhoanForm.IsDisposed)
+            {
+                taiKhoanForm = new TaiKhoan_BS(sDT);
+                taiKhoanForm.FormClosed += (s, args) => this.Close();
+                this.Hide();
+                taiKhoanForm.Show();
+            }
+            if (IsFormHidden(taiKhoanForm))
+            {
+                this.Hide();
+                taiKhoanForm.Show();
+            }
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            LichLamViec_BS lichLamViec = new LichLamViec_BS(sDT);
-            this.Hide();
-            lichLamViec.ShowDialog();
-            this.Close();
+            //lichLamViec = new LichLamViec_BS(sDT);
+            //this.Hide();
+            //lichLamViec.ShowDialog();
+            //this.Close();
+            if (lichLamViec == null || lichLamViec.IsDisposed)
+            {
+                lichLamViec = new LichLamViec_BS(sDT);
+                lichLamViec.FormClosed += (s, args) => this.Close();
+                this.Hide();
+                lichLamViec.Show();
+            }
+            if (IsFormHidden(lichLamViec))
+            {
+                this.Hide();
+                lichLamViec.Show();
+            }
+        }
+
+        private bool IsFormHidden(Form form)
+        {
+            return form != null && form.Visible && !form.Focused;
         }
     }
 }

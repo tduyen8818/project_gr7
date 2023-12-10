@@ -42,9 +42,10 @@ namespace QLBenhVienDaLieu
                 else if (functionCaller.CheckUser(sDT, matKhau) == "User")
                 {
                     BenhNhan_Trang form1 = new BenhNhan_Trang(sDT, functionCaller);
+                    form1.FormClosed += (s, args) => this.Close();
                     this.Hide();
-                    form1.ShowDialog();
-                    this.Close();
+                    form1.Show();
+                    //this.Close();
                 }
 
                 else
@@ -56,9 +57,9 @@ namespace QLBenhVienDaLieu
                         {
                             case "BacSi":
                                 BS_Kham_Benh bacSiForm = new BS_Kham_Benh(sDT);
+                                bacSiForm.FormClosed += (s, args) => this.Close();
                                 this.Hide();
-                                bacSiForm.ShowDialog();
-                                this.Close();
+                                bacSiForm.Show();
                                 break;
 
                             case "ThuKy":

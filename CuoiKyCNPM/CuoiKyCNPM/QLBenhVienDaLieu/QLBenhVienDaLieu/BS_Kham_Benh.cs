@@ -1,4 +1,5 @@
-﻿using QLBenhVienDaLieu.Database.Function;
+﻿using QLBenhVienDaLieu.Database.Class;
+using QLBenhVienDaLieu.Database.Function;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,7 +31,7 @@ namespace QLBenhVienDaLieu
         public BS_Kham_Benh()
         {
             InitializeComponent();
-            this.sDT = "123";
+            this.sDT = "";
             dt_ngayKham.Value = DateTime.Now;
             dt_ngayKham.MaxDate = dt_ngayKham.Value;
             //Change column display size
@@ -100,23 +101,47 @@ namespace QLBenhVienDaLieu
 
         private void btn_DichVu_Click(object sender, EventArgs e)
         {
-            
+
         }
+
+        TaiKhoan_BS taiKhoanForm;
+        LichLamViec_BS lichLamViec;
 
         private void btn_LichLamViec_Click(object sender, EventArgs e)
         {
-            LichLamViec_BS lichLamViec = new LichLamViec_BS(sDT);
-            this.Hide();
-            lichLamViec.ShowDialog();
-            this.Close();
+            if (lichLamViec == null || lichLamViec.IsDisposed)
+            {
+                lichLamViec = new LichLamViec_BS(sDT);
+                lichLamViec.FormClosed += (s, args) => this.Close();
+                this.Hide();
+                lichLamViec.Show();
+            }
+            if (IsFormHidden(lichLamViec))
+            {
+                this.Hide();
+                lichLamViec.Show();
+            }
         }
 
         private void btn_taiKhoan_Click(object sender, EventArgs e)
         {
-            TaiKhoan_BS taiKhoanForm = new TaiKhoan_BS(sDT);
-            this.Hide();
-            taiKhoanForm.ShowDialog();
-            this.Close();
+            if (taiKhoanForm == null || taiKhoanForm.IsDisposed)
+            {
+                taiKhoanForm = new TaiKhoan_BS(sDT);
+                taiKhoanForm.FormClosed += (s, args) => this.Close();
+                this.Hide();
+                taiKhoanForm.Show();
+            }
+            if (IsFormHidden(taiKhoanForm))
+            {
+                this.Hide();
+                taiKhoanForm.Show();
+            }
+        }
+
+        private bool IsFormHidden(Form form)
+        {
+            return form != null && form.Visible && !form.Focused;
         }
     }
 }

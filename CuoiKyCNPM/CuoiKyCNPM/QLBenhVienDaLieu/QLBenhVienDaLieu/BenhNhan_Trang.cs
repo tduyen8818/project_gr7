@@ -42,12 +42,27 @@ namespace QLBenhVienDaLieu
 
         }
 
+        private BS_Kham_Benh bskb;
+
         private void buttonDichVu_Click(object sender, EventArgs e)
         {
-            BS_Kham_Benh bskb = new BS_Kham_Benh();
-            bskb.FormClosed += (s, args) => this.Show();
-            bskb.Show();
-            this.Hide();
+            if (bskb == null || bskb.IsDisposed)
+            {
+                bskb = new BS_Kham_Benh(soDienThoai);
+                bskb.FormClosed += (s, args) => this.Close();
+                this.Hide();
+                bskb.Show();
+            }
+            if (IsFormHidden(bskb))
+            {
+                this.Hide();
+                bskb.Show();
+            }
+        }
+
+        private bool IsFormHidden(Form form)
+        {
+            return form != null && form.Visible && !form.Focused;
         }
 
         private void buttonLichKham_Click(object sender, EventArgs e)

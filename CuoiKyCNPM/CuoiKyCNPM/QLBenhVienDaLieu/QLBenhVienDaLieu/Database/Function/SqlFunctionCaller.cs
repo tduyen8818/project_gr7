@@ -19,7 +19,7 @@ namespace QLBenhVienDaLieu.Database.Function
         public SqlFunctionCaller()
         {
 
-            // -----------------Database của Quang------------------------
+            //-----------------Database của Quang------------------------
 
             const string serverName = "LAPTOP-C2CHSH4F";
             const string databaseName = "PHONGKHAMDALIEU";
