@@ -57,12 +57,27 @@ namespace QLBenhVienDaLieu
             }
         }
 
+        LichLamViec_BS LichLamViec;
+
         private void btn_LichLamViec_Click(object sender, EventArgs e)
         {
-            LichLamViec_BS LichLamViec = new LichLamViec_BS(SDT);
-            this.Hide();
-            LichLamViec.ShowDialog();
-            this.Close();
+            if (LichLamViec == null || LichLamViec.IsDisposed)
+            {
+                LichLamViec = new LichLamViec_BS(SDT);
+                LichLamViec.FormClosed += (s, args) => this.Close();
+                this.Hide();
+                LichLamViec.Show();
+            }
+            if (IsFormHidden(LichLamViec))
+            {
+                this.Hide();
+                LichLamViec.Show();
+            }
+        }
+
+        private bool IsFormHidden(Form form)
+        {
+            return form != null && form.Visible && !form.Focused;
         }
     }
 }
