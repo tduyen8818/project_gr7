@@ -39,22 +39,37 @@ namespace QLBenhVienDaLieu
             // Hiển thị kết quả tìm kiếm trong DataGridView
             guna2DataGridView1.DataSource = searchResult;
         }
-
+        TaiKhoan_BS TaiKhoan;
         private void btn_TaiKhoan_Click(object sender, EventArgs e)
         {
-            TaiKhoan_BS TaiKhoan = new TaiKhoan_BS(sDT);
-            this.Hide();
-            TaiKhoan.ShowDialog();
-            this.Close();
-
+            if (TaiKhoan == null || TaiKhoan.IsDisposed)
+            {
+                TaiKhoan = new TaiKhoan_BS(sDT);
+                TaiKhoan.FormClosed += (s, args) => this.Close();
+                this.Hide();
+                TaiKhoan.Show();
+            }
+            if (IsFormHidden(TaiKhoan))
+            {
+                this.Hide();
+                TaiKhoan.Show();
+            }
         }
-
+        LichLamViec_BS LichLamViec;
         private void btn_LichLamViec_Click(object sender, EventArgs e)
         {
-            LichLamViec_BS LichLamViec = new LichLamViec_BS(sDT);
-            this.Hide();
-            LichLamViec.ShowDialog();
-            this.Close();
+            if (LichLamViec == null || LichLamViec.IsDisposed)
+            {
+                LichLamViec = new LichLamViec_BS(sDT);
+                LichLamViec.FormClosed += (s, args) => this.Close();
+                this.Hide();
+                LichLamViec.Show();
+            }
+            if (IsFormHidden(LichLamViec))
+            {
+                this.Hide();
+                LichLamViec.Show();
+            }
         }
 
         private void btn_TrangChu_Click(object sender, EventArgs e)
