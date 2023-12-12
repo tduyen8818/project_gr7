@@ -192,9 +192,6 @@ namespace QLBenhVienDaLieu
         {
             mainPanelRight.Region = Graphic.Draw.RoundedRectangle(0, 0, mainPanelRight.Width, mainPanelRight.Height, 20, 20);
             mainPanelLeft.Region = Graphic.Draw.RoundedRectangle(0, 0, mainPanelLeft.Width, mainPanelLeft.Height, 20, 20);
-
         }
-
-        
     }
 }
