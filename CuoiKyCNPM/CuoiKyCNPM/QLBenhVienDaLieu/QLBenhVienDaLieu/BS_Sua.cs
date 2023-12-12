@@ -68,7 +68,7 @@ namespace QLBenhVienDaLieu
                     tb_ba_giaiPhau.Text = table.Cells["GiaiPhauBenh"].Value.ToString();
                     tb_ba_benhLy.Text = table.Cells["QuaTrinhBenhLy"].Value.ToString();
                     tb_ba_tienSu.Text = table.Cells["TienSuBenh"].Value.ToString();
-                    tb_ba_toanThan.Text = table.Cells["ToaThan"].Value.ToString();
+                    tb_ba_toanThan.Text = table.Cells["ToanThan"].Value.ToString();
                     tb_ba_coNang.Text = table.Cells["TrieuChungCoNang"].Value.ToString();
                     tb_ba_thuongTonCB.Text = table.Cells["ThuongTonCanBan"].Value.ToString();
                     tb_ba_coQuan.Text = table.Cells["CacCoQuan"].Value.ToString();

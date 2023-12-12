@@ -79,5 +79,23 @@ namespace QLBenhVienDaLieu
         {
             return form != null && form.Visible && !form.Focused;
         }
+
+        BS_Kham_Benh bskb;
+
+        private void btn_DichVu_Click(object sender, EventArgs e)
+        {
+            if (bskb == null || bskb.IsDisposed)
+            {
+                bskb = new BS_Kham_Benh(SDT);
+                bskb.FormClosed += (s, args) => this.Close();
+                this.Hide();
+                bskb.Show();
+            }
+            if (IsFormHidden(bskb))
+            {
+                this.Hide();
+                bskb.Show();
+            }
+        }
     }
 }
